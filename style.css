@@ -12,3 +12,42 @@ src: url("fonts/fontin-bold-webfont.woff") format("woff");
 font-family: "fontin-smallcaps";
 src: url("fonts/fontin-smallcaps-webfont.woff") format("woff");
 }
+
+.transition {
+		-webkit-transition: 0.25s ease-in-out;
+		-moz-transition: 0.25s ease-in-out;
+		-o-transition: 0.25s ease-in-out;
+		-ms-transition: 0.25s ease-in-out;
+		transition: 0.25s ease-in-out;
+}
+body {
+
+	font-family: 'fontin-bold';
+	color: white;
+	padding: 20px;
+	background-color: #222;
+	letter-spacing: 0.02em;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.background_wrap {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+		background-size: auto;
+    background-image: url('https://alpha.pathofexile.com/image/layout/WftA_background.jpg?1512364400000');
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	flex-flow: wrap;
+	padding-bottom: 250px;
+}
