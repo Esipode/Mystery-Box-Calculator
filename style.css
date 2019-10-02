@@ -20,6 +20,7 @@ src: url("fonts/fontin-smallcaps-webfont.woff") format("woff");
 		-ms-transition: 0.25s ease-in-out;
 		transition: 0.25s ease-in-out;
 }
+
 body {
 
 	font-family: 'fontin-bold';
@@ -35,6 +36,7 @@ body {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+
 .background_wrap {
     z-index: -1;
     position: fixed;
@@ -42,12 +44,186 @@ body {
     left: 0;
     height: 100%;
     width: 100%;
-		background-size: auto;
+	background-size: auto;
     background-image: url('https://alpha.pathofexile.com/image/layout/WftA_background.jpg?1512364400000');
 }
+
 .container {
 	display: flex;
 	flex-direction: column;
 	flex-flow: wrap;
 	padding-bottom: 250px;
+}
+
+@media screen and (min-width: 1920px) {
+	.background_wrap {
+		background-size: 100%;	
+	}
+}
+
+@media screen and (max-width: 550px) {
+	body {
+		padding: 0;
+	}
+}
+
+.footer {
+	pointer-events: none;
+	position: fixed;
+	justify-content: center;
+	align-items: center;
+	bottom: 0%;
+	left: 0px;
+	width: 100%;
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 32%, rgba(0,0,0,0.9) 78%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 32%,rgba(0,0,0,0.9) 78%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 32%,rgba(0,0,0,0.9) 78%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+.footer_title {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.footer img {
+	-webkit-filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
+	-ms-filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
+	filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
+}
+
+.footer h1 {
+	font-size: 1.5em;
+	letter-spacing: 2px;
+	text-shadow: 2px 2px 2px black;
+	padding: 50px 0px 0px 50px;
+}
+
+.verdict {
+	display: flex;
+	justify-content: center;
+	text-shadow: 2px 2px 2px black;
+	height: 75px;
+}
+
+.advice {
+	text-align: center;
+	font-size: 1.5em;
+	margin: 0 20px 0 20px;
+	line-height: 0.7em;
+	padding-bottom: 15px;
+}
+
+#number_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.25em;
+	padding-bottom: 10px;
+}
+
+#final_number {
+	font-family: 'roboto';
+	background-color: gray;
+	font-size: 1.5em;
+	text-align:center;
+	padding: 8px;
+	margin: 10px;
+	border-radius: 15px;
+	text-shadow: 1px 1px 2px black;
+}
+
+@media screen and (max-width: 900px) {
+	.footer img {
+		height: 120px;
+	}
+
+	.footer h1 {
+		padding: 40px 0px 0px 50px;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.footer {
+		zoom: 0.8;
+	}
+
+	.verdict {
+		display: inline;
+		height: auto;
+	}
+
+	.advice {
+		padding-bottom: 0px;
+		line-height: 0.1em;
+	}
+
+	#number_container {
+		line-height: 0.5em;
+	}
+
+	#final_number {
+		line-height: 1.0em;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.footer img {
+		height: 90px;
+	}
+
+	.footer h1 {
+		padding: 20px 0px 0px 30px;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.footer {
+		background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 32%, rgba(0,0,0,1) 78%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 32%,rgba(0,0,0,1) 78%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 32%,rgba(0,0,0,1) 78%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	}
+
+	.footer h1 {
+		padding: 20px 0px 0px 15px;
+  		font-size: 1.2em;	
+	}
+
+	.advice {
+		font-size: 1.2em;
+	}
+
+	#number_container {
+		font-size: 1.0em;
+	}
+
+	#final_number {
+		font-size: 1.25em;
+	}
+}
+@media screen and (max-width: 475px) {
+	.footer img {
+		display: none;
+	}
+}
+.great, .good, .okay, .bad {
+	display: none;
+}
+
+.great {
+	color: rgb(0, 200, 0);
+}
+
+.good {
+	color: rgb(190, 221, 19);
+}
+
+.okay {
+	color: rgb(234, 113, 0);
+}
+
+.bad {
+	color: rgb(180, 0, 0);
 }
