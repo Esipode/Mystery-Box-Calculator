@@ -1,24 +1,24 @@
 @font-face {
-font-family: "fontin-regular";
-src: url("fonts/fontin-regular-webfont.woff") format("woff");
+	font-family: "fontin-regular";
+	src: url("fonts/fontin-regular-webfont.woff") format("woff");
 }
 
 @font-face {
-font-family: "fontin-bold";
-src: url("fonts/fontin-bold-webfont.woff") format("woff");
+	font-family: "fontin-bold";
+	src: url("fonts/fontin-bold-webfont.woff") format("woff");
 }
 
 @font-face {
-font-family: "fontin-smallcaps";
-src: url("fonts/fontin-smallcaps-webfont.woff") format("woff");
+	font-family: "fontin-smallcaps";
+	src: url("fonts/fontin-smallcaps-webfont.woff") format("woff");
 }
 
 .transition {
-		-webkit-transition: 0.25s ease-in-out;
-		-moz-transition: 0.25s ease-in-out;
-		-o-transition: 0.25s ease-in-out;
-		-ms-transition: 0.25s ease-in-out;
-		transition: 0.25s ease-in-out;
+	-webkit-transition: 0.25s ease-in-out;
+	 -moz-transition: 0.25s ease-in-out;
+	  -o-transition: 0.25s ease-in-out;
+	   -ms-transition: 0.25s ease-in-out;
+	    transition: 0.25s ease-in-out;
 }
 
 body {
@@ -31,10 +31,9 @@ body {
 	-webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+      -moz-user-select: none; /* Firefox */
+       -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 .background_wrap {
@@ -67,6 +66,116 @@ body {
 	}
 }
 
+.list_item {
+	background-image: url('https://www.pathofexile.com/image/shop/deal-background-large.png'), url('https://web.poecdn.com/image/shop/daily-deal/categories/ShopItemPackageBackground.jpg?1554764519899');
+	background-position: top, bottom;
+	display: inline-block;
+	width: 291px;
+	height: 240px;
+	vertical-align: middle;
+	text-align: center;
+	margin: auto;
+	margin-bottom: 10px;
+	box-shadow: inset 0 0 10px 1px;
+	filter: saturate(0.6);
+	overflow: hidden;
+}
+
+.list_item img {
+	position: relative;
+	top: -90px;
+	right: -80px;
+}
+
+label {
+	cursor: pointer;
+}
+
+input[type="checkbox"]{
+	display: none;
+}
+
+input[type="checkbox"] + .label-text:before {
+	content: url('https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Cross.png?hash=edf6a81e4c9ce92681d0ca95b757bb27');
+	line-height: 1;
+	-webkit-font-smoothing: antialiasing;
+	font-size: 3em;
+	font-weight: 400;
+	position: absolute;
+	top: 110px;
+	left: 40px;
+	background-color: #ff0000;
+	color: transparent;
+	text-shadow: 0px 2px 3px rgba(78, 0, 0, 0.5);
+	-webkit-background-clip: text;
+	 -moz-background-clip: text;
+	  background-clip: text;
+}
+
+input[type="checkbox"]:checked + .label-text:before {
+	content: url('https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Tick.png?hash=1f20be360c2bcbcdafcd6a783ed7a944');
+	background-color: #00d000;
+	color: transparent;
+	text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+	-webkit-background-clip: text;
+	 -moz-background-clip: text;
+	  background-clip: text;
+}
+
+.label-text:after {
+	content: attr(value);
+	background-image: url('https://web.poecdn.com/image/shop/item/ShopItemCoin.png?1554764519971');
+	background-repeat: no-repeat;
+	background-position: top right;
+	position: absolute;
+	top: 65px;
+	left: 28px;
+	width: 36px;
+	height: 39px;
+}
+
+.rare {
+	color: #b523e6;
+}
+
+.uncommon {
+	color: #795fc0;
+}
+
+.common {
+	color: #b5abe0;
+}
+
+.selected {
+	color: #00ff00;
+	filter: saturate(1);
+}
+
+span {
+	color: #ffda4d;
+	text-shadow: 1px 1px 3px black;
+	font-weight: 600;
+	float: left;
+  	width: 100%;
+	height: 80%;
+	position: relative;
+  	top: 32px;
+}
+
+span p {
+	position: relative;
+  	top: 29px;
+	right: -65px;
+	letter-spacing: 1px;
+	text-align: start;
+	font-size: 1.3em;
+}
+
+a {
+	width: 50px;
+	height: 50px;
+}
+
 .footer {
 	pointer-events: none;
 	position: fixed;
@@ -76,9 +185,9 @@ body {
 	left: 0px;
 	width: 100%;
 	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 32%, rgba(0,0,0,0.9) 78%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 32%,rgba(0,0,0,0.9) 78%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 32%,rgba(0,0,0,0.9) 78%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	 background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 32%,rgba(0,0,0,0.9) 78%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 32%,rgba(0,0,0,0.9) 78%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
 
 .footer_title {
@@ -181,9 +290,9 @@ body {
 @media screen and (max-width: 550px) {
 	.footer {
 		background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 32%, rgba(0,0,0,1) 78%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 32%,rgba(0,0,0,1) 78%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 32%,rgba(0,0,0,1) 78%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+		 background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 32%,rgba(0,0,0,1) 78%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 32%,rgba(0,0,0,1) 78%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 	}
 
 	.footer h1 {
