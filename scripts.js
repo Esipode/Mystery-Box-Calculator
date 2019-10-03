@@ -38,9 +38,9 @@ $(document).ready(function() {
 		jQuery('<span/>', {
 			"class": "label-text",
 			"text":   mtxData[i].name
-		}).appendTo($('.coins')[i]);
+		}).appendTo($('.list_item')[i]);
 		jQuery('<img/>', {
 			"src": mtxData[i].image,
-		}).appendTo($('.coins')[i]);
+		}).appendTo($('.list_item')[i]);
 	}
 });
