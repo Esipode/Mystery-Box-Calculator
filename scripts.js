@@ -24,8 +24,8 @@ const mtxGlobals = {
 	mtxTotalCommonValue: ''
 }
 
-//Creates UI elements for each item once document has loaded
 $(document).ready(function() {
+	//Creates UI elements for each item once document has loaded
 	for(let i = 0; i < mtxGlobals.mtxTotal; i++) {
 		//Creates label container for each item
 		jQuery('<label/>', {
@@ -47,4 +47,12 @@ $(document).ready(function() {
 			"src": mtxData[i].image,
 		}).appendTo($('.list_item')[i]);
 	}
+	//Displays point values for each item
+	let totalcoins = document.getElementsByClassName("coins");
+	let i = 0;
+	let arr0 = totalcoins[i].value;
+	$('.label-text').each(function() {
+		i++;
+		$('.label-text').eq(i - 1).append("<p>" + totalcoins[i - 1].value + "</p>");
+	})
 });
