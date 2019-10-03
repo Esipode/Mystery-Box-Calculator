@@ -79,7 +79,7 @@ const mtxData = [
 	{
 		name: "Harlequin Weapon Effect",
 		value: "180",
-		image: "https://web.poecdn.com/public/news/2019-09-08/Items/HarleqinWeaponEffect.png",
+		image: "https://web.poecdn.com/public/news/2019-09-08/Items/HarlequinWeaponEffect.png",
 		rarity: "rare"
 	},
 
