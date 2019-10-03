@@ -27,18 +27,22 @@ const mtxGlobals = {
 //Creates UI elements for each item once document has loaded
 $(document).ready(function() {
 	for(let i = 0; i < mtxGlobals.mtxTotal; i++) {
+		//Creates label container for each item
 		jQuery('<label/>', {
 			"class": 'list_item transition' + ' ' + mtxData[i].rarity
 		}).appendTo('.container');
+		//Creates checkbox for each item
 		jQuery('<input/>', {
 			"class": "coins",
 			"type": "checkbox",
 			"value": mtxData[i].value
 		}).appendTo($('.list_item')[i]);
+		//Creates title for each item
 		jQuery('<span/>', {
 			"class": "label-text",
 			"text":   mtxData[i].name
 		}).appendTo($('.list_item')[i]);
+		//Creates image for each item
 		jQuery('<img/>', {
 			"src": mtxData[i].image,
 		}).appendTo($('.list_item')[i]);
