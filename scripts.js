@@ -21,7 +21,8 @@ const mtxGlobals = {
 	//Total point value of items selected from the box for each rarity
 	mtxTotalRareValue: 0,
 	mtxTotalUncommonValue: 0,
-	mtxTotalCommonValue: 0
+	mtxTotalCommonValue: 0,
+	mtxFinalBoxValue: 0
 }
 
 $(document).ready(function() {
@@ -61,8 +62,23 @@ $(document).ready(function() {
 	})
 });
 
-
-
+//Calculates total point value of selected items
 let rarityValues = () => {
-	
+	mtxGlobals.mtxTotalRareValue = 0;
+	mtxGlobals.mtxTotalUncommonValue = 0;
+	mtxGlobals.mtxTotalCommonValue = 0;
+	let arr0 = document.querySelectorAll('.rare input[type="checkbox"]:checked');
+	let arr1 = document.querySelectorAll('.uncommon input[type="checkbox"]:checked');
+	let arr2 = document.querySelectorAll('.common input[type="checkbox"]:checked');
+	for(let i = 0; i < arr0.length; i++) {
+			mtxGlobals.mtxTotalRareValue += (100 * (parseInt(arr0[i].value) * mtxGlobals.mtxPercentRare) / 100);
+	}
+	for(let i = 0; i < arr1.length; i++) {
+			mtxGlobals.mtxTotalUncommonValue += (100 * (parseInt(arr1[i].value) * mtxGlobals.mtxPercentUncommon) / 100);
+	}
+	for(let i = 0; i < arr2.length; i++) {
+			mtxGlobals.mtxTotalCommonValue += (100 * (parseInt(arr2[i].value) * mtxGlobals.mtxPercentCommon) / 100);
+	}
+	mtxGlobals.mtxFinalBoxValue = (mtxGlobals.mtxTotalRareValue + mtxGlobals.mtxTotalUncommonValue + mtxGlobals.mtxTotalCommonValue).toFixed(2);
+	console.log(mtxGlobals.mtxFinalBoxValue);
 };
