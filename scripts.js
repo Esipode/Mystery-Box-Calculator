@@ -100,10 +100,20 @@ let rarityValues = () => {
 
 //Function to change background color of final value element
 let colorChange = (percentage, hue0, hue1) => {
+		//value of red on color wheel
 		hue0 = 0;
+		//value of green on color wheel
 		hue1 = 120;
+		//current value of box divided max value of box
 		percentage = (mtxGlobals.mtxFinalBoxValue / 110);
+		//creates final color value based on defined parameters above
     	let hue = (percentage * (hue1 - hue0)) + hue0;
 
     	return 'hsl(' + hue + ', 100%, 30%)';
 }
+
+//Changes edge color of each item to green when selected
+$(document).on('click', '.coins', function() {
+	//toggles class on click
+	$(this.parentNode).toggleClass('selected');
+});
