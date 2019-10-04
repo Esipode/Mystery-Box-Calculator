@@ -304,10 +304,6 @@ a {
   		font-size: 1.2em;	
 	}
 
-	.advice {
-		font-size: 1.2em;
-	}
-
 	#number_container {
 		font-size: 1.0em;
 	}
@@ -320,23 +316,4 @@ a {
 	.footer img {
 		display: none;
 	}
-}
-.great, .good, .okay, .bad {
-	display: none;
-}
-
-.great {
-	color: rgb(0, 200, 0);
-}
-
-.good {
-	color: rgb(190, 221, 19);
-}
-
-.okay {
-	color: rgb(234, 113, 0);
-}
-
-.bad {
-	color: rgb(180, 0, 0);
 }
