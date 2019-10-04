@@ -169,10 +169,10 @@ span p {
 
 span h1 {
 	grid-area: 1 / 1 / 2 / 3;
-	font-size: 1em;
-	margin: auto;
-	max-width: 250px;
-	padding-top: 0.5em;
+    font-size: 1.1em;
+    margin: auto;
+    max-width: 240px;
+    padding-top: 0.55em;
 }
 
 a {
