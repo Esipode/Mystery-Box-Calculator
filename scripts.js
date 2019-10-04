@@ -37,11 +37,14 @@ $(document).ready(function() {
 			"type": "checkbox",
 			"value": mtxData[i].value
 		}).appendTo($('.list_item')[i]);
-		//Creates title for each item
+		//Creates :before and :after UI elements for each item
 		jQuery('<span/>', {
-			"class": "label-text",
-			"text":   mtxData[i].name
+			"class": "label-text"
 		}).appendTo($('.list_item')[i]);
+		//Creates title of each item
+		jQuery('<h1/>', {
+			"text":   mtxData[i].name
+		}).appendTo($('.label-text')[i]);
 		//Creates image for each item
 		jQuery('<img/>', {
 			"src": mtxData[i].image,

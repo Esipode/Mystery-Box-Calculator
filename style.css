@@ -67,12 +67,15 @@ body {
 }
 
 .list_item {
+	display: grid; 
+	grid-template-columns: repeat(2, 1fr); 
+	grid-template-rows: repeat(3, 1fr); 
+	grid-column-gap: 0px;
+	grid-row-gap: 0px; 
 	background-image: url('https://www.pathofexile.com/image/shop/deal-background-large.png'), url('https://web.poecdn.com/image/shop/daily-deal/categories/ShopItemPackageBackground.jpg?1554764519899');
 	background-position: top, bottom;
-	display: inline-block;
 	width: 291px;
 	height: 240px;
-	vertical-align: middle;
 	text-align: center;
 	margin: auto;
 	margin-bottom: 10px;
@@ -82,9 +85,9 @@ body {
 }
 
 .list_item img {
-	position: relative;
-	top: -90px;
-	right: -80px;
+	grid-area: 2 / 2 / 4 / 3;
+	justify-self: center;
+	align-self: center;
 }
 
 label {
@@ -96,14 +99,8 @@ input[type="checkbox"]{
 }
 
 input[type="checkbox"] + .label-text:before {
+	grid-area: 3 / 1 / 4 / 2;
 	content: url('https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Cross.png?hash=edf6a81e4c9ce92681d0ca95b757bb27');
-	line-height: 1;
-	-webkit-font-smoothing: antialiasing;
-	font-size: 3em;
-	font-weight: 400;
-	position: absolute;
-	top: 110px;
-	left: 40px;
 	background-color: #ff0000;
 	color: transparent;
 	text-shadow: 0px 2px 3px rgba(78, 0, 0, 0.5);
@@ -123,15 +120,15 @@ input[type="checkbox"]:checked + .label-text:before {
 }
 
 .label-text:after {
+	grid-area: 2 / 1 / 3 / 2;
 	content: attr(value);
 	background-image: url('https://web.poecdn.com/image/shop/item/ShopItemCoin.png?1554764519971');
 	background-repeat: no-repeat;
 	background-position: top right;
-	position: absolute;
-	top: 65px;
-	left: 28px;
 	width: 36px;
 	height: 39px;
+	align-self: center;
+    margin-left: 25px;
 }
 
 .rare {
@@ -152,23 +149,30 @@ input[type="checkbox"]:checked + .label-text:before {
 }
 
 span {
+	display: grid; 
+	grid-template-columns: repeat(2, 1fr); 
+	grid-template-rows: 1.6fr 1fr 1.8fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	grid-area: 1 / 1 / 4 / 3;
 	color: #ffda4d;
 	text-shadow: 1px 1px 3px black;
-	font-weight: 600;
-	float: left;
-  	width: 100%;
-	height: 80%;
-	position: relative;
-  	top: 32px;
 }
 
 span p {
-	position: relative;
-  	top: 29px;
-	right: -65px;
+	grid-area: 2 / 1 / 3 / 2;
 	letter-spacing: 1px;
-	text-align: start;
 	font-size: 1.3em;
+	text-align: start;
+    margin-left: 60px;
+}
+
+span h1 {
+	grid-area: 1 / 1 / 2 / 3;
+	font-size: 1em;
+	margin: auto;
+	max-width: 250px;
+	padding-top: 0.5em;
 }
 
 a {
