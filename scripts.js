@@ -52,11 +52,12 @@ $(document).ready(function() {
 			"src": mtxData[i].image,
 		}).appendTo($('.list_item')[i]);
 	}
-	//Displays point values for each item
+	//Gets point values for each item
 	let totalcoins = document.getElementsByClassName("coins");
 	let i = 0;
 	let arr0 = totalcoins[i].value;
 	$('.label-text').each(function() {
+		//Display point values for each item
 		$('.label-text').eq(i).append("<p>" + totalcoins[i].value + "</p>");
 		i++;
 	})
@@ -64,21 +65,24 @@ $(document).ready(function() {
 
 //Calculates total point value of selected items
 let rarityValues = () => {
+	//set total values to 0 for each rarity category
 	mtxGlobals.mtxTotalRareValue = 0;
 	mtxGlobals.mtxTotalUncommonValue = 0;
 	mtxGlobals.mtxTotalCommonValue = 0;
+	//create arrays from selected items for each category
 	let arr0 = document.querySelectorAll('.rare input[type="checkbox"]:checked');
 	let arr1 = document.querySelectorAll('.uncommon input[type="checkbox"]:checked');
 	let arr2 = document.querySelectorAll('.common input[type="checkbox"]:checked');
+	//Calculate average value per category total point values of the arrays
 	for(let i = 0; i < arr0.length; i++) {
-			mtxGlobals.mtxTotalRareValue += (100 * (parseInt(arr0[i].value) * mtxGlobals.mtxPercentRare) / 100);
+		mtxGlobals.mtxTotalRareValue += (100 * (parseInt(arr0[i].value) * mtxGlobals.mtxPercentRare) / 100);
 	}
 	for(let i = 0; i < arr1.length; i++) {
-			mtxGlobals.mtxTotalUncommonValue += (100 * (parseInt(arr1[i].value) * mtxGlobals.mtxPercentUncommon) / 100);
+		mtxGlobals.mtxTotalUncommonValue += (100 * (parseInt(arr1[i].value) * mtxGlobals.mtxPercentUncommon) / 100);
 	}
 	for(let i = 0; i < arr2.length; i++) {
-			mtxGlobals.mtxTotalCommonValue += (100 * (parseInt(arr2[i].value) * mtxGlobals.mtxPercentCommon) / 100);
+		mtxGlobals.mtxTotalCommonValue += (100 * (parseInt(arr2[i].value) * mtxGlobals.mtxPercentCommon) / 100);
 	}
+	//Adds together average values for each category to get average value of entire box
 	mtxGlobals.mtxFinalBoxValue = (mtxGlobals.mtxTotalRareValue + mtxGlobals.mtxTotalUncommonValue + mtxGlobals.mtxTotalCommonValue).toFixed(2);
-	console.log(mtxGlobals.mtxFinalBoxValue);
 };
