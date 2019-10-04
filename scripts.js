@@ -85,4 +85,21 @@ let rarityValues = () => {
 	}
 	//Adds together average values for each category to get average value of entire box
 	mtxGlobals.mtxFinalBoxValue = (mtxGlobals.mtxTotalRareValue + mtxGlobals.mtxTotalUncommonValue + mtxGlobals.mtxTotalCommonValue).toFixed(2);
+	document.getElementById("final_number").innerHTML = mtxGlobals.mtxFinalBoxValue;
+	colorChange();
+	if (mtxGlobals.mtxFinalBoxValue > 0) {
+		document.getElementById("final_number").style.backgroundColor = colorChange();
+	}
+	else {
+		document.getElementById("final_number").style.backgroundColor = 'gray';
+	}
 };
+
+let colorChange = (percentage, hue0, hue1) => {
+		hue0 = 0;
+		hue1 = 120;
+		percentage = (mtxGlobals.mtxFinalBoxValue / 110);
+    	let hue = (percentage * (hue1 - hue0)) + hue0;
+
+    	return 'hsl(' + hue + ', 80%, 40%)';
+}
