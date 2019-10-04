@@ -105,5 +105,5 @@ let colorChange = (percentage, hue0, hue1) => {
 		percentage = (mtxGlobals.mtxFinalBoxValue / 110);
     	let hue = (percentage * (hue1 - hue0)) + hue0;
 
-    	return 'hsl(' + hue + ', 80%, 40%)';
+    	return 'hsl(' + hue + ', 100%, 30%)';
 }
