@@ -35,7 +35,8 @@ $(document).ready(function() {
 		jQuery('<input/>', {
 			"class": "coins",
 			"type": "checkbox",
-			"value": mtxData[i].value
+			"value": mtxData[i].value,
+			"onclick": 'rarityValues()'
 		}).appendTo($('.list_item')[i]);
 		//Creates :before and :after UI elements for each item
 		jQuery('<span/>', {
@@ -59,3 +60,9 @@ $(document).ready(function() {
 		i++;
 	})
 });
+
+
+
+let rarityValues = () => {
+	
+};
