@@ -19,9 +19,9 @@ const mtxGlobals = {
 	mtxPercentCommon: (0.45 / (mtxData.filter((obj) => obj.rarity === 'common').length)).toFixed(12),
 
 	//Total point value of items selected from the box for each rarity
-	mtxTotalRareValue: '',
-	mtxTotalUncommonValue: '',
-	mtxTotalCommonValue: ''
+	mtxTotalRareValue: 0,
+	mtxTotalUncommonValue: 0,
+	mtxTotalCommonValue: 0
 }
 
 $(document).ready(function() {
@@ -55,7 +55,7 @@ $(document).ready(function() {
 	let i = 0;
 	let arr0 = totalcoins[i].value;
 	$('.label-text').each(function() {
+		$('.label-text').eq(i).append("<p>" + totalcoins[i].value + "</p>");
 		i++;
-		$('.label-text').eq(i - 1).append("<p>" + totalcoins[i - 1].value + "</p>");
 	})
 });
