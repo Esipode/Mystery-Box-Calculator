@@ -22,11 +22,11 @@
 }
 
 @keyframes spin {
-    from{
-        transform: rotate(0deg);
-    }to{
-        transform: rotate(360deg);
-    }
+	from{
+		transform: rotate(0deg);
+	}to{
+		transform: rotate(360deg);
+	}
 }
 
 body {
@@ -57,28 +57,28 @@ body {
  }
 
 .spinner {
-	width: 40px;
-	height: 40px;
+	width: 160px;
+	height: 160px;
 	border-top:3px solid #f2b341;
 	border-radius: 100%;
 	animation: spin 1.5s infinite linear;
-    position: relative;
     filter: blur(1px);
 }
 
 #loader h2 {
-	margin-left: 15px;
+	position: absolute;
+	height: 80px;
 }
 
 .background_wrap {
-    z-index: -1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 	background-size: auto;
-    background-image: url('https://alpha.pathofexile.com/image/layout/WftA_background.jpg?1512364400000');
+	background-image: url('https://alpha.pathofexile.com/image/layout/WftA_background.jpg?1512364400000');
 }
 
 .container {
