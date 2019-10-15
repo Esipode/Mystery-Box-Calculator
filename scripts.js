@@ -25,7 +25,14 @@ const mtxGlobals = {
 	mtxFinalBoxValue: 0
 }
 
+//Listen for page to finish loading
+window.addEventListener('load', function () {
+	//Hide the loading screen
+	document.getElementById("loader").style.display = 'none';
+})
+
 $(document).ready(function() {
+	
 	//Creates UI elements for each item once document has loaded
 	for(let i = 0; i < mtxGlobals.mtxTotal; i++) {
 		//Creates label container for each item
