@@ -68,6 +68,7 @@ body {
 #loader h2 {
 	position: absolute;
 	height: 80px;
+	line-height: 1.5em;
 }
 
 .background_wrap {
