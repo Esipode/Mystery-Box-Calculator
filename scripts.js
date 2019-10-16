@@ -28,7 +28,7 @@ const mtxGlobals = {
 //Listen for page to finish loading
 window.addEventListener('load', function () {
 	//Hide the loading screen
-	document.getElementById("loader").style.display = 'none';
+	$("#loader").fadeOut(500);
 })
 
 $(document).ready(function() {
