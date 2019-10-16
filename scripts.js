@@ -32,7 +32,7 @@ window.addEventListener('load', function () {
 })
 
 $(document).ready(function() {
-	
+	$('.dropdown').select2();
 	//Creates UI elements for each item once document has loaded
 	for(let i = 0; i < mtxGlobals.mtxTotal; i++) {
 		//Creates label container for each item
