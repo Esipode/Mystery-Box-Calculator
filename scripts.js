@@ -93,7 +93,7 @@ let rarityValues = () => {
 	//Adds together average values for each category to get average value of entire box
 	mtxGlobals.mtxFinalBoxValue = (mtxGlobals.mtxTotalRareValue + mtxGlobals.mtxTotalUncommonValue + mtxGlobals.mtxTotalCommonValue).toFixed(2);
 	//Display the value
-	document.getElementById("final_number").innerHTML = mtxGlobals.mtxFinalBoxValue;
+	document.getElementById("final_number").innerHTML = mtxGlobals.mtxFinalBoxValue + "<img src='https://web.poecdn.com/image/shop/item/ShopItemCoin.png?1554764519971' />";
 	//Gets color value based on current value of selected items
 	colorChange();
 	//Change background color based on function's returned value, if 0, return to default color
