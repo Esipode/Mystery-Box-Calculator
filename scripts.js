@@ -22,16 +22,31 @@ const mtxGlobals = {
 	mtxTotalRareValue: 0,
 	mtxTotalUncommonValue: 0,
 	mtxTotalCommonValue: 0,
-	mtxFinalBoxValue: 0
+	mtxFinalBoxValue: 0,
+
+	//Currently selected box
+	mtxCurrentBox: ''
 }
 
 //Listen for page to finish loading
 window.addEventListener('load', function () {
 	//Hide the loading screen
 	$("#loader").fadeOut(500);
-})
+	//Sets value for what box is active by default
+	mtxGlobals.mtxCurrentBox = (document.getElementsByClassName('select2-selection__rendered')[0].innerHTML);
+});
+
+//Watches for the box selector to change
+$('.dropdown').change(function() {
+	//Creates a delay so that the function doesn't carry out before value changes
+	setTimeout(function () {
+		//Sets value for what box is being changed to
+		mtxGlobals.mtxCurrentBox = (document.getElementsByClassName('select2-selection__rendered')[0].innerHTML);
+	}, 50);
+});
 
 $(document).ready(function() {
+	//Runs library that replaces 'select' element and replaces with spans
 	$('.dropdown').select2();
 	//Creates UI elements for each item once document has loaded
 	for(let i = 0; i < mtxGlobals.mtxTotal; i++) {
