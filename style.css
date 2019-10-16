@@ -1,16 +1,6 @@
 @font-face {
-	font-family: "fontin-regular";
-	src: url("fonts/fontin-regular-webfont.woff") format("woff");
-}
-
-@font-face {
 	font-family: "fontin-bold";
 	src: url("fonts/fontin-bold-webfont.woff") format("woff");
-}
-
-@font-face {
-	font-family: "fontin-smallcaps";
-	src: url("fonts/fontin-smallcaps-webfont.woff") format("woff");
 }
 
 .transition {
@@ -207,7 +197,7 @@ span h1 {
 	grid-area: 1 / 1 / 2 / 3;
     font-size: 1.1em;
     margin: auto;
-    max-width: 240px;
+    max-width: 230px;
     padding-top: 0.55em;
 }
 
