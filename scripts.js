@@ -1,9 +1,4 @@
 const mtxGlobals = {
-	//Percentage weight for each rarity
-	mtxChanceRare: 0.2,
-	mtxChanceUncommon: 0.35,
-	mtxChanceCommon: 0.45,
-
 	//Percentage chance per item for each rarity
 	mtxPercentRare: (0.2 / (mtxData.filter((obj) => obj.rarity === 'rare').length)).toFixed(12),
 	mtxPercentUncommon: (0.35 / (mtxData.filter((obj) => obj.rarity === 'uncommon').length)).toFixed(12),
