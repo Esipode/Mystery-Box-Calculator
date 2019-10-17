@@ -60,10 +60,12 @@ function loadContent() {
 	if (mtxGlobals.mtxCurrentBox != mtxGlobals.mtxPrevBox) {
 		//Check if any items of the box exist currently
 		if(!$('.list_item').length) {
-			//Do nothing
+			//Set previous box at value of current box
+			mtxGlobals.mtxPrevBox = mtxGlobals.mtxCurrentBox;
 		}
 		//If box item elements exist already, remove old elements before replacing with new elements
 		else {
+			console.log('Items do exist');
 			//Removes previous box content
 			for(let i = 0; i < mtxGlobals.mtxTotal; i++) {
 				$('.list_item').get(0).remove();
@@ -72,39 +74,39 @@ function loadContent() {
 			mtxGlobals.mtxPrevBox = mtxGlobals.mtxCurrentBox;
 		}
 		//Creates UI elements for each item once document has loaded
-		for(let i = 0; i < mtxGlobals.mtxTotal; i++) {
+		for(let j = 0; j < mtxGlobals.mtxTotal; j++) {
 			//Creates label container for each item
 			jQuery('<label/>', {
-				"class": 'list_item transition' + ' ' + mtxData[i].rarity
+				"class": 'list_item transition' + ' ' + mtxData[j].rarity
 			}).appendTo('.container');
 			//Creates checkbox for each item
 			jQuery('<input/>', {
 				"class": "coins",
 				"type": "checkbox",
-				"value": mtxData[i].value,
+				"value": mtxData[j].value,
 				"onclick": 'rarityValues()'
-			}).appendTo($('.list_item')[i]);
+			}).appendTo($('.list_item')[j]);
 			//Creates :before and :after UI elements for each item
 			jQuery('<span/>', {
 				"class": "label-text"
-			}).appendTo($('.list_item')[i]);
+			}).appendTo($('.list_item')[j]);
 			//Creates title of each item
 			jQuery('<h1/>', {
-				"text":   mtxData[i].name
-			}).appendTo($('.label-text')[i]);
+				"text":   mtxData[j].name
+			}).appendTo($('.label-text')[j]);
 			//Creates image for each item
 			jQuery('<img/>', {
-				"src": mtxData[i].image,
-			}).appendTo($('.list_item')[i]);
+				"src": mtxData[j].image,
+			}).appendTo($('.list_item')[j]);
 		}
 		//Gets point values for each item
 		let totalcoins = document.getElementsByClassName("coins");
-		let i = 0;
-		let arr0 = totalcoins[i].value;
+		let k = 0;
+		let arr0 = totalcoins[k].value;
 		$('.label-text').each(function() {
 			//Display point values for each item
-			$('.label-text').eq(i).append("<p>" + totalcoins[i].value + "</p>");
-			i++;
+			$('.label-text').eq(k).append("<p>" + totalcoins[k].value + "</p>");
+			k++;
 		})
 	}
 };
