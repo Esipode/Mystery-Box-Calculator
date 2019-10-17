@@ -20,8 +20,8 @@ const mtxGlobals = {
 window.addEventListener('load', function () {
 	//Runs library that replaces 'select' element and replaces with spans
 	$('.dropdown').select2();
-	//Hide the loading screen
-	$("#loader").fadeOut(500);
+	//Loads all images, then removes loading screen
+	preloadImages();
 	//Sets value for what box is active by default
 	mtxGlobals.mtxCurrentBox = (document.getElementsByClassName('select2-selection__rendered')[0].innerHTML);
 	//By default there is no previous box so it takes the value of the current box
@@ -29,6 +29,34 @@ window.addEventListener('load', function () {
 	//Loads content of default box
 	loadContent();
 });
+
+//Loads all images from sources in data.js
+function preloadImages() {
+	//creates promise function to load all images into DOM
+	let loadImages = new Promise(function(resolve, reject) {
+		let images = [];
+	    for (let i = 0; i < mtxData.length; i++) {
+	        images[i] = new Image();
+	        images[i].src = mtxData[i].image;
+	    }
+	    //Return value of entire array of images after finishing
+	    resolve(images);
+	});
+	//After promise function completes, check each image index to see if it has finished loading
+	loadImages.then(function(value) {
+		let loadCounter = 0;
+		for (let j = 0; (j + 1) < value.length; j++) {
+			value[j].onload = function() {
+				loadCounter++;
+				j = loadCounter;
+				//Once all images are done loading, remove loading screen
+				if (loadCounter == (value.length - 1)) {
+					$("#loader").fadeOut(500);
+				}
+			}
+		}
+	});
+};
 
 //Watches for the box selector to change
 $('.dropdown').change(function() {
