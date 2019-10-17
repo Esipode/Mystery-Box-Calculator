@@ -1,9 +1,4 @@
 const mtxGlobals = {
-	//Percentage chance per item for each rarity
-	mtxPercentRare: (0.2 / (mtxData.filter((obj) => obj.rarity === 'rare').length)).toFixed(12),
-	mtxPercentUncommon: (0.35 / (mtxData.filter((obj) => obj.rarity === 'uncommon').length)).toFixed(12),
-	mtxPercentCommon: (0.45 / (mtxData.filter((obj) => obj.rarity === 'common').length)).toFixed(12),
-
 	//Total point value of items selected from the box for each rarity
 	mtxTotalRareValue: 0,
 	mtxTotalUncommonValue: 0,
@@ -140,13 +135,13 @@ let rarityValues = () => {
 	let arr2 = document.querySelectorAll('.common input[type="checkbox"]:checked');
 	//Calculate average value per category total point values of the arrays
 	for(let i = 0; i < arr0.length; i++) {
-		mtxGlobals.mtxTotalRareValue += (100 * (parseInt(arr0[i].value) * mtxGlobals.mtxPercentRare) / 100);
+		mtxGlobals.mtxTotalRareValue += (100 * (parseInt(arr0[i].value) * (0.2 / (mtxData.filter((obj) => obj.rarity === 'rare' && obj.box === mtxGlobals.mtxCurrentBox).length))) / 100);
 	}
 	for(let i = 0; i < arr1.length; i++) {
-		mtxGlobals.mtxTotalUncommonValue += (100 * (parseInt(arr1[i].value) * mtxGlobals.mtxPercentUncommon) / 100);
+		mtxGlobals.mtxTotalUncommonValue += (100 * (parseInt(arr1[i].value) * (0.35 / (mtxData.filter((obj) => obj.rarity === 'uncommon' && obj.box === mtxGlobals.mtxCurrentBox).length))) / 100);
 	}
 	for(let i = 0; i < arr2.length; i++) {
-		mtxGlobals.mtxTotalCommonValue += (100 * (parseInt(arr2[i].value) * mtxGlobals.mtxPercentCommon) / 100);
+		mtxGlobals.mtxTotalCommonValue += (100 * (parseInt(arr2[i].value) * (0.45 / (mtxData.filter((obj) => obj.rarity === 'common' && obj.box === mtxGlobals.mtxCurrentBox).length))) / 100);
 	}
 	//Adds together average values for each category to get average value of entire box
 	mtxGlobals.mtxFinalBoxValue = (mtxGlobals.mtxTotalRareValue + mtxGlobals.mtxTotalUncommonValue + mtxGlobals.mtxTotalCommonValue).toFixed(2);
