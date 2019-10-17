@@ -25,15 +25,23 @@ const mtxGlobals = {
 	mtxFinalBoxValue: 0,
 
 	//Currently selected box
-	mtxCurrentBox: ''
+	mtxCurrentBox: '',
+	//Previously selected box
+	mtxPrevBox: ''
 }
 
 //Listen for page to finish loading
 window.addEventListener('load', function () {
+	//Runs library that replaces 'select' element and replaces with spans
+	$('.dropdown').select2();
 	//Hide the loading screen
 	$("#loader").fadeOut(500);
 	//Sets value for what box is active by default
 	mtxGlobals.mtxCurrentBox = (document.getElementsByClassName('select2-selection__rendered')[0].innerHTML);
+	//By default there is no previous box so it takes the value of the current box
+	mtxGlobals.mtxPrevBox = mtxGlobals.mtxCurrentBox;
+	//Loads content of default box
+	loadContent();
 });
 
 //Watches for the box selector to change
@@ -42,48 +50,64 @@ $('.dropdown').change(function() {
 	setTimeout(function () {
 		//Sets value for what box is being changed to
 		mtxGlobals.mtxCurrentBox = (document.getElementsByClassName('select2-selection__rendered')[0].innerHTML);
+		//Loads newly selected box content
+		loadContent();
 	}, 50);
 });
 
-$(document).ready(function() {
-	//Runs library that replaces 'select' element and replaces with spans
-	$('.dropdown').select2();
-	//Creates UI elements for each item once document has loaded
-	for(let i = 0; i < mtxGlobals.mtxTotal; i++) {
-		//Creates label container for each item
-		jQuery('<label/>', {
-			"class": 'list_item transition' + ' ' + mtxData[i].rarity
-		}).appendTo('.container');
-		//Creates checkbox for each item
-		jQuery('<input/>', {
-			"class": "coins",
-			"type": "checkbox",
-			"value": mtxData[i].value,
-			"onclick": 'rarityValues()'
-		}).appendTo($('.list_item')[i]);
-		//Creates :before and :after UI elements for each item
-		jQuery('<span/>', {
-			"class": "label-text"
-		}).appendTo($('.list_item')[i]);
-		//Creates title of each item
-		jQuery('<h1/>', {
-			"text":   mtxData[i].name
-		}).appendTo($('.label-text')[i]);
-		//Creates image for each item
-		jQuery('<img/>', {
-			"src": mtxData[i].image,
-		}).appendTo($('.list_item')[i]);
+function loadContent() {
+	//Check if current box is the same as previously selected box
+	if (mtxGlobals.mtxCurrentBox != mtxGlobals.mtxPrevBox) {
+		//Check if any items of the box exist currently
+		if(!$('.list_item').length) {
+			//Do nothing
+		}
+		//If box item elements exist already, remove old elements before replacing with new elements
+		else {
+			//Removes previous box content
+			for(let i = 0; i < mtxGlobals.mtxTotal; i++) {
+				$('.list_item').get(0).remove();
+			}
+			//After finishing removing all items, set previous box at value of current box
+			mtxGlobals.mtxPrevBox = mtxGlobals.mtxCurrentBox;
+		}
+		//Creates UI elements for each item once document has loaded
+		for(let i = 0; i < mtxGlobals.mtxTotal; i++) {
+			//Creates label container for each item
+			jQuery('<label/>', {
+				"class": 'list_item transition' + ' ' + mtxData[i].rarity
+			}).appendTo('.container');
+			//Creates checkbox for each item
+			jQuery('<input/>', {
+				"class": "coins",
+				"type": "checkbox",
+				"value": mtxData[i].value,
+				"onclick": 'rarityValues()'
+			}).appendTo($('.list_item')[i]);
+			//Creates :before and :after UI elements for each item
+			jQuery('<span/>', {
+				"class": "label-text"
+			}).appendTo($('.list_item')[i]);
+			//Creates title of each item
+			jQuery('<h1/>', {
+				"text":   mtxData[i].name
+			}).appendTo($('.label-text')[i]);
+			//Creates image for each item
+			jQuery('<img/>', {
+				"src": mtxData[i].image,
+			}).appendTo($('.list_item')[i]);
+		}
+		//Gets point values for each item
+		let totalcoins = document.getElementsByClassName("coins");
+		let i = 0;
+		let arr0 = totalcoins[i].value;
+		$('.label-text').each(function() {
+			//Display point values for each item
+			$('.label-text').eq(i).append("<p>" + totalcoins[i].value + "</p>");
+			i++;
+		})
 	}
-	//Gets point values for each item
-	let totalcoins = document.getElementsByClassName("coins");
-	let i = 0;
-	let arr0 = totalcoins[i].value;
-	$('.label-text').each(function() {
-		//Display point values for each item
-		$('.label-text').eq(i).append("<p>" + totalcoins[i].value + "</p>");
-		i++;
-	})
-});
+};
 
 //Calculates total point value of selected items
 let rarityValues = () => {
