@@ -54,7 +54,10 @@ function loadContent() {
 		else {
 			//Removes previous box content
 			for(let i = 0; i < mtxList.length; i++) {
+				//remove each item one by one
 				$('.list_item').get(0).remove();
+				//Run to reset values to default for final value
+				rarityValues();
 			}
 			//After finishing removing all items, set previous box at value of current box
 			mtxGlobals.mtxPrevBox = mtxGlobals.mtxCurrentBox;
