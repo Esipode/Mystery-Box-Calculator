@@ -314,3 +314,28 @@ a {
 #final_number img {
 	vertical-align: bottom;
 }
+
+@media screen and (max-width: 615px) {
+	.verdict {
+		height: 100px;
+	}
+	#number_container {
+		display: block;
+	}
+	#number_container p {
+		margin: 10px;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	#number_container {
+		font-size: 1em;
+		display: block;
+	}
+	#number_container p {
+		margin: 10px 5px 10px 5px;
+	}
+	#final_number img {
+	display: none;
+}
+}
