@@ -5,6 +5,9 @@ const mtxGlobals = {
 	mtxTotalCommonValue: 0,
 	mtxFinalBoxValue: 0,
 
+	//Array of items from the currently active box
+	mtxCurrList: [],
+
 	//Currently selected box
 	mtxCurrentBox: '',
 	//Previously selected box
@@ -15,43 +18,15 @@ const mtxGlobals = {
 window.addEventListener('load', function () {
 	//Runs library that replaces 'select' element and replaces with spans
 	$('.dropdown').select2();
-	//Loads all images, then removes loading screen
-	preloadImages();
 	//Sets value for what box is active by default
 	mtxGlobals.mtxCurrentBox = (document.getElementsByClassName('select2-selection__rendered')[0].innerHTML);
 	//By default there is no previous box so it takes the value of the current box
 	mtxGlobals.mtxPrevBox = mtxGlobals.mtxCurrentBox;
 	//Loads content of default box
 	loadContent();
+	//Loads all images, then removes loading screen
+	preloadImages();
 });
-
-//Loads all images from sources in data.js
-function preloadImages() {
-	//creates promise function to load all images into DOM
-	let loadImages = new Promise(function(resolve, reject) {
-		let images = [];
-	    for (let i = 0; i < mtxData.length; i++) {
-	        images[i] = new Image();
-	        images[i].src = mtxData[i].image;
-	    }
-	    //Return value of entire array of images after finishing
-	    resolve(images);
-	});
-	//After promise function completes, check each image index to see if it has finished loading
-	loadImages.then(function(value) {
-		let loadCounter = 0;
-		for (let j = 0; (j + 1) < value.length; j++) {
-			value[j].onload = function() {
-				loadCounter++;
-				j = loadCounter;
-				//Once all images are done loading, remove loading screen
-				if (loadCounter == (value.length - 1)) {
-					$("#loader").fadeOut(500);
-				}
-			}
-		}
-	});
-};
 
 //Watches for the box selector to change
 $('.dropdown').change(function() {
@@ -65,7 +40,8 @@ $('.dropdown').change(function() {
 });
 
 function loadContent() {
-	let mtxList = mtxData.filter((obj) => obj.box === mtxGlobals.mtxCurrentBox);
+	//Creates array of items based on the active box
+	mtxGlobals.mtxCurrList = mtxData.filter((obj) => obj.box === mtxGlobals.mtxCurrentBox);
 	//Check if current box is the same as previously selected box
 	if (mtxGlobals.mtxCurrentBox != mtxGlobals.mtxPrevBox) {
 		//Check if any items of the box exist currently
@@ -75,52 +51,60 @@ function loadContent() {
 		}
 		//If box item elements exist already, remove old elements before replacing with new elements
 		else {
-			//Removes previous box content
-			for(let i = 0; i < mtxList.length; i++) {
-				//remove each item one by one
-				$('.list_item').get(0).remove();
-				//Run to reset values to default for final value
-				rarityValues();
-			}
+			//Loads all images, then removes loading screen
+			preloadImages();
+			//Forces function to wait until loading animation has finished
+			setTimeout(function() {
+				//Removes previous box content
+				for(let i = 0; i < mtxGlobals.mtxCurrList.length; i++) {
+					//remove each item one by one
+					$('.list_item').get(0).remove();
+				}
+			}, 300);
+			//Run to reset values to default for final value
+			rarityValues();
 			//After finishing removing all items, set previous box at value of current box
 			mtxGlobals.mtxPrevBox = mtxGlobals.mtxCurrentBox;
 		}
 	}
-	//Creates UI elements for each item once document has loaded
-	for(let j = 0; j < mtxList.length; j++) {
-		//Creates label container for each item
-		jQuery('<label/>', {
-			"class": 'list_item transition' + ' ' + mtxList[j].rarity
-		}).appendTo('.container');
-		//Creates checkbox for each item
-		jQuery('<input/>', {
-			"class": "coins",
-			"type": "checkbox",
-			"value": mtxList[j].value,
-			"onclick": 'rarityValues()'
-		}).appendTo($('.list_item')[j]);
-		//Creates :before and :after UI elements for each item
-		jQuery('<span/>', {
-			"class": "label-text"
-		}).appendTo($('.list_item')[j]);
-		//Creates title of each item
-		jQuery('<h1/>', {
-			"text":   mtxList[j].name
-		}).appendTo($('.label-text')[j]);
-		//Creates image for each item
-		jQuery('<img/>', {
-			"src": mtxList[j].image,
-		}).appendTo($('.list_item')[j]);
-	}
-	//Gets point values for each item
-	let totalcoins = document.getElementsByClassName("coins");
-	let k = 0;
-	let arr0 = totalcoins[k].value;
-	$('.label-text').each(function() {
-		//Display point values for each item
-		$('.label-text').eq(k).append("<p>" + totalcoins[k].value + "</p>");
-		k++;
-	})
+	//Forces function to wait until loading animation has finished
+	setTimeout(function() {
+		//Creates UI elements for each item once document has loaded
+		for(let j = 0; j < mtxGlobals.mtxCurrList.length; j++) {
+			//Creates label container for each item
+			jQuery('<label/>', {
+				"class": 'list_item transition' + ' ' + mtxGlobals.mtxCurrList[j].rarity
+			}).appendTo('.container');
+			//Creates checkbox for each item
+			jQuery('<input/>', {
+				"class": "coins",
+				"type": "checkbox",
+				"value": mtxGlobals.mtxCurrList[j].value,
+				"onclick": 'rarityValues()'
+			}).appendTo($('.list_item')[j]);
+			//Creates :before and :after UI elements for each item
+			jQuery('<span/>', {
+				"class": "label-text"
+			}).appendTo($('.list_item')[j]);
+			//Creates title of each item
+			jQuery('<h1/>', {
+				"text":   mtxGlobals.mtxCurrList[j].name
+			}).appendTo($('.label-text')[j]);
+			//Creates image for each item
+			jQuery('<img/>', {
+				"src": mtxGlobals.mtxCurrList[j].image,
+			}).appendTo($('.list_item')[j]);
+		}
+		//Gets point values for each item
+		let totalcoins = document.getElementsByClassName("coins");
+		let k = 0;
+		let arr0 = totalcoins[k].value;
+		$('.label-text').each(function() {
+			//Display point values for each item
+			$('.label-text').eq(k).append("<p>" + totalcoins[k].value + "</p>");
+			k++;
+		})
+	}, 300);
 };
 
 //Calculates total point value of selected items
@@ -177,3 +161,32 @@ $(document).on('click', '.coins', function() {
 	//toggles class on click
 	$(this.parentNode).toggleClass('selected');
 });
+
+//Loads all images from sources in data.js
+function preloadImages() {
+	$("#loader").fadeIn(250);
+	//creates promise function to load all images into DOM
+	let loadImages = new Promise(function(resolve, reject) {
+		let images = [];
+	    for (let i = 0; i < mtxGlobals.mtxCurrList.length; i++) {
+	        images[i] = new Image();
+	        images[i].src = mtxGlobals.mtxCurrList[i].image;
+	    }
+	    //Return value of entire array of images after finishing
+	    resolve(images);
+	});
+	//After promise function completes, check each image index to see if it has finished loading
+	loadImages.then(function(value) {
+		let loadCounter = 0;
+		for (let j = 0; (j + 1) < value.length; j++) {
+			value[j].onload = function() {
+				loadCounter++;
+				j = loadCounter;
+				//Once all images are done loading, remove loading screen
+				if (loadCounter == (value.length - 1)) {
+					$("#loader").fadeOut(350);
+				}
+			}
+		}
+	});
+};
