@@ -1,13 +1,4 @@
 const mtxGlobals = {
-	//Total number of MTX items available in the box
-	mtxTotal: mtxData.length,
-	//Total number of Rare MTX items available in the box
-	mtxTotalRare: mtxData.filter((obj) => obj.rarity === 'rare').length,
-	//Total number of Uncommon MTX items available in the box
-	mtxTotalUncommon: mtxData.filter((obj) => obj.rarity === 'uncommon').length,
-	//Total number of Common MTX items available in the box
-	mtxTotalCommon: mtxData.filter((obj) => obj.rarity === 'common').length,
-
 	//Percentage weight for each rarity
 	mtxChanceRare: 0.2,
 	mtxChanceUncommon: 0.35,
