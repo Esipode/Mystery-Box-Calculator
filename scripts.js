@@ -47,6 +47,7 @@ $('.dropdown').change(function() {
 });
 
 function loadContent() {
+	let mtxList = mtxData.filter((obj) => obj.box === mtxGlobals.mtxCurrentBox);
 	//Check if current box is the same as previously selected box
 	if (mtxGlobals.mtxCurrentBox != mtxGlobals.mtxPrevBox) {
 		//Check if any items of the box exist currently
@@ -57,7 +58,7 @@ function loadContent() {
 		//If box item elements exist already, remove old elements before replacing with new elements
 		else {
 			//Removes previous box content
-			for(let i = 0; i < mtxGlobals.mtxTotal; i++) {
+			for(let i = 0; i < mtxList.length; i++) {
 				$('.list_item').get(0).remove();
 			}
 			//After finishing removing all items, set previous box at value of current box
@@ -65,17 +66,16 @@ function loadContent() {
 		}
 	}
 	//Creates UI elements for each item once document has loaded
-	for(let j = 0; j < mtxGlobals.mtxTotal; j++) {
-		console.log(j);
+	for(let j = 0; j < mtxList.length; j++) {
 		//Creates label container for each item
 		jQuery('<label/>', {
-			"class": 'list_item transition' + ' ' + mtxData[j].rarity
+			"class": 'list_item transition' + ' ' + mtxList[j].rarity
 		}).appendTo('.container');
 		//Creates checkbox for each item
 		jQuery('<input/>', {
 			"class": "coins",
 			"type": "checkbox",
-			"value": mtxData[j].value,
+			"value": mtxList[j].value,
 			"onclick": 'rarityValues()'
 		}).appendTo($('.list_item')[j]);
 		//Creates :before and :after UI elements for each item
@@ -84,11 +84,11 @@ function loadContent() {
 		}).appendTo($('.list_item')[j]);
 		//Creates title of each item
 		jQuery('<h1/>', {
-			"text":   mtxData[j].name
+			"text":   mtxList[j].name
 		}).appendTo($('.label-text')[j]);
 		//Creates image for each item
 		jQuery('<img/>', {
-			"src": mtxData[j].image,
+			"src": mtxList[j].image,
 		}).appendTo($('.list_item')[j]);
 	}
 	//Gets point values for each item
