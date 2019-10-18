@@ -55,13 +55,10 @@ function loadContent() {
 			preloadImages();
 			//Forces function to wait until loading animation has finished
 			setTimeout(function() {
-				//Removes previous box content
-				for(let i = 0; i < mtxGlobals.mtxCurrList.length; i++) {
-					//remove each item one by one
-					$('.list_item').get(0).remove();
-					//Run to reset values to default for final value
-					rarityValues();
-				}
+				//remove all items in container
+				$('.container').empty();
+				//Run to reset values to default for final value
+				rarityValues();
 			}, 300);
 			//After finishing removing all items, set previous box at value of current box
 			mtxGlobals.mtxPrevBox = mtxGlobals.mtxCurrentBox;
