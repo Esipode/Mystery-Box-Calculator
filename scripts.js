@@ -59,10 +59,10 @@ function loadContent() {
 				for(let i = 0; i < mtxGlobals.mtxCurrList.length; i++) {
 					//remove each item one by one
 					$('.list_item').get(0).remove();
+					//Run to reset values to default for final value
+					rarityValues();
 				}
 			}, 300);
-			//Run to reset values to default for final value
-			rarityValues();
 			//After finishing removing all items, set previous box at value of current box
 			mtxGlobals.mtxPrevBox = mtxGlobals.mtxCurrentBox;
 		}
