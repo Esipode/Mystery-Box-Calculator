@@ -328,15 +328,16 @@ a {
 	font-family: sans-serif;
 	background-color: gray;
 	font-size: 1.5em;
+	height: 1.3em;
 	text-align:center;
 	padding: 4px 4px 4px 8px;
 	margin: 10px;
 	border-radius: 15px;
 	text-shadow: 1px 1px 2px black;
 }
-
-#final_number img {
-	vertical-align: bottom;
+#final_number:after {
+	content: url('https://web.poecdn.com/image/shop/item/ShopItemCoin.png');
+	vertical-align: middle;
 }
 
 @media screen and (max-width: 615px) {
@@ -359,7 +360,10 @@ a {
 	#number_container p {
 		margin: 10px 5px 10px 5px;
 	}
+	#final_number {
+		height: 1.7em;
+	}
 	#final_number img {
-	display: none;
-}
+		display: none;
+	}
 }
