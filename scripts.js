@@ -128,11 +128,9 @@ let rarityValues = () => {
 	mtxGlobals.mtxFinalBoxValue = (mtxGlobals.mtxTotalRareValue + mtxGlobals.mtxTotalUncommonValue + mtxGlobals.mtxTotalCommonValue).toFixed(2);
 	//Display the value
 	document.getElementById("final_number").innerHTML = mtxGlobals.mtxFinalBoxValue;
-	//Gets color value based on current value of selected items
-	colorChange();
 	//Change background color based on function's returned value, if 0, return to default color
 	if (mtxGlobals.mtxFinalBoxValue > 0) {
-		document.getElementById("final_number").style.backgroundColor = colorChange();
+		document.getElementById("final_number").style.backgroundColor = colorChange(); 	//Gets color value based on current value of selected items
 	}
 	else {
 		document.getElementById("final_number").style.backgroundColor = 'gray';
