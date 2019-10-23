@@ -26,7 +26,7 @@ body {
 	background-color: #222;
 	letter-spacing: 0.02em;
 	-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
+	-webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
       -moz-user-select: none; /* Firefox */
        -ms-user-select: none; /* Internet Explorer/Edge */
@@ -190,15 +190,15 @@ input[type="checkbox"]:checked + .label-text:before {
 	letter-spacing: 1px;
 	font-size: 1.3em;
 	text-align: start;
-    margin-left: 60px;
+	margin-left: 60px;
 }
 
 .label-text h1 {
 	grid-area: 1 / 1 / 2 / 3;
-    font-size: 1.1em;
-    margin: auto;
-    max-width: 230px;
-    padding-top: 0.55em;
+	font-size: 1.1em;
+	margin: auto;
+	max-width: 230px;
+	padding-top: 0.55em;
 }
 
 a {
@@ -321,15 +321,16 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 1.25em;
+	font-size: 1.25em;*/
 }
 
 #final_number {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-family: sans-serif;
 	background-color: gray;
 	font-size: 1.5em;
-	height: 1.3em;
-	text-align:center;
 	padding: 4px 4px 4px 8px;
 	margin: 10px;
 	border-radius: 15px;

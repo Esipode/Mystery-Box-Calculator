@@ -175,9 +175,9 @@ let colorChange = (percentage, hue0, hue1) => {
 		//current value of box divided max value of box
 		percentage = (mtxGlobals.mtxFinalBoxValue / 110);
 		//creates final color value based on defined parameters above
-    	let hue = (percentage * (hue1 - hue0)) + hue0;
+		let hue = (percentage * (hue1 - hue0)) + hue0;
 
-    	return 'hsl(' + hue + ', 100%, 30%)';
+		return 'hsl(' + hue + ', 100%, 30%)';
 }
 
 //Changes edge color of each item to green when selected
@@ -192,12 +192,12 @@ function preloadImages() {
 	//creates promise function to load all images into DOM
 	let loadImages = new Promise(function(resolve, reject) {
 		let images = [];
-	    for (let i = 0; i < mtxGlobals.mtxCurrList.length; i++) {
-	        images[i] = new Image();
-	        images[i].src = mtxGlobals.mtxCurrList[i].image;
-	    }
-	    //Return value of entire array of images after finishing
-	    resolve(images);
+		for (let i = 0; i < mtxGlobals.mtxCurrList.length; i++) {
+			images[i] = new Image();
+			images[i].src = mtxGlobals.mtxCurrList[i].image;
+		}
+		//Return value of entire array of images after finishing
+		resolve(images);
 	});
 	//After promise function completes, check each image index to see if it has finished loading
 	loadImages.then(function(value) {
