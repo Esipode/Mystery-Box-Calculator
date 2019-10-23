@@ -125,9 +125,11 @@ let rarityValues = () => {
 		mtxGlobals.mtxTotalCommonValue += (100 * (parseInt(arr2[i].value) * (0.45 / (mtxData.filter((obj) => obj.rarity === 'common' && obj.box === mtxGlobals.mtxCurrentBox).length))) / 100);
 	}
 	//Adds together average values for each category to get average value of entire box
-	mtxGlobals.mtxFinalBoxValue = (mtxGlobals.mtxTotalRareValue + mtxGlobals.mtxTotalUncommonValue + mtxGlobals.mtxTotalCommonValue).toFixed(2);
-	//Display the value
-	document.getElementById("final_number").innerHTML = mtxGlobals.mtxFinalBoxValue;
+	mtxGlobals.mtxFinalBoxValue = parseFloat((mtxGlobals.mtxTotalRareValue + mtxGlobals.mtxTotalUncommonValue + mtxGlobals.mtxTotalCommonValue).toFixed(2));
+	//Gets old final value of box
+	let prevFinalValue = parseFloat(document.getElementById("final_number").innerHTML);
+	//Animates final value changing
+	animateValue(prevFinalValue, mtxGlobals.mtxFinalBoxValue);
 	//Change background color based on function's returned value, if 0, return to default color
 	if (mtxGlobals.mtxFinalBoxValue > 0) {
 		document.getElementById("final_number").style.backgroundColor = colorChange(); 	//Gets color value based on current value of selected items
@@ -136,6 +138,33 @@ let rarityValues = () => {
 		document.getElementById("final_number").style.backgroundColor = 'gray';
 	}
 };
+
+//Animates final value of box changing
+function animateValue(start, end) {
+	//By default, current value is given the starting value
+	let current = start;
+	//Sets how much the number increments with each step
+	let increment = end > start ? ((end - start) / 20) : -((start - end) / 20);
+	//Sets rate at which the number increments
+	let stepTime = Math.abs(Math.floor(20));
+	//Sets the timer for the animation
+	let timer = setInterval(function() {
+		//Add increment to current value
+		current += increment;
+		//Display incremented value
+		document.getElementById("final_number").innerHTML = current.toFixed(2);
+		//When the current value is equal to the target value
+		if (current.toFixed(2) == end) {
+			//Check for negative number
+			if (current < 0) {
+				//Correct negative number
+				document.getElementById("final_number").innerHTML = '0.00';
+			}
+			clearInterval(timer);
+		}
+	}, stepTime);
+}
+
 
 //Function to change background color of final value element
 let colorChange = (percentage, hue0, hue1) => {
