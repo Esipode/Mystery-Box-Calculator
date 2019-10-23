@@ -2135,5 +2135,544 @@ const mtxData = [
 		value: "50",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceBricks.png",
 		rarity: "common"
+	},
+	{
+		box: "Chaos Order",
+		name: "Ultimate Chaos Wings",
+		value: "320",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosWings.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Pure Light Wings",
+		value: "320",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightWings.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Ultimate Chaos Body Armour",
+		value: "250",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosBody.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Pure Light Body Armour",
+		value: "250",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightBody.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Ultimate Chaos Cloak",
+		value: "230",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/DarkCloak.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Pure Light Cloak",
+		value: "230",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightCloak.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Ultimate Chaos Character Effect",
+		value: "210",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosCharacterEffect.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Pure Light Character Effect",
+		value: "210",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightCharacterEffect.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Ultimate Chaos Sword Skin",
+		value: "180",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosWeapon.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Ivory Arc of Courage",
+		value: "180",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/IvoryBow.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Ultimate Chaos Weapon Effect",
+		value: "180",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosWeaponEffect.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Pure Light Weapon Effect",
+		value: "180",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightWeaponEffect.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Ultimate Chaos Portal",
+		value: "150",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/DarkPortal.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Pure Light Portal",
+		value: "150",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightPortal.png",
+		rarity: "rare"
+	},
+	{
+		box: "Chaos Order",
+		name: "Raven Pet",
+		value: "160",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/Crow.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Chaos Order",
+		name: "White Dove Pet",
+		value: "160",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/Dove.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Chaos Order",
+		name: "Ultimate Chaos Helmet",
+		value: "130",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosHelmet.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Chaos Order",
+		name: "Pure Light Helmet",
+		value: "130",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightHelmet.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Chaos Order",
+		name: "Ultimate Chaos Boots",
+		value: "80",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosBoots.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Chaos Order",
+		name: "Pure Light Boots",
+		value: "80",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightBoots.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Chaos Order",
+		name: "Ultimate Chaos Gloves",
+		value: "80",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosGloves.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Chaos Order",
+		name: "Pure Light Gloves",
+		value: "80",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightGloves.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Chaos Order",
+		name: "Gore Herald Skill Effect",
+		value: "125",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/GoreHerald.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Chaos Order",
+		name: "Bone Aura Character Effect",
+		value: "125",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/BoneAura.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Chaos Order",
+		name: "Dark Cyclone Skill Effect",
+		value: "110",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/DarkCyclone.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Chaos Order",
+		name: "Divine Blink/Mirror Arrow Skill Effect",
+		value: "110",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/BlinkArrow.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Chaos Order",
+		name: "Glowing Red Eyes",
+		value: "100",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosEyes.png",
+		rarity: "common"
+	},
+	{
+		box: "Chaos Order",
+		name: "Holy Eyes",
+		value: "100",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/HolyEyes.png",
+		rarity: "common"
+	},
+	{
+		box: "Chaos Order",
+		name: "Ultimate Chaos Footprints",
+		value: "80",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosFootprints.png",
+		rarity: "common"
+	},
+	{
+		box: "Chaos Order",
+		name: "Pure Light Footprints",
+		value: "80",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightFootprints.png",
+		rarity: "common"
+	},
+	{
+		box: "Chaos Order",
+		name: "Blood and Bone Hideout Decoration",
+		value: "60",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/BloodAndBone.png",
+		rarity: "common"
+	},
+	{
+		box: "Chaos Order",
+		name: "White Fern Hideout Decoration",
+		value: "60",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/WhiteFern.png",
+		rarity: "common"
+	},
+	{
+		box: "Chaos Order",
+		name: "Beast Eye Hideout Decoration",
+		value: "50",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/BeastEye.png",
+		rarity: "common"
+	},
+	{
+		box: "Chaos Order",
+		name: "White Lights Hideout Decoration",
+		value: "50",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/WhiteLights.png",
+		rarity: "common"
+	},
+	{
+		box: "Chaos Order",
+		name: "Beast Egg Hideout Decoration",
+		value: "40",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/BeastEgg.png",
+		rarity: "common"
+	},
+	{
+		box: "Chaos Order",
+		name: "White Crystal Hideout Decoration",
+		value: "40",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/WhiteCrystal.png",
+		rarity: "common"
+	},
+	{
+		box: "Chaos Order",
+		name: "Dark Swarm Pet",
+		value: "30",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/DarkSwarm.png",
+		rarity: "common"
+	},
+	{
+		box: "Chaos Order",
+		name: "Light Swarm Pet",
+		value: "30",
+		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightSwarm.png",
+		rarity: "common"
+	},
+	{
+		box: "Classic",
+		name: "Purple Acid Scorpion",
+		value: "450",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/PurpleAcidScorpion.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Arcane Seraph Wings",
+		value: "320",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/ArcaneSeraphWings.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Gore Raven Wings",
+		value: "320",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/GoreRavenWings.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Bleached Demon King Horns",
+		value: "250",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/BleachedDemonKingHorns.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Bleached Demon King Body Armour",
+		value: "250",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/BleachDemonKingBody.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Arcane Lightning Body Armour",
+		value: "250",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/ArcaneLightningBody.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Purple Necrotic Body Armour",
+		value: "250",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/PurpleNecroticBody.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Divine Skull",
+		value: "220",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/DivineSkull.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Purple Skull",
+		value: "220",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/PurpleSkull.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Purple Lightning Weapon Effect",
+		value: "200",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/PurpleLightningWeapon.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Spectral Toad Pet",
+		value: "200",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/SpectralGlassFrog.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Bleached Skull",
+		value: "175",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/BleachedBoneSkull.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Orange Cat Pet",
+		value: "150",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/OrangeCat.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "White Wolf Pet",
+		value: "150",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/WhiteWolf.png",
+		rarity: "rare"
+	},
+	{
+		box: "Classic",
+		name: "Bleached Demon King Helmet",
+		value: "130",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/BleachDemonKingHelmet.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Arcane Lightning Helmet",
+		value: "130",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/ArcaneLightningHelmet.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Purple Necrotic Helmet",
+		value: "130",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/PurpleNecroticHelmet.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Divine Herald Skill Effect",
+		value: "125",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/DivineHerald.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Purple Herald Skill Effect",
+		value: "125",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/PurpleHerald.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Purple Arc Skill Effect",
+		value: "120",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/PurpleArc.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Arcane Visage",
+		value: "95",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/ArcaneFieryVisageSmall.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Divine Ice Crown",
+		value: "95",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/DivineCrown.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Bleached Demon King Gloves",
+		value: "80",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/BleachDemonKingGloves.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Bleached Demon King Boots",
+		value: "80",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/BleachDemonKingBoots.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Arcane Lightning Gloves",
+		value: "80",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/ArcaneLightningGLoves.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Arcane Lightning Boots",
+		value: "80",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/ArcaneLightningBoots.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Purple Necrotic Gloves",
+		value: "80",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/PurpleNecroticGloves.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Purple Necrotic Boots",
+		value: "80",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/PurpleNecroticBoots.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Purple Divine Sign",
+		value: "80",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/PurpleDivineSign.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Classic Purple Portal",
+		value: "75",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/PurplePortal.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Classic",
+		name: "Arcane Victorious Wings",
+		value: "70",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/ArcaneVictoriousWings.png",
+		rarity: "common"
+	},
+	{
+		box: "Classic",
+		name: "Twisted Bone Horns",
+		value: "65",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/BleachedHorns.png",
+		rarity: "common"
+	},
+	{
+		box: "Classic",
+		name: "Arcane Mark of the Phoenix",
+		value: "55",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/ArcaneMarkofthePhoenix.png",
+		rarity: "common"
+	},
+	{
+		box: "Classic",
+		name: "Red Hideout Crystal",
+		value: "50",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/RedCrystal.png",
+		rarity: "common"
+	},
+	{
+		box: "Classic",
+		name: "Green Hideout Crystal",
+		value: "50",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/GreenCrystal.png",
+		rarity: "common"
+	},
+	{
+		box: "Classic",
+		name: "Blue Hideout Crystal",
+		value: "50",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/BlueCrystal.png",
+		rarity: "common"
+	},
+	{
+		box: "Classic",
+		name: "Blood Rain Hideout Decoration",
+		value: "40",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/BloodRainHideout.png",
+		rarity: "common"
+	},
+	{
+		box: "Classic",
+		name: "Arcane Halo",
+		value: "30",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/ArcaneHalo.png",
+		rarity: "common"
+	},
+	{
+		box: "Classic",
+		name: "Classic Fireworks",
+		value: "30",
+		image: "https://p7p4m6s5.ssl.hwcdn.net/public/bex/classic/ClassicFireworks.png",
+		rarity: "common"
 	}
 ]
