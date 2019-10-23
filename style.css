@@ -337,7 +337,8 @@ a {
 }
 #final_number:after {
 	content: url('https://web.poecdn.com/image/shop/item/ShopItemCoin.png');
-	vertical-align: middle;
+	position: relative;
+	top: 3px;
 }
 
 @media screen and (max-width: 615px) {
@@ -348,7 +349,7 @@ a {
 		display: block;
 	}
 	#number_container p {
-		margin: 10px;
+		margin: 5px 0px 5px 0px;
 	}
 }
 
@@ -358,12 +359,10 @@ a {
 		display: block;
 	}
 	#number_container p {
+		text-align: center;
 		margin: 10px 5px 10px 5px;
 	}
-	#final_number {
-		height: 1.7em;
-	}
-	#final_number img {
+	#final_number:after {
 		display: none;
 	}
 }
