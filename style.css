@@ -321,7 +321,7 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 1.25em;*/
+	font-size: 1.25em;
 }
 
 #final_number {
@@ -351,6 +351,9 @@ a {
 	}
 	#number_container p {
 		margin: 5px 0px 5px 0px;
+	}
+	#final_number {
+		margin: 0 auto;
 	}
 }
 
