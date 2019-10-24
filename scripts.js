@@ -53,6 +53,10 @@ $('.dropdown').on('select2:open', function() {
 })
 
 function loadContent() {
+	//Force dropdown to open, triggering box thumbnails loading
+	$(".dropdown").select2('open');
+	//Force dropdown to close immediately after
+	$(".dropdown").select2('close');
 	//Creates array of items based on the active box
 	mtxGlobals.mtxCurrList = mtxData.filter((obj) => obj.box === mtxGlobals.mtxCurrentBox);
 	//Check if current box is the same as previously selected box
