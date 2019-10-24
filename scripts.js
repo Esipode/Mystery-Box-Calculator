@@ -225,7 +225,7 @@ function preloadImages() {
 				j = loadCounter;
 				//Once all images are done loading, remove loading screen
 				if (loadCounter == (value.length - 1)) {
-					$("#loader").fadeOut(350);
+					$("#loader").delay(300).fadeOut(250);
 				}
 			}
 		}
