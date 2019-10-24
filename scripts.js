@@ -39,6 +39,19 @@ $('.dropdown').change(function() {
 	}, 50);
 });
 
+//After dropdown has opened, prepend list items with images of each corresponding box 
+$('.dropdown').on('select2:open', function() {
+	//Short delay so event doesn't fire before dropdown list is created
+	setTimeout(function() {
+		for(let i = 0; i < boxImage.length; i++) {
+			//Creates image, then places img tag into list item at index
+			jQuery('<img/>', {
+				"src": boxImage[i],
+			}).prependTo($('.select2-results__option')[i]);
+		}
+	}, 5);
+})
+
 function loadContent() {
 	//Creates array of items based on the active box
 	mtxGlobals.mtxCurrList = mtxData.filter((obj) => obj.box === mtxGlobals.mtxCurrentBox);

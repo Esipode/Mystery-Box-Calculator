@@ -1,3 +1,17 @@
+const boxImage = new Array(
+	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/7/7c/Carnival_Mystery_Box_inventory_icon.png',
+	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/d/d8/Frontier_Mystery_Box_inventory_icon.png',
+	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/4/4d/Glimmerwood_Mystery_Box_inventory_icon.png',
+	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/e/ec/Fairgraves_Mystery_Box_inventory_icon.png',
+	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/6/6f/Oriath_Mystery_Box_inventory_icon.png',
+	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/c/c9/Apocalypse_Mystery_Box_inventory_icon.png',
+	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/7/70/Sin_and_Innocence_Mystery_Box_inventory_icon.png',
+	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/8/8e/Fire_and_Ice_Mystery_Box_inventory_icon.png',
+	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/1/1b/Chaos_and_Order_Mystery_Box_inventory_icon.png',
+	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/e/e6/Classic_Mystery_Box_inventory_icon.png'
+)
+
+
 const mtxData = [
 	{
 		box: "Carnival",

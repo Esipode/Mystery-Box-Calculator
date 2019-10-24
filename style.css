@@ -260,7 +260,18 @@ a {
 }
 
 .select2-results {
-	text-align: center;
+	text-align: left;
+}
+
+.select2-results__option {
+	font-size: 0.9em;
+}
+
+.select2-results__option img {
+	position: relative;
+	height: 30px;
+	vertical-align: middle;
+	padding-right: 8px;
 }
 
 .select2-container--default .select2-results__option[aria-selected=true] {
