@@ -114,6 +114,9 @@ body {
 	grid-area: 2 / 2 / 4 / 3;
 	justify-self: center;
 	align-self: center;
+	max-width: 100px;
+	max-height: 100px;
+}
 }
 
 label {
