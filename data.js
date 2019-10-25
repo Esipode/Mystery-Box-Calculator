@@ -677,7 +677,7 @@ const mtxData = [
 		box: "Glimmerwood",
 		name: "Madcap Portal",
 		value: "150",
-		image: "https://web.poecdn.com/public/news/2019-03-15/GlimmerwoodBox/mtx/MadcapWeaponEffect.png",
+		image: "https://web.poecdn.com/public/news/2019-03-15/GlimmerwoodBox/mtx/MadcapPortal.png",
 		rarity: "rare"
 	},
 	{
@@ -1468,7 +1468,7 @@ const mtxData = [
 		box: "Apocalypse",
 		name: "Wasteland Portal",
 		value: "150",
-		image: "https://web.poecdn.com/public/news/2018-06-03/WastelandPortal.png",
+		image: "https://gamepedia.cursecdn.com/pathofexile_gamepedia/8/84/Wasteland_Portal_Effect_inventory_icon.png",
 		rarity: "rare"
 	},
 	{
