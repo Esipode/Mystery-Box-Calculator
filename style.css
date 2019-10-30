@@ -414,9 +414,9 @@ a {
 	border-radius: 7px;
 	text-shadow: 1px 1px 2px black;
 	filter: saturate(0);
-	background: url(https://web.poecdn.com/image/layout/button/button-generic-normal-left.png) left top no-repeat,
-	url(https://web.poecdn.com/image/layout/button/button-generic-normal-right.png) right top no-repeat,
-	url(https://web.poecdn.com/image/layout/button/button-generic-normal-middle.png) center top repeat-x;
+	background: url(https://web.poecdn.com/image/layout/button/button-generic-hover-left.png) left top no-repeat,
+	url(https://web.poecdn.com/image/layout/button/button-generic-hover-right.png) right top no-repeat,
+	url(https://web.poecdn.com/image/layout/button/button-generic-hover-middle.png) center top repeat-x;
 }
 
 @media screen and (max-width: 615px) {
