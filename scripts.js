@@ -144,15 +144,17 @@ let rarityValues = () => {
 	//Adds together average values for each category to get average value of entire box
 	mtxGlobals.mtxFinalBoxValue = parseFloat((mtxGlobals.mtxTotalRareValue + mtxGlobals.mtxTotalUncommonValue + mtxGlobals.mtxTotalCommonValue).toFixed(2));
 	//Gets old final value of box
-	let prevFinalValue = parseFloat(document.getElementById("final_number").innerHTML);
+	let prevFinalValue = parseFloat(document.getElementById("total").innerHTML);
 	//Animates final value changing
 	animateValue(prevFinalValue, mtxGlobals.mtxFinalBoxValue);
 	//Change background color based on function's returned value, if 0, return to default color
 	if (mtxGlobals.mtxFinalBoxValue > 0) {
-		document.getElementById("final_number").style.backgroundColor = colorChange(); 	//Gets color value based on current value of selected items
+		document.getElementById("final_number").style.filter = 'saturate(1)'; //Remove grascale
+		document.getElementById("final_number").style.filter = 'hue-rotate(' + colorChange() + 'deg)' + 'brightness(1.2)'; 	//Gets color value based on current value of selected items
+		document.getElementById("total_coin").style.filter = 'hue-rotate(' + '-' + colorChange() + 'deg)'; //Reverses color shifting of coin
 	}
 	else {
-		document.getElementById("final_number").style.backgroundColor = 'gray';
+		document.getElementById("final_number").style.filter = 'saturate(0)'; //Return element image to grayscale
 	}
 };
 
@@ -169,13 +171,13 @@ function animateValue(start, end) {
 		//Add increment to current value
 		current += increment;
 		//Display incremented value
-		document.getElementById("final_number").innerHTML = current.toFixed(2);
+		document.getElementById("total").innerHTML = current.toFixed(2);
 		//When the current value is equal to the target value
 		if (current.toFixed(2) == end) {
 			//Check for negative number
 			if (current < 0) {
 				//Correct negative number
-				document.getElementById("final_number").innerHTML = '0.00';
+				document.getElementById("total").innerHTML = '0.00';
 			}
 			clearInterval(timer);
 		}
@@ -192,9 +194,9 @@ let colorChange = (percentage, hue0, hue1) => {
 		//current value of box divided max value of box
 		percentage = (mtxGlobals.mtxFinalBoxValue / 110);
 		//creates final color value based on defined parameters above
-		let hue = (percentage * (hue1 - hue0)) + hue0;
+		let hue = ((percentage * (hue1 - hue0)) + hue0) - 30;
 
-		return 'hsl(' + hue + ', 100%, 30%)';
+		return hue;
 }
 
 //Changes edge color of each item to green when selected

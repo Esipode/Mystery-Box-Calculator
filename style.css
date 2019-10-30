@@ -399,18 +399,15 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-family: sans-serif;
-	background-color: gray;
 	font-size: 1.5em;
-	padding: 4px 4px 4px 8px;
+	padding: 9px 15px;
 	margin: 10px;
-	border-radius: 15px;
+	border-radius: 7px;
 	text-shadow: 1px 1px 2px black;
-}
-#final_number:after {
-	content: url('https://web.poecdn.com/image/shop/item/ShopItemCoin.png');
-	position: relative;
-	top: 3px;
+	filter: saturate(0);
+	background: url(https://web.poecdn.com/image/layout/button/button-generic-normal-left.png) left top no-repeat,
+	url(https://web.poecdn.com/image/layout/button/button-generic-normal-right.png) right top no-repeat,
+	url(https://web.poecdn.com/image/layout/button/button-generic-normal-middle.png) center top repeat-x;
 }
 
 @media screen and (max-width: 615px) {
