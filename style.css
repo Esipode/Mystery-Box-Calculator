@@ -218,26 +218,26 @@ a {
 	}
 	.label-text p {
 		font-size: 1.1em;
-		margin: 10px 0px 0px 135px;
+		margin: 10px 0px 0px 140px;
 	}
 	.label-text:after {
-		margin: 9px 130px;
-		zoom: 0.8;
+		margin: 3px 108px;
+		transform: scale(0.8);
 	}
 	input[type="checkbox"] + .label-text:before {
-		margin: -65px 160px 0px 0px;
-		zoom: 0.7;
+		margin: -55px 130px 0px 0px;
+		transform: scale(0.7);
 	}
 	.label-text h1 {
-	    font-size: 0.8em;
-	    margin: 0 auto;
-	    max-width: 250px;
-	    padding-top: 10px;
+		font-size: 0.8em;
+		margin: 0 auto;
+		max-width: 250px;
+		padding-top: 10px;
 	}
 	.list_item img {
 		max-width: 50px;
 		max-height: 50px;
-		margin-bottom: 7px;
+		margin: 0 0 7px 10px;
 	}
 }
 
@@ -353,7 +353,8 @@ a {
 
 @media screen and (max-width: 380px) {
 	.select2-container {
-		margin: 0 10px;
+		transform: scale(0.8);
+		margin: 0;
 	}
 	.select2-container--open .select2-dropdown--below {
 		margin: 0 -10px;
@@ -426,15 +427,12 @@ a {
 }
 
 @media screen and (max-width: 400px) {
-	#number_container {
-		font-size: 1em;
-		display: block;
-	}
 	#number_container p {
+		font-size: 0.8em;
 		text-align: center;
 		margin: 10px 5px 10px 5px;
 	}
-	#final_number:after {
-		display: none;
+	#final_number {
+		transform: scale(0.8);
 	}
 }
