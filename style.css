@@ -208,6 +208,39 @@ a {
 	height: 50px;
 }
 
+@media screen and (max-width: 675px), screen and (max-height: 450px) {
+	.list_item {
+		background-position: -5px -5px, bottom;
+		width: 281px;
+		height: 78px;
+		margin-bottom: 25px;
+		box-shadow: inset 0 0 5px 1px;
+	}
+	.label-text p {
+		font-size: 1.1em;
+		margin: 10px 0px 0px 135px;
+	}
+	.label-text:after {
+		margin: 9px 130px;
+		zoom: 0.8;
+	}
+	input[type="checkbox"] + .label-text:before {
+		margin: -65px 160px 0px 0px;
+		zoom: 0.7;
+	}
+	.label-text h1 {
+	    font-size: 0.8em;
+	    margin: 0 auto;
+	    max-width: 250px;
+	    padding-top: 10px;
+	}
+	.list_item img {
+		max-width: 50px;
+		max-height: 50px;
+		margin-bottom: 7px;
+	}
+}
+
 .header {
 	z-index: 1;
 	display: grid;
