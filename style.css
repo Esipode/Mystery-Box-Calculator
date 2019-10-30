@@ -8,7 +8,7 @@
 	 -moz-transition: 0.25s ease-in-out;
 	  -o-transition: 0.25s ease-in-out;
 	   -ms-transition: 0.25s ease-in-out;
-	    transition: 0.25s ease-in-out;
+		transition: 0.25s ease-in-out;
 }
 
 @keyframes spin {
@@ -27,10 +27,10 @@ body {
 	letter-spacing: 0.02em;
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Firefox */
-       -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+	 -khtml-user-select: none; /* Konqueror HTML */
+	  -moz-user-select: none; /* Firefox */
+	   -ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 #loader {
@@ -52,7 +52,7 @@ body {
 	border-top:3px solid #f2b341;
 	border-radius: 100%;
 	animation: spin 1.5s infinite linear;
-    filter: blur(1px);
+	filter: blur(1px);
 }
 
 #loader h2 {
@@ -117,7 +117,6 @@ body {
 	max-width: 100px;
 	max-height: 100px;
 }
-}
 
 label {
 	cursor: pointer;
@@ -157,7 +156,7 @@ input[type="checkbox"]:checked + .label-text:before {
 	width: 36px;
 	height: 39px;
 	align-self: center;
-    margin-left: 25px;
+	margin-left: 25px;
 }
 
 .rare {
