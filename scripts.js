@@ -150,8 +150,9 @@ let rarityValues = () => {
 	//Change background color based on function's returned value, if 0, return to default color
 	if (mtxGlobals.mtxFinalBoxValue > 0) {
 		document.getElementById("final_number").style.filter = 'saturate(1)'; //Remove grascale
-		document.getElementById("final_number").style.filter = 'hue-rotate(' + colorChange() + 'deg)' + 'brightness(1.2)'; 	//Gets color value based on current value of selected items
-		document.getElementById("total_coin").style.filter = 'hue-rotate(' + '-' + colorChange() + 'deg)'; //Reverses color shifting of coin
+		let currColor = colorChange(); //Gets color value based on current value of selected items
+		document.getElementById("final_number").style.filter = 'hue-rotate(' + (currColor) + 'deg)' + 'brightness(1.2)'; //Shifts color of background
+		document.getElementById("total_coin").style.filter = 'hue-rotate(' + '-' + (currColor) + 'deg)'; //Reverses color shifting of coin
 	}
 	else {
 		document.getElementById("final_number").style.filter = 'saturate(0)'; //Return element image to grayscale
@@ -196,7 +197,7 @@ let colorChange = (percentage, hue0, hue1) => {
 		//creates final color value based on defined parameters above
 		let hue = ((percentage * (hue1 - hue0)) + hue0);
 
-		return hue;
+		return hue.toFixed(0);
 }
 
 //Changes edge color of each item to green when selected
