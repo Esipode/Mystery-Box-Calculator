@@ -362,10 +362,10 @@ a {
 @media screen and (max-width: 400px) {
 	.select2-container {
 		transform: scale(0.8);
-		margin: 0;
+		margin-right: -20px;
 	}
 	.select2-container--open .select2-dropdown--below {
-		margin: 0 -10px;
+		margin: -10px -25px;
 	}
 }
 
@@ -405,9 +405,13 @@ a {
 }
 
 #final_number {
-	display: flex;
+	display: grid;
+	grid-template-columns: 0.70fr 0.30fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	width: 120px;
 	align-items: center;
-	justify-content: center;
 	font-size: 1.5em;
 	padding: 9px 15px;
 	margin: 10px;
@@ -417,6 +421,20 @@ a {
 	background: url(https://web.poecdn.com/image/layout/button/button-generic-hover-left.png) left top no-repeat,
 	url(https://web.poecdn.com/image/layout/button/button-generic-hover-right.png) right top no-repeat,
 	url(https://web.poecdn.com/image/layout/button/button-generic-hover-middle.png) center top repeat-x;
+}
+
+#total {
+	grid-area: 1 / 1 / 2 / 2;
+	text-align: center;
+	justify-self: center;
+	width: 80px;
+}
+
+#total_coin {
+	grid-area: 1 / 2 / 2 / 3;
+	filter: hue-rotate(-90.4255deg);
+	justify-self: center;
+	margin-left: 5px;
 }
 
 @media screen and (max-width: 615px) {
