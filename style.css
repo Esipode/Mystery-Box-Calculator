@@ -87,15 +87,9 @@ noscript {
 	padding-top: 100px;
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1921px), screen and (min-height: 1081px) {
 	.background_wrap {
-		background-size: 100%;	
-	}
-}
-
-@media screen and (max-width: 550px) {
-	body {
-		padding: 0;
+		background-size: cover;	
 	}
 }
 
