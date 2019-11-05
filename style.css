@@ -228,6 +228,7 @@ input[type="checkbox"]:checked + .label-text:before {
 .label-text h1 {
 	grid-area: 1 / 1 / 2 / 3;
 	font-size: 1.1em;
+	font-weight: 300;
 	margin: auto;
 	max-width: 230px;
 	padding-top: 0.55em;
