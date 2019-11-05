@@ -47,6 +47,7 @@ body {
  }
 
 .spinner {
+	position: absolute;
 	width: 160px;
 	height: 160px;
 	border-top:3px solid #f2b341;
@@ -55,18 +56,45 @@ body {
 	filter: blur(1px);
 }
 
+#progress_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#loading_bar {
+	background-color: #222;
+	color: #f2b341;
+	border: 0;
+	height: 3px;
+	width: 100px;
+	border-radius: 9px;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+	/*opacity: 0.8;*/
+}
+
+#loading_bar::-webkit-progress-bar {
+	border-radius: 9px;
+	background-color: #222;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+}
+#loading_bar::-webkit-progress-value {
+	border-radius: 9px;
+	background-color: #f2b341;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+}
+#loading_bar::-moz-progress-bar {
+	border-radius: 9px;
+	background-color: #f2b341;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+}
+
 noscript {
 	position: absolute;
 	max-width: 80%;
-	margin-top: 120px;
+	padding-bottom: 250px;
 	font-size: 1.2em;
 	text-align: center;
-}
-
-#loader h2 {
-	position: absolute;
-	height: 80px;
-	line-height: 1.5em;
 }
 
 .background_wrap {

@@ -15,7 +15,11 @@
 <body>
 	<div id="loader">
 		<noscript>Page not loading? Make sure JavaScript is enabled!</noscript>
-		<div class="spinner"></div><h2>Loading...</h2>
+		<div class="spinner"></div>
+		<div id="progress_container">
+			<h2>Loading...</h2>
+			<progress id="loading_bar" max="100" value="0"></progress>
+		</div>
 	</div>
 	<div class="header">
 		<select class="dropdown">

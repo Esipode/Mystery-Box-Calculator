@@ -221,11 +221,20 @@ function preloadImages() {
 	});
 	//After promise function completes, check each image index to see if it has finished loading
 	loadImages.then(function(value) {
+		//Reset loading bar to 0%
+		$('#loading_bar').val(0);
+		//Reset number of loaded elements
 		let loadCounter = 0;
+		//Reset percentage of loaded elements
+		let percentage = 0;
 		for (let j = 0; (j + 1) < value.length; j++) {
 			value[j].onload = function() {
 				loadCounter++;
 				j = loadCounter;
+				//Set percentage to reflect amount of images loaded
+				percentage = (((j + 1) * 100) / value.length).toFixed(0);
+				//Display loaded percentage
+				$('#loading_bar').val(percentage);
 				//Once all images are done loading, remove loading screen
 				if (loadCounter == (value.length - 1)) {
 					$("#loader").delay(300).fadeOut(250);
