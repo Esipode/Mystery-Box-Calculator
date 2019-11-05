@@ -113,6 +113,7 @@ noscript {
 	flex-direction: column;
 	flex-flow: wrap;
 	padding-top: 100px;
+	justify-content: center;
 }
 
 @media screen and (min-width: 1921px), screen and (min-height: 1081px) {
@@ -129,6 +130,7 @@ noscript {
 	grid-row-gap: 0px; 
 	background-image: url('https://www.pathofexile.com/image/shop/deal-background-large.png'), url('https://web.poecdn.com/image/shop/daily-deal/categories/ShopItemPackageBackground.jpg');
 	background-position: top, bottom;
+	min-width: 281px;
 	width: 291px;
 	height: 240px;
 	text-align: center;
@@ -272,6 +274,12 @@ a {
 	}
 }
 
+@media screen and (max-width: 400px) {
+	.list_item {
+		margin: 0 0 25px 0;
+	}
+}
+
 .header {
 	z-index: 1;
 	display: grid;
@@ -384,11 +392,24 @@ a {
 
 @media screen and (max-width: 400px) {
 	.select2-container {
-		transform: scale(0.8);
+		font-size: 1.25em;
+		width: 150px !important;
+		margin-right: -20px;
+		margin-left: -10px;
 		margin-right: -20px;
 	}
 	.select2-container--open .select2-dropdown--below {
-		margin: -10px -25px;
+		margin: 0px 10px;
+		font-size: 0.9em;
+	}
+	.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+		margin: 15px -68px;
+	}
+	.select2-container--default .select2-selection--single .select2-selection__arrow b {
+		margin: 19px -68px;
+	}
+	.select2-results__option img {
+		height: 20px;
 	}
 }
 
