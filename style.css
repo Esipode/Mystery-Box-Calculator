@@ -79,18 +79,21 @@ body {
 	background-color: #222;
 	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
 }
+
 #loading_bar::-webkit-progress-value {
 	border-radius: 9px;
 	background-color: #f2b341;
 	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
 	-webkit-transition : width 0.2s ease;
 }
+
 #loading_bar::-moz-progress-bar {
 	border-radius: 9px;
 	background-color: #f2b341;
 	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
 	-moz-transition : width 0.2s ease;
 }
+
 
 noscript {
 	position: absolute;
