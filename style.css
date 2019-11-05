@@ -280,7 +280,7 @@ a {
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
 	position: fixed;
-	top: 0%;
+	top: 0px;
 	left: 0px;
 	width: 100%;
 	background: rgba(0,0,0,0.8);
