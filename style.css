@@ -140,11 +140,9 @@ noscript {
 	width: 291px;
 	height: 240px;
 	text-align: center;
-	margin: auto;
-	margin-bottom: 10px;
+	margin: 0 25px 25px 0;
 	box-shadow: inset 0 0 10px 1px;
 	filter: saturate(0.6);
-	overflow: hidden;
 	border-radius: 3px;
 }
 
@@ -165,24 +163,36 @@ input[type="checkbox"]{
 }
 
 input[type="checkbox"] + .label-text:before {
-	grid-area: 3 / 1 / 4 / 2;
-	content: url('https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Cross.png');
-	background-color: #ff0000;
-	color: transparent;
-	text-shadow: 0px 2px 3px rgba(78, 0, 0, 0.5);
+	grid-area: 1 / 1 / 2 / 2;
+	content: '';
+	width: 40px;
+	height: 40px;
 	-webkit-background-clip: text;
 	 -moz-background-clip: text;
 	  background-clip: text;
+	background: url('https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Cross.png'),
+    			url('https://web.poecdn.com/gen/image/WzIyLCI4NmVlNjUyYzgwYzk5YWI4NWZjZTQ1MzNlODM0Y2NkZiIseyJ0IjoyLCJzcCI6MC4zODM1fV0/9c85e2c3c2/Skill_Frame_CanAllocate.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px, 40px 40px;
+	margin: -20px 0 0 -20px;
+	background-color: #0f0d0a;
+	border-radius: 100%;
 }
 
 input[type="checkbox"]:checked + .label-text:before {
-	content: url('https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Tick.png');
-	background-color: #00d000;
-	color: transparent;
-	text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+	content: '';
+	width: 40px;
+	height: 40px;
 	-webkit-background-clip: text;
 	 -moz-background-clip: text;
 	  background-clip: text;
+	background: url('https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Tick.png'),
+				url('https://web.poecdn.com/gen/image/WzIyLCJiMjc2Mjk0ODA5N2MyODUzOTQ1YWUzNTdhNDcxYzZlOCIseyJ0IjoxLCJzcCI6MC4zODM1fV0/a70a46fca1/Skill_Frame_Allocated.png');
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px, 57px 57px;
+    background-color: #0f0d0a;
 }
 
 .label-text:after {
@@ -264,7 +274,6 @@ a {
 		transform: scale(0.8);
 	}
 	input[type="checkbox"] + .label-text:before {
-		margin: -55px 130px 0px 0px;
 		transform: scale(0.7);
 	}
 	.label-text h1 {
