@@ -237,7 +237,12 @@ function preloadImages() {
 				$('#loading_bar').val(percentage);
 				//Once all images are done loading, remove loading screen
 				if (loadCounter == (value.length - 1)) {
+					//Fade away loading screen
 					$("#loader").delay(300).fadeOut(250);
+					//After loading screen is gone, reset progress percentage
+					setTimeout(function() {
+						$('#loading_bar').val(0);
+					}, 550);
 				}
 			}
 		}
