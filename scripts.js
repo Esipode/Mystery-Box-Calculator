@@ -242,7 +242,7 @@ function preloadImages() {
 					//After loading screen is gone, reset progress percentage
 					setTimeout(function() {
 						$('#loading_bar').val(0);
-					}, 550);
+					}, 750);
 				}
 			}
 		}
