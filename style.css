@@ -145,11 +145,17 @@ noscript {
 }
 
 .list_item img {
-	max-width: 80px;
-	max-height: 80px;
+	max-width: 75px;
+    max-height: 75px;
+    padding: 5px;
 	position: absolute;
 	bottom: -45px;
 	right: 15px;
+	background: -moz-linear-gradient(bottom, rgba(15,13,10,1) 0%, rgba(15,13,10,1) 50%, rgba(15,13,10,0) 51%, rgba(15,13,10,0) 100%);
+    background: -webkit-linear-gradient(bottom, rgba(15,13,10,1) 0%,rgba(15,13,10,1) 50%,rgba(15,13,10,0) 51%,rgba(15,13,10,0) 100%);
+    background: linear-gradient(to top, rgba(15,13,10,1) 0%,rgba(15,13,10,1) 50%,rgba(15,13,10,0) 51%,rgba(15,13,10,0) 100%);
+    border-bottom: 2px dotted rgba(255,218,77,0.5);
+    border-radius: 100%;
 }
 
 label {
