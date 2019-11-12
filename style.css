@@ -129,9 +129,6 @@ noscript {
 }
 
 .list_item {
-	display: flex;
-	align-items: center;
-    justify-content: center;
 	background-image: url('https://www.pathofexile.com/image/shop/deal-background-large.png');
 	background-position: -5px -5px;
 	min-width: 281px;
@@ -146,16 +143,18 @@ noscript {
 
 .list_item img {
 	max-width: 75px;
-    max-height: 75px;
-    padding: 5px;
+	max-height: 75px;
+	padding: 5px;
 	position: absolute;
-	bottom: -45px;
-	right: 15px;
+	margin: -42px 0 0 40px;
 	background: -moz-linear-gradient(bottom, rgba(15,13,10,1) 0%, rgba(15,13,10,1) 50%, rgba(15,13,10,0) 51%, rgba(15,13,10,0) 100%);
-    background: -webkit-linear-gradient(bottom, rgba(15,13,10,1) 0%,rgba(15,13,10,1) 50%,rgba(15,13,10,0) 51%,rgba(15,13,10,0) 100%);
-    background: linear-gradient(to top, rgba(15,13,10,1) 0%,rgba(15,13,10,1) 50%,rgba(15,13,10,0) 51%,rgba(15,13,10,0) 100%);
-    border-bottom: 2px dotted rgba(255,218,77,0.5);
-    border-radius: 100%;
+	 background: -webkit-linear-gradient(bottom, rgba(15,13,10,1) 0%,rgba(15,13,10,1) 50%,rgba(15,13,10,0) 51%,rgba(15,13,10,0) 100%);
+	  background: linear-gradient(to top, rgba(15,13,10,1) 0%,rgba(15,13,10,1) 50%,rgba(15,13,10,0) 51%,rgba(15,13,10,0) 100%);
+	box-shadow: inset 0px -5px 5px -4px;
+	color: #ffda4d;
+	-webkit-border-radius: 100%;
+	 -moz-border-radius: 100%;
+	  border-radius: 100%;
 }
 
 label {
@@ -168,7 +167,6 @@ input[type="checkbox"]{
 
 input[type="checkbox"] + .label-text:before {
 	position: absolute;
-	bottom: -20px;
 	content: '';
 	width: 40px;
 	height: 40px;
@@ -180,7 +178,7 @@ input[type="checkbox"] + .label-text:before {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 20px 20px, 40px 40px;
-	margin: -20px 0 0 -20px;
+	margin-top: 38px;
 	background-color: #0f0d0a;
 	border-radius: 100%;
 }
@@ -216,8 +214,13 @@ input[type="checkbox"]:checked + .label-text:before {
 }
 
 .label-text {
+	display: flex;
 	color: inherit;
 	text-shadow: 1px 1px 3px black;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
 }
 
 .label-text:before {
@@ -228,13 +231,12 @@ input[type="checkbox"]:checked + .label-text:before {
 .label-text p {
 	color: #ffda4d;
 	position: absolute;
-	bottom: -41px;
 	height: 39px;
 	line-height: 39px;
 	letter-spacing: 1px;
 	font-size: 1.3em;
-	left: 60px;
-	padding: 2px 8px 2px 0;
+	margin: 38px 0 0 -60px;
+	padding: 2px 8px 2px 1px;
 	background-color: rgba(15,13,10,0.8);
 	border-top: 1px solid rgba(255,218,77,0.5);
 	border-bottom: 1px solid rgba(255,218,77,0.5);
@@ -249,7 +251,7 @@ input[type="checkbox"]:checked + .label-text:before {
 	width: 36px;
 	height: 39px;
 	position: absolute;
-	left: -41px;
+	margin-left: -42px;
 	padding: 2px 0 2px 5px;
 	background-color: rgba(15,13,10,0.8);
 	top: -1px;
@@ -260,10 +262,10 @@ input[type="checkbox"]:checked + .label-text:before {
 
 .label-text h1 {
 	color: #ffda4d;
-    font-size: 1.1em;
-    font-weight: 300;
-    max-width: 230px;
-    padding-bottom: 0.6em;
+	font-size: 1.1em;
+	font-weight: 300;
+	max-width: 230px;
+	padding-bottom: 0.6em;
 }
 
 a {
