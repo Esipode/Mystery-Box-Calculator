@@ -147,14 +147,13 @@ noscript {
 	padding: 5px;
 	position: absolute;
 	margin: -42px 0 0 40px;
-	background: -moz-linear-gradient(bottom, rgba(15,13,10,1) 0%, rgba(15,13,10,1) 50%, rgba(15,13,10,0) 51%, rgba(15,13,10,0) 100%);
-	 background: -webkit-linear-gradient(bottom, rgba(15,13,10,1) 0%,rgba(15,13,10,1) 50%,rgba(15,13,10,0) 51%,rgba(15,13,10,0) 100%);
-	  background: linear-gradient(to top, rgba(15,13,10,1) 0%,rgba(15,13,10,1) 50%,rgba(15,13,10,0) 51%,rgba(15,13,10,0) 100%);
-	box-shadow: inset 0px -5px 5px -4px;
-	color: #ffda4d;
+	background: -moz-linear-gradient(bottom, rgba(15,13,10,0.8) 0%, rgba(15,13,10,0.8) 50%, rgba(15,13,10,0) 51%, rgba(15,13,10,0) 100%);
+	 background: -webkit-linear-gradient(bottom, rgba(15,13,10,0.8) 0%,rgba(15,13,10,0.8) 50%,rgba(15,13,10,0) 51%,rgba(15,13,10,0) 100%);
+	  background: linear-gradient(to top, rgba(15,13,10,0.8) 0%,rgba(15,13,10,0.8) 50%,rgba(15,13,10,0) 51%,rgba(15,13,10,0) 100%);
 	-webkit-border-radius: 100%;
 	 -moz-border-radius: 100%;
-	  border-radius: 100%;
+	  border-radius: 10%;
+	  border-bottom: 1px solid rgba(255,218,77,0.5);
 }
 
 label {
