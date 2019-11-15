@@ -234,14 +234,14 @@ function preloadImages() {
 				//Set percentage to reflect amount of images loaded
 				percentage = (((j + 1) * 100) / value.length).toFixed(0);
 				//Display loaded percentage
-				$('#loading_bar').val(percentage);
+				$('.load_current').css('clip-path', 'inset(' + ((13 - parseInt(percentage)) + 100) + '% 0px 0px 0px');
 				//Once all images are done loading, remove loading screen
 				if (loadCounter == (value.length - 1)) {
 					//Fade away loading screen
 					$("#loader").delay(300).fadeOut(250);
 					//After loading screen is gone, reset progress percentage
 					setTimeout(function() {
-						$('#loading_bar').val(0);
+						$('.load_current').css('clip-path', 'inset(391px 0px 0px 0px');
 					}, 750);
 				}
 			}

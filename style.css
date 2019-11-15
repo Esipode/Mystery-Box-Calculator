@@ -46,6 +46,22 @@ body {
 	justify-content: center;
  }
 
+.load_empty, .load_current {
+	height: 150px;
+	width: 150px;
+	position: absolute;
+	padding-top: 10px;
+}
+
+.load_empty {
+	opacity: 0.5;
+	filter: saturate(0);
+}
+
+.load_current {
+	clip-path: inset(100% 0px 0px 0px);
+}
+
 .spinner {
 	position: absolute;
 	width: 160px;
@@ -55,45 +71,6 @@ body {
 	animation: spin 1.5s infinite linear;
 	filter: blur(1px);
 }
-
-#progress_container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-#loading_bar {
-	background-color: #222;
-	color: #f2b341;
-	border: 0;
-	height: 3px;
-	width: 100px;
-	border-radius: 9px;
-	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
-	opacity: 0.8;
-	transition : width 0.2s ease;
-}
-
-#loading_bar::-webkit-progress-bar {
-	border-radius: 9px;
-	background-color: #222;
-	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
-}
-
-#loading_bar::-webkit-progress-value {
-	border-radius: 9px;
-	background-color: #f2b341;
-	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
-	-webkit-transition : width 0.2s ease;
-}
-
-#loading_bar::-moz-progress-bar {
-	border-radius: 9px;
-	background-color: #f2b341;
-	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
-	-moz-transition : width 0.2s ease;
-}
-
 
 noscript {
 	position: absolute;
