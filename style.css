@@ -141,15 +141,25 @@ noscript {
 	border-radius: 3px;
 }
 
+.list_item:before {
+	content: '';
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
+    position: absolute;
+    height: 78px;
+    width: 281px;
+    left: 0;
+    top: 0;
+}
+
 .list_item img {
 	max-width: 75px;
 	max-height: 75px;
 	padding: 5px;
 	position: absolute;
-	margin: -42px 0 0 40px;
-	background: -moz-linear-gradient(bottom, rgba(15,13,10,0.8) 0%, rgba(15,13,10,0.8) 50%, rgba(15,13,10,0) 51%, rgba(15,13,10,0) 100%);
-	 background: -webkit-linear-gradient(bottom, rgba(15,13,10,0.8) 0%,rgba(15,13,10,0.8) 50%,rgba(15,13,10,0) 51%,rgba(15,13,10,0) 100%);
-	  background: linear-gradient(to top, rgba(15,13,10,0.8) 0%,rgba(15,13,10,0.8) 50%,rgba(15,13,10,0) 51%,rgba(15,13,10,0) 100%);
+	margin: -38px 0 0 40px;
+	background: -moz-linear-gradient(bottom, rgba(15,13,10,0.8) 0%, rgba(15,13,10,0.8) 55%, rgba(15,13,10,0) 56%, rgba(15,13,10,0) 100%);
+	 background: -webkit-linear-gradient(bottom, rgba(15,13,10,0.8) 0%,rgba(15,13,10,0.8) 55%,rgba(15,13,10,0) 56%,rgba(15,13,10,0) 100%);
+	  background: linear-gradient(to top, rgba(15,13,10,0.8) 0%,rgba(15,13,10,0.8) 55%,rgba(15,13,10,0) 56%,rgba(15,13,10,0) 100%);
 	-webkit-border-radius: 100%;
 	 -moz-border-radius: 100%;
 	  border-radius: 10%;
