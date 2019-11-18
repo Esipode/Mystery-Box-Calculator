@@ -107,7 +107,7 @@ noscript {
 }
 
 .list_item {
-	background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://www.pathofexile.com/image/shop/deal-background-large.png');
+	background-image: linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.pathofexile.com/image/shop/deal-background-large.png');
 	background-position: -5px -5px;
 	min-width: 281px;
 	width: 281px;
