@@ -241,7 +241,7 @@ function preloadImages() {
 					$("#loader").delay(300).fadeOut(250);
 					//After loading screen is gone, reset progress percentage
 					setTimeout(function() {
-						$('.load_current').css('clip-path', 'inset(391px 0px 0px 0px');
+						$('.load_current').css('clip-path', 'inset(100% 0px 0px 0px');
 					}, 750);
 				}
 			}
