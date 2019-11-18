@@ -124,8 +124,7 @@ noscript {
     position: absolute;
     height: 78px;
     width: 281px;
-    left: 0;
-    top: 0;
+    margin-left: -141px;
 }
 
 .list_item img {
