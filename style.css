@@ -60,6 +60,7 @@ body {
 
 .load_current {
 	clip-path: inset(100% 0px 0px 0px);
+	transition: clip-path 0.25s;
 }
 
 .spinner {
