@@ -163,8 +163,10 @@ noscript {
 	  background: linear-gradient(to top, rgba(15,13,10,0.8) 0%,rgba(15,13,10,0.8) 55%,rgba(15,13,10,0) 56%,rgba(15,13,10,0) 100%);
 	-webkit-border-radius: 100%;
 	 -moz-border-radius: 100%;
-	  border-radius: 10%;
-	  border-bottom: 1px solid rgba(255,218,77,0.5);
+	border-radius: 10%;
+	border-bottom: 1px solid rgba(255,218,77,0.5);
+	background-repeat: no-repeat;
+
 }
 
 label {
@@ -176,7 +178,7 @@ input[type="checkbox"]{
 }
 
 input[type="checkbox"] + .label-text:before {
-	position: absolute;
+	position: relative;
 	content: '';
 	width: 40px;
 	height: 40px;
@@ -188,9 +190,10 @@ input[type="checkbox"] + .label-text:before {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 20px 20px, 40px 40px;
-	margin-top: 38px;
 	background-color: #0f0d0a;
 	border-radius: 100%;
+	top: 38px;
+	left: 20px;
 }
 
 input[type="checkbox"]:checked + .label-text:before {
@@ -223,12 +226,13 @@ input[type="checkbox"]:checked + .label-text:before {
 
 .label-text p {
 	color: #ffda4d;
-	position: absolute;
+	position: relative;
 	height: 39px;
 	line-height: 39px;
 	letter-spacing: 1px;
 	font-size: 1.3em;
-	margin: 38px 0 0 -60px;
+	top: 38px;
+	right: 80px;
 	padding: 2px 8px 2px 1px;
 	background-color: rgba(15,13,10,0.8);
 	border-top: 1px solid rgba(255,218,77,0.5);
@@ -254,11 +258,13 @@ input[type="checkbox"]:checked + .label-text:before {
 }
 
 .label-text h1 {
+	position: absolute;
 	color: #ffda4d;
 	font-size: 1.1em;
 	font-weight: 300;
 	max-width: 230px;
 	padding-bottom: 0.6em;
+	margin: auto;
 }
 
 a {
@@ -500,6 +506,7 @@ a {
 		display: block;
 	}
 	#number_container p {
+		text-align: center;
 		margin: 5px 0px 5px 0px;
 	}
 	#final_number {
@@ -510,7 +517,6 @@ a {
 @media screen and (max-width: 400px) {
 	#number_container p {
 		font-size: 0.8em;
-		text-align: center;
 		margin: 10px 5px 10px 5px;
 	}
 	#final_number {
