@@ -169,6 +169,10 @@ noscript {
 
 }
 
+.list_item:hover {
+	background-image: url('https://www.pathofexile.com/image/shop/deal-background-large.png');
+}
+
 label {
 	cursor: pointer;
 }
