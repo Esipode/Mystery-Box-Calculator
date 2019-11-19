@@ -276,7 +276,7 @@ a {
 	height: 50px;
 }
 
-.label-text, .list_item img {
+.label-text h1, .list_item img {
 	opacity: 0.8;
 }
 
@@ -297,7 +297,7 @@ a {
 	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1)), url(https://www.pathofexile.com/image/shop/deal-background-large.png);
 }
 
-.selected .label-text, .selected img {
+.selected .label-text h1, .selected img {
 	opacity: 1.0;
 }
 
