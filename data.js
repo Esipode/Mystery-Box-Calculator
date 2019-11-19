@@ -1647,770 +1647,770 @@ const mtxData = [
 		rarity: "common"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Wings",
 		value: "320",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinWings.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Wings",
 		value: "320",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_Wings.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Body Armour",
 		value: "250",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinBody.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Body Armour",
 		value: "250",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_BodyArmour.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Cloak",
 		value: "230",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinCloak.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Cloak",
 		value: "230",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_Cloak.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Character Effect",
 		value: "210",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinCharacterEffect.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Character Effect",
 		value: "210",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_Character.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Sword Skin",
 		value: "180",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinSword.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Sword Skin",
 		value: "180",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_Sword.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Weapon Effect",
 		value: "180",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinWeapon.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Weapon Effect",
 		value: "180",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_Weapons.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Portal",
 		value: "150",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinPortal.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Portal",
 		value: "150",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_Portal.png",
 		rarity: "rare"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Cherub Pet",
 		value: "160",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinCherub.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Cherub Pet",
 		value: "160",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_Cherub.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Helmet",
 		value: "130",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinHelmet.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Helmet",
 		value: "130",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_Helmet.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Boots",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinBoots.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Boots",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_Boots.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Gloves",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinGloves.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Gloves",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_Gloves.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Herald",
 		value: "125",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinHerald.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Herald",
 		value: "125",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/InnocenceHerald.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Leap Slam",
 		value: "110",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinLeapSlam.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Lightning Warp",
 		value: "110",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_LightningWarp.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Helmet Attachment",
 		value: "100",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinHelmetAttachment.png",
 		rarity: "common"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Helmet Attachment",
 		value: "100",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_HelmetAttachment.png",
 		rarity: "common"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Footprints",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinFootprints.png",
 		rarity: "common"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Footprints",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_Footprints.png",
 		rarity: "common"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Cathedral Decoration",
 		value: "60",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinWindows.png",
 		rarity: "common"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Cathedral Decoration",
 		value: "60",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_Windows.png",
 		rarity: "common"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Oriath Citizen Corpse Decoration",
 		value: "50",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinCorpse.png",
 		rarity: "common"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Oriath Citizen Decoration",
 		value: "50",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/InnocenceCivilian.png",
 		rarity: "common"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Symbol Decoration",
 		value: "40",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Sin_Symbol.png",
 		rarity: "common"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Symbol Decoration",
 		value: "40",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence__Symbol.png",
 		rarity: "common"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Sin Sword Pet",
 		value: "30",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/SinSwordPet.png",
 		rarity: "common"
 	},
 	{
-		box: "Sin Innocence",
+		box: "Sin &amp; Innocence",
 		name: "Innocence Sword Pet",
 		value: "30",
 		image: "https://web.poecdn.com/public/news/2018-03-04/Icons/Innocence_SwordPet.png",
 		rarity: "common"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Wings",
 		value: "320",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireWings.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Wings",
 		value: "320",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceWings.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Body Armour",
 		value: "250",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireBody.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Body Armour",
 		value: "250",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceBody.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Cloak",
 		value: "230",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireCloak.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Cloak",
 		value: "230",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceCloak.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Character Effect",
 		value: "210",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireCharacterEffect.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Character Effect",
 		value: "210",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceCharacterEffect.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Weapon",
 		value: "180",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireWeapon.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Weapon",
 		value: "180",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceWeapon.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Shield",
 		value: "180",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireShield.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Shield",
 		value: "180",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceShield.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Portal",
 		value: "150",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FirePortal.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Portal",
 		value: "150",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IcePortal.png",
 		rarity: "rare"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Lion",
 		value: "160",
 		image: "https://web.poecdn.com/public/news/2017-12-10/LionPet.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Tiger",
 		value: "160",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceTiger.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Helmet",
 		value: "130",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireHelmet.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Helmet",
 		value: "130",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceHelmet.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Boots",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireBoots.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Boots",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceBoots.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Gloves",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireGloves.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Gloves",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceGloves.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Dragon Flame Dash",
 		value: "125",
 		image: "https://web.poecdn.com/public/news/2017-12-10/DragonFlameDash.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Whirling Blades",
 		value: "125",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceWhirlingBlades.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Infernal Flame Golem",
 		value: "110",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireGolem.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Arctic Ice Golem",
 		value: "110",
 		image: "https://web.poecdn.com/public/news/2017-12-10/Ice_Golem.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Horns",
 		value: "100",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireHorns.png",
 		rarity: "common"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Horns",
 		value: "100",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceHorns.png",
 		rarity: "common"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Footprints",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireFootprints.png",
 		rarity: "common"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Footprints",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceFootprints.png",
 		rarity: "common"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Corpse Pile Hideout Decoration",
 		value: "60",
 		image: "https://web.poecdn.com/public/news/2017-12-10/FireCorpsePile.png",
 		rarity: "common"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Corpse Pile Hideout Decoration",
 		value: "60",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceCorpsePile.png",
 		rarity: "common"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Fire Bricks Hideout Decoration",
 		value: "50",
 		image: "https://web.poecdn.com/public/news/2017-12-10/LavaWall.png",
 		rarity: "common"
 	},
 	{
-		box: "Fire Ice",
+		box: "Fire &amp; Ice",
 		name: "Ice Bricks Hideout Decoration",
 		value: "50",
 		image: "https://web.poecdn.com/public/news/2017-12-10/IceBricks.png",
 		rarity: "common"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Ultimate Chaos Wings",
 		value: "320",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosWings.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Pure Light Wings",
 		value: "320",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightWings.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Ultimate Chaos Body Armour",
 		value: "250",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosBody.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Pure Light Body Armour",
 		value: "250",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightBody.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Ultimate Chaos Cloak",
 		value: "230",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/DarkCloak.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Pure Light Cloak",
 		value: "230",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightCloak.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Ultimate Chaos Character Effect",
 		value: "210",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosCharacterEffect.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Pure Light Character Effect",
 		value: "210",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightCharacterEffect.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Ultimate Chaos Sword Skin",
 		value: "180",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosWeapon.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Ivory Arc of Courage",
 		value: "180",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/IvoryBow.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Ultimate Chaos Weapon Effect",
 		value: "180",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosWeaponEffect.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Pure Light Weapon Effect",
 		value: "180",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightWeaponEffect.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Ultimate Chaos Portal",
 		value: "150",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/DarkPortal.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Pure Light Portal",
 		value: "150",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightPortal.png",
 		rarity: "rare"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Raven Pet",
 		value: "160",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/Crow.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "White Dove Pet",
 		value: "160",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/Dove.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Ultimate Chaos Helmet",
 		value: "130",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosHelmet.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Pure Light Helmet",
 		value: "130",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightHelmet.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Ultimate Chaos Boots",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosBoots.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Pure Light Boots",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightBoots.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Ultimate Chaos Gloves",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosGloves.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Pure Light Gloves",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightGloves.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Gore Herald Skill Effect",
 		value: "125",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/GoreHerald.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Bone Aura Character Effect",
 		value: "125",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/BoneAura.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Dark Cyclone Skill Effect",
 		value: "110",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/DarkCyclone.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Divine Blink/Mirror Arrow Skill Effect",
 		value: "110",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/BlinkArrow.png",
 		rarity: "uncommon"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Glowing Red Eyes",
 		value: "100",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosEyes.png",
 		rarity: "common"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Holy Eyes",
 		value: "100",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/HolyEyes.png",
 		rarity: "common"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Ultimate Chaos Footprints",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/ChaosFootprints.png",
 		rarity: "common"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Pure Light Footprints",
 		value: "80",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightFootprints.png",
 		rarity: "common"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Blood and Bone Hideout Decoration",
 		value: "60",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/BloodAndBone.png",
 		rarity: "common"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "White Fern Hideout Decoration",
 		value: "60",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/WhiteFern.png",
 		rarity: "common"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Beast Eye Hideout Decoration",
 		value: "50",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/BeastEye.png",
 		rarity: "common"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "White Lights Hideout Decoration",
 		value: "50",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/WhiteLights.png",
 		rarity: "common"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Beast Egg Hideout Decoration",
 		value: "40",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/BeastEgg.png",
 		rarity: "common"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "White Crystal Hideout Decoration",
 		value: "40",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/WhiteCrystal.png",
 		rarity: "common"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Dark Swarm Pet",
 		value: "30",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/DarkSwarm.png",
 		rarity: "common"
 	},
 	{
-		box: "Chaos Order",
+		box: "Chaos &amp; Order",
 		name: "Light Swarm Pet",
 		value: "30",
 		image: "https://web.poecdn.com/public/news/Bex/BoxIcons/LightSwarm.png",
