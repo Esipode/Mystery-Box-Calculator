@@ -19,7 +19,7 @@ window.addEventListener('load', function () {
 	//Runs library that replaces 'select' element and replaces with spans
 	$('.dropdown').select2();
 	//Sets value for what box is active by default, and remove any ampersands
-	mtxGlobals.mtxCurrentBox = (document.getElementsByClassName('select2-selection__rendered')[0].innerHTML).replace('&amp;', '');
+	mtxGlobals.mtxCurrentBox = (document.getElementsByClassName('select2-selection__rendered')[0].innerHTML);
 	//By default there is no previous box so it takes the value of the current box
 	mtxGlobals.mtxPrevBox = mtxGlobals.mtxCurrentBox;
 	//Loads content of default box
