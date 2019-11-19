@@ -379,7 +379,7 @@ a {
 @media screen and (max-width: 400px) {
 	.select2-container {
 		font-size: 1.25em;
-		width: 150px !important;
+		width: 160px !important;
 		margin-right: -20px;
 		margin-left: -10px;
 		margin-right: -20px;
