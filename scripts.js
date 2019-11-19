@@ -45,9 +45,7 @@ $('.dropdown').on('select2:open', function() {
 	setTimeout(function() {
 		for(let i = 0; i < boxImage.length; i++) {
 			//Creates image, then places img tag into list item at index
-			jQuery('<img/>', {
-				"src": boxImage[i],
-			}).prependTo($('.select2-results__option')[i]);
+			$('.select2-results__option').eq(i).css('background-image', 'url(' + boxImage[i] + ')');
 		}
 	}, 5);
 })

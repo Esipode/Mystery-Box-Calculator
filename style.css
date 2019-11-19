@@ -44,6 +44,14 @@
 	background: transparent;
 }
 
+@media screen and (max-width: 500px), screen and (max-height: 500px) {
+	::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+
+
 body {
 	font-family: 'fontin-bold';
 	color: white;
@@ -145,11 +153,11 @@ noscript {
 
 .list_item:before {
 	content: '';
-    box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
-    position: absolute;
-    height: 78px;
-    width: 281px;
-    margin-left: -140px;
+	box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
+	position: absolute;
+	height: 78px;
+	width: 281px;
+	margin-left: -140px;
 }
 
 .list_item img {
@@ -360,13 +368,14 @@ a {
 
 .select2-results__option {
 	font-size: 0.8em;
-}
-
-.select2-results__option img {
-	position: relative;
-	height: 30px;
-	vertical-align: middle;
-	padding-right: 8px;
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	padding: 9px 0px 9px 40px;
+	-webkit-transition: all 0.5s ease-in-out;
+	 -moz-transition: all 0.5s ease-in-out;
+	  -o-transition: all 0.5s ease-in-out;
+	   transition: all 0.5s ease-in-out;
 }
 
 .select2-container--default .select2-results__option[aria-selected=true] {
