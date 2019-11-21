@@ -380,11 +380,17 @@ a {
 
 .select2-container--default .select2-results__option[aria-selected=true] {
 	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.select2-container--default .select2-results__option[aria-selected=true]:last-of-type {
 	border-radius: 0 0 5px 5px;
 }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
 	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected]:last-of-type {
 	border-radius: 0 0 5px 5px;
 }
 
