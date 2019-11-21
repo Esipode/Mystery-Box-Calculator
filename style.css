@@ -385,6 +385,7 @@ a {
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
 	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 0 0 5px 5px;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {
