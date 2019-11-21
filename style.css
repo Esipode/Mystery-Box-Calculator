@@ -492,6 +492,7 @@ a {
 	border-radius: 7px;
 	text-shadow: 1px 1px 2px black;
 	filter: saturate(0);
+	transition: filter 0.5s ease-in-out;
 	background: url(https://web.poecdn.com/image/layout/button/button-generic-hover-left.png) left top no-repeat,
 	url(https://web.poecdn.com/image/layout/button/button-generic-hover-right.png) right top no-repeat,
 	url(https://web.poecdn.com/image/layout/button/button-generic-hover-middle.png) center top repeat-x;
