@@ -396,6 +396,7 @@ a {
 
 .select2-container--open .select2-dropdown--below {
 	margin: 0 -20px;
+	border-radius: 0 0 5px 5px;
 }
 
 .select2-container .select2-selection--single .select2-selection__rendered {
