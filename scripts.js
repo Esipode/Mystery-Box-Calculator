@@ -149,7 +149,7 @@ let rarityValues = () => {
 	if (mtxGlobals.mtxFinalBoxValue > 0) {
 		document.getElementById("final_number").style.filter = 'saturate(1)'; //Remove grascale
 		let currColor = colorChange(); //Gets color value based on current value of selected items
-		document.getElementById("final_number").style.filter = 'hue-rotate(' + (currColor - 30) + 'deg)' + 'brightness(1.2)'; //Shifts color of background
+		document.getElementById("final_number").style.filter = 'saturate(1)' + 'hue-rotate(' + (currColor - 30) + 'deg)' + 'brightness(1.2)'; //Shifts color of background
 		document.getElementById("total_coin").style.filter = 'hue-rotate(' + (30 - currColor) + 'deg)'; //Reverses color shifting of coin
 	}
 	else {
