@@ -45,7 +45,7 @@ $('.dropdown').on('select2:open', function() {
 	setTimeout(function() {
 		for(let i = 0; i < boxImage.length; i++) {
 			//Creates image, then places img tag into list item at index
-			$('.select2-results__option').eq(i).css('background-image', 'url(' + boxImage[i] + ')');
+			$('.select2-results__option').eq(i).css('background-image', 'url(' + boxImage[i].image + ')');
 		}
 	}, 5);
 })
@@ -206,13 +206,17 @@ $(document).on('click', '.coins', function() {
 
 //Loads all images from sources in data.js
 function preloadImages() {
+	//Combine current list of items with all UI elements. This ensures UI loads before removing loading screen on first load.
+	let allImages = uiImages.concat(boxImage, mtxGlobals.mtxCurrList);
+	console.log(allImages);
+	//Fade in loading screen
 	$("#loader").fadeIn(250);
-	//creates promise function to load all images into DOM
+	//Creates promise function to load all images into DOM
 	let loadImages = new Promise(function(resolve, reject) {
 		let images = [];
-		for (let i = 0; i < mtxGlobals.mtxCurrList.length; i++) {
+		for (let i = 0; i < allImages.length; i++) {
 			images[i] = new Image();
-			images[i].src = mtxGlobals.mtxCurrList[i].image;
+			images[i].src = allImages[i].image;
 		}
 		//Return value of entire array of images after finishing
 		resolve(images);

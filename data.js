@@ -1,14 +1,28 @@
+const uiImages = [
+	{ image: 'https://web.poecdn.com/image/favicon/ogimage.png'},
+	{ image: 'https://web.poecdn.com/image/shop/item/ShopItemCoin.png'},
+	{ image: 'https://web.poecdn.com/image/layout/button/button-generic-hover-left.png'},
+	{ image: 'https://web.poecdn.com/image/layout/button/button-generic-hover-right.png'},
+	{ image: 'https://web.poecdn.com/image/layout/button/button-generic-hover-middle.png'},
+	{ image: 'https://alpha.pathofexile.com/image/layout/WftA_background.jpg'},
+	{ image: 'https://www.pathofexile.com/image/shop/deal-background-large.png'},
+	{ image: 'https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Cross.png'},
+	{ image: 'https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Tick.png'},
+	{ image: 'https://web.poecdn.com/gen/image/WzIyLCI4NmVlNjUyYzgwYzk5YWI4NWZjZTQ1MzNlODM0Y2NkZiIseyJ0IjoyLCJzcCI6MC4zODM1fV0/9c85e2c3c2/Skill_Frame_CanAllocate.png'},
+	{ image: 'https://web.poecdn.com/gen/image/WzIyLCJiMjc2Mjk0ODA5N2MyODUzOTQ1YWUzNTdhNDcxYzZlOCIseyJ0IjoxLCJzcCI6MC4zODM1fV0/a70a46fca1/Skill_Frame_Allocated.png'}
+]
+
 const boxImage = [
-	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/7/7c/Carnival_Mystery_Box_inventory_icon.png',
-	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/d/d8/Frontier_Mystery_Box_inventory_icon.png',
-	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/4/4d/Glimmerwood_Mystery_Box_inventory_icon.png',
-	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/e/ec/Fairgraves_Mystery_Box_inventory_icon.png',
-	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/6/6f/Oriath_Mystery_Box_inventory_icon.png',
-	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/c/c9/Apocalypse_Mystery_Box_inventory_icon.png',
-	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/7/70/Sin_and_Innocence_Mystery_Box_inventory_icon.png',
-	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/8/8e/Fire_and_Ice_Mystery_Box_inventory_icon.png',
-	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/1/1b/Chaos_and_Order_Mystery_Box_inventory_icon.png',
-	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/e/e6/Classic_Mystery_Box_inventory_icon.png'
+	{ image: 'https://gamepedia.cursecdn.com/pathofexile_gamepedia/7/7c/Carnival_Mystery_Box_inventory_icon.png'},
+	{ image: 'https://gamepedia.cursecdn.com/pathofexile_gamepedia/d/d8/Frontier_Mystery_Box_inventory_icon.png'},
+	{ image: 'https://gamepedia.cursecdn.com/pathofexile_gamepedia/4/4d/Glimmerwood_Mystery_Box_inventory_icon.png'},
+	{ image: 'https://gamepedia.cursecdn.com/pathofexile_gamepedia/e/ec/Fairgraves_Mystery_Box_inventory_icon.png'},
+	{ image: 'https://gamepedia.cursecdn.com/pathofexile_gamepedia/6/6f/Oriath_Mystery_Box_inventory_icon.png'},
+	{ image: 'https://gamepedia.cursecdn.com/pathofexile_gamepedia/c/c9/Apocalypse_Mystery_Box_inventory_icon.png'},
+	{ image: 'https://gamepedia.cursecdn.com/pathofexile_gamepedia/7/70/Sin_and_Innocence_Mystery_Box_inventory_icon.png'},
+	{ image: 'https://gamepedia.cursecdn.com/pathofexile_gamepedia/8/8e/Fire_and_Ice_Mystery_Box_inventory_icon.png'},
+	{ image: 'https://gamepedia.cursecdn.com/pathofexile_gamepedia/1/1b/Chaos_and_Order_Mystery_Box_inventory_icon.png'},
+	{ image: 'https://gamepedia.cursecdn.com/pathofexile_gamepedia/e/e6/Classic_Mystery_Box_inventory_icon.png'}
 ]
 
 const mtxData = [
