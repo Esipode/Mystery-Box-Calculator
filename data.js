@@ -1,4 +1,4 @@
-const boxImage = new Array(
+const boxImage = [
 	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/7/7c/Carnival_Mystery_Box_inventory_icon.png',
 	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/d/d8/Frontier_Mystery_Box_inventory_icon.png',
 	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/4/4d/Glimmerwood_Mystery_Box_inventory_icon.png',
@@ -9,8 +9,7 @@ const boxImage = new Array(
 	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/8/8e/Fire_and_Ice_Mystery_Box_inventory_icon.png',
 	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/1/1b/Chaos_and_Order_Mystery_Box_inventory_icon.png',
 	'https://gamepedia.cursecdn.com/pathofexile_gamepedia/e/e6/Classic_Mystery_Box_inventory_icon.png'
-)
-
+]
 
 const mtxData = [
 	{
