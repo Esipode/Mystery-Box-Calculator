@@ -15,7 +15,7 @@ const mtxGlobals = {
 }
 
 //Listen for page to finish loading
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
 	//Runs library that replaces 'select' element and replaces with spans
 	$('.dropdown').select2();
 	//Sets value for what box is active by default, and remove any ampersands
@@ -50,7 +50,7 @@ $('.dropdown').on('select2:open', function() {
 	}, 5);
 })
 
-function loadContent() {
+let loadContent = () =>  {
 	//Force dropdown to open, triggering box thumbnails loading
 	$(".dropdown").select2('open');
 	//Force dropdown to close immediately after
@@ -158,7 +158,7 @@ let rarityValues = () => {
 };
 
 //Animates final value of box changing
-function animateValue(start, end) {
+let animateValue = (start, end) => {
 	//By default, current value is given the starting value
 	let current = start;
 	//Sets how much the number increments with each step
@@ -205,7 +205,7 @@ $(document).on('click', '.coins', function() {
 });
 
 //Loads all images from sources in data.js
-function preloadImages() {
+let preloadImages = () => {
 	//Combine current list of items with all UI elements. This ensures UI loads before removing loading screen on first load.
 	let allImages = uiImages.concat(boxImage, mtxGlobals.mtxCurrList);
 	console.log(allImages);
