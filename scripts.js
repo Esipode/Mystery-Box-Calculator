@@ -219,8 +219,6 @@ function preloadImages() {
 	});
 	//After promise function completes, check each image index to see if it has finished loading
 	loadImages.then(function(value) {
-		//Reset loading bar to 0%
-		$('#loading_bar').val(0);
 		//Reset number of loaded elements
 		let loadCounter = 0;
 		//Reset percentage of loaded elements
