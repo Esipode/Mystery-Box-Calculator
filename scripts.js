@@ -71,7 +71,7 @@ let loadContent = () =>  {
 			//Forces function to wait until loading animation has finished
 			setTimeout(function() {
 				//remove all items in container
-				$('.container').empty();
+				$('.list_item').remove();
 				//Run to reset values to default for final value
 				rarityValues();
 			}, 300);
@@ -86,7 +86,7 @@ let loadContent = () =>  {
 			//Creates label container for each item
 			jQuery('<label/>', {
 				"class": 'list_item transition' + ' ' + mtxGlobals.mtxCurrList[j].rarity
-			}).appendTo('.container');
+			}).appendTo('.' + mtxGlobals.mtxCurrList[j].rarity + 'Container');
 			//Creates checkbox for each item
 			jQuery('<input/>', {
 				"class": "coins",

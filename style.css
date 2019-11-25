@@ -138,11 +138,50 @@ noscript {
 }
 
 .container {
+	--rareColor: #b523e6;
+	--uncommonColor: #795fc0;
+	--commonColor: #b5abe0;
 	display: flex;
 	flex-direction: column;
 	flex-flow: wrap;
-	padding-top: 100px;
+	padding-top: 40px;
 	justify-content: center;
+	max-width: 1300px;
+	margin: auto;
+}
+
+.container h2 {
+	padding-top: 40px;
+	font-size: 2em;
+}
+
+.rareContainer, .uncommonContainer, .commonContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 50px 20px 0px 20px;
+	border: 1px solid rgba(255,255,255,0.1);
+	border-radius: 20px;
+}
+
+.rareContainer {
+	background-color: #b523e610;
+}
+
+.uncommonContainer {
+	background-color: #795fc010;
+}
+
+.commonContainer {
+	background-color: #b5abe010;
+}
+
+@media screen and (max-width: 400px) {
+	.rareContainer, .uncommonContainer, .commonContainer {
+		padding: 50px 10px 0px 10px;
+		min-width: 320px;
+	}
 }
 
 @media screen and (min-width: 1921px), screen and (min-height: 1081px) {
@@ -301,15 +340,15 @@ a {
 }
 
 .rare {
-	color: #b523e6;
+	color: var(--rareColor);
 }
 
 .uncommon {
-	color: #795fc0;
+	color: var(--uncommonColor);
 }
 
 .common {
-	color: #b5abe0;
+	color: var(--commonColor);
 }
 
 .selected {
