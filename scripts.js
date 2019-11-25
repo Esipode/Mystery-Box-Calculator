@@ -147,13 +147,13 @@ let rarityValues = () => {
 	animateValue(prevFinalValue, mtxGlobals.mtxFinalBoxValue);
 	//Change background color based on function's returned value, if 0, return to default color
 	if (mtxGlobals.mtxFinalBoxValue > 0) {
-		document.getElementById("final_number").style.filter = 'saturate(1)'; //Remove grascale
+		$("#final_number").css('filter', 'saturate(1)'); //Remove grascale
 		let currColor = colorChange(); //Gets color value based on current value of selected items
-		document.getElementById("final_number").style.filter = 'saturate(1)' + 'hue-rotate(' + (currColor - 30) + 'deg)' + 'brightness(1.2)'; //Shifts color of background
-		document.getElementById("total_coin").style.filter = 'hue-rotate(' + (30 - currColor) + 'deg)'; //Reverses color shifting of coin
+		$("#final_number").css('filter', 'saturate(1)' + 'hue-rotate(' + (currColor - 30) + 'deg)' + 'brightness(1.2)'); //Shifts color of background
+		$("#total_coin").css('filter', 'hue-rotate(' + (30 - currColor) + 'deg)'); //Reverses color shifting of coin
 	}
 	else {
-		document.getElementById("final_number").style.filter = 'saturate(0)'; //Return element image to grayscale
+		$("#final_number").css('filter', 'saturate(0)') //Return element image to grayscale
 	}
 };
 
