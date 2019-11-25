@@ -12,11 +12,34 @@
 }
 
 @keyframes spin {
-	from{
+	from {
 		transform: rotate(0deg);
-	}to{
+	}
+	to {
 		transform: rotate(360deg);
 	}
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+    to {
+        opacity: 0;
+        transform: scaleY(0);
+    }
 }
 
 ::-webkit-scrollbar {
@@ -331,12 +354,14 @@ a {
 }
 
 .select2-container {
+	z-index: 3;
 	font-size: 1.5em;
 	grid-area: 1 / 1 / 2 / 2;
 	width: 200px !important;
 	justify-self: center;
 	align-self: center;
 	margin: 0 20px;
+	animation: slide-up 0.4s ease;
 }
 
 .select2-container--default .select2-selection--single {
