@@ -31,17 +31,6 @@
     }
 }
 
-@keyframes slide-down {
-    from {
-        opacity: 1;
-        transform: scaleY(1);
-    }
-    to {
-        opacity: 0;
-        transform: scaleY(0);
-    }
-}
-
 ::-webkit-scrollbar {
 	width: 8px;
 }
