@@ -164,7 +164,7 @@ let animateValue = (start, end) => {
 	//Sets how much the number increments with each step
 	let increment = end > start ? ((end - start) / 20) : -((start - end) / 20);
 	//Sets rate at which the number increments
-	let stepTime = Math.abs(Math.floor(20));
+	let stepTime = 20;
 	//Sets the timer for the animation
 	let timer = setInterval(function() {
 		//Add increment to current value
