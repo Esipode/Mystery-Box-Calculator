@@ -204,6 +204,12 @@ $(document).on('click', '.coins', function() {
 	$(this.parentNode).toggleClass('selected');
 });
 
+//Minimizes item container when clicking corresponding rarity's title
+$('h2[class*="Title"]').on('click', function() {
+	$(this).toggleClass('inactiveTitle');
+	$(this.nextElementSibling).toggleClass('inactive');
+});
+
 //Loads all images from sources in data.js
 let preloadImages = () => {
 	//Combine current list of items with all UI elements. This ensures UI loads before removing loading screen on first load.
@@ -239,6 +245,8 @@ let preloadImages = () => {
 				});
 				//Once all images are done loading, remove loading screen
 				if (loadCounter == (value.length - 1)) {
+					//Reset any inactive rarity containers
+					$('*').removeClass('inactiveTitle inactive');
 					//Fade away loading screen
 					$("#loader").delay(300).fadeOut(250);
 					//After loading screen is gone, reset progress percentage
