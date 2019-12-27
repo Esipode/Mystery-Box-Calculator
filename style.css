@@ -138,9 +138,9 @@ noscript {
 }
 
 .container {
-	--rareColor: #b523e6;
-	--uncommonColor: #795fc0;
-	--commonColor: #b5abe0;
+	--rareColor: #ffff77;
+	--uncommonColor: #8888ff;
+	--commonColor: #c8c8c8;
 	display: flex;
 	flex-direction: column;
 	flex-flow: wrap;
@@ -153,6 +153,7 @@ noscript {
 .container h2 {
 	cursor: pointer;
 	margin-top: 60px;
+	margin-bottom: 0;
 	padding-bottom: 5px;
     width: 200px;
     font-size: 2em;
@@ -160,15 +161,27 @@ noscript {
     text-align: center;
 }
 
-.container h2:before {
+.rarityLabel:before {
 	content: '';
 	position: absolute;
 	border-width: 5px 6px 0 6px;
 	height: 0px;
-	margin-top: 47px;
+	margin-top: 107px;
 	left: 49.5%;
 	border-color: white transparent transparent transparent;
 	border-style: solid;
+}
+
+.counterContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+}
+
+.counterContainer h3 {
+	font-size: 1.2em;
+	padding: 5px;
 }
 
 .rareContainer, .uncommonContainer, .commonContainer {
@@ -182,15 +195,15 @@ noscript {
 }
 
 .rareContainer {
-	background-color: #b523e610;
+	background-color: #ffff7705;
 }
 
 .uncommonContainer {
-	background-color: #795fc010;
+	background-color: #8888ff08;
 }
 
 .commonContainer {
-	background-color: #b5abe010;
+	background-color: #c8c8c806;
 }
 
 .inactiveTitle {
@@ -198,7 +211,7 @@ noscript {
 }
 
 .inactiveTitle:before {
-	margin-top: 42px !important;
+	margin-top: 102px !important;
 	transform: rotate(180deg);
 }
 

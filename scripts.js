@@ -107,6 +107,10 @@ let loadContent = () =>  {
 				"src": mtxGlobals.mtxCurrList[j].image,
 			}).appendTo($('.list_item')[j]);
 		}
+		//Set display of number of total items for each rarity
+		$('.outOfRareB').html(mtxData.filter((obj) => obj.rarity === 'rare' && obj.box === mtxGlobals.mtxCurrentBox).length);
+		$('.outOfUncommonB').html(mtxData.filter((obj) => obj.rarity === 'uncommon' && obj.box === mtxGlobals.mtxCurrentBox).length);
+		$('.outOfCommonB').html(mtxData.filter((obj) => obj.rarity === 'common' && obj.box === mtxGlobals.mtxCurrentBox).length);
 		//Gets point values for each item
 		let totalcoins = document.getElementsByClassName("coins");
 		let k = 0;
@@ -155,6 +159,10 @@ let rarityValues = () => {
 	else {
 		$("#final_number").css('filter', 'saturate(0)') //Return element image to grayscale
 	}
+	//Set display of number of selected items for each rarity
+	$('.outOfRareA').html(arr0.length);
+	$('.outOfUncommonA').html(arr1.length);
+	$('.outOfCommonA').html(arr2.length);
 };
 
 //Animates final value of box changing
@@ -205,7 +213,7 @@ $(document).on('click', '.coins', function() {
 });
 
 //Minimizes item container when clicking corresponding rarity's title
-$('h2[class*="Title"]').on('click', function() {
+$('div[class*="Label"]').on('click', function() {
 	$(this).toggleClass('inactiveTitle');
 	$(this.nextElementSibling).toggleClass('inactive');
 });
