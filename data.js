@@ -122,7 +122,7 @@ const mtxData = [
 		box: "Polaris",
 		name: "Black Portal",
 		value: "150",
-		image: "https://web.poecdn.com/public/news/2019-12-12/PolarisBox/Items/BlackWeaponEffect.png",
+		image: "https://web.poecdn.com/public/news/2019-12-12/PolarisBox/Items/BlackPortal.png",
 		rarity: "rare"
 	},
 	{
