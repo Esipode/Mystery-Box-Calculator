@@ -60,7 +60,7 @@ let loadContent = () =>  {
 	//Check if current box is the same as previously selected box
 	if (mtxGlobals.mtxCurrentBox != mtxGlobals.mtxPrevBox) {
 		//Check if any items of the box exist currently
-		if(!$('.list_item').length) {
+		if(!$('.listItem').length) {
 			//Set previous box at value of current box
 			mtxGlobals.mtxPrevBox = mtxGlobals.mtxCurrentBox;
 		}
@@ -71,7 +71,7 @@ let loadContent = () =>  {
 			//Forces function to wait until loading animation has finished
 			setTimeout(function() {
 				//remove all items in container
-				$('.list_item').remove();
+				$('.listItem').remove();
 				//Run to reset values to default for final value
 				rarityValues();
 			}, 300);
@@ -85,7 +85,7 @@ let loadContent = () =>  {
 		for(let j = 0; j < mtxGlobals.mtxCurrList.length; j++) {
 			//Creates label container for each item
 			jQuery('<label/>', {
-				"class": 'list_item transition' + ' ' + mtxGlobals.mtxCurrList[j].rarity
+				"class": 'listItem transition' + ' ' + mtxGlobals.mtxCurrList[j].rarity
 			}).appendTo('.' + mtxGlobals.mtxCurrList[j].rarity + 'Container');
 			//Creates checkbox for each item
 			jQuery('<input/>', {
@@ -93,19 +93,19 @@ let loadContent = () =>  {
 				"type": "checkbox",
 				"value": mtxGlobals.mtxCurrList[j].value,
 				"onclick": 'rarityValues()'
-			}).appendTo($('.list_item')[j]);
+			}).appendTo($('.listItem')[j]);
 			//Creates :before and :after UI elements for each item
 			jQuery('<span/>', {
-				"class": "label-text"
-			}).appendTo($('.list_item')[j]);
+				"class": "labelText"
+			}).appendTo($('.listItem')[j]);
 			//Creates title of each item
 			jQuery('<h1/>', {
 				"text":   mtxGlobals.mtxCurrList[j].name
-			}).appendTo($('.label-text')[j]);
+			}).appendTo($('.labelText')[j]);
 			//Creates image for each item
 			jQuery('<img/>', {
 				"src": mtxGlobals.mtxCurrList[j].image,
-			}).appendTo($('.list_item')[j]);
+			}).appendTo($('.listItem')[j]);
 		}
 		//Set display of number of total items for each rarity
 		$('.outOfRareB').html(mtxData.filter((obj) => obj.rarity === 'rare' && obj.box === mtxGlobals.mtxCurrentBox).length);
@@ -115,9 +115,9 @@ let loadContent = () =>  {
 		let totalcoins = document.getElementsByClassName("coins");
 		let k = 0;
 		let arr0 = totalcoins[k].value;
-		$('.label-text').each(function() {
+		$('.labelText').each(function() {
 			//Display point values for each item
-			$('.label-text').eq(k).append("<p>" + totalcoins[k].value + "</p>");
+			$('.labelText').eq(k).append("<p>" + totalcoins[k].value + "</p>");
 			k++;
 		})
 	}, 300);
@@ -151,13 +151,13 @@ let rarityValues = () => {
 	animateValue(prevFinalValue, mtxGlobals.mtxFinalBoxValue);
 	//Change background color based on function's returned value, if 0, return to default color
 	if (mtxGlobals.mtxFinalBoxValue > 0) {
-		$("#final_number").css('filter', 'saturate(1)'); //Remove grascale
+		$("#finalNumber").css('filter', 'saturate(1)'); //Remove grascale
 		let currColor = colorChange(); //Gets color value based on current value of selected items
-		$("#final_number").css('filter', 'saturate(1)' + 'hue-rotate(' + (currColor - 30) + 'deg)' + 'brightness(1.2)'); //Shifts color of background
-		$("#total_coin").css('filter', 'hue-rotate(' + (30 - currColor) + 'deg)'); //Reverses color shifting of coin
+		$("#finalNumber").css('filter', 'saturate(1)' + 'hue-rotate(' + (currColor - 30) + 'deg)' + 'brightness(1.2)'); //Shifts color of background
+		$("#totalCoin").css('filter', 'hue-rotate(' + (30 - currColor) + 'deg)'); //Reverses color shifting of coin
 	}
 	else {
-		$("#final_number").css('filter', 'saturate(0)') //Return element image to grayscale
+		$("#finalNumber").css('filter', 'saturate(0)') //Return element image to grayscale
 	}
 	//Set display of number of selected items for each rarity
 	$('.outOfRareA').html(arr0.length);
@@ -247,7 +247,7 @@ let preloadImages = () => {
 				//Set percentage to reflect amount of images loaded
 				percentage = (((j + 1) * 100) / value.length).toFixed(0);
 				//Display loaded percentage
-				$('.load_current').css({
+				$('.loadCurrent').css({
 					'clip-path': 'inset(' + ((13 - parseInt(percentage)) + 100) + '% 0px 0px 0px',
 					'-webkit-clip-path': 'inset(' + ((13 - parseInt(percentage)) + 100) + '% 0px 0px 0px'
 				});
@@ -259,7 +259,7 @@ let preloadImages = () => {
 					$("#loader").delay(300).fadeOut(250);
 					//After loading screen is gone, reset progress percentage
 					setTimeout(function() {
-						$('.load_current').css({
+						$('.loadCurrent').css({
 							'clip-path': 'inset(100% 0px 0px 0px)',
 							'-webkit-clip-path': 'inset(100% 0px 0px 0px)'
 					});

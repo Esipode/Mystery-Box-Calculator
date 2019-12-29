@@ -91,19 +91,19 @@ body {
 	justify-content: center;
  }
 
-.load_empty, .load_current {
+.loadEmpty, .loadCurrent {
 	height: 150px;
 	width: 150px;
 	position: absolute;
 	padding-top: 10px;
 }
 
-.load_empty {
+.loadEmpty {
 	opacity: 0.5;
 	filter: saturate(0);
 }
 
-.load_current {
+.loadCurrent {
 	clip-path: inset(100% 0px 0px 0px);
 	transition: clip-path 0.25s;
 }
@@ -126,7 +126,7 @@ noscript {
 	text-align: center;
 }
 
-.background_wrap {
+.backgroundWrap {
 	z-index: -1;
 	position: fixed;
 	top: 0;
@@ -137,7 +137,7 @@ noscript {
 	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://alpha.pathofexile.com/image/layout/WftA_background.jpg);
 }
 
-.container {
+.itemContainer {
 	--rareColor: #ffff77;
 	--uncommonColor: #8888ff;
 	--commonColor: #c8c8c8;
@@ -150,7 +150,7 @@ noscript {
 	margin: auto;
 }
 
-.container h2 {
+.itemContainer h2 {
 	cursor: pointer;
 	margin-top: 60px;
 	margin-bottom: 0;
@@ -229,12 +229,12 @@ noscript {
 }
 
 @media screen and (min-width: 1921px), screen and (min-height: 1081px) {
-	.background_wrap {
+	.backgroundWrap {
 		background-size: cover;	
 	}
 }
 
-.list_item {
+.listItem {
 	background-image: linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.pathofexile.com/image/shop/deal-background-large.png');
 	background-position: -5px -5px;
 	min-width: 281px;
@@ -246,7 +246,7 @@ noscript {
 	border-radius: 3px;
 }
 
-.list_item:before {
+.listItem:before {
 	content: '';
 	box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
 	position: absolute;
@@ -255,7 +255,7 @@ noscript {
 	margin-left: -140px;
 }
 
-.list_item img {
+.listItem img {
 	max-width: 75px;
 	max-height: 75px;
 	padding: 5px;
@@ -272,7 +272,7 @@ noscript {
 
 }
 
-.list_item:hover {
+.listItem:hover {
 	background-image: url('https://www.pathofexile.com/image/shop/deal-background-large.png');
 }
 
@@ -284,7 +284,7 @@ input[type="checkbox"]{
 	display: none;
 }
 
-input[type="checkbox"] + .label-text:before {
+input[type="checkbox"] + .labelText:before {
 	position: relative;
 	content: '';
 	width: 40px;
@@ -303,7 +303,7 @@ input[type="checkbox"] + .label-text:before {
 	left: 20px;
 }
 
-input[type="checkbox"]:checked + .label-text:before {
+input[type="checkbox"]:checked + .labelText:before {
 	content: '';
 	-webkit-background-clip: text;
 	 -moz-background-clip: text;
@@ -316,7 +316,7 @@ input[type="checkbox"]:checked + .label-text:before {
 	background-color: #0f0d0a;
 }
 
-.label-text {
+.labelText {
 	display: flex;
 	color: inherit;
 	text-shadow: 1px 1px 3px black;
@@ -326,12 +326,12 @@ input[type="checkbox"]:checked + .label-text:before {
 	align-items: center;
 }
 
-.label-text:before {
+.labelText:before {
 	box-shadow: inset 0px 0px 8px -1px;
 	color: inherit;
 }
 
-.label-text p {
+.labelText p {
 	color: #ffda4d;
 	position: relative;
 	height: 39px;
@@ -347,7 +347,7 @@ input[type="checkbox"]:checked + .label-text:before {
 	border-radius: 0 10px 10px 0;
 }
 
-.label-text p:before {
+.labelText p:before {
 	content: attr(value);
 	background-image: url('https://web.poecdn.com/image/shop/item/ShopItemCoin.png');
 	background-repeat: no-repeat;
@@ -364,7 +364,7 @@ input[type="checkbox"]:checked + .label-text:before {
 	border-radius: 10px 0 0 10px;
 }
 
-.label-text h1 {
+.labelText h1 {
 	position: absolute;
 	color: #ffda4d;
 	font-size: 1.1em;
@@ -379,7 +379,7 @@ a {
 	height: 50px;
 }
 
-.label-text h1, .list_item img {
+.labelText h1, .listItem img {
 	opacity: 0.8;
 }
 
@@ -400,7 +400,7 @@ a {
 	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1)), url(https://www.pathofexile.com/image/shop/deal-background-large.png);
 }
 
-.selected .label-text h1, .selected img {
+.selected .labelText h1, .selected img {
 	opacity: 1.0;
 }
 
@@ -577,14 +577,14 @@ a {
 	padding-bottom: 15px;
 }
 
-#number_container {
+#numberContainer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 1.25em;
 }
 
-#final_number {
+#finalNumber {
 	display: grid;
 	grid-template-columns: 0.70fr 0.30fr;
 	grid-template-rows: 1fr;
@@ -611,7 +611,7 @@ a {
 	width: 80px;
 }
 
-#total_coin {
+#totalCoin {
 	grid-area: 1 / 2 / 2 / 3;
 	filter: hue-rotate(-90.4255deg);
 	justify-self: center;
@@ -622,24 +622,24 @@ a {
 	.verdict {
 		height: 100px;
 	}
-	#number_container {
+	#numberContainer {
 		display: block;
 	}
-	#number_container p {
+	#numberContainer p {
 		text-align: center;
 		margin: 5px 0px 5px 0px;
 	}
-	#final_number {
+	#finalNumber {
 		margin: 0 auto;
 	}
 }
 
 @media screen and (max-width: 400px) {
-	#number_container p {
+	#numberContainer p {
 		font-size: 0.8em;
 		margin: 10px 5px 10px 5px;
 	}
-	#final_number {
+	#finalNumber {
 		transform: scale(0.8);
 	}
 }
