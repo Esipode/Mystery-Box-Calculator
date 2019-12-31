@@ -9,7 +9,7 @@
 		<meta name="keywords" content="path, exile, poe, mystery, box, loot, cosmetic, calculator, coins, chance, gambling, microtransaction, mtx">
 		<meta name="robots" content="all">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" type="text/css"/>
-		<link href="style.css" rel="stylesheet" type="text/css"/>
+		<link href="style.css?v=1.01" rel="stylesheet" type="text/css"/>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 		<script src="data.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
@@ -21,6 +21,21 @@
 			<img class="loadEmpty" src="https://web.poecdn.com/image/favicon/ogimage.png" />
 			<img class="loadCurrent" src="https://web.poecdn.com/image/favicon/ogimage.png" />
 			<div class="spinner"></div>
+		</div>
+		<div class="simulatorContainer transition">
+			<div class="simulatorClose" onclick="simulatorToggle()"></div>
+			<div class="simulatorGambler">
+				<div class="simulatorPoints"><h3>Points Spent:</h3><img src="https://web.poecdn.com/image/shop/item/ShopItemCoin.png"/><span>0</span></div>
+				<div class="simulatorReset" onclick="resetPoints()"><h3>Reset</h3></div>
+				<div class="simulatorItem"></div>
+				<div class="simulatorTitle"></div>
+				<div class="simulatorBox"></div>
+				<div class="simulatorOpenBtn" onclick="simulateItems()">Open</div>
+			</div>
+			<div class="historyLabel">
+				<h2 class="historyTitle">History</h2>
+			</div>
+			<div class="prevItems transition"></div>
 		</div>
 		<div class="header">
 			<select class="dropdown">
@@ -62,6 +77,9 @@
 				<div class="counterContainer"><h3 class="outOfCommonA">0</h3><span>/</span><h3 class="outOfCommonB">0</h3></div>
 			</div>
 			<div class="commonContainer transition"></div>
+		</div>
+		<div class="toggleSimulator transition" onclick="simulatorToggle()">
+			<h4>Open Boxes</h4>
 		</div>
 	</body>
 

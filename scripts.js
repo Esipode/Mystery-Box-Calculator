@@ -16,6 +16,8 @@ const mtxGlobals = {
 
 //Listen for page to finish loading
 window.addEventListener('load', function() {
+	//Clear all old stored 'points spent' values
+	sessionStorage.clear();
 	//Runs library that replaces 'select' element and replaces with spans
 	$('.dropdown').select2();
 	//Sets value for what box is active by default, and remove any ampersands
@@ -55,6 +57,18 @@ let loadContent = () =>  {
 	$(".dropdown").select2('open');
 	//Force dropdown to close immediately after
 	$(".dropdown").select2('close');
+	//Set box icon in simulator to active box
+	$('.simulatorBox').css('background-image', 'url(' + boxImage[$(".dropdown").prop('selectedIndex')].image + ')');
+	//Reset all simulator properties
+	resetPoints();
+	//Change simulator toggler image to current box thumbnail
+	setTimeout(function() {
+		//Change simulator toggler image to current box thumbnail
+		$('.toggleSimulator').css('background-image', 'url(' + boxImage[$(".dropdown").prop('selectedIndex')].image + ')');
+	}, 300);
+	//Clear box simulator contents
+	$('.simulatorTitle').html('');
+	$('.simulatorItem').css('background-image', '');
 	//Creates array of items based on the active box
 	mtxGlobals.mtxCurrList = mtxData.filter((obj) => obj.box === mtxGlobals.mtxCurrentBox);
 	//Check if current box is the same as previously selected box
@@ -104,7 +118,7 @@ let loadContent = () =>  {
 			}).appendTo($('.labelText')[j]);
 			//Creates image for each item
 			jQuery('<img/>', {
-				"src": mtxGlobals.mtxCurrList[j].image,
+				"src": mtxGlobals.mtxCurrList[j].image
 			}).appendTo($('.listItem')[j]);
 		}
 		//Set display of number of total items for each rarity
@@ -213,9 +227,16 @@ $(document).on('click', '.coins', function() {
 });
 
 //Minimizes item container when clicking corresponding rarity's title
-$('div[class*="Label"]').on('click', function() {
+$('div[class*="Label"]', $(!'.historyLabel')).on('click', function() {
 	$(this).toggleClass('inactiveTitle');
 	$(this.nextElementSibling).toggleClass('inactive');
+});
+
+$('.historyLabel').on('click', function() {
+	$(this).toggleClass('inactiveHistory');
+	$(this.nextElementSibling).toggleClass('inactive');
+	$('.simulatorGambler').toggleClass('hiddenMobile');
+	$('.prevItems').toggleClass('showMobile');
 });
 
 //Loads all images from sources in data.js
@@ -269,3 +290,111 @@ let preloadImages = () => {
 		}
 	});
 };
+
+let simulatorToggle = () => {
+	if ($('.simulatorContainer').attr('active') == 'true') {
+		$('.simulatorContainer')
+			.animate({top: '110%'}, 0, function() {
+				$('.simulatorContainer').attr('active', 'false');
+				$('body').css('overflow', 'auto');
+		});
+	}
+	else {
+		$('.simulatorContainer').fadeIn()
+			.css({top: '110%', display: 'grid'})
+			.animate({top: '3%'}, 0, function() {
+				$('.simulatorContainer').attr('active', 'true');
+				$('body').css('overflow', 'hidden');
+		});
+	}
+}
+
+let simulateItems = () => {
+	//Checks if function is currently running to prevent click spamming
+	if ($('.simulatorContainer').attr('running') == 'true') {
+		return;
+	}
+	//Set function to 'running' state
+	$('.simulatorContainer').attr('running', 'true');
+	//Determines value of random chance in order to pick rarity
+	chanceRoll = Math.floor(Math.random()*(100)+1);
+	//Checks for and sets 'rare'
+	if (chanceRoll <= 20) {
+		currentRarity = 'rare';
+	}
+	//Checks for and sets 'uncommon'
+	else if (chanceRoll <= 55 && chanceRoll >= 20) {
+		currentRarity = 'uncommon';
+	}
+	//Checks for and sets 'common'
+	else if (chanceRoll > 55) {
+		currentRarity = 'common';
+	}
+	//Chooses a random item index from array of current possible box items
+	chanceRoll = Math.floor(Math.random()*(mtxGlobals.mtxCurrList.length));
+
+	//Loops until correct item with correct rarity is selected
+	let rolling = setInterval(function() {
+		//When the current rarity is equal to the item rarity
+		if (currentRarity == mtxGlobals.mtxCurrList[chanceRoll].rarity) {
+			//Store incremented value of total points spent on current box
+			let pointsSpent = parseInt($('.simulatorPoints span').html()) + 30;
+			//Fade out item name and image, then fade back in after changing
+			$('.simulatorTitle, .simulatorItem').fadeOut(300, function() {
+				($('.simulatorTitle').html(mtxGlobals.mtxCurrList[chanceRoll].name).fadeIn(300));
+				($('.simulatorItem').css('background-image', 'url(' + mtxGlobals.mtxCurrList[chanceRoll].image + ')')).fadeIn(300);
+				//Change function state to 'not running'
+				$('.simulatorContainer').attr('running', 'false');
+				//Display updated spent points value
+				$('.simulatorPoints span').html(pointsSpent);
+			});
+			clearInterval(rolling);
+			//Create 'history' cards of previous item draws
+			prevItemCards(chanceRoll);
+		}
+		else {
+			//Rerolls items in list until correct rarity is found
+			chanceRoll = Math.floor(Math.random()*(mtxGlobals.mtxCurrList.length));
+		}
+	}, 20);
+}
+
+let prevItemCards = (index) => {
+	let duplicateFound;
+	$('.prevItem h4').each(function() {
+		if ($(this).text() == mtxGlobals.mtxCurrList[index].name) {
+			$(this).parent().attr('total', (parseInt($(this).parent().attr('total')) + 1));
+			$(this).parent().prependTo('.prevItems');
+			duplicateFound = true;
+		}
+	});
+	if (!duplicateFound) {
+		jQuery('<div/>', {
+			"class": 'prevItem' + ' transition ' + mtxGlobals.mtxCurrList[index].rarity,
+			"total": 1
+		}).prependTo('.prevItems');
+		jQuery('<h4/>', {
+			"text": mtxGlobals.mtxCurrList[index].name
+		}).appendTo($('.prevItem')[0]);
+		jQuery('<img/>', {
+			"src": mtxGlobals.mtxCurrList[index].image
+		}).appendTo($('.prevItem')[0]);
+	}
+	duplicateFound = false;
+}
+
+let resetPoints = () => {
+	//Reset display of points spent
+	$('.simulatorPoints span').html(0);
+	//Remove previous item draws
+	$('.prevItem').remove();
+	//Removed currently displayed item name
+	$('.simulatorTitle').html('');
+	//Removed currently displayed item image
+	$('.simulatorItem').css('background-image', '');
+}
+
+window.addEventListener('load', function() {
+	let hideScroll = $('.prevItems');
+	hideScroll.css('padding-right', hideScroll.offsetWidth - hideScroll.clientWidth + 'px');
+});

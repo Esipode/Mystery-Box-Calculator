@@ -31,6 +31,17 @@
 	}
 }
 
+@-webkit-keyframes slideIn {
+  0% {
+	opacity: 0;
+	transform: translateY(-100%);
+  }
+  100% {
+	opacity: 1;
+	transform: translateY(0);
+  }
+}
+
 ::-webkit-scrollbar {
 	width: 8px;
 }
@@ -126,6 +137,541 @@ noscript {
 	text-align: center;
 }
 
+.simulatorContainer {
+	display: none;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	background-color: rgba(0,0,0,0.9);
+	position: fixed;
+	z-index: 2;
+	margin: -28px;
+	width: 100%;
+	height: calc(100% + 28px);
+	overflow: hidden;
+}
+
+.simulatorClose {
+	grid-area: 1 / 2 / 2 / 3;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Cross.png), url(https://web.poecdn.com/gen/image/WzIyLCI4NmVlNjUyYzgwYzk5YWI4NWZjZTQ1MzNlODM0Y2NkZiIseyJ0IjoyLCJzcCI6MC4zODM1fV0/9c85e2c3c2/Skill_Frame_CanAllocate.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 20px 20px, 40px 40px;
+	background-color: #0f0d0a;
+	border-radius: 100%;
+	top: 15px;
+	right: 25px;
+}
+
+.simulatorClose:hover {
+	filter: saturate(1.5);
+}
+
+.simulatorClose:active {
+	filter: saturate(0.7);
+}
+
+.simulatorGambler {
+	background-image: url(images/simulator.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	grid-area: 1 / 1 / 5 / 2;
+	display: grid;
+	grid-template-columns: 10.05% 10.92% 8.1% 1.06% 38.03% 1.06% 7.75% 10.21% 12.85%;
+	grid-template-rows: 14.13% 30.54% 1.09% 5.44% 7.07% 24.57% 5.54% 6.3% 5.33%;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	height: calc(920px  * 0.74);
+	width: calc(568px  * 0.74);
+	align-self: center;
+	justify-self: center;
+}
+
+.simulatorPoints {
+	grid-area: 1 / 1 / 2 / 6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffda4d;
+	position: relative;
+	height: 39px;
+	line-height: 39px;
+	padding: 0px 10px;
+	background-color: rgba(15,13,10,0.8);
+	border-top: 1px solid rgba(255,218,77,0.5);
+	border-bottom: 1px solid rgba(255,218,77,0.5);
+	border-radius: 10px;
+	margin: 0 auto;
+}
+
+.simulatorPoints span {
+	font-size: 1.5em;
+}
+
+.simulatorPoints img {
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 36px;
+	height: 39px;
+}
+
+.simulatorReset {
+	grid-area: 1 / 5 / 2 / 10;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ff2828;
+	position: relative;
+	height: 39px;
+	line-height: 39px;
+	padding: 0px 10px;
+	background-color: rgba(15,13,10,0.8);
+	border-top: 1px solid rgba(255,77,77,0.5);
+	border-bottom: 1px solid rgba(255,77,77,0.5);
+	border-radius: 10px;
+	margin: 0 19% 0 auto;
+}
+
+.simulatorItem {
+	grid-area: 2 / 3 / 3 / 8;
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
+
+.simulatorTitle {
+	grid-area: 4 / 2 / 5 / 9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-variant: small-caps;
+	font-size: 1.25em;
+	color: #7bd690;
+	text-shadow: 0px 0px 3px green;
+}
+
+.simulatorBox {
+	grid-area: 6 / 4 / 7 / 6;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	margin: 10%;
+}
+
+.simulatorOpenBtn {
+	grid-area: 8 / 5 / 9 / 6;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	filter: hue-rotate(75deg);
+	font-size: 1.25em;
+	text-shadow: 0px 0px 5px rgb(255, 1, 203);
+	background: url(https://web.poecdn.com/image/layout/button/button-generic-hover-left.png) left top no-repeat,
+				url(https://web.poecdn.com/image/layout/button/button-generic-hover-right.png) right top no-repeat,
+				url(https://web.poecdn.com/image/layout/button/button-generic-hover-middle.png) center top repeat-x;
+	background-size: contain;
+}
+
+.simulatorOpenBtn:hover {
+	filter: hue-rotate(75deg) brightness(1.2);
+}
+
+.simulatorOpenBtn:active {
+	filter: hue-rotate(75deg) brightness(0.8);
+}
+
+.prevItems {
+	grid-area: 2 / 2 / 4 / 3;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	overflow-y: scroll;
+	width: 104%;
+	height: 100%;
+	overflow: auto;
+	border-top: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	border-radius: 15px 0 0 10px;
+	justify-content: center;
+	padding: 20px 0 15px 0;
+}
+
+.prevItem {
+	background-image: url('images/ItemDescNormal.jpg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: calc(421px * 0.75);
+	width: calc(277px * 0.75);
+	color: #ffffff;
+	text-shadow: 0px 0px 1px black;
+	display: grid;
+	grid-template-columns: 5% 90% 5%;
+	grid-template-rows: 2% 15% 80% 3%;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	justify-items: center;
+	align-items: center;
+	position: relative;
+	margin: 15px 10px;
+	border-radius: 3px;
+	transition-duration: 0.5s;
+	 -webkit-animation: slideIn 1s forwards;
+	  -moz-animation: slideIn 1s forwards;
+	   animation: slideIn 1s forwards;
+}
+
+.prevItem:nth-child(1) {
+	background-image: url('images/AltItemDescBright.jpg');
+	filter: saturate(1.25);
+	box-shadow: 0px 0px 6px 2px #ffba47;
+}
+
+.prevItem:nth-child(1):before {
+	box-shadow: 0px 2px 4px -1px #ffba47;
+}
+
+.prevItem:nth-child(2) {
+	background-image: url('images/AltItemDescNormal.jpg');
+	box-shadow: 0px 0px 4px 1px #4772ff;
+}
+
+.prevItem:nth-child(2):before {
+	box-shadow: 0px 2px 4px -1px #4772ff;
+}
+
+.prevItem:nth-child(3) {
+	background-image: url('images/ItemDescNormal.jpg');
+	box-shadow: 0px 0px 5px 0px #ffffff;
+}
+
+.prevItem:nth-child(3):before {
+	box-shadow: 0px 2px 4px -1px #ffffff;
+}
+
+.prevItem:nth-child(n+4) {
+	background-image: url('images/ItemDescDull.jpg');
+}
+
+.prevItem:before {
+	position: absolute;
+	content: attr(total);
+	width: 40px;
+	height: 40px;
+	-webkit-background-clip: text;
+	 -moz-background-clip: text;
+	  background-clip: text;
+	background: url('https://web.poecdn.com/gen/image/WzIyLCI4NmVlNjUyYzgwYzk5YWI4NWZjZTQ1MzNlODM0Y2NkZiIseyJ0IjoyLCJzcCI6MC4zODM1fV0/9c85e2c3c2/Skill_Frame_CanAllocate.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size:40px;
+	background-color: #0f0d0a;
+	border-radius: 100%;
+	bottom: -5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.prevItem h4 {
+	grid-area: 2 / 2 / 3 / 3;
+	font-size: 0.8em;
+	text-align: center;
+	padding: 8px;
+	text-shadow: 0px 0px 5px black;
+}
+
+.prevItem img {
+	grid-area: 3 / 2 / 4 / 3;
+}
+
+.historyLabel {
+	grid-area: 1 / 2 / 2 / 3;
+	display: flex;
+	align-self: end;
+	justify-self: center;
+	justify-content: center;
+	align-items: flex-end;
+	margin-bottom: 20px;
+}
+
+.historyLabel:before {
+	content: '';
+	position: absolute;
+	border-width: 5px 6px 0 6px;
+	height: 0px;
+	border-color: white transparent transparent transparent;
+	border-style: solid;
+	margin-top: 5px;
+}
+
+.historyLabel .historyTitle {
+	cursor: pointer;
+	margin-top: 60px;
+	margin-bottom: 0;
+	padding-bottom: 5px;
+	width: 200px;
+	font-size: 2em;
+	border-bottom: 1px solid white;
+	text-align: center;
+}
+
+.toggleSimulator {
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: contain;
+	position: fixed;
+	height: 150px;
+	width: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 15px;
+	right: 15px;
+	opacity: 0.5;
+}
+
+.toggleSimulator:hover {
+	opacity: 1;
+}
+
+.toggleSimulator:active {
+	opacity: 0.8;
+}
+
+.toggleSimulator h4 {
+	text-align: center;
+	color: #ffda4d;
+	height: 20px;
+	line-height: 20px;
+	letter-spacing: 1px;
+	font-size: 1.15em;
+	padding: 3px 6px;
+	background-color: rgba(6, 43, 0, 0.8);
+	border-top: 1px solid #4dff6380;
+	border-bottom: 1px solid #4dff6380;
+	border-radius: 10px;
+	box-shadow: 0px 0px 6px 4px #000000bf;
+}
+
+.inactiveHistory {
+	opacity: 0.5;
+}
+
+.inactiveHistory:before {
+	margin-top: 0px !important;
+	transform: rotate(180deg);
+}
+
+@media screen and (max-width: 950px), screen and (max-height: 800px) {
+	.simulatorContainer {
+		grid-template-columns: 1fr;
+		grid-template-rows: 100% 100%;
+	}
+	.simulatorClose {
+		grid-area: 1 / 1 / 2 / 2;
+		top: 30px;
+		right: 25px;
+	}
+	.simulatorGambler {
+		grid-area: 1 / 1 / 2 / 2;
+		height: calc(920px * 0.5);
+		width: calc(568px * 0.5);
+	}
+	.simulatorPoints {
+		height: 30px;
+		line-height: 30px;
+		padding: 0px 7px;
+		font-size: 0.8em;
+	}
+	.simulatorPoints img {
+		width: 29px;
+		height: 30px;
+	}
+	.simulatorReset {
+		height: 30px;
+		line-height: 30px;
+		padding: 0px 7px;
+		margin: 0 7% 0 auto;
+	}
+	.simulatorTitle {
+		font-size: 0.9em;
+	}
+	.simulatorOpenBtn {
+		font-size: 1em;
+	}
+	.historyLabel {
+		grid-area: 1 / 1 / 2 / 2;
+		position: absolute;
+		bottom: 25px;
+	}
+	.inactiveHistory {
+		opacity: 1;
+		top: -30px;
+		bottom: auto;
+	}
+	.prevItems {
+		grid-area: 2 / 1 / 3 / 2;
+		width: 100%;
+	}
+	.prevItems .inactive {
+		visibility: visible;
+		opacity: 1;
+		height: 100%;
+	}
+	.hiddenMobile {
+		display: none;
+	}
+	.showMobile {
+		visibility: visible;
+		grid-area: 1 / 1 / 2 / 2;
+		opacity: 1;
+		height: 75%;
+		border: none;
+		align-content: end;
+		align-self: end;
+		border-top: 1px solid rgba(255,255,255,0.2);
+		border-radius: 0;
+		margin-bottom: 6%;
+	}
+	.prevItem {
+		height: calc(421px * 0.5);
+		width: calc(277px * 0.5);
+	}
+	.prevItem:before {
+		bottom: -8%;
+	}
+	.prevItem h4 {
+		font-size: 0.55em;
+	}
+}
+
+@media screen and (max-width: 350px) and (max-height: 800px) {
+	.simulatorClose {
+		top: 30px;
+		right: 20px;
+	}
+	.simulatorGambler {
+		height: calc(920px * 0.4);
+		width: calc(568px * 0.4);
+	}
+	.simulatorPoints {
+		height: 30px;
+		line-height: 30px;
+		padding: 0px 7px;
+		font-size: 0.6em;
+	}
+	.simulatorPoints img {
+		width: 25px;
+		height: 26px;
+	}
+	.simulatorItem {
+		height: 75%;
+		width: 75%;
+		justify-self: center;
+		align-self: center;
+		background-size: contain;
+	}
+	.simulatorTitle {
+		font-size: 0.7em;
+	}
+	.simulatorOpenBtn {
+		font-size: 0.8em;
+	}
+}
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+	.simulatorContainer {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+	}
+	.simulatorClose {
+		grid-area: 1 / 2 / 2 / 3;
+	}
+	.simulatorGambler {
+		grid-area: 1 / 1 / 5 / 2;
+		height: calc(920px * 0.35);
+		width: calc(568px * 0.35);
+	}
+	.simulatorPoints {
+		font-size: 0.5em;
+	}
+	.simulatorPoints img {
+		width: 25px;
+		height: 26px;
+	}
+	.simulatorReset {
+		font-size: 0.6em;
+	}
+	.simulatorItem {
+		height: 75%;
+		width: 75%;
+		justify-self: center;
+		align-self: center;
+		background-size: contain;
+	}
+	.simulatorTitle {
+		font-size: 0.6em;
+	}
+	.simulatorOpenBtn {
+		font-size: 0.7em;
+	}
+	.historyLabel {
+		grid-area: 1 / 2 / 2 / 3;
+		pointer-events: none;
+		bottom: auto;
+	}
+	.prevItems {
+		grid-area: 2 / 2 / 4 / 3;
+		padding: 0 0 50px 0;
+	}
+}
+
+@media screen and (max-height: 375px) and (orientation: landscape) {
+	.simulatorGambler {
+		height: calc(920px * 0.32);
+		width: calc(568px * 0.32);
+	}
+	.simulatorPoints {
+		font-size: 0.4em;
+		height: 25px;
+		line-height: 25px;
+	}
+	.simulatorPoints img {
+		width: 21px;
+		height: 22px;
+	}
+	.simulatorReset {
+		height: 25px;
+		line-height: 25px;
+	}
+	.simulatorTitle {
+		font-size: 0.5em;
+	}
+	.simulatorOpenBtn {
+		font-size: 0.5em;
+	}
+	.historyLabel .historyTitle {
+		font-size: 1.5em;
+	}
+	.prevItem {
+		height: calc(421px * 0.4);
+		width: calc(277px * 0.4);
+	}
+	.prevItem h4 {
+		font-size: 0.5em;
+	}
+	.prevItem:before {
+		bottom: -10%;
+	}
+}
+
 .backgroundWrap {
 	z-index: -1;
 	position: fixed;
@@ -148,6 +694,7 @@ noscript {
 	justify-content: center;
 	max-width: 1300px;
 	margin: auto;
+	margin-bottom: 150px;
 }
 
 .itemContainer h2 {
@@ -155,10 +702,10 @@ noscript {
 	margin-top: 60px;
 	margin-bottom: 0;
 	padding-bottom: 5px;
-    width: 200px;
-    font-size: 2em;
-    border-bottom: 1px solid white;
-    text-align: center;
+	width: 200px;
+	font-size: 2em;
+	border-bottom: 1px solid white;
+	text-align: center;
 }
 
 .rarityLabel:before {
@@ -210,12 +757,12 @@ noscript {
 	opacity: 0.5;
 }
 
-.inactiveTitle:before {
+.itemContainer .inactiveTitle:before {
 	margin-top: 102px !important;
 	transform: rotate(180deg);
 }
 
-.inactive  {
+.inactive:not(.showMobile) {
 	visibility: hidden;
 	opacity: 0;
 	height: 0;
