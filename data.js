@@ -9,7 +9,13 @@ const uiImages = [
 	{ image: 'https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Cross.png'},
 	{ image: 'https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Tick.png'},
 	{ image: 'https://web.poecdn.com/gen/image/WzIyLCI4NmVlNjUyYzgwYzk5YWI4NWZjZTQ1MzNlODM0Y2NkZiIseyJ0IjoyLCJzcCI6MC4zODM1fV0/9c85e2c3c2/Skill_Frame_CanAllocate.png'},
-	{ image: 'https://web.poecdn.com/gen/image/WzIyLCJiMjc2Mjk0ODA5N2MyODUzOTQ1YWUzNTdhNDcxYzZlOCIseyJ0IjoxLCJzcCI6MC4zODM1fV0/a70a46fca1/Skill_Frame_Allocated.png'}
+	{ image: 'https://web.poecdn.com/gen/image/WzIyLCJiMjc2Mjk0ODA5N2MyODUzOTQ1YWUzNTdhNDcxYzZlOCIseyJ0IjoxLCJzcCI6MC4zODM1fV0/a70a46fca1/Skill_Frame_Allocated.png'},
+	{ image: 'images/simulator.png'},
+	{ image: 'images/AltItemDescBright.jpg'},
+	{ image: 'images/AltItemDescNormal.jpg'},
+	{ image: 'images/ItemDescDull.jpg'},
+	{ image: 'images/ItemDescNormal.jpg'}
+	
 ]
 
 const boxImage = [
