@@ -16,8 +16,6 @@ const mtxGlobals = {
 
 //Listen for page to finish loading
 window.addEventListener('load', function() {
-	//Clear all old stored 'points spent' values
-	sessionStorage.clear();
 	//Runs library that replaces 'select' element and replaces with spans
 	$('.dropdown').select2();
 	//Sets value for what box is active by default, and remove any ampersands
