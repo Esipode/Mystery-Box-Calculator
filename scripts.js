@@ -344,10 +344,10 @@ let simulateItems = () => {
 			$('.simulatorTitle, .simulatorItem').fadeOut(300, function() {
 				($('.simulatorTitle').html(mtxGlobals.mtxCurrList[chanceRoll].name).fadeIn(300));
 				($('.simulatorItem').css('background-image', 'url(' + mtxGlobals.mtxCurrList[chanceRoll].image + ')')).fadeIn(300);
-				//Change function state to 'not running'
-				$('.simulatorContainer').attr('running', 'false');
 				//Display updated spent points value
 				$('.simulatorPoints span').html(pointsSpent);
+				//Change function state to 'not running'
+				$('.simulatorContainer').attr('running', 'false');
 			});
 			clearInterval(rolling);
 			//Create 'history' cards of previous item draws
