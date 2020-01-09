@@ -227,14 +227,12 @@ $(document).on('click', '.coins', function() {
 //Minimizes item container when clicking corresponding rarity's title
 $('div[class*="Label"]').on('click', function() {
 	if (this.classList.contains("historyLabel")) {
-		console.log('Is history label!');
 		$(this).toggleClass('inactiveHistory');
 		$(this.nextElementSibling).toggleClass('inactive');
 		$('.simulatorGambler').toggleClass('hiddenMobile');
 		$('.prevItems').toggleClass('showMobile');
 	}
 	else {
-		console.log('Not history label!');
 		$(this).toggleClass('inactiveTitle');
 		$(this.nextElementSibling).toggleClass('inactive');
 	}
