@@ -241,7 +241,7 @@ $('div[class*="Label"]').on('click', function() {
 //Loads all images from sources in data.js
 let preloadImages = () => {
 	//Combine current list of items with all UI elements. This ensures UI loads before removing loading screen on first load.
-	let allImages = uiImages.concat(boxImage, mtxGlobals.mtxCurrList);
+	let allImages = mtxGlobals.mtxCurrList.concat(uiImages, boxImage);
 	//Fade in loading screen
 	$("#loader").fadeIn(250);
 	//Creates promise function to load all images into DOM
