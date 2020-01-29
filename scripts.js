@@ -265,7 +265,7 @@ let preloadImages = () => {
 				loadCounter++;
 				j = loadCounter;
 				//Set cookie to not trigger sameSite warning
-				document.cookie = `name=${allImages[j].name}; value=${allImages[j].image}; expires=${365*60*60*24}; sameSite=none; secure`;
+				document.cookie = `${allImages[j].name}=${encodeURIComponent(allImages[j].image)}; expires=${365*60*60*24}; sameSite=none; secure`;
 				//Set percentage to reflect amount of images loaded
 				percentage = (((j + 1) * 100) / value.length).toFixed(0);
 				//Display loaded percentage
