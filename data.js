@@ -1,35 +1,35 @@
 const uiImages = [
-	{ image: 'https://web.poecdn.com/image/favicon/ogimage.png' },
-	{ image: 'https://web.poecdn.com/image/shop/item/ShopItemCoin.png' },
-	{ image: 'https://web.poecdn.com/image/layout/button/button-generic-hover-left.png' },
-	{ image: 'https://web.poecdn.com/image/layout/button/button-generic-hover-right.png' },
-	{ image: 'https://web.poecdn.com/image/layout/button/button-generic-hover-middle.png' },
-	{ image: 'https://pathofexile.com/image/layout/WftA_background.jpg' },
-	{ image: 'https://www.pathofexile.com/image/shop/deal-background-large.png' },
-	{ image: 'https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Cross.png' },
-	{ image: 'https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Tick.png' },
-	{ image: 'https://web.poecdn.com/gen/image/WzIyLCI4NmVlNjUyYzgwYzk5YWI4NWZjZTQ1MzNlODM0Y2NkZiIseyJ0IjoyLCJzcCI6MC4zODM1fV0/9c85e2c3c2/Skill_Frame_CanAllocate.png' },
-	{ image: 'https://web.poecdn.com/gen/image/WzIyLCJiMjc2Mjk0ODA5N2MyODUzOTQ1YWUzNTdhNDcxYzZlOCIseyJ0IjoxLCJzcCI6MC4zODM1fV0/a70a46fca1/Skill_Frame_Allocated.png' },
-	{ image: 'images/simulator.png' },
-	{ image: 'images/AltItemDescBright.jpg' },
-	{ image: 'images/AltItemDescNormal.jpg' },
-	{ image: 'images/ItemDescDull.jpg' },
-	{ image: 'images/ItemDescNormal.jpg'}
+	{ image: 'https://web.poecdn.com/image/favicon/ogimage.png', name: 'loadingIcon' },
+	{ image: 'https://web.poecdn.com/image/shop/item/ShopItemCoin.png', name: 'coinIcon' },
+	{ image: 'https://web.poecdn.com/image/layout/button/button-generic-hover-left.png', name: 'buttonLeft' },
+	{ image: 'https://web.poecdn.com/image/layout/button/button-generic-hover-right.png', name: 'buttonRight' },
+	{ image: 'https://web.poecdn.com/image/layout/button/button-generic-hover-middle.png', name: 'buttonMiddle' },
+	{ image: 'https://pathofexile.com/image/layout/WftA_background.jpg', name: 'background' },
+	{ image: 'https://www.pathofexile.com/image/shop/deal-background-large.png', name: 'itemBackground' },
+	{ image: 'https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Cross.png', name: 'unselectedIcon' },
+	{ image: 'https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Tick.png', name: 'selectedIcon' },
+	{ image: 'https://web.poecdn.com/gen/image/WzIyLCI4NmVlNjUyYzgwYzk5YWI4NWZjZTQ1MzNlODM0Y2NkZiIseyJ0IjoyLCJzcCI6MC4zODM1fV0/9c85e2c3c2/Skill_Frame_CanAllocate.png', name: 'circleUnselected' },
+	{ image: 'https://web.poecdn.com/gen/image/WzIyLCJiMjc2Mjk0ODA5N2MyODUzOTQ1YWUzNTdhNDcxYzZlOCIseyJ0IjoxLCJzcCI6MC4zODM1fV0/a70a46fca1/Skill_Frame_Allocated.png', name: 'circleSelected' },
+	{ image: 'images/simulator.png', name: 'simulatorBackground' },
+	{ image: 'images/AltItemDescBright.jpg', name: 'simulatorItemOne' },
+	{ image: 'images/AltItemDescNormal.jpg', name: 'simulatorItemTwo' },
+	{ image: 'images/ItemDescDull.jpg', name: 'simulatorItemThree' },
+	{ image: 'images/ItemDescNormal.jpg', name: 'simulatorItemEtc'}
 	
 ]
 
 const boxImage = [
-	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/PolarisBox_itemart.png' },
-	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/CarnevalMysteryBox.png' },
-	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/FrontierMysteryBox.png' },
-	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/DarkwoodMysteryBox.png' },
-	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/FairgravesMysteryBox.png' },
-	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/OriathMysteryBox.png' },
-	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/ApocalypseMysteryBox.png' },
-	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/SinInnocenceMysteryBox.png' },
-	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/FireIceMysteryBox.png' },
-	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/LightChaosMysteryBox.png' },
-	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/ClassicMysteryBox.png'}
+	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/PolarisBox_itemart.png', name: 'PolarisBox' },
+	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/CarnevalMysteryBox.png', name: 'CarnivalBox' },
+	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/FrontierMysteryBox.png', name: 'FrontierBox' },
+	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/DarkwoodMysteryBox.png', name: 'GlimmerwoodBox' },
+	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/FairgravesMysteryBox.png', name: 'FairgravesBox' },
+	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/OriathMysteryBox.png', name: 'OriathBox' },
+	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/ApocalypseMysteryBox.png', name: 'ApocalypseBox' },
+	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/SinInnocenceMysteryBox.png', name: 'SinInnocenceBox' },
+	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/FireIceMysteryBox.png', name: 'FireIceBox' },
+	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/LightChaosMysteryBox.png', name: 'LightChaosBox' },
+	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/ClassicMysteryBox.png', name: 'ClassicBox'}
 ]
 
 const mtxData = [
