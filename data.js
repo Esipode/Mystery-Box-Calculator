@@ -4,7 +4,7 @@ const uiImages = [
 	{ image: 'https://web.poecdn.com/image/layout/button/button-generic-hover-left.png' },
 	{ image: 'https://web.poecdn.com/image/layout/button/button-generic-hover-right.png' },
 	{ image: 'https://web.poecdn.com/image/layout/button/button-generic-hover-middle.png' },
-	{ image: 'https://alpha.pathofexile.com/image/layout/WftA_background.jpg' },
+	{ image: 'https://pathofexile.com/image/layout/WftA_background.jpg' },
 	{ image: 'https://www.pathofexile.com/image/shop/deal-background-large.png' },
 	{ image: 'https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Cross.png' },
 	{ image: 'https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/Tick.png' },
