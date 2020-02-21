@@ -116,7 +116,8 @@ let loadContent = () =>  {
 			}).appendTo($('.labelText')[j]);
 			//Creates image for each item
 			jQuery('<img/>', {
-				"src": mtxGlobals.mtxCurrList[j].image
+				"src": mtxGlobals.mtxCurrList[j].image,
+				"draggable": false
 			}).appendTo($('.listItem')[j]);
 		}
 		//Set display of number of total items for each rarity
@@ -378,7 +379,8 @@ let prevItemCards = (index) => {
 			"text": mtxGlobals.mtxCurrList[index].name
 		}).appendTo($('.prevItem')[0]);
 		jQuery('<img/>', {
-			"src": mtxGlobals.mtxCurrList[index].image
+			"src": mtxGlobals.mtxCurrList[index].image,
+			"draggable": false
 		}).appendTo($('.prevItem')[0]);
 	}
 	duplicateFound = false;

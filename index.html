@@ -18,14 +18,14 @@
 	<body>
 		<div id="loader">
 			<noscript>Page not loading? Make sure JavaScript is enabled!</noscript>
-			<img class="loadEmpty" src="https://web.poecdn.com/image/favicon/ogimage.png" />
-			<img class="loadCurrent" src="https://web.poecdn.com/image/favicon/ogimage.png" />
+			<img class="loadEmpty" src="https://web.poecdn.com/image/favicon/ogimage.png" draggable="false"/>
+			<img class="loadCurrent" src="https://web.poecdn.com/image/favicon/ogimage.png" draggable="false"/>
 			<div class="spinner"></div>
 		</div>
 		<div class="simulatorContainer transition">
 			<div class="simulatorClose" onclick="simulatorToggle()"></div>
 			<div class="simulatorGambler">
-				<div class="simulatorPoints"><h3>Points Spent:</h3><img src="https://web.poecdn.com/image/shop/item/ShopItemCoin.png"/><span>0</span></div>
+				<div class="simulatorPoints"><h3>Points Spent:</h3><img src="https://web.poecdn.com/image/shop/item/ShopItemCoin.png" draggable="false"/><span>0</span></div>
 				<div class="simulatorReset" onclick="resetPoints()"><h3>Reset</h3></div>
 				<div class="simulatorItem"></div>
 				<div class="simulatorTitle"></div>
@@ -55,7 +55,7 @@
 				<div id="numberContainer">
 					<p>Average Value</p>
 					<div id="finalNumber" class="transition">
-						<div id="total">0.00</div><img id="totalCoin" src='https://web.poecdn.com/image/shop/item/ShopItemCoin.png'/>
+						<div id="total">0.00</div><img id="totalCoin" src='https://web.poecdn.com/image/shop/item/ShopItemCoin.png' draggable="false"/>
 					</div>
 				</div>
 			</div>
