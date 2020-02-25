@@ -90,6 +90,7 @@ body {
 	font-family: 'fontin-bold';
 	color: white;
 	padding: 20px;
+	padding: env(safe-area-inset);
 	background-color: #222;
 	letter-spacing: 0.02em;
 	-webkit-touch-callout: none; /* iOS Safari */
