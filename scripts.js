@@ -29,12 +29,15 @@ window.addEventListener('load', function() {
 });
 
 $(window).scroll(function() {
-	const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    const header = $('.header');
+	if (!$('.select2-dropdown').length) {
+		const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+	    const header = $('.header');
 
-    scrollY <= this.lastScroll ? header.removeClass('hideHeader') : header.addClass('hideHeader'); 
+	    scrollY <= this.lastScroll ? header.removeClass('hideHeader') : header.addClass('hideHeader'); 
 
-    this.lastScroll = scrollY ;
+	    this.lastScroll = scrollY;
+	}
+	else {return}
 })
 
 //Watches for the box selector to change
