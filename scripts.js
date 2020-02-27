@@ -28,6 +28,15 @@ window.addEventListener('load', function() {
 	preloadImages();
 });
 
+$(window).scroll(function() {
+	const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const header = $('.header');
+
+    scrollY <= this.lastScroll ? header.removeClass('hideHeader') : header.addClass('hideHeader'); 
+
+    this.lastScroll = scrollY ;
+})
+
 //Watches for the box selector to change
 $('.dropdown').change(function() {
 	//Creates a delay so that the function doesn't carry out before value changes

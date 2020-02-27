@@ -977,9 +977,14 @@ a {
 	left: 0px;
 	width: 100%;
 	background: rgba(0,0,0,0.8);
+	transition: all 250ms ease-in-out;
 	-webkit-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.75);
 	 -moz-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.75);
 	  box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.75);
+}
+
+.hideHeader {
+	transform: translateY(-75px);
 }
 
 .dropdown {
