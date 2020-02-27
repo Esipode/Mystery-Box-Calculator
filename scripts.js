@@ -28,14 +28,16 @@ window.addEventListener('load', function() {
 	preloadImages();
 });
 
-$(window).scroll(function() {
+//Disables and re-enables header when scrolling
+$('.mainWrapper').scroll(function() {
 	if (!$('.select2-dropdown').length) {
-		const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+		const scrollY = $('.mainWrapper').scrollTop() || window.pageYOffset;
 	    const header = $('.header');
-
-	    scrollY <= this.lastScroll ? header.removeClass('hideHeader') : header.addClass('hideHeader'); 
-
+	    scrollY <= this.lastScroll ? header.removeClass('hideHeader') : header.addClass('hideHeader');
 	    this.lastScroll = scrollY;
+	    if (scrollY < 1) {
+	    	header.removeClass('hideHeader');
+	    }
 	}
 	else {return}
 })
