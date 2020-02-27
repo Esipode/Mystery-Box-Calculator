@@ -1198,6 +1198,9 @@ a {
 	#finalNumber {
 		margin: 0 auto;
 	}
+	.hideHeader {
+		transform: translateY(-100px);
+	}
 }
 
 @media screen and (max-width: 400px) {
