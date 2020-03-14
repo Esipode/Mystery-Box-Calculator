@@ -19,6 +19,7 @@ const uiImages = [
 ]
 
 const boxImage = [
+	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/ThaumaturgyBox_itemart.png', name: 'ThaumaturgyBox' },
 	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/PolarisBox_itemart.png', name: 'PolarisBox' },
 	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/CarnevalMysteryBox.png', name: 'CarnivalBox' },
 	{ image: 'https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/FrontierMysteryBox.png', name: 'FrontierBox' },
@@ -33,6 +34,272 @@ const boxImage = [
 ]
 
 const mtxData = [
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Wings",
+		value: "320",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistWings.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Project Wings",
+		value: "320",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectWings.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Body Armour",
+		value: "250",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistBodyArmour.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Project Body Armour",
+		value: "250",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectBodyArmour.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Cloak",
+		value: "230",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistCloak.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Project Cloak",
+		value: "230",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectCloak.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Character Effect",
+		value: "210",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistCharacterEffect.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Project Character Effect",
+		value: "210",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectCharacterEffect.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Weapon Skin",
+		value: "180",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistWeaponSkin.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: " Project Weapon Skin",
+		value: "180",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectWeaponSkin.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Weapon Effect",
+		value: "180",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistWeaponEffect.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: " Project Weapon Effect",
+		value: "180",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectWeaponEffect.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Portal",
+		value: "150",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistPortal.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: " Project Portal",
+		value: "150",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectPortal.png",
+		rarity: "rare"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Labrador Pet",
+		value: "160",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistLabradorPet.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Thaumaturgy",
+		name: " Project Labrador Pet",
+		value: "160",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectLabradorPet.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Helmet",
+		value: "130",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistHelmet.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Project Helmet",
+		value: "130",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectHelmet.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Boots",
+		value: "80",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistBoots.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Project Boots",
+		value: "80",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectBoots.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Gloves",
+		value: "80",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistGloves.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Project Gloves",
+		value: "80",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectGloves.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Aura Effect",
+		value: "125",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistAuraEffect.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Project Aura Effect",
+		value: "125",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectAuraEffect.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Flame Dash Effect",
+		value: "110",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistFlameDash.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Project Raise Zombie Skin",
+		value: "110",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectRaiseZombieSkin.png",
+		rarity: "uncommon"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Hood",
+		value: "100",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistHood.png",
+		rarity: "common"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Project Hood",
+		value: "100",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectHood.png",
+		rarity: "common"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Footprints",
+		value: "80",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistFootprints.png",
+		rarity: "common"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Project Footprints",
+		value: "80",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectFootprints.png",
+		rarity: "common"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Laboratory Building Supplies",
+		value: "60",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/LaboratoryBuildingSupplies.png",
+		rarity: "common"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Twisted Building Supplies",
+		value: "60",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/TwistedBuildingSupplies.png",
+		rarity: "common"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Laboratory Benches",
+		value: "50",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/LaboratoryBenches.png",
+		rarity: "common"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Twisted Experiments",
+		value: "50",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/TwistedExperiments.png",
+		rarity: "common"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Laboratory Environment Decoration",
+		value: "40",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistEnvironmentHideoutDecoration.png",
+		rarity: "common"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Twisted Environment Decoration",
+		value: "40",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectEnvironmentHideoutDecoration.png",
+		rarity: "common"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Scientist Lab Rat Pet",
+		value: "30",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ScientistLabRatPet.png",
+		rarity: "common"
+	},
+	{
+		box: "Thaumaturgy",
+		name: "Dark Advisor Pet",
+		value: "30",
+		image: "https://web.poecdn.com/public/news/2020-03-15/MysteryBoxThaumaturgy/Items/ProjectDarkAdvisorPet.png",
+		rarity: "common"
+	},
 	{
 		box: "Polaris",
 		name: "White Wings",
