@@ -1,0 +1,79 @@
+body {
+	background-color: #424242;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.App {
+
+}
+
+/* LOADING SCREEN */
+
+.loading {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	justify-items: center;
+	margin-top: 20%;
+}
+
+.icon {
+	width: 150px;
+}
+
+/* LOGO ANIMATION */
+
+@keyframes icon-left-flash {
+	0% {
+		transform:  translate(0px,0px)  ;
+	}
+	50% {
+		transform:  translate(-8px,-20px)  ;
+	}
+	100% {
+		transform:  translate(0px,0px)  ;
+	}
+}
+
+@keyframes icon-middle-flash {
+	0% {
+		transform:  translate(0px,0px)  ;
+	}
+	50% {
+		transform:  translate(0px,-20px)  ;
+	}
+	100% {
+		transform:  translate(0px,0px)  ;
+	}
+}
+
+@keyframes icon-right-flash {
+	0% {
+		transform:  translate(0px,0px)  ;
+	}
+	50% {
+		transform:  translate(10px,-16px)  ;
+	}
+	100% {
+		transform:  translate(0px,0px)  ;
+	}
+}
+
+.icon #Layer_18 .st13:nth-child(1) {
+	animation: icon-left-flash linear 2s;
+	animation-iteration-count: infinite;
+}
+
+.icon #Layer_18 .st13:nth-child(2) {
+	animation: icon-middle-flash linear 2s;
+	animation-iteration-count: infinite;
+}
+
+.icon #Layer_18 .st13:nth-child(3) {
+	animation: icon-right-flash linear 2s;
+	animation-iteration-count: infinite;
+}
