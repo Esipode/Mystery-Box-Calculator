@@ -1,7 +1,14 @@
+html,body {
+	/* position: fixed; */
+	overflow: hidden;
+}
+
 body {
 	background-color: #424242;
+	color: white;
 	margin: 0;
 	padding: 0;
+	padding: env(safe-area-inset);
 	border: 0;
 }
 
@@ -14,14 +21,16 @@ body {
 .loading {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: repeat(2, 1fr);
+	grid-template-rows: 200px 1fr;
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
 	justify-items: center;
-	margin-top: 20%;
+	align-items: center;
+	margin-top: 15%;
 }
 
 .icon {
+	grid-area: 1 / 1 / 2 / 2;
 	width: 150px;
 }
 

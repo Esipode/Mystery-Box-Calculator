@@ -12,6 +12,8 @@ export default class Loading extends React.Component {
 		return (
 			<div className="loading">
 				<LogoSVG/>
+				<div className="loadText">
+				</div>
 			</div>
 		)
 	}
