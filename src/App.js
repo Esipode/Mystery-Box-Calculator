@@ -8,21 +8,37 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			curBox: ''
+			curBox: '',
+			activeMTX: []
 		};
 	}
 	onChangeMTX = (boxName) => {
 		this.setState({
-			curBox: boxName
+			curBox: boxName,
+			activeMTX: []
 		});
 	};
+	onModifyMTX = (mtx, add) => {
+		let arr = this.state.activeMTX;
+		if (add) {
+			arr = this.state.activeMTX.concat(mtx);
+			this.setState({
+				activeMTX: arr
+			})
+		}
+		else {
+			arr = arr.filter((item) => item !== mtx);
+			this.setState({
+				activeMTX: arr
+			})
+		}
+	}
 	render() {
 		return (
 			<div className="App">
-				<LogoSVG />
+				<Header />
 				<BoxSelection changeMTX={this.onChangeMTX} />
-				<MTXSelection curMTX={this.state.curBox} />
-				<Loading />
+				<MTXSelection curMTX={this.state.curBox} modifyMTX={this.onModifyMTX} />
 			</div>
 		);
 	}

@@ -6,16 +6,30 @@ export default class MTXSelection extends React.Component {
 	render() {
 		let mtxList = data.filter((item) => item.box === this.props.curMTX);
 		return (
-			<div className="mtxSelection">
-				{mtxList.map((mtxData, index) => (
-					<MTX
-						name={mtxList[index].name}
-						image={mtxList[index].image}
-						value={mtxList[index].value}
-						rarity={mtxList[index].rarity}
-						key={mtxList[index].name}
-					/>
-				))}
+			<div className="mtxSelection" style={{display: this.props.curMTX.length > 0 ? 'flex' : 'none'}}>
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+							<th>Rarity</th>
+							<th>Image</th>
+						</tr>
+					</thead>
+					<tbody>
+						{mtxList.map((mtxData, index) => (
+								<MTX
+									item={mtxList[index]}
+									name={mtxList[index].name}
+									image={mtxList[index].image}
+									value={mtxList[index].value}
+									rarity={mtxList[index].rarity}
+									key={mtxList[index].name}
+									modifyMTX={this.props.modifyMTX}
+								/>
+						))}
+					</tbody>
+				</table>
 			</div>
 		);
 	}
