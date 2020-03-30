@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import { ReactComponent as LogoSVG } from './images/chesticon.svg';
-import Loading from './loading';
+import Header from './header';
 import BoxSelection from './boxSelection';
 import MTXSelection from './mtxSelection';
 

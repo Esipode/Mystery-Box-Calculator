@@ -19,7 +19,7 @@ body {
 	align-items: center;
 }
 
-.icon {
+.header .icon {
 	margin-top: 30px;
 	width: 150px;
 }
