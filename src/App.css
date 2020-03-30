@@ -27,37 +27,37 @@ body {
 
 @keyframes icon-left-flash {
 	0% {
-		transform:  translate(0px,0px)  ;
+		transform: translate(0px, 0px);
 	}
 	50% {
-		transform:  translate(-8px,-20px)  ;
+		transform: translate(-8px, -20px);
 	}
 	100% {
-		transform:  translate(0px,0px)  ;
+		transform: translate(0px, 0px);
 	}
 }
 
 @keyframes icon-middle-flash {
 	0% {
-		transform:  translate(0px,0px)  ;
+		transform: translate(0px, 0px);
 	}
 	50% {
-		transform:  translate(0px,-20px)  ;
+		transform: translate(0px, -20px);
 	}
 	100% {
-		transform:  translate(0px,0px)  ;
+		transform: translate(0px, 0px);
 	}
 }
 
 @keyframes icon-right-flash {
 	0% {
-		transform:  translate(0px,0px)  ;
+		transform: translate(0px, 0px);
 	}
 	50% {
-		transform:  translate(10px,-16px)  ;
+		transform: translate(10px, -16px);
 	}
 	100% {
-		transform:  translate(0px,0px)  ;
+		transform: translate(0px, 0px);
 	}
 }
 
@@ -79,7 +79,6 @@ body {
 /* LOADING SCREEN */
 
 .loading {
-	
 }
 
 /* BOX SELECTION */
@@ -88,22 +87,35 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 10px;
-	justify-content: center;
+	justify-content: space-evenly;
 }
 
 .box {
-	font-family: sen, sans-serif;
+	font-family: dosis, sans-serif;
 	height: 150px;
 	width: 150px;
 	text-align: center;
-	border: 1px solid rgba(255,255,255,0.3);
+	background-color: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.05);
 	border-radius: 10px;
-	margin: 5px;
+	margin: 10px;
+	transition: all 0.25s linear;
+}
+
+.box:hover {
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.box.selected {
+	color: #5fff5f;
+	border-color: #5fff5f;
 }
 
 .box h3 {
 	font-size: 15px;
 	margin: 5px 5px 15px 5px;
+	letter-spacing: 1px;
 }
 
 .box img {
