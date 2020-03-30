@@ -2,6 +2,7 @@ html {
 	--rareColor: #ffff77;
 	--uncommonColor: #8888ff;
 	--commonColor: #c8c8c8;
+	--selectColor: #5fff5f;
 }
 
 body {
@@ -109,8 +110,8 @@ body {
 }
 
 .box.selected {
-	color: #5fff5f;
-	border-color: #5fff5f;
+	color: var(--selectColor);
+	border-color: var(--selectColor);
 }
 
 .box img {
@@ -154,6 +155,8 @@ body {
 
 .mtxSelection .mtx td {
 	padding: 5px;
+	border: 0px solid transparent;
+	transition: all 0.25s ease-in-out;
 }
 
 .mtxSelection .mtx .rare {
@@ -176,7 +179,15 @@ body {
 	height: 50px;
 }
 
-.mtx:hover {
+.mtxSelection .mtx:hover {
 	cursor: pointer;
-	opacity: 0.7;
+}
+
+.mtxSelection .mtx td:first-child {
+	padding: 5px 10px;
+}
+
+.mtxSelection .mtx.active td:first-child {
+	border-left: 5px solid var(--selectColor);
+	padding-left: 5px; 
 }
