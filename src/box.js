@@ -1,17 +1,13 @@
 import React from 'react';
 
 export default class BoxSelection extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
 	onChangeBox = () => {
 		if (this.props.activeBox !== this.props.name || this.props.activeBox === '') {
 			this.props.changeBox(this.props.name);
 		}
 	};
 	checkMatch = () => {
-		return this.props.activeBox === this.props.name ? ' selected' : ' unselected';
+		return this.props.activeBox === this.props.name ? 'selected' : 'unselected';
 	};
 	render() {
 		return (
