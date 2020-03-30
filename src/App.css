@@ -1,10 +1,6 @@
-html,body {
-	/* position: fixed; */
-	overflow: hidden;
-}
-
 body {
-	background-color: #424242;
+	user-select: none;
+	background-color: #2f2b27;
 	color: white;
 	margin: 0;
 	padding: 0;
@@ -13,12 +9,6 @@ body {
 }
 
 .App {
-
-}
-
-/* LOADING SCREEN */
-
-.loading {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 200px 1fr;
@@ -26,11 +16,10 @@ body {
 	grid-row-gap: 0px;
 	justify-items: center;
 	align-items: center;
-	margin-top: 15%;
 }
 
 .icon {
-	grid-area: 1 / 1 / 2 / 2;
+	margin-top: 30px;
 	width: 150px;
 }
 
@@ -85,4 +74,39 @@ body {
 .icon #Layer_18 .st13:nth-child(3) {
 	animation: icon-right-flash linear 2s;
 	animation-iteration-count: infinite;
+}
+
+/* LOADING SCREEN */
+
+.loading {
+	
+}
+
+/* BOX SELECTION */
+
+.boxSelection {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px;
+	justify-content: center;
+}
+
+.box {
+	font-family: sen, sans-serif;
+	height: 150px;
+	width: 150px;
+	text-align: center;
+	border: 1px solid rgba(255,255,255,0.3);
+	border-radius: 10px;
+	margin: 5px;
+}
+
+.box h3 {
+	font-size: 15px;
+	margin: 5px 5px 15px 5px;
+}
+
+.box img {
+	height: 100px;
+	margin-top: 10px;
 }

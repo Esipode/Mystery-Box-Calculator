@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as LogoSVG } from './images/chesticon.svg';
+
 
 export default class Loading extends React.Component {
 	constructor(props) {
@@ -11,9 +11,7 @@ export default class Loading extends React.Component {
 	render() {
 		return (
 			<div className="loading">
-				<LogoSVG/>
-				<div className="loadText">
-				</div>
+				
 			</div>
 		)
 	}
