@@ -150,6 +150,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	height: calc(100vh - 150px);
+	transition: transform 0.75s cubic-bezier(1, -0.26, 0, 1.41);
 }
 
 /* BOX SELECTION */
@@ -200,6 +201,15 @@ body {
 	justify-content: center;
 	min-width: 100vw;
 	align-content: center;
+	overflow-y: scroll;
+	box-sizing: content-box;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;  /* IE 10+ */
+}
+
+.mtxSelection::-webkit-scrollbar {
+	width: 0;
+	background: transparent;
 }
 
 .mtxSelection table {
