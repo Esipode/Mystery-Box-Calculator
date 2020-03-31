@@ -8,9 +8,15 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			curStep: 0,
 			curBox: '',
 			activeMTX: []
 		};
+	}
+	onChangeStep = (step) => {
+		this.setState({
+			curStep: step
+		})
 	}
 	onChangeMTX = (boxName) => {
 		this.setState({
@@ -36,9 +42,11 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<Header />
-				<BoxSelection changeMTX={this.onChangeMTX} />
-				<MTXSelection curMTX={this.state.curBox} modifyMTX={this.onModifyMTX} />
+				<Header curStep={this.state.curStep} changeStep={this.onChangeStep} />
+				<div className="mainWrapper">
+					<BoxSelection changeMTX={this.onChangeMTX} />
+					<MTXSelection curMTX={this.state.curBox} modifyMTX={this.onModifyMTX} />
+				</div>
 			</div>
 		);
 	}

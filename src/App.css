@@ -17,18 +17,80 @@ body {
 }
 
 .App {
+	overflow: hidden;
+	height: 100vh;
+}
+
+.header {
 	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 200px 1fr;
+	grid-template-columns: calc(50% - 50px) 100px calc(50% - 50px);
+	grid-template-rows: 150px;
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
+	height: 150px;
 	justify-items: center;
 	align-items: center;
 }
 
 .header .icon {
-	margin-top: 30px;
-	width: 150px;
+	grid-area: 1 / 2 / 2 / 3;
+	height: 100px;
+}
+
+.header h1 {
+	grid-area: 1 / 2 / 2 / 3;
+	font-size: 25px;
+	text-align: center;
+	text-shadow: 1px 1px 3px rgba(0,0,0,1);
+	white-space: nowrap;
+	padding-top: 65px;
+}
+
+.header h2 {
+	grid-area: 1 / 2 / 2 / 3;
+	font-size: 15px;
+	text-align: center;
+	word-spacing: 2px;
+	white-space: nowrap;
+	padding-top: 115px;
+}
+
+.header h2 span {
+	opacity: 0.7;
+	margin-left: 5px;
+}
+
+.header i {
+	font-size: 20px;
+	padding: 3px 10px 0px 10px;
+}
+
+.backStep, .forwardStep {
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+}
+
+.backStep h3, .forwardStep h3 {
+	font-size: 15px;
+	margin: 0;
+}
+
+.backStep span, .forwardStep span {
+	font-size: 12px;
+	opacity: 0.7;
+	margin: 0;
+}
+
+.header .backStep {
+	grid-area: 1 / 1 / 2 / 2;
+	justify-self: end;
+	text-align: end;
+}
+
+.header .forwardStep {
+	grid-area: 1 / 3 / 2 / 4;
+	justify-self: start;
 }
 
 /* LOGO ANIMATION */
@@ -84,13 +146,21 @@ body {
 	animation-iteration-count: infinite;
 }
 
+.mainWrapper {
+	display: flex;
+	flex-direction: row;
+	height: calc(100vh - 150px);
+}
+
 /* BOX SELECTION */
 
 .boxSelection {
 	display: flex;
 	flex-wrap: wrap;
-	margin: 10px;
-	justify-content: space-evenly;
+	margin: 0;
+	justify-content: center;
+	min-width: 100vw;
+	align-content: center;
 }
 
 .box {
@@ -126,8 +196,10 @@ body {
 
 .mtxSelection {
 	display: flex;
-	flex-wrap: wrap;
-	margin: 10px;
+	margin: 0;
+	justify-content: center;
+	min-width: 100vw;
+	align-content: center;
 }
 
 .mtxSelection table {
