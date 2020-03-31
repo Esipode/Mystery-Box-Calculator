@@ -21,7 +21,8 @@ export default class App extends React.Component {
 	onChangeMTX = (boxName) => {
 		this.setState({
 			curBox: boxName,
-			activeMTX: []
+			activeMTX: [],
+			curStep: 1
 		});
 	};
 	onModifyMTX = (mtx, add) => {
@@ -42,8 +43,8 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<Header curStep={this.state.curStep} changeStep={this.onChangeStep} />
-				<div className="mainWrapper">
+				<Header curStep={this.state.curStep} changeStep={this.onChangeStep} boxSelected={this.state.curBox} activeMTX={this.state.activeMTX} />
+				<div className="mainWrapper" style={{transform: 'translateX('+(this.state.curStep * -100)+'vw)'}}>
 					<BoxSelection changeMTX={this.onChangeMTX} />
 					<MTXSelection curMTX={this.state.curBox} modifyMTX={this.onModifyMTX} />
 				</div>
