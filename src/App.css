@@ -161,7 +161,7 @@ body {
 	margin: 0;
 	justify-content: center;
 	min-width: 100vw;
-	align-content: center;
+	align-content: baseline;
 }
 
 .box {
