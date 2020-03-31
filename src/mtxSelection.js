@@ -6,7 +6,7 @@ export default class MTXSelection extends React.Component {
 	render() {
 		let mtxList = data.filter((item) => item.box === this.props.curMTX);
 		return (
-			<div className="mtxSelection" style={{display: this.props.curMTX.length > 0 ? 'flex' : 'none'}}>
+			<div className="mtxSelection">
 				<table>
 					<thead>
 						<tr>
