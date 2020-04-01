@@ -14,7 +14,7 @@ export default class BoxSelection extends React.Component {
 		this.setState({
 			activeBox: newBox
 		});
-		this.props.changeMTX(newBox);
+		this.props.changeMTXBox(newBox);
 	};
 	render() {
 		return (

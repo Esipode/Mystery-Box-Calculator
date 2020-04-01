@@ -19,14 +19,14 @@ export default class App extends React.Component {
 			curStep: step
 		})
 	}
-	onChangeMTX = (boxName) => {
+	onChangeMTXBox = (boxName) => {
 		this.setState({
 			curBox: boxName,
 			activeMTX: [],
 			curStep: 1
 		});
 	};
-	onModifyMTX = (mtx, add) => {
+	onModifyMTXItem = (mtx, add) => {
 		let arr = this.state.activeMTX;
 		if (add) {
 			arr = this.state.activeMTX.concat(mtx);
@@ -46,8 +46,8 @@ export default class App extends React.Component {
 			<div className="App">
 				<Header curStep={this.state.curStep} changeStep={this.onChangeStep} boxSelected={this.state.curBox} activeMTX={this.state.activeMTX} />
 				<div className="mainWrapper" style={{transform: 'translateX('+(this.state.curStep * -100)+'vw)'}}>
-					<BoxSelection changeMTX={this.onChangeMTX} />
-					<MTXSelection curMTX={this.state.curBox} modifyMTX={this.onModifyMTX} />
+					<BoxSelection changeMTXBox={this.onChangeMTXBox} />
+					<MTXSelection curMTX={this.state.curBox} modifyMTXItem={this.onModifyMTXItem} />
 					<BoxSimulator/>
 				</div>
 			</div>
