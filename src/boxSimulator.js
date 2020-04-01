@@ -8,6 +8,14 @@ export default class BoxSimulator extends React.Component {
 			percentLoaded: 0
 		};
 	}
+	onStartSimulating = () => {
+		if (!this.state.running && (this.state.boxVal > 0 && this.state.boxVal < 1000)) {
+			this.setState({running: true})
+		}
+		else {
+			this.setState({running: false})
+		}
+	}
 	render() {
 		return (
 			<div className="boxSimulator">
@@ -25,7 +33,7 @@ export default class BoxSimulator extends React.Component {
 					</h4>
 					<h4>Points: {this.state.boxVal * 30}</h4>
 					<button 
-						onClick={() => {this.setState({running: this.state.running ? false : true})}} 
+						onClick={this.onStartSimulating} 
 						style={{borderColor: this.state.running ? '#ff5f5f' : 'var(--selectColor)'}}><i className={this.state.running ? 'fas fa-stop' : 'fas fa-play' }/>
 					</button>
 				</div>
