@@ -150,7 +150,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	height: calc(100vh - 150px);
-	transition: transform 0.75s cubic-bezier(1, -0.26, 0, 1.41);
+	transition: transform 0.75s ease-in-out;
 }
 
 /* BOX SELECTION */
@@ -200,6 +200,7 @@ body {
 	margin: 0;
 	justify-content: center;
 	min-width: 100vw;
+	padding: 10px 0 40px 0;
 	align-content: center;
 	overflow-y: scroll;
 	box-sizing: content-box;
@@ -218,7 +219,6 @@ body {
 }
 
 .mtxSelection thead {
-	height: 50px;
 	background-color: rgba(0,0,0,0.5);
 }
 
