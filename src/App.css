@@ -318,8 +318,21 @@ body {
 	border-bottom: 1px solid white;
 	outline: none;
 	caret-color: white;
+	transition: all 0.5s linear;
 }
 
 .boxSimulator input:focus {
 	border-bottom: 1px solid var(--selectColor);
+}
+
+.boxSimulator .searchContainer button {
+	cursor: pointer;
+	height: 100%;
+	width: 58px;
+	font-family: dosis;
+	font-weight: 600;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: var(--selectColor);
 }
