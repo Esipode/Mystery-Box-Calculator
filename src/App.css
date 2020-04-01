@@ -226,6 +226,14 @@ body {
 	padding: 10px;
 }
 
+.mtxSelection thead th:first-child {
+	border-radius: 10px 0 0 0;
+}
+
+.mtxSelection thead th:last-child {
+	border-radius: 0 10px 0 0;
+}
+
 .mtxSelection .mtx {
 	height: 60px;
 	background-color: rgba(255,255,255,0.05);
@@ -233,6 +241,14 @@ body {
 
 .mtxSelection .mtx:nth-child(odd) {
 	background-color: rgba(255,255,255,0.15);
+}
+
+.mtxSelection .mtx:last-child td:first-child {
+	border-radius: 0 0 0 10px;
+}
+
+.mtxSelection .mtx:last-child td:last-child {
+	border-radius: 0 0 10px 0;
 }
 
 .mtxSelection .mtx td {
@@ -282,6 +298,13 @@ body {
 	align-content: center;
 	overflow-y: scroll;
 	box-sizing: content-box;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;  /* IE 10+ */
+}
+
+.boxSimulator::-webkit-scrollbar {
+	width: 0;
+	background: transparent;
 }
 
 .boxSimulator .searchContainer {
@@ -290,19 +313,21 @@ body {
 	justify-content: center;
 	margin-top: 12px;
 	height: 40px;
-	width: 70%;
+	width: 85%;
 	margin: 12px 5%;
+	border-radius: 10px;
 	background-color: rgba(0,0,0,0.5)
 }
 
 .boxSimulator h4 {
 	display: flex;
-	width: 50%;
+	width: 40%;
 	justify-content: center;
 }
 
 .boxSimulator h4:first-child {
 	border-right: 1px solid white;
+	margin-left: 5px;
 }
 
 .boxSimulator input {
@@ -327,12 +352,18 @@ body {
 
 .boxSimulator .searchContainer button {
 	cursor: pointer;
-	height: 100%;
-	width: 58px;
+	color: white;
+	height: 40px;
+	width: 20%;
 	font-family: dosis;
 	font-weight: 600;
 	font-size: 18px;
 	border: none;
+	border-top: 2px solid var(--selectColor);
+	border-bottom: 2px solid var(--selectColor);
+	border-right: 2px solid var(--selectColor);
+	border-radius: 0 10px 10px 0;
 	outline: none;
-	background-color: var(--selectColor);
+	background-color: transparent;
+	transition: all 0.25s linear;
 }
