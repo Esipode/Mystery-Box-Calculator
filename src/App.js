@@ -3,6 +3,7 @@ import './App.css';
 import Header from './header';
 import BoxSelection from './boxSelection';
 import MTXSelection from './mtxSelection';
+import BoxSimulator from './boxSimulator';
 
 export default class App extends React.Component {
 	constructor(props) {
@@ -47,6 +48,7 @@ export default class App extends React.Component {
 				<div className="mainWrapper" style={{transform: 'translateX('+(this.state.curStep * -100)+'vw)'}}>
 					<BoxSelection changeMTX={this.onChangeMTX} />
 					<MTXSelection curMTX={this.state.curBox} modifyMTX={this.onModifyMTX} />
+					<BoxSimulator/>
 				</div>
 			</div>
 		);

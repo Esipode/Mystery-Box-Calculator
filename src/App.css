@@ -273,3 +273,53 @@ body {
 	border-left: 5px solid var(--selectColor);
 	padding-left: 5px; 
 }
+
+.boxSimulator {
+	display: flex;
+	margin: 0;
+	justify-content: center;
+	min-width: 100vw;
+	align-content: center;
+	overflow-y: scroll;
+	box-sizing: content-box;
+}
+
+.boxSimulator .searchContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 12px;
+	height: 40px;
+	width: 70%;
+	margin: 12px 5%;
+	background-color: rgba(0,0,0,0.5)
+}
+
+.boxSimulator h4 {
+	display: flex;
+	width: 50%;
+	justify-content: center;
+}
+
+.boxSimulator h4:first-child {
+	border-right: 1px solid white;
+}
+
+.boxSimulator input {
+	font-family: dosis;
+	color: rgba(255,255,255,0.7);
+	font-size: 13px;
+	width: 60px;
+	text-align: center;
+	margin: 0 5px;
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid white;
+	outline: none;
+	caret-color: white;
+}
+
+.boxSimulator input:focus {
+	border-bottom: 1px solid var(--selectColor);
+}
