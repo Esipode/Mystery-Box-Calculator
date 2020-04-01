@@ -4,7 +4,8 @@ export default class BoxSimulator extends React.Component {
 		super(props);
 		this.state = {
 			boxVal: '',
-			running: false
+			running: false,
+			percentLoaded: 0
 		};
 	}
 	render() {
@@ -27,6 +28,10 @@ export default class BoxSimulator extends React.Component {
 						onClick={() => {this.setState({running: this.state.running ? false : true})}} 
 						style={{borderColor: this.state.running ? '#ff5f5f' : 'var(--selectColor)'}}><i className={this.state.running ? 'fas fa-stop' : 'fas fa-play' }/>
 					</button>
+				</div>
+				<div className="loadingBar" style={{display: this.state.running ? 'flex' : 'none'}}>
+					<div className="loadedPercent" style={{width: this.state.percentLoaded + '%'}}/>
+					<h4>{this.state.percentLoaded}%</h4>
 				</div>
 				{/* <table>
 					<thead>
