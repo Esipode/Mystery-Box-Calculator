@@ -52,11 +52,23 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<Header curStep={this.state.curStep} changeStep={this.onChangeStep} boxSelected={this.state.curBox} activeMTX={this.state.activeMTX} isSimulating={this.state.simulatorRunning} />
+				<Header 
+					curStep={this.state.curStep}
+					changeStep={this.onChangeStep}
+					boxSelected={this.state.curBox}
+					activeMTX={this.state.activeMTX}
+					isSimulating={this.state.simulatorRunning}
+				/>
 				<div className="mainWrapper" style={{transform: 'translateX('+(this.state.curStep * -100)+'vw)'}}>
 					<BoxSelection changeMTXBox={this.onChangeMTXBox} />
 					<MTXSelection curMTX={this.state.curBox} modifyMTXItem={this.onModifyMTXItem} />
-					<BoxSimulator simToggle={this.onToggleSimulator} isRunning={this.state.simulatorRunning} curMTXList={this.state.activeMTX} fullMTXList={this.state.fullMTXList} />
+					<BoxSimulator
+						simToggle={this.onToggleSimulator}
+						isRunning={this.state.simulatorRunning}
+						curMTXList={this.state.activeMTX}
+						fullMTXList={this.state.fullMTXList}
+						curStep={this.state.curStep}
+					/>
 				</div>
 			</div>
 		);

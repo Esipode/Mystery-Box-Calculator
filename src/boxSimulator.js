@@ -27,13 +27,12 @@ export default class BoxSimulator extends React.Component {
 						disabled={this.props.isRunning} 
 						onChange={(e) => this.setState({boxVal: e.target.value.replace(/\D/,'')})} 
 						value={this.state.boxVal} 
-						placeholder="# of boxes" 
+						placeholder="# of boxes"
 					/>
 					</h4>
 					<h4>Points: {this.state.boxVal * 30}</h4>
-					<button 
-						onClick={this.onStartSimulating} 
-						style={{borderColor: this.props.isRunning ? '#ff5f5f' : 'var(--selectColor)'}}><i className={this.props.isRunning ? 'fas fa-stop' : 'fas fa-play' }/>
+					<button onClick={this.onStartSimulating} style={{borderColor: this.props.isRunning ? '#ff5f5f' : 'var(--selectColor)'}}>
+						<i className={this.props.isRunning ? 'fas fa-stop' : 'fas fa-play' }/>
 					</button>
 				</div>
 				<div className="loadingBar" style={{display: this.props.isRunning ? 'flex' : 'none'}}>
