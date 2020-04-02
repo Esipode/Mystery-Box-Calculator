@@ -8,11 +8,13 @@ export default class BoxSimulator extends React.Component {
 		};
 	}
 	onStartSimulating = () => {
-		if (!this.props.isRunning && (this.state.boxVal > 0 && this.state.boxVal < 1000)) {
-			this.props.simToggle();
-		}
-		else {
-			this.props.simToggle();
+		if (this.props.curStep === 2) {
+			if (!this.props.isRunning && (this.state.boxVal > 0 && this.state.boxVal < 1000)) {
+				this.props.simToggle();
+			}
+			else if (this.state.boxVal > 0 && this.state.boxVal < 1000) {
+				this.props.simToggle();
+			}
 		}
 	}
 	render() {
@@ -34,10 +36,13 @@ export default class BoxSimulator extends React.Component {
 					<button onClick={this.onStartSimulating} style={{borderColor: this.props.isRunning ? '#ff5f5f' : 'var(--selectColor)'}}>
 						<i className={this.props.isRunning ? 'fas fa-stop' : 'fas fa-play' }/>
 					</button>
-				</div>
-				<div className="loadingBar" style={{display: this.props.isRunning ? 'flex' : 'none'}}>
-					<div className="loadedPercent" style={{width: this.state.percentLoaded + '%'}}/>
-					<h4>{this.state.percentLoaded}%</h4>
+					<div
+						className="progressBar"
+						style={{
+							width: `${(this.state.percentLoaded / 100) * 69}%`,
+							opacity: this.state.percentLoaded >= 1 && this.state.percentLoaded < 100 ? 1 : 0
+						}}
+					/>
 				</div>
 				{/* <table>
 					<thead>
