@@ -4,16 +4,15 @@ export default class BoxSimulator extends React.Component {
 		super(props);
 		this.state = {
 			boxVal: '',
-			running: false,
 			percentLoaded: 0
 		};
 	}
 	onStartSimulating = () => {
-		if (!this.state.running && (this.state.boxVal > 0 && this.state.boxVal < 1000)) {
-			this.setState({running: true})
+		if (!this.props.isRunning && (this.state.boxVal > 0 && this.state.boxVal < 1000)) {
+			this.props.simToggle();
 		}
 		else {
-			this.setState({running: false})
+			this.props.simToggle();
 		}
 	}
 	render() {
@@ -25,7 +24,7 @@ export default class BoxSimulator extends React.Component {
 						type="text" 
 						pattern={"[0-9]*"} 
 						maxLength="3" 
-						disabled={this.state.running} 
+						disabled={this.props.isRunning} 
 						onChange={(e) => this.setState({boxVal: e.target.value.replace(/\D/,'')})} 
 						value={this.state.boxVal} 
 						placeholder="# of boxes" 
@@ -34,10 +33,10 @@ export default class BoxSimulator extends React.Component {
 					<h4>Points: {this.state.boxVal * 30}</h4>
 					<button 
 						onClick={this.onStartSimulating} 
-						style={{borderColor: this.state.running ? '#ff5f5f' : 'var(--selectColor)'}}><i className={this.state.running ? 'fas fa-stop' : 'fas fa-play' }/>
+						style={{borderColor: this.props.isRunning ? '#ff5f5f' : 'var(--selectColor)'}}><i className={this.props.isRunning ? 'fas fa-stop' : 'fas fa-play' }/>
 					</button>
 				</div>
-				<div className="loadingBar" style={{display: this.state.running ? 'flex' : 'none'}}>
+				<div className="loadingBar" style={{display: this.props.isRunning ? 'flex' : 'none'}}>
 					<div className="loadedPercent" style={{width: this.state.percentLoaded + '%'}}/>
 					<h4>{this.state.percentLoaded}%</h4>
 				</div>

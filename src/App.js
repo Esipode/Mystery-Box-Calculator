@@ -11,7 +11,9 @@ export default class App extends React.Component {
 		this.state = {
 			curStep: 0,
 			curBox: '',
-			activeMTX: []
+			fullMTXList: [],
+			activeMTX: [],
+			simulatorRunning: false
 		};
 	}
 	onChangeStep = (step) => {
@@ -19,11 +21,12 @@ export default class App extends React.Component {
 			curStep: step
 		})
 	}
-	onChangeMTXBox = (boxName) => {
+	onChangeMTXBox = (boxName, mtxList) => {
 		this.setState({
+			curStep: 1,
 			curBox: boxName,
-			activeMTX: [],
-			curStep: 1
+			fullMTXList: mtxList,
+			activeMTX: []		
 		});
 	};
 	onModifyMTXItem = (mtx, add) => {
@@ -41,14 +44,19 @@ export default class App extends React.Component {
 			})
 		}
 	}
+	onToggleSimulator = () => {
+		this.setState(prevState => ({
+			simulatorRunning: !prevState.simulatorRunning
+		}))
+	}
 	render() {
 		return (
 			<div className="App">
-				<Header curStep={this.state.curStep} changeStep={this.onChangeStep} boxSelected={this.state.curBox} activeMTX={this.state.activeMTX} />
+				<Header curStep={this.state.curStep} changeStep={this.onChangeStep} boxSelected={this.state.curBox} activeMTX={this.state.activeMTX} isSimulating={this.state.simulatorRunning} />
 				<div className="mainWrapper" style={{transform: 'translateX('+(this.state.curStep * -100)+'vw)'}}>
 					<BoxSelection changeMTXBox={this.onChangeMTXBox} />
 					<MTXSelection curMTX={this.state.curBox} modifyMTXItem={this.onModifyMTXItem} />
-					<BoxSimulator/>
+					<BoxSimulator simToggle={this.onToggleSimulator} isRunning={this.state.simulatorRunning} curMTXList={this.state.activeMTX} fullMTXList={this.state.fullMTXList} />
 				</div>
 			</div>
 		);

@@ -3,8 +3,11 @@ import { mtxData as data } from './data.json';
 import MTX from './mtx';
 
 export default class MTXSelection extends React.Component {
+	getMTXList = () => {
+		return data.filter((item) => item.box === this.props.curMTX);
+	}
 	render() {
-		let mtxList = data.filter((item) => item.box === this.props.curMTX);
+		let mtxList = this.getMTXList();
 		return (
 			<div className="mtxSelection">
 				<table>
