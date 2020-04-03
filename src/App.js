@@ -32,6 +32,7 @@ export default class App extends React.Component {
 	onModifyMTXItem = (mtx, add) => {
 		let arr = this.state.activeMTX;
 		if (add) {
+			mtx.selected = true;
 			arr = this.state.activeMTX.concat(mtx);
 			this.setState({
 				activeMTX: arr
