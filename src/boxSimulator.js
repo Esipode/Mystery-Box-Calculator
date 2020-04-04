@@ -1,20 +1,104 @@
 import React from 'react';
+import SimResults from './simResults';
+
 export default class BoxSimulator extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			boxVal: '',
-			percentLoaded: 0
+			curProgress: 0,
+			percentLoaded: 0,
+			completedList: []
 		};
 	}
 	onStartSimulating = () => {
 		if (this.props.curStep === 2) {
 			if (!this.props.isRunning && (this.state.boxVal > 0 && this.state.boxVal < 1000)) {
 				this.props.simToggle();
+				this.simRun();
 			}
 			else if (this.state.boxVal > 0 && this.state.boxVal < 1000) {
 				this.props.simToggle();
 			}
+		}
+	}
+	//Forces waiting between each time an item is randomly selected
+	sleep = (milliseconds) => {
+		return new Promise(resolve => setTimeout(resolve, milliseconds))
+	}
+	simRun = async () => {
+		//Forces waiting between each time an item is randomly selected
+		let selectedItems = [];
+		let fullList = JSON.parse(JSON.stringify(this.props.fullMTXList));
+		//Execute for as long as the number of items randomly selected is less than the number of boxes to be opened
+		for (let i = 1; i < this.state.boxVal;) {
+			await this.sleep(10);
+			if (this.props.isRunning) {
+				//Variable to store selected rarity of items to select from
+				let curRarity;
+				//Random number to decided rarity
+				let chanceRoll = Math.floor(Math.random()*(100)+1);
+				//Weighted categories for deciding rarity
+				switch (true) {
+					case (chanceRoll <= 20):
+						curRarity = 'rare';
+						break;
+					case (chanceRoll <= 55 && chanceRoll > 20):
+						curRarity = 'uncommon';
+						break;
+					case (chanceRoll > 55):
+						curRarity = 'common'
+						break;
+					default:
+						curRarity = ''
+						break;
+				}
+				//The index of the item to be selected, taken from the full list
+				let curItemIndex = (Math.floor(Math.random()*(fullList.length)));
+				//Check to see if the randomly selected rarity matched the rarity of the random item
+				if (curRarity === fullList[curItemIndex].rarity) {
+					//Create variable storing the currently selected item taken from the index of the full list
+					let curItem = fullList[curItemIndex];
+					if (selectedItems.length === 0) {
+						selectedItems = selectedItems.concat(curItem);
+					}
+					else {
+						for (let j = 0; j <= selectedItems.length; j++) {
+							if (j < selectedItems.length && curItem.name === selectedItems[j].name) {
+								selectedItems[j].count++;
+								i++;
+								break;
+							}
+							else if (j === selectedItems.length) {
+								selectedItems = selectedItems.concat(curItem);
+								i++;
+								break;
+							}
+						}
+						this.setState({
+							curProgress: i,
+							percentLoaded: ((i / this.state.boxVal) * 100)
+						});
+					}
+				}
+			}
+			else {
+				break;
+			}
+		}
+		//Checks total number of items rolled in box
+		let sum = 0;
+		for (let k = 0; k < selectedItems.length; k++) {
+			sum += selectedItems[k].count;
+		}
+		await this.sleep(100);
+		this.setState({
+			curProgress: 0,
+			percentLoaded: 0,
+			completedList: selectedItems
+		})
+		if (this.props.isRunning) {
+			this.onStartSimulating();
 		}
 	}
 	render() {
@@ -39,12 +123,13 @@ export default class BoxSimulator extends React.Component {
 					<div
 						className="progressBar"
 						style={{
-							width: `${(this.state.percentLoaded / 100) * 69}%`,
+							width: `${(this.state.percentLoaded / 100) * 68}%`,
 							opacity: this.state.percentLoaded >= 1 && this.state.percentLoaded < 100 ? 1 : 0
 						}}
 					/>
 				</div>
-				{/* <table>
+				<p className="progressCount" style={{display: this.props.isRunning && this.state.curProgress !== this.state.boxVal ? 'block' : 'none'}}>{this.state.curProgress}/{this.state.boxVal}</p>
+				<table style={{display: this.state.finishLoading ? 'block' : 'none'}}>
 					<thead>
 						<tr>
 							<th>Name</th>
@@ -54,8 +139,8 @@ export default class BoxSimulator extends React.Component {
 						</tr>
 					</thead>
 					<tbody>
-						{mtxList.map((mtxData, index) => (
-								<MTX
+						{/* {mtxList.map((mtxData, index) => (
+								<SimResults
 									item={mtxList[index]}
 									name={mtxList[index].name}
 									image={mtxList[index].image}
@@ -64,9 +149,9 @@ export default class BoxSimulator extends React.Component {
 									key={mtxList[index].name}
 									modifyMTX={this.props.modifyMTX}
 								/>
-						))}
+						))} */}
 					</tbody>
-				</table> */}
+				</table>
 			</div>
 		);
 	}
