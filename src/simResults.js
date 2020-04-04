@@ -9,7 +9,7 @@ export default class SimResults extends React.Component {
 	}
 	render() {
 		return (
-			<tr className="simResults">
+			<tr className={`simResults ${this.props.selected ? 'wanted' : 'unwanted'}`}>
 				<td>{this.props.name}</td>
 				<td>{this.props.value}</td>
 				<td className={this.props.rarity}>{this.props.rarity}</td>

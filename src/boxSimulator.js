@@ -63,7 +63,16 @@ export default class BoxSimulator extends React.Component {
 				//Check to see if the randomly selected rarity matched the rarity of the random item
 				if (curRarity === fullList[curItemIndex].rarity) {
 					//Create variable storing the currently selected item taken from the index of the full list
-					let curItem = fullList[curItemIndex];
+					let curItem = JSON.parse(JSON.stringify(fullList[curItemIndex]));
+					let itemCheck = this.props.curMTXList.filter((item) => item.name === curItem.name);
+					if (itemCheck.length) {
+						if (itemCheck[0].name === curItem.name) {
+							curItem.selected = true;
+						}
+					}
+					else {
+						curItem.selected = false;
+					}
 					if (selectedItems.length === 0) {
 						selectedItems = selectedItems.concat(curItem);
 					}
@@ -96,6 +105,35 @@ export default class BoxSimulator extends React.Component {
 		// for (let k = 0; k < selectedItems.length; k++) {
 		// 	sum += selectedItems[k].count;
 		// }
+		selectedItems.sort((a, b) => {
+			//First sort by if the item is desired or not
+			if (a.selected !== b.selected) {
+				return a.selected ? -1 : 1;
+			}
+			//Then sort by item rarity
+			if (a.rarity !== b.rarity) {
+				if (a.rarity === 'rare' && (b.rarity === 'uncommon' || b.rarity === 'common')) {
+					return -1;
+				}
+				else if (a.rarity === 'uncommon' && b.rarity === 'rare') {
+					return 1;
+				}
+				else if (a.rarity === 'uncommon' && b.rarity === 'common') {
+					return -1;
+				}
+				else if (a.rarity === 'common' && (b.rarity === 'rare' || b.rarity === 'uncommon')) {
+					return 1;
+				}
+			}
+			//Then sort by point value
+			if (a.value !== b.value) {
+				return b.value - a.value;
+			}
+			//Then sort by name
+			if (a.name !== b.name) {
+				return a - b;
+			}
+		})
 		await this.sleep(100);
 		this.setState({
 			curProgress: 0,
@@ -135,7 +173,7 @@ export default class BoxSimulator extends React.Component {
 					/>
 				</div>
 				<p className="progressCount" style={{display: this.props.isRunning && this.state.curProgress !== this.state.boxVal ? 'block' : 'none'}}>{this.state.curProgress}/{this.state.boxVal}</p>
-				<table style={{display: this.state.finishLoading ? 'block' : 'none'}}>
+				<table style={{display: this.state.completedList.length && !this.props.isRunning ? 'block' : 'none'}}>
 					<thead>
 						<tr>
 							<th>Name</th>
@@ -153,6 +191,7 @@ export default class BoxSimulator extends React.Component {
 								image={this.state.completedList[index].image}
 								value={this.state.completedList[index].value}
 								rarity={this.state.completedList[index].rarity}
+								selected={this.state.completedList[index].selected}
 								count={this.state.completedList[index].count}
 								key={this.state.completedList[index].name}
 							/>

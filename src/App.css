@@ -201,7 +201,6 @@ body {
 	justify-content: center;
 	min-width: 100vw;
 	padding: 10px 0 40px 0;
-	align-content: center;
 	overflow-y: scroll;
 	box-sizing: content-box;
 	scrollbar-width: none; /* Firefox */
@@ -292,12 +291,12 @@ body {
 
 .boxSimulator {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	margin: 0;
+	justify-content: center;
 	min-width: 100vw;
-	align-items: center;
-	overflow-y: scroll;
-	box-sizing: content-box;
+	height: calc(100vh - 190px);
+	padding-bottom: 40px;
 	scrollbar-width: none; /* Firefox */
 	-ms-overflow-style: none;  /* IE 10+ */
 }
@@ -311,7 +310,6 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 12px;
 	height: 40px;
 	width: 85%;
 	margin: 12px 5%;
@@ -322,7 +320,10 @@ body {
 .boxSimulator .searchContainer h4 {
 	display: flex;
 	width: 40%;
+	height: 40px;
 	justify-content: center;
+	margin: 0;
+	align-items: center;
 }
 
 .boxSimulator .searchContainer h4:first-child {
@@ -384,11 +385,18 @@ body {
 .boxSimulator .progressCount {
 	margin: 0;
 	opacity: 0.5;
+	position: absolute;
+    top: 65px;
 }
 
 .boxSimulator table {
 	width: 375px;
-	text-align: center;
+	height: calc(100vh - 240px);
+	margin-top: 30px;
+	overflow-y: scroll;
+	box-sizing: content-box;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;  /* IE 10+ */
 }
 
 .boxSimulator thead {
@@ -409,11 +417,15 @@ body {
 
 .boxSimulator .simResults {
 	height: 60px;
-	background-color: rgba(255,255,255,0.05);
+	text-align: center;
 }
 
-.boxSimulator .simResults:nth-child(odd) {
-	background-color: rgba(255,255,255,0.15);
+.boxSimulator .simResults.wanted {
+	background-color: rgba(16, 255, 0, 0.1);
+}
+
+.boxSimulator .simResults.unwanted {
+	background-color: rgba(255, 0, 0, 0.1);
 }
 
 .boxSimulator .simResults:last-child td:first-child {
