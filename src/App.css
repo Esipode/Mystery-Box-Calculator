@@ -406,3 +406,50 @@ body {
 .boxSimulator thead th:last-child {
 	border-radius: 0 10px 0 0;
 }
+
+.boxSimulator .simResults {
+	height: 60px;
+	background-color: rgba(255,255,255,0.05);
+}
+
+.boxSimulator .simResults:nth-child(odd) {
+	background-color: rgba(255,255,255,0.15);
+}
+
+.boxSimulator .simResults:last-child td:first-child {
+	border-radius: 0 0 0 10px;
+}
+
+.boxSimulator .simResults:last-child td:last-child {
+	border-radius: 0 0 10px 0;
+}
+
+.boxSimulator .simResults td {
+	padding: 5px;
+	border: 0px solid transparent;
+	transition: all 0.25s ease-in-out;
+}
+
+.boxSimulator .simResults .rare {
+	color: var(--rareColor);
+}
+
+.boxSimulator .simResults .uncommon {
+	color: var(--uncommonColor);
+}
+
+.boxSimulator .simResults .common {
+	color: var(--commonColor);
+}
+
+.boxSimulator .simResults td:nth-child(4) {
+	background-color: rgba(0,0,0,0.5);
+}
+
+.boxSimulator .simResults td:nth-child(4) img {
+	height: 50px;
+}
+
+.boxSimulator .simResults td:first-child {
+	padding: 5px 10px;
+}
