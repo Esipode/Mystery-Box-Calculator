@@ -22,6 +22,11 @@ export default class BoxSimulator extends React.Component {
 			}
 		}
 	}
+	//Prevent pasting into input
+	stopPaste = (e) => {
+		e.preventDefault();
+		return false;
+	}
 	//Forces waiting between each time an item is randomly selected
 	sleep = (milliseconds) => {
 		return new Promise(resolve => setTimeout(resolve, milliseconds))
@@ -87,10 +92,10 @@ export default class BoxSimulator extends React.Component {
 			}
 		}
 		//Checks total number of items rolled in box
-		let sum = 0;
-		for (let k = 0; k < selectedItems.length; k++) {
-			sum += selectedItems[k].count;
-		}
+		// let sum = 0;
+		// for (let k = 0; k < selectedItems.length; k++) {
+		// 	sum += selectedItems[k].count;
+		// }
 		await this.sleep(100);
 		this.setState({
 			curProgress: 0,
@@ -114,6 +119,7 @@ export default class BoxSimulator extends React.Component {
 						onChange={(e) => this.setState({boxVal: e.target.value.replace(/\D/,'')})} 
 						value={this.state.boxVal} 
 						placeholder="# of boxes"
+						onPaste={this.stopPaste}
 					/>
 					</h4>
 					<h4>Points: {this.state.boxVal * 30}</h4>
@@ -136,20 +142,21 @@ export default class BoxSimulator extends React.Component {
 							<th>Value</th>
 							<th>Rarity</th>
 							<th>Image</th>
+							<th>Count</th>
 						</tr>
 					</thead>
 					<tbody>
-						{/* {mtxList.map((mtxData, index) => (
-								<SimResults
-									item={mtxList[index]}
-									name={mtxList[index].name}
-									image={mtxList[index].image}
-									value={mtxList[index].value}
-									rarity={mtxList[index].rarity}
-									key={mtxList[index].name}
-									modifyMTX={this.props.modifyMTX}
-								/>
-						))} */}
+						{this.state.completedList.map((list, index) => (
+							<SimResults
+								item={this.state.completedList[index]}
+								name={this.state.completedList[index].name}
+								image={this.state.completedList[index].image}
+								value={this.state.completedList[index].value}
+								rarity={this.state.completedList[index].rarity}
+								count={this.state.completedList[index].count}
+								key={this.state.completedList[index].name}
+							/>
+						))}
 					</tbody>
 				</table>
 			</div>
