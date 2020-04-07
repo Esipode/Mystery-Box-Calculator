@@ -335,7 +335,12 @@ body {
 }
 
 .boxSimulator .searchContainer h4:first-child {
-	border-right: 1px solid white;
+	border-right: 1px solid rgba(255, 255, 255, 0.1);
+	margin-left: 5px;
+}
+
+.boxSimulator .searchContainer h4:nth-child(2) {
+	border-right: 1px solid rgba(255, 255, 255, 0.1);
 	margin-left: 5px;
 }
 
@@ -401,10 +406,18 @@ body {
 	width: 375px;
 	height: calc(100vh - 240px);
 	margin-top: 30px;
+	padding-left: calc(50% - calc(375px / 2));
+	padding-right: calc(50% - calc(375px / 2));
 	overflow-y: scroll;
+	overflow-x: hidden;
 	box-sizing: content-box;
 	scrollbar-width: none; /* Firefox */
 	-ms-overflow-style: none;  /* IE 10+ */
+}
+
+.boxSimulator table::-webkit-scrollbar {
+	width: 0;
+	background: transparent;
 }
 
 .boxSimulator thead {
