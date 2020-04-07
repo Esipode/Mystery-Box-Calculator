@@ -13,10 +13,16 @@ export default class App extends React.Component {
 			curBox: '',
 			fullMTXList: [],
 			activeMTX: [],
+			statList: [],
 			simulatorRunning: false
 		};
 	}
 	onChangeStep = (step) => {
+		if (step === 1) {
+			this.setState({
+				allowStepThree: false
+			})
+		}
 		this.setState({
 			curStep: step
 		})
@@ -26,7 +32,8 @@ export default class App extends React.Component {
 			curStep: 1,
 			curBox: boxName,
 			fullMTXList: mtxList,
-			activeMTX: []		
+			activeMTX: [],
+			allowStepThree: false
 		});
 	};
 	onModifyMTXItem = (mtx, add) => {
@@ -34,21 +41,29 @@ export default class App extends React.Component {
 		if (add) {
 			mtx.selected = true;
 			arr = this.state.activeMTX.concat(mtx);
-			this.setState({
-				activeMTX: arr
-			})
 		}
 		else {
 			arr = arr.filter((item) => item !== mtx);
-			this.setState({
-				activeMTX: arr
-			})
 		}
+		this.toggleStepThree(true);
+		this.setState({
+			activeMTX: arr
+		})
+	}
+	toggleStepThree = (val) => {
+		this.setState({
+			allowStepThree: val ? true : false
+		})
 	}
 	onToggleSimulator = () => {
 		this.setState(prevState => ({
 			simulatorRunning: !prevState.simulatorRunning
 		}))
+	}
+	onSimFinish = (list) => {
+		this.setState({
+			statList: list
+		})
 	}
 	render() {
 		return (
@@ -59,6 +74,8 @@ export default class App extends React.Component {
 					boxSelected={this.state.curBox}
 					activeMTX={this.state.activeMTX}
 					isSimulating={this.state.simulatorRunning}
+					simList={this.state.statList.length < 1 ? false : true}
+					allowStepThree={this.state.allowStepThree}
 				/>
 				<div className="mainWrapper" style={{transform: 'translateX('+(this.state.curStep * -100)+'vw)'}}>
 					<BoxSelection changeMTXBox={this.onChangeMTXBox} />
@@ -69,6 +86,7 @@ export default class App extends React.Component {
 						curMTXList={this.state.activeMTX}
 						fullMTXList={this.state.fullMTXList}
 						curStep={this.state.curStep}
+						simList={this.onSimFinish}
 					/>
 				</div>
 			</div>

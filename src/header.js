@@ -63,8 +63,22 @@ export default class Header extends React.Component {
 				<div className={`forwardStep ${this.onCheckStepVisibilityForward(this.props.curStep)}`} onClick={() => this.onStepButton(+1)}>
 					<i className="fas fa-arrow-circle-right" />
 					<div>
-						<h3>Step {this.props.curStep < 2 ? this.props.curStep + 2 : this.props.curStep === 2 && this.props.simList ? this.props.curStep + 2 : this.props.curStep + 1}</h3>
-						<span>{this.props.curStep < 2 ? this.state.stepInfo[this.props.curStep + 1] : this.props.curStep === 2 && this.props.simList ? this.state.stepInfo[this.props.curStep + 1] : this.state.stepInfo[this.props.curStep]}</span>
+						<h3>Step {
+							!this.props.activeMTX.length && !this.props.allowStepThree ? 2 :
+							this.props.curStep === 1 && this.props.allowStepThree ? 3 :
+							this.props.curStep < 2 ? this.props.curStep + 2 : 
+							this.props.curStep === 2 && this.props.simList ? this.props.curStep + 2 : 
+							this.props.curStep + 1
+							}
+						 </h3>
+						<span> {
+							!this.props.activeMTX.length && !this.props.allowStepThree ? this.state.stepInfo[1] : 
+							this.props.curStep === 1 && this.props.allowStepThree ? this.state.stepInfo[2] :
+							this.props.curStep < 2 ? this.state.stepInfo[this.props.curStep + 1] : 
+							this.props.curStep === 2 && this.props.simList ? this.state.stepInfo[this.props.curStep + 1] : 
+							this.state.stepInfo[this.props.curStep]
+							}
+						</span>
 					</div>
 				</div>
 			</div>
