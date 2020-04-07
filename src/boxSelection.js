@@ -15,8 +15,7 @@ export default class BoxSelection extends React.Component {
 		this.setState({
 			activeBox: newBox
 		});
-		let fullMTXList = data.filter((item) => item.box === newBox);
-		fullMTXList = fullMTXList.map(item => ({...item, count: 1}));
+		let fullMTXList = data.filter((item) => item.box === newBox).map(item => ({...item, count: 0}));
 		this.props.changeMTXBox(newBox, fullMTXList);
 	};
 	render() {
