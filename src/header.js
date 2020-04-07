@@ -4,11 +4,12 @@ export default class Header extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			stepInfo: ['Select a box',
-								 'Select desired MTXs',
-								 'Simulate Boxes',
-								 'Step 4 Info'	
-								]
+			stepInfo: [ 
+				'Select a box',
+				'Select desired MTXs',
+				'Simulate Boxes',
+				'Statistics'
+			]
 		};
 	}
 	onStepButton = (direction) => {
@@ -16,22 +17,18 @@ export default class Header extends React.Component {
 	}
 	onCheckStepVisibilityForward = (step) => {
 		if (this.props.isSimulating) {
-			return {display: 'none'}
+			return ''
 		}
 		else {
 			switch (step) {
 				case 0:
-					return (this.props.boxSelected === "") ? {display: 'none'} : {display: 'flex'};
+					return (this.props.boxSelected === "") ? '' : 'headerVisible';
 				case 1:
-					return (this.props.activeMTX.length < 1) ? {display: 'none'} : {display: 'flex'};
+					return (this.props.activeMTX.length < 1) ? '' : 'headerVisible';
 				case 2:
-					return {
-						display: 'none'
-					};
+					return (this.props.simList) ? 'headerVisible' : '';
 				case 3:
-					return {
-						display: 'none'
-					};
+					return '';
 				default:
 					return
 			}
@@ -39,35 +36,35 @@ export default class Header extends React.Component {
 	}
 	onCheckStepVisibilityBackward = () => {
 		if (this.props.isSimulating) {
-			return {display: 'none'}
+			return ''
 		}
 		else {
 			if (this.props.curStep > 0) {
-				return {display: 'flex'}
+				return 'headerVisible'
 			}
 			else {
-				return {display: 'none'}
+				return ''
 			}
 		}
 	}
 	render() {
 		return (
 			<div className="header">
-				<div className="backStep" onClick={() => this.onStepButton(-1)} style={this.onCheckStepVisibilityBackward()}>
+				<div className={`backStep ${this.onCheckStepVisibilityBackward()}`} onClick={() => this.onStepButton(-1)} >
 					<div>
-						<h3>Step {this.props.curStep}</h3>
-						<span>{this.state.stepInfo[this.props.curStep - 1]}</span>
+						<h3>Step {this.props.curStep > 0 ? this.props.curStep : 1}</h3>
+						<span>{this.props.curStep > 0 ? this.state.stepInfo[this.props.curStep - 1] : this.state.stepInfo[0]}</span>
 					</div>
 					<i className="fas fa-arrow-circle-left" />
 				</div>
 				<LogoSVG />
 				<h1>MTX Calc</h1>
 				<h2>Step {this.props.curStep + 1}:<span>{this.state.stepInfo[this.props.curStep]}</span></h2>
-				<div className="forwardStep" onClick={() => this.onStepButton(+1)} style={this.onCheckStepVisibilityForward(this.props.curStep)}>
+				<div className={`forwardStep ${this.onCheckStepVisibilityForward(this.props.curStep)}`} onClick={() => this.onStepButton(+1)}>
 					<i className="fas fa-arrow-circle-right" />
 					<div>
-						<h3>Step {this.props.curStep + 2}</h3>
-						<span>{this.state.stepInfo[this.props.curStep + 1]}</span>
+						<h3>Step {this.props.curStep < 2 ? this.props.curStep + 2 : this.props.curStep === 2 && this.props.simList ? this.props.curStep + 2 : this.props.curStep + 1}</h3>
+						<span>{this.props.curStep < 2 ? this.state.stepInfo[this.props.curStep + 1] : this.props.curStep === 2 && this.props.simList ? this.state.stepInfo[this.props.curStep + 1] : this.state.stepInfo[this.props.curStep]}</span>
 					</div>
 				</div>
 			</div>
