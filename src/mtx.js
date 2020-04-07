@@ -18,10 +18,10 @@ export default class MTX extends React.Component {
 	render() {
 		return (
 			<tr className={`mtx ${this.checkActive()}`} onClick={this.onAddRemoveMTX}>
-					<td>{this.props.name}</td>
-					<td>{this.props.value}</td>
-					<td className={this.props.rarity}>{this.props.rarity}</td>
-					<td><img src={this.props.image} alt={this.props.name} /></td>
+					<td>{this.props.item.name}</td>
+					<td>{this.props.item.value}</td>
+					<td className={this.props.item.rarity}>{this.props.item.rarity}</td>
+					<td><img src={this.props.item.image} alt={this.props.item.name} /></td>
 			</tr>
 		);
 	}

@@ -9,12 +9,12 @@ export default class SimResults extends React.Component {
 	}
 	render() {
 		return (
-			<tr className={`simResults ${this.props.selected && this.props.count > 0 ? 'wanted' : ''} ${this.props.count !== 0 && !this.props.selected ? 'unwanted' : ''}`}>
-				<td>{this.props.name}</td>
-				<td>{this.props.value}</td>
-				<td className={this.props.rarity}>{this.props.rarity}</td>
-				<td><img src={this.props.image} alt={this.props.name} /></td>
-				<td>{this.props.count}</td>
+			<tr className={`simResults ${this.props.item.selected && this.props.item.count > 0 ? 'wanted' : ''} ${this.props.item.count !== 0 && !this.props.item.selected ? 'unwanted' : ''}`}>
+				<td>{this.props.item.name}</td>
+				<td>{this.props.item.value}</td>
+				<td className={this.props.item.rarity}>{this.props.item.rarity}</td>
+				<td><img src={this.props.item.image} alt={this.props.item.name} /></td>
+				<td>{this.props.item.count}</td>
 			</tr>
 		);
 	}

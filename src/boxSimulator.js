@@ -228,12 +228,6 @@ export default class BoxSimulator extends React.Component {
 						{this.state.completedList.map((list, index) => (
 							<SimResults
 								item={this.state.completedList[index]}
-								name={this.state.completedList[index].name}
-								image={this.state.completedList[index].image}
-								value={this.state.completedList[index].value}
-								rarity={this.state.completedList[index].rarity}
-								selected={this.state.completedList[index].selected}
-								count={this.state.completedList[index].count}
 								key={this.state.completedList[index].name}
 							/>
 						))}
