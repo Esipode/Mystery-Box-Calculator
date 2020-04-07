@@ -465,3 +465,15 @@ body {
 .boxSimulator .simResults td:first-child {
 	padding: 5px 10px;
 }
+
+.boxSimulator .simResults:nth-child(odd) {
+	background-color: rgba(255,255,255,0.15);
+}
+
+.boxSimulator .simResults:nth-child(odd).wanted {
+	background-color: rgba(16, 255, 0, 0.2);
+}
+
+.boxSimulator .simResults:nth-child(odd).unwanted {
+	background-color: rgba(255, 0, 0, 0.2);
+}
