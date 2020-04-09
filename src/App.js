@@ -86,7 +86,11 @@ export default class App extends React.Component {
 						curMTXList={this.state.activeMTX}
 						fullMTXList={this.state.fullMTXList}
 						curStep={this.state.curStep}
-						simList={this.onSimFinish}
+						changeStep={this.onChangeStep}
+						boxSelected={this.state.curBox}
+						activeMTX={this.state.activeMTX}
+						isSimulating={this.state.simulatorRunning}
+						simList={this.state.statList.length > 0 ? true : false}
 					/>
 				</div>
 			</div>
