@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReactComponent as LogoSVG } from './images/chesticon.svg';
+
 export default class Header extends React.Component {
 	constructor(props) {
 		super(props);
@@ -67,7 +68,8 @@ export default class Header extends React.Component {
 							!this.props.activeMTX.length && !this.props.allowStepThree ? 2 :
 							this.props.curStep === 1 && this.props.allowStepThree ? 3 :
 							this.props.curStep < 2 ? this.props.curStep + 2 : 
-							this.props.curStep === 2 && this.props.simList ? this.props.curStep + 2 : 
+							this.props.curStep === 2 && !this.props.simList ? 3 :
+							this.props.curStep === 2 ? 4 :
 							this.props.curStep + 1
 							}
 						 </h3>
@@ -75,7 +77,8 @@ export default class Header extends React.Component {
 							!this.props.activeMTX.length && !this.props.allowStepThree ? this.state.stepInfo[1] : 
 							this.props.curStep === 1 && this.props.allowStepThree ? this.state.stepInfo[2] :
 							this.props.curStep < 2 ? this.state.stepInfo[this.props.curStep + 1] : 
-							this.props.curStep === 2 && this.props.simList ? this.state.stepInfo[this.props.curStep + 1] : 
+							this.props.curStep === 2 && !this.props.simList ? this.state.stepInfo[2] :
+							this.props.curStep === 2 ? this.state.stepInfo[3] : 
 							this.state.stepInfo[this.props.curStep]
 							}
 						</span>
