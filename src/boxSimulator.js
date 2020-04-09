@@ -96,9 +96,7 @@ export default class BoxSimulator extends React.Component {
 		// for (let k = 0; k < selectedItems.length; k++) {
 		// 	sum += selectedItems[k].count;
 		// }
-		this.setState({
-			statList: selectedItems
-		})
+		this.props.simList(selectedItems);
 		selectedItems.sort((a, b) => {
 			if (a.rolled !== b.rolled) {
 				return a.rolled ? -1 : 1;
