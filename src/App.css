@@ -2,13 +2,12 @@ html {
 	--rareColor: #ffff77;
 	--uncommonColor: #8888ff;
 	--commonColor: #c8c8c8;
-	--selectColor: #5fff5f;
+	overflow: hidden;
 }
 
 body {
 	font-family: dosis, sans-serif;
 	user-select: none;
-	background-color: #2a2a2a;
 	color: white;
 	margin: 0;
 	padding: 0;
@@ -16,9 +15,70 @@ body {
 	border: 0;
 }
 
+.Thaumaturgy {
+	--mainColor: #9fd42b;
+	--bgColor: #191900;
+}
+
+.Polaris {
+	--mainColor: #ffffff;
+	--bgColor: #101010;
+}
+
+.Carnival {
+	--mainColor: #d87437;
+	--bgColor: #120512;
+}
+
+.Frontier {
+	--mainColor: #c59248;
+	--bgColor: #190000;
+}
+
+.Glimmerwood {
+	--mainColor: #52ff81;
+	--bgColor: #0b0c29;
+}
+
+.Fairgraves {
+	--mainColor: #4ff5ff;
+	--bgColor: #06140b;
+}
+
+.Oriath {
+	--mainColor: #f5e559;
+	--bgColor: #250606;
+}
+
+.Apocalypse {
+	--mainColor: #b18955;
+	--bgColor: #1f0101;
+}
+
+.Sin_Innocence {
+	--mainColor: #c1a12d;
+	--bgColor: #060606;
+}
+
+.Fire_Ice {
+	--mainColor: #b4d6ff;
+	--bgColor: #270a00;
+}
+
+.Chaos_Order {
+	--mainColor: #dadada;
+	--bgColor: #2d0200;
+}
+
+.Classic {
+	--mainColor: #fdf790;
+	--bgColor: #21120a;
+}
+
 .App {
 	overflow: hidden;
 	height: 100vh;
+	transition: all 0.25s linear;
 }
 
 .header {
@@ -158,7 +218,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	height: calc(100vh - 150px);
-	transition: transform 0.75s ease-in-out;
+	transition: transform 0.75s cubic-bezier(1, -0.14, 0, 1.25);
 }
 
 /* BOX SELECTION */
@@ -189,8 +249,8 @@ body {
 }
 
 .box.selected {
-	color: var(--selectColor);
-	border-color: var(--selectColor);
+	color: var(--mainColor);
+	border-color: var(--mainColor);
 }
 
 .box img {
@@ -273,6 +333,7 @@ body {
 	overflow-y: auto;
 	overflow-x: hidden;
 	height: calc(100vh - 195px);
+	background-color: #2a2a2a;
 	border-spacing: 0px;
 	scrollbar-width: none;
     -ms-overflow-style: none;
@@ -316,7 +377,7 @@ body {
 
 .mtxSelection .mtx td:nth-child(1) {
 	width: 172px;
-	border-left: 0px solid var(--selectColor);
+	border-left: 0px solid var(--mainColor);
 }
 
 .mtxSelection .mtx td:nth-child(2) {
@@ -342,7 +403,7 @@ body {
 }
 
 .mtxSelection .mtx.active td:first-child {
-	border-left: 5px solid var(--selectColor);
+	border-left: 5px solid var(--mainColor);
 	padding-left: 0px;
 }
 
@@ -409,7 +470,7 @@ body {
 }
 
 .boxSimulator input:focus {
-	border-bottom: 1px solid var(--selectColor);
+	border-bottom: 1px solid var(--mainColor);
 }
 
 .boxSimulator .searchContainer button {
@@ -421,14 +482,18 @@ body {
 	font-weight: 600;
 	font-size: 18px;
 	border: none;
-	border-top: 2px solid var(--selectColor);
-	border-bottom: 2px solid var(--selectColor);
-	border-right: 2px solid var(--selectColor);
+	border-top: 2px solid var(--mainColor);
+	border-bottom: 2px solid var(--mainColor);
+	border-right: 2px solid var(--mainColor);
 	border-radius: 0 10px 10px 0;
 	outline: none;
 	background-color: transparent;
 	transition: all 0.25s linear;
 }
+
+.boxSimulator .searchContainer button::-moz-focus-inner {
+	border: 0;
+  }
 
 .boxSimulator .searchContainer .progressBar {
 	content: '';
@@ -436,7 +501,7 @@ body {
 	height: 36px;
 	position: absolute;
 	left: 207.5vw;
-	border: 2px solid var(--selectColor);
+	border: 2px solid var(--mainColor);
 	border-radius: 10px 0 0 10px;
 	border-right: none;
 	pointer-events: none;
@@ -466,7 +531,7 @@ body {
 .boxSimulator .submitted {
 	cursor: default;
 	opacity: 1;
-	color: var(--selectColor);
+	color: var(--mainColor);
 }
 
 .boxSimulator .fa-check {
@@ -551,6 +616,7 @@ body {
 	overflow-y: auto;
 	overflow-x: hidden;
 	height: calc(100vh - 290px);
+	background-color: #2a2a2a;
 	border-spacing: 0px;
 	scrollbar-width: none;
 	-ms-overflow-style: none;

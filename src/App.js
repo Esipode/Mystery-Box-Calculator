@@ -67,14 +67,14 @@ export default class App extends React.Component {
 	}
 	render() {
 		return (
-			<div className="App">
+			<div className={`App ${this.state.curBox.replace(/[^A-Z0-9]+/ig, "_")}`} style={ this.state.curBox === '' ? {backgroundColor: '#2a2a2a'} : {backgroundColor: 'var(--bgColor)'}}>
 				<Header 
 					curStep={this.state.curStep}
 					changeStep={this.onChangeStep}
 					boxSelected={this.state.curBox}
 					activeMTX={this.state.activeMTX}
 					isSimulating={this.state.simulatorRunning}
-					simList={this.state.statList.length < 1 ? false : true}
+					simList={this.state.statList.length > 0 ? true : false}
 					allowStepThree={this.state.allowStepThree}
 				/>
 				<div className="mainWrapper" style={{transform: 'translateX('+(this.state.curStep * -100)+'vw)'}}>

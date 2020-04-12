@@ -200,7 +200,7 @@ export default class BoxSimulator extends React.Component {
 					/>
 					</h4>
 					<h4>Points: {this.state.boxVal * 30}</h4>
-					<button onClick={this.onStartSimulating} style={{borderColor: this.props.isRunning ? '#ff5f5f' : 'var(--selectColor)'}}>
+					<button onClick={this.onStartSimulating} style={{borderColor: this.props.isRunning ? '#ff5f5f' : 'var(--mainColor)'}}>
 						<i className={this.props.isRunning ? 'fas fa-stop' : 'fas fa-play' }/>
 					</button>
 					<div
