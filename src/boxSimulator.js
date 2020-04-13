@@ -212,7 +212,8 @@ export default class BoxSimulator extends React.Component {
 					/>
 				</div>
 				<p className="progressCount" style={{display: this.props.isRunning && this.state.curProgress !== this.state.boxVal ? 'block' : 'none'}}>{this.state.curProgress}/{this.state.boxVal}</p>
-				<table style={{display: this.state.completedList.length && !this.props.isRunning ? 'block' : 'none'}}>
+				<p className={`submitResults ${this.state.resultsSubmitted ? 'submitted' : ''}`} onClick={this.onSubmitResults} style={{display: !this.props.isRunning && this.state.completedList.length ? 'block' : 'none'}}>{this.state.resultsSubmitted ? <i className="fas fa-check"></i> : 'Submit Results'}</p>
+				<table style={{display: this.state.completedList.length && !this.props.isRunning ? 'table' : 'none'}}>
 					<thead>
 						<tr>
 							<th>Name</th>
