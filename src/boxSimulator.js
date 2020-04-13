@@ -224,10 +224,10 @@ export default class BoxSimulator extends React.Component {
 						</tr>
 					</thead>
 					<tbody>
-						{this.state.completedList.map((list, index) => (
+						{this.state.completedList.map((item) => (
 							<SimResults
-								item={this.state.completedList[index]}
-								key={this.state.completedList[index].name}
+								item={item}
+								key={item.name}
 							/>
 						))}
 					</tbody>

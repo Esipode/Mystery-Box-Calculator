@@ -20,10 +20,10 @@ export default class MTXSelection extends React.Component {
 						</tr>
 					</thead>
 					<tbody>
-						{mtxList.map((mtxData, index) => (
+						{mtxList.map((mtxItem) => (
 							<MTX
-								item={mtxList[index]}
-								key={mtxList[index].name}
+								item={mtxItem}
+								key={mtxItem.name}
 								modifyMTXItem={this.props.modifyMTXItem}
 							/>
 						))}
