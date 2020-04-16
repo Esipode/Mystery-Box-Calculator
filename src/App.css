@@ -700,4 +700,105 @@ body {
 .boxSimulator .simResults:nth-child(odd).unwanted {
 	background-color: rgba(255, 0, 0, 0.25);
 }
+
+.statistics {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0;
+	min-width: 100vw;
+	padding-bottom: 40px;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.statistics::-webkit-scrollbar {
+	width: 0;
+	background: transparent;
+}
+
+.statistics table {
+	width: 375px;
+	margin-top: 12px;
+	align-self: center;
+	box-sizing: content-box;
+	border-spacing: 0;
+	text-align: center;
+	scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.statistics thead {
+	display: block;
+	width: 375px;
+	border-radius: 10px 10px 0 0;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.statistics thead tr {
+	display: block;
+}
+
+.statistics thead th {
+	display: inline-block;
+	padding: 5px 0;
+	border-right: 2px solid #2a2a2a;
+}
+
+.statistics thead th:nth-child(1) {
+	width: 219px;
+	border-left: none;
+}
+
+.statistics thead th:nth-child(2) {
+	width: 75px;
+}
+
+.statistics thead th:nth-child(3) {
+	width: 77px;
+	border-right: none;
+}
+
+.statistics tbody {
+	display: block;
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: calc(100vh - 195px);
+	border-spacing: 0px;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.statistics tbody::-webkit-scrollbar {
+	width: 0;
+	background: transparent;
+}
+
+.statistics tbody tr {
+	height: 30px;
+	background-color: rgba(255,255,255,0.07);
+}
+
+.statistics tbody tr:nth-child(odd) {
+	background-color: rgba(255,255,255,0.12);
+}
+
+.statistics tbody td {
+	padding: 5px;
+    border-right: 2px solid rgba(0,0,0,0.3);
+}
+
+.statistics tbody td:nth-child(1) {
+	width: 211px;
+	font-size: 13px;
+}
+
+.statistics tbody td:nth-child(2) {
+	width: 65px;
+	word-break: break-all;
+}
+
+.statistics tbody td:nth-child(3) {
+	width: 65px;
+	border-right: none;
 }

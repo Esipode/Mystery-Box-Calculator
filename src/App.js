@@ -4,6 +4,7 @@ import Header from './header';
 import BoxSelection from './boxSelection';
 import MTXSelection from './mtxSelection';
 import BoxSimulator from './boxSimulator';
+import Statistics from './statistics';
 
 export default class App extends React.Component {
 	constructor(props) {
@@ -13,7 +14,7 @@ export default class App extends React.Component {
 			curBox: '',
 			fullMTXList: [],
 			activeMTX: [],
-			statList: [],
+			statList: {itemList: []},
 			simulatorRunning: false
 		};
 	}
@@ -33,6 +34,7 @@ export default class App extends React.Component {
 			curBox: boxName,
 			fullMTXList: mtxList,
 			activeMTX: [],
+			statList: {itemList: []},
 			allowStepThree: false
 		});
 	};
@@ -92,6 +94,7 @@ export default class App extends React.Component {
 						isSimulating={this.state.simulatorRunning}
 						simList={this.state.statList.length > 0 ? true : false}
 					/>
+					<Statistics stats={this.state.statList} boxChanged={this.state.boxChanged} />
 				</div>
 			</div>
 		);
