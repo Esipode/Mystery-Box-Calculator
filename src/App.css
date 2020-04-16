@@ -226,10 +226,10 @@ body {
 .boxSelection {
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0;
+	margin: 0 0 5vh 0;
 	justify-content: center;
 	min-width: 100vw;
-	align-content: baseline;
+	align-content: center;
 }
 
 .box {
@@ -316,11 +316,11 @@ body {
 }
 
 .mtxSelection thead th:nth-child(2) {
-	width: 53px;
+	width: 54px;
 }
 
 .mtxSelection thead th:nth-child(3) {
-	width: 83px;
+	width: 82px;
 }
 
 .mtxSelection thead th:nth-child(4) {
@@ -333,19 +333,18 @@ body {
 	overflow-y: auto;
 	overflow-x: hidden;
 	height: calc(100vh - 195px);
-	background-color: #2a2a2a;
 	border-spacing: 0px;
 	scrollbar-width: none;
-    -ms-overflow-style: none;
+	-ms-overflow-style: none;
 }
 
 .mtxSelection .mtx {
 	height: 60px;
-	background-color: rgba(255,255,255,0.05);
+	background-color: rgba(255,255,255,0.07);
 }
 
 .mtxSelection .mtx:nth-child(odd) {
-	background-color: rgba(255,255,255,0.15);
+	background-color: rgba(255,255,255,0.12);
 }
 
 .mtxSelection tbody::-webkit-scrollbar {
@@ -392,13 +391,10 @@ body {
 .mtxSelection .mtx td:nth-child(4) {
 	width: 50px;
 	border: none;
+	background-color: rgba(0,0,0,0.3);
 }
 
-.mtxSelection .mtx td:last-child {
-	background-color: rgba(0,0,0,0.5);
-}
-
-.mtxSelection .mtx td:last-child img {
+.mtxSelection .mtx td:nth-child(4) img {
 	height: 50px;
 }
 
@@ -616,7 +612,6 @@ body {
 	overflow-y: auto;
 	overflow-x: hidden;
 	height: calc(100vh - 290px);
-	background-color: #2a2a2a;
 	border-spacing: 0px;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
@@ -629,16 +624,19 @@ body {
 
 .boxSimulator .simResults {
 	height: 60px;
+	opacity: 0.5;
 	text-align: center;
 	background-color: rgba(255,255,255,0.05);
 }
 
 .boxSimulator .simResults.wanted {
-	background-color: rgba(16, 255, 0, 0.1);
+	opacity: 1;
+	background-color: rgba(16, 255, 0, 0.18);
 }
 
 .boxSimulator .simResults.unwanted {
-	background-color: rgba(255, 0, 0, 0.1);
+	opacity: 1;
+	background-color: rgba(255, 0, 0, 0.18);
 }
 
 .boxSimulator .simResults td {
@@ -684,7 +682,7 @@ body {
 }
 
 .boxSimulator .simResults td:nth-child(4) {
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.3);
 }
 
 .boxSimulator .simResults td:nth-child(4) img {
@@ -696,9 +694,10 @@ body {
 }
 
 .boxSimulator .simResults:nth-child(odd).wanted {
-	background-color: rgba(16, 255, 0, 0.2);
+	background-color: rgba(16, 255, 0, 0.25);
 }
 
 .boxSimulator .simResults:nth-child(odd).unwanted {
-	background-color: rgba(255, 0, 0, 0.2);
+	background-color: rgba(255, 0, 0, 0.25);
+}
 }
