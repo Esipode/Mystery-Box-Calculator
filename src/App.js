@@ -12,6 +12,7 @@ export default class App extends React.Component {
 		this.state = {
 			curStep: 0,
 			curBox: '',
+			boxChanged: false,
 			fullMTXList: [],
 			activeMTX: [],
 			statList: {itemList: []},
@@ -32,6 +33,7 @@ export default class App extends React.Component {
 		this.setState({
 			curStep: 1,
 			curBox: boxName,
+			boxChanged: true,
 			fullMTXList: mtxList,
 			activeMTX: [],
 			statList: {itemList: []},
@@ -59,7 +61,8 @@ export default class App extends React.Component {
 	}
 	onToggleSimulator = () => {
 		this.setState(prevState => ({
-			simulatorRunning: !prevState.simulatorRunning
+			simulatorRunning: !prevState.simulatorRunning,
+			boxChanged: false
 		}))
 	}
 	onSimFinish = (list) => {
@@ -76,7 +79,7 @@ export default class App extends React.Component {
 					boxSelected={this.state.curBox}
 					activeMTX={this.state.activeMTX}
 					isSimulating={this.state.simulatorRunning}
-					simList={this.state.statList.length > 0 ? true : false}
+					simList={this.state.statList.itemList.length > 0 ? true : false}
 					allowStepThree={this.state.allowStepThree}
 				/>
 				<div className="mainWrapper" style={{transform: 'translateX('+(this.state.curStep * -100)+'vw)'}}>
@@ -88,11 +91,8 @@ export default class App extends React.Component {
 						curMTXList={this.state.activeMTX}
 						fullMTXList={this.state.fullMTXList}
 						curStep={this.state.curStep}
-						changeStep={this.onChangeStep}
-						boxSelected={this.state.curBox}
-						activeMTX={this.state.activeMTX}
-						isSimulating={this.state.simulatorRunning}
-						simList={this.state.statList.length > 0 ? true : false}
+						simList={this.onSimFinish}
+						boxChanged={this.state.boxChanged}
 					/>
 					<Statistics stats={this.state.statList} boxChanged={this.state.boxChanged} />
 				</div>
