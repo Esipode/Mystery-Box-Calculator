@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import SimResults from './simResults';
 
 export default class BoxSimulator extends React.Component {
@@ -8,7 +9,8 @@ export default class BoxSimulator extends React.Component {
 			boxVal: '',
 			curProgress: 0,
 			percentLoaded: 0,
-			completedList: []
+			completedList: [],
+			resultsSubmitted: false
 		};
 	}
 	onStartSimulating = () => {
@@ -32,12 +34,15 @@ export default class BoxSimulator extends React.Component {
 		return new Promise(resolve => setTimeout(resolve, milliseconds))
 	}
 	simRun = async () => {
-		//Forces waiting between each time an item is randomly selected
+		this.setState({
+			resultsSubmitted: false
+		})
 		let selectedItems = JSON.parse(JSON.stringify(this.props.fullMTXList));
 		let fullList = JSON.parse(JSON.stringify(this.props.fullMTXList));
 		//Execute for as long as the number of items randomly selected is less than the number of boxes to be opened
 		for (let i = 1; i <= this.state.boxVal;) {
-			await this.sleep(10);
+			//Forces waiting between each time an item is randomly selected to prevent browser freezing
+			await this.sleep(5);
 			if (this.props.isRunning) {
 				//Variable to store selected rarity of items to select from
 				let curRarity;
@@ -96,7 +101,6 @@ export default class BoxSimulator extends React.Component {
 		// for (let k = 0; k < selectedItems.length; k++) {
 		// 	sum += selectedItems[k].count;
 		// }
-		this.props.simList(selectedItems);
 		selectedItems.sort((a, b) => {
 			if (a.rolled !== b.rolled) {
 				return a.rolled ? -1 : 1;
@@ -139,49 +143,86 @@ export default class BoxSimulator extends React.Component {
 		if (this.props.isRunning) {
 			this.onStartSimulating();
 		}
-		this.listStats();
 	}
 	listStats = () => {
 		let rawList = JSON.parse(JSON.stringify(this.state.completedList))
-		let statList = [];
-		statList.total = (() => {
-			let sum = 0;
-			for (let i = 0; i < rawList.length; i++) {
-				sum += rawList[i].count;
+		let sortedItems = rawList;
+		return new Promise(resolve => {
+			let statList = [];
+			statList.total = (() => {
+				let sum = 0;
+				for (let i = 0; i < rawList.length; i++) {
+					sum += rawList[i].count;
+				}
+				return sum;
+			})();
+			statList.box = rawList[0].box;
+			statList.itemList = (() => {
+				
+				sortedItems.sort((a, b) => {
+					//Sort by item rarity
+					if (a.rarity !== b.rarity) {
+						if (a.rarity === 'rare' && (b.rarity === 'uncommon' || b.rarity === 'common')) {
+							return -1;
+						}
+						else if (a.rarity === 'uncommon' && b.rarity === 'rare') {
+							return 1;
+						}
+						else if (a.rarity === 'uncommon' && b.rarity === 'common') {
+							return -1;
+						}
+						else if (a.rarity === 'common' && (b.rarity === 'rare' || b.rarity === 'uncommon')) {
+							return 1;
+						}
+					}
+					//Then sort by point value
+					if (a.value !== b.value) {
+						return b.value - a.value;
+					}
+					//Then sort by name
+					if (a.name !== b.name) {
+						return a - b;
+					}
+					return 0;
+				})
+				return sortedItems;
+			})();
+		resolve(statList);
+		})
+	}
+	onSubmitResults = async () => {
+		const stat = await this.listStats();
+		console.log(stat);
+		let masterList = await axios.get('http://localhost:5000/stats');
+		console.log(masterList);
+		let boxIndex = await masterList.data.findIndex((name) => {return name._id === stat.box});
+		let curBox = masterList.data[boxIndex];
+		curBox.total += stat.total;
+		for (let i = 0; i < curBox.itemList.length; i++) {
+			if (stat.itemList[i].count > 0) {
+				curBox.itemList[i].count += stat.itemList[i].count;
+				if (stat.itemList[i].selected) {
+					curBox.itemList[i].wanted += stat.itemList[i].count;
+				}
+				else {
+					curBox.itemList[i].unwanted += stat.itemList[i].count;
+				}
 			}
-			return sum;
-		})();
-		statList.box = rawList[0].box;
-		statList.itemList = (() => {
-			let sortedItems = rawList;
-			sortedItems.sort((a, b) => {
-				//Sort by item rarity
-				if (a.rarity !== b.rarity) {
-					if (a.rarity === 'rare' && (b.rarity === 'uncommon' || b.rarity === 'common')) {
-						return -1;
-					}
-					else if (a.rarity === 'uncommon' && b.rarity === 'rare') {
-						return 1;
-					}
-					else if (a.rarity === 'uncommon' && b.rarity === 'common') {
-						return -1;
-					}
-					else if (a.rarity === 'common' && (b.rarity === 'rare' || b.rarity === 'uncommon')) {
-						return 1;
-					}
-				}
-				//Then sort by point value
-				if (a.value !== b.value) {
-					return b.value - a.value;
-				}
-				//Then sort by name
-				if (a.name !== b.name) {
-					return a - b;
-				}
-				return 0;
-			})
-			return sortedItems;
-		})();
+		}
+		this.setState({
+			resultsSubmitted: true
+		})
+		const statList = {
+			_id: stat.box,
+            total: curBox.total,
+            itemList: curBox.itemList
+		}
+		this.props.simList(statList);
+		// axios.post('http://localhost:5000/stats/update/'+statList._id, statList)
+		// 	.then(res => console.log(res.data))
+		// 	.catch((err) => {
+		// 		console.log(err);
+		// 	});
 	}
 	render() {
 		return (
