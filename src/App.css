@@ -784,7 +784,7 @@ body {
 }
 
 .statistics tbody td {
-	padding: 5px;
+	padding: 5px 5px 5px 0;
     border-right: 2px solid rgba(0,0,0,0.3);
 }
 
@@ -801,4 +801,16 @@ body {
 .statistics tbody td:nth-child(3) {
 	width: 65px;
 	border-right: none;
+}
+
+.statistics tbody tr.rare td:nth-child(1) {
+	border-left: 5px solid var(--rareColor);
+}
+
+.statistics tbody tr.uncommon td:nth-child(1) {
+	border-left: 5px solid var(--uncommonColor);
+}
+
+.statistics tbody tr.common td:nth-child(1) {
+	border-left: 5px solid var(--commonColor);
 }
