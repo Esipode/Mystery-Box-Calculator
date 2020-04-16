@@ -784,12 +784,13 @@ body {
 }
 
 .statistics tbody td {
-	padding: 5px 5px 5px 0;
+	padding: 5px;
     border-right: 2px solid rgba(0,0,0,0.3);
 }
 
 .statistics tbody td:nth-child(1) {
-	width: 211px;
+	padding-left: 0px;
+	width: 209px;
 	font-size: 13px;
 }
 
@@ -799,8 +800,10 @@ body {
 }
 
 .statistics tbody td:nth-child(3) {
-	width: 65px;
+	width: 67px;
 	border-right: none;
+	display: flex;
+    justify-content: center;
 }
 
 .statistics tbody tr.rare td:nth-child(1) {
@@ -813,4 +816,16 @@ body {
 
 .statistics tbody tr.common td:nth-child(1) {
 	border-left: 5px solid var(--commonColor);
+}
+
+.statistics tbody .wanted {
+	font-size: 12px;
+	align-self: flex-start;
+	color: #71ff71;
+}
+
+.statistics tbody .unwanted {
+	font-size: 12px;
+	align-self: flex-end;
+	color: #ff6f6f;
 }
