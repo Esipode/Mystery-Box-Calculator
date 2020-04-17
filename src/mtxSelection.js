@@ -27,7 +27,7 @@ export default class MTXSelection extends React.Component {
 								modifyMTXItem={this.props.modifyMTXItem}
 							/>
 						))}
-						<div className="bufferSpace" />
+						<tr className="bufferSpace" />
 					</tbody>
 				</table>
 			</div>

@@ -271,7 +271,7 @@ export default class BoxSimulator extends React.Component {
 								key={item.name}
 							/>
 						))}
-						<div className="bufferSpace" />
+						<tr className="bufferSpace" />
 					</tbody>
 				</table>
 			</div>

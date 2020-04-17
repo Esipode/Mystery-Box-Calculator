@@ -26,7 +26,7 @@ export default class Statistics extends React.Component {
 								key={stat.name}
 							/>
 						))}
-						<div className="bufferSpace" />
+						<tr className="bufferSpace" />
 					</tbody>
 				</table>
 			</div>
