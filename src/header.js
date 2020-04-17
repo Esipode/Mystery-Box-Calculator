@@ -9,7 +9,7 @@ export default class Header extends React.Component {
 				'Select a box',
 				'Select desired MTXs',
 				'Simulate Boxes',
-				'Statistics'
+				'Global Stats'
 			]
 		};
 	}
