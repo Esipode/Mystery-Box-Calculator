@@ -221,6 +221,10 @@ body {
 	transition: transform 0.75s cubic-bezier(1, -0.14, 0, 1.25);
 }
 
+.bufferSpace {
+	height: 150px;
+}
+
 /* BOX SELECTION */
 
 .boxSelection {
@@ -407,7 +411,6 @@ body {
 	display: flex;
 	margin: 0;
 	min-width: 100vw;
-	padding-bottom: 40px;
 	flex-wrap: wrap;
 	justify-content: center;
 	scrollbar-width: none; /* Firefox */
@@ -730,7 +733,6 @@ body {
 
 .statistics thead {
 	display: block;
-	width: 375px;
 	border-radius: 10px 10px 0 0;
 	background-color: rgba(0,0,0,0.5);
 }
@@ -803,7 +805,9 @@ body {
 	width: 67px;
 	border-right: none;
 	display: flex;
-    justify-content: center;
+	height: inherit;
+	justify-content: center;
+	align-items: center;
 }
 
 .statistics tbody tr.rare td:nth-child(1) {
