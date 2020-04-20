@@ -230,10 +230,18 @@ body {
 .boxSelection {
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0 0 5vh 0;
+	margin: 0;
 	justify-content: center;
 	min-width: 100vw;
-	align-content: center;
+	align-content: baseline;
+	overflow-y: auto;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;  /* IE 10+ */
+}
+
+.boxSelection::-webkit-scrollbar {
+	width: 0;
+	background: transparent;
 }
 
 .box {
@@ -710,7 +718,6 @@ body {
 	justify-content: center;
 	margin: 0;
 	min-width: 100vw;
-	padding-bottom: 40px;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
 }
@@ -776,12 +783,12 @@ body {
 	background: transparent;
 }
 
-.statistics tbody tr {
+.statistics tbody .stat {
 	height: 30px;
 	background-color: rgba(255,255,255,0.07);
 }
 
-.statistics tbody tr:nth-child(odd) {
+.statistics tbody .stat:nth-child(odd) {
 	background-color: rgba(255,255,255,0.12);
 }
 
@@ -810,15 +817,15 @@ body {
 	align-items: center;
 }
 
-.statistics tbody tr.rare td:nth-child(1) {
+.statistics tbody .stat.rare td:nth-child(1) {
 	border-left: 5px solid var(--rareColor);
 }
 
-.statistics tbody tr.uncommon td:nth-child(1) {
+.statistics tbody .stat.uncommon td:nth-child(1) {
 	border-left: 5px solid var(--uncommonColor);
 }
 
-.statistics tbody tr.common td:nth-child(1) {
+.statistics tbody .stat.common td:nth-child(1) {
 	border-left: 5px solid var(--commonColor);
 }
 
@@ -832,4 +839,371 @@ body {
 	font-size: 12px;
 	align-self: flex-end;
 	color: #ff6f6f;
+}
+
+@media only screen and (max-width: 380px) {
+	.header {
+		grid-template-rows: 100px;
+		height: 110px;
+	}
+
+	.header .backStep {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	.header .backStep i {
+		padding-right: 0;
+		padding-bottom: 5px;
+		align-self: flex-end;
+	}
+
+	.header .icon {
+		height: 80px;
+	}
+
+	.header h1 {
+		font-size: 20px;
+		padding-top: 55px;
+	}
+
+	.header h2 {
+		font-size: 13px;
+		padding-top: 100px;
+	}
+
+	.header .forwardStep {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.header .forwardStep i {
+		padding-left: 0;
+		padding-bottom: 5px;
+		align-self: flex-start;
+	}
+
+	.mainWrapper {
+		height: calc(100vh - 110px);
+	}
+
+	.mtxSelection {
+		font-size: 14px;
+		margin: 0;
+	}
+
+	.mtxSelection table {
+		width: 300px;
+	}
+
+	.mtxSelection thead th:nth-child(1) {
+		width: 146px;
+	}
+
+	.mtxSelection thead th:nth-child(2) {
+		width: 69px;
+	}
+
+	.mtxSelection thead th:nth-child(3) {
+		width: 81px;
+		border-right: none;
+	}
+
+	.mtxSelection thead th:nth-child(4) {
+		display: none;
+	}
+
+	.mtxSelection tbody {
+		height: calc(100vh - 155px);
+	}
+
+	.mtxSelection .mtx {
+		height: 45px;
+	}
+
+	.mtxSelection .mtx td:nth-child(1) {
+		width: 139px;
+	}
+
+	.mtxSelection .mtx td:nth-child(2) {
+		width: 60px;
+	}
+
+	.mtxSelection .mtx td:nth-child(3) {
+		width: 71px;
+	}
+
+	.mtxSelection .mtx td:nth-child(4) {
+		display: none;
+	}
+
+	.boxSimulator {
+		font-size: 14px;
+		width: 300px;
+		padding: 0;
+	}
+
+	.boxSimulator .searchContainer {
+		margin: 9px 7.5%
+	}
+
+	.boxSimulator .progressCount {
+		top: 60px;
+		font-size: 14px;
+	}
+
+	.boxSimulator .submitResults {
+		top: 60px;
+		font-size: 14px;
+	}
+
+	.boxSimulator table {
+		width: 300px;
+		margin-top: 0px;
+	}
+
+	.boxSimulator thead th:nth-child(1) {
+		width: 134px;
+	}
+
+	.boxSimulator thead th:nth-child(2) {
+		width: 44px;
+	}
+
+	.boxSimulator thead th:nth-child(3) {
+		width: 71px;
+	}
+
+	.boxSimulator thead th:nth-child(4) {
+		display: none;
+	}
+
+	.boxSimulator thead th:nth-child(5) {
+		width: 45px;
+	}
+
+	.boxSimulator tbody {
+		height: calc(100vh - 235px);
+	}
+
+	.boxSimulator .simResults {
+		height: 45px;
+	}
+
+	.boxSimulator .simResults td:nth-child(1) {
+		padding: 0 5px;
+		width: 124px;
+	}
+
+	.boxSimulator .simResults td:nth-child(2) {
+		width: 44px;
+	}
+
+	.boxSimulator .simResults td:nth-child(3) {
+		width: 71px;
+		border-right: 2px solid rgba(0,0,0,0.3);
+	}
+
+	.boxSimulator .simResults td:nth-child(4) {
+		display: none;
+	}
+
+	.boxSimulator .simResults td:nth-child(5) {
+		width: 45px;
+	}
+
+	.statistics {
+		padding-bottom: 0px;
+	}
+
+	.statistics table {
+		width: 300px;
+		margin-top: 9px;
+	}
+
+	.statistics thead th:nth-child(1) {
+		width: 164px;
+	}
+
+	.statistics thead th:nth-child(2) {
+		width: 55px;
+	}
+}
+
+@media only screen and (max-height: 600px) {
+	.App {
+		display: flex;
+		flex-direction: row;
+		padding-left: env(safe-area-inset-left);
+	}
+
+	.header {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, 1fr);
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+		height: auto;
+		width: 175px;
+	}
+
+	.header .icon {
+		grid-area: 2 / 2 / 3 / 2;
+	}
+
+	.header h1 {
+		grid-area: 2 / 2 / 3 / 2;
+	}
+
+	.header h2 {
+		width: 175px;
+		grid-area: 2 / 2 / 3 / 2;
+	}
+
+	.header .backStep, .header .forwardStep {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.header .backStep {
+		grid-area: 1 / 2 / 2 / 2;
+	}
+
+	.header .forwardStep {
+		grid-area: 3 / 2 / 4 / 2;
+	}
+
+	.mainWrapper {
+		height: auto;
+		width: calc(100vw - 185px);
+	}
+
+	.bufferSpace {
+		height: 75px;
+	}
+
+	.boxSelection {
+		min-width: calc(100vw - 185px);
+		align-content: center;
+	}
+
+	.box {
+		height: 85px;
+		width: 85px;
+		margin: 8px;
+	}
+
+	.box img {
+		height: 60px;
+	}
+
+	.mtxSelection {
+		margin: 0;
+		margin-left: 185px;
+		min-width: calc(100vw - 185px);
+	}
+
+	.mtxSelection table {
+		padding-top: 15px;
+		align-self: baseline;
+	}
+
+	.mtxSelection tbody {
+		height: calc(100vh - 45px);
+	}
+
+	.boxSimulator {
+		margin-left: 185px;
+		min-width: calc(100vw - 185px);
+	}
+
+	.boxSimulator .searchContainer {
+		margin: 25px 7.5% 12px 7.5%;
+	}
+
+	.boxSimulator .searchContainer .progressBar {
+		left: 206vw;
+	}
+
+	.boxSimulator .progressCount, .boxSimulator .submitResults {
+		top: 75px;
+	}
+
+	.boxSimulator table {
+		margin-top: 10px;
+	}
+
+	.boxSimulator tbody {
+		height: calc(100vh - 138px);
+	}
+
+	.statistics {
+		margin-left: 185px;
+		min-width: calc(100vw - 185px);
+	}
+
+	.statistics table {
+		align-self: baseline;
+	}
+
+	.statistics tbody {
+		height: calc(100vh - 55px);
+	}
+}
+
+@media only screen and (min-width: 768px) and (min-height: 600px) {
+	.header h3 {
+		font-size: 20px;
+	}
+
+	.header span {
+		font-size: 15px;
+	}
+
+	.header i {
+		font-size: 25px;
+	}
+
+	.boxSelection {
+		width: 768px;
+		min-width: 768px;
+		margin: 0 calc(50% - (768px / 2));
+	}
+
+	.mtxSelection table {
+		width: 445px;
+	}
+
+	.mtxSelection thead th:nth-child(1) {
+		width: 243px;
+	}
+
+	.mtxSelection .mtx td:nth-child(1) {
+		width: 242px;
+	}
+
+	.boxSimulator table {
+		width: 485px;
+	}
+
+	.boxSimulator thead th:nth-child(1) {
+		width: 223px;
+	}
+	
+	.boxSimulator .simResults td:nth-child(1) {
+		width: 203px;
+	}
+
+	.statistics table {
+		width: 445px;
+	}
+
+	.statistics thead th:nth-child(1) {
+		width: 289px;
+	}
+
+	.statistics tbody .stat td:nth-child(1) {
+		width: 279px;
+		font-size: 16px;
+	}
 }
