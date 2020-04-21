@@ -536,12 +536,12 @@ body {
 	margin: 0;
 	opacity: 0.5;
 	position: absolute;
-	top: 70px;
+	top: 62px;
 }
 
 .boxSimulator .submitResults {
 	position: absolute;
-	top: 70px;
+	top: 62px;
 	width: 100px;
 	cursor: pointer;
 	margin: 0;
