@@ -442,7 +442,8 @@ body {
 	justify-content: center;
 	height: 40px;
 	width: 85%;
-	margin: 12px 7.5%;
+	max-width: 485px;
+	margin-top: 12px;
 	border-radius: 10px;
 	background-color: rgba(0,0,0,0.5)
 }
@@ -508,17 +509,26 @@ body {
 	border: 0;
   }
 
-.boxSimulator .searchContainer .progressBar {
+.boxSimulator .progressBar {
 	content: '';
-	width: 0%;
+	clip-path: inset(0 100% 0 0);
+	width: 100%;
+	max-width: 68.5%;;
 	height: 36px;
 	position: absolute;
-	left: 207.5vw;
+	left: calc(200vw + 7.5%);
 	border: 2px solid var(--mainColor);
 	border-radius: 10px 0 0 10px;
 	border-right: none;
 	pointer-events: none;
 	transition: opacity 0.1s ease-in-out;
+}
+
+@media only screen and (min-width: 575px) {
+	.boxSimulator .progressBar {
+		max-width: 390px;
+		left: calc(200vw + (50% - (485px / 2)));
+	}
 }
 
 .boxSimulator .progressCount {
@@ -957,6 +967,10 @@ body {
 		margin: 9px 7.5%
 	}
 
+	.boxSimulator .progressBar {
+		margin-top: 9px;
+	}
+
 	.boxSimulator .progressCount {
 		top: 60px;
 		font-size: 14px;
@@ -1132,10 +1146,6 @@ body {
 		margin: 25px 7.5% 12px 7.5%;
 	}
 
-	.boxSimulator .searchContainer .progressBar {
-		left: 206vw;
-	}
-
 	.boxSimulator .progressCount, .boxSimulator .submitResults {
 		top: 75px;
 	}
@@ -1191,6 +1201,12 @@ body {
 
 	.mtxSelection .mtx td:nth-child(1) {
 		width: 242px;
+	}
+
+	.boxSimulator {
+		min-width: 768px;
+		width: 768px;
+		margin: 0 calc(50% - (768px / 2));
 	}
 
 	.boxSimulator table {
