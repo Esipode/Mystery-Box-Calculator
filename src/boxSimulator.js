@@ -248,7 +248,7 @@ export default class BoxSimulator extends React.Component {
 					<div
 						className="progressBar"
 						style={{
-							width: `${(this.state.percentLoaded / 100) * 68}%`,
+							clipPath: `inset(0 ${(100 - this.state.percentLoaded)}% 0 0)`,
 							opacity: this.state.percentLoaded >= 1 && this.state.percentLoaded < 100 ? 1 : 0
 						}}
 					/>
