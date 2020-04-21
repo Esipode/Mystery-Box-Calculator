@@ -10,7 +10,7 @@ export default class Statistics extends React.Component {
 	}
 	render() {
 		return (
-			<div className="statistics">
+			<div className={`statistics${this.props.safariCheck() ? ' safari' : ''}`}>
 				<table style={{display: !this.props.boxChanged ? 'table' : 'none'}}>
 					<thead>
 						<tr>
@@ -26,7 +26,6 @@ export default class Statistics extends React.Component {
 								key={stat.name}
 							/>
 						))}
-						<tr className="bufferSpace" />
 					</tbody>
 				</table>
 			</div>

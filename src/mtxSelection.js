@@ -9,7 +9,7 @@ export default class MTXSelection extends React.Component {
 	render() {
 		let mtxList = this.getMTXList();
 		return (
-			<div className="mtxSelection">
+			<div className={`mtxSelection${this.props.safariCheck() ? ' safari' : ''}`}>
 				<table>
 					<thead>
 						<tr>
@@ -27,7 +27,6 @@ export default class MTXSelection extends React.Component {
 								modifyMTXItem={this.props.modifyMTXItem}
 							/>
 						))}
-						<tr className="bufferSpace" />
 					</tbody>
 				</table>
 			</div>

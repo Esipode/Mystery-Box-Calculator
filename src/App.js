@@ -19,6 +19,14 @@ export default class App extends React.Component {
 			simulatorRunning: false
 		};
 	}
+	mobileSafariCheck = () => {
+		let ua = window.navigator.userAgent;
+		let iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+		let webkit = !!ua.match(/WebKit/i);
+		let isBrave = !!(navigator.brave && navigator.brave.isBrave() || false);
+		let iOSSafari = iOS && webkit && !ua.match(/CriOS/i) && !isBrave;
+		return iOSSafari;
+	}
 	onChangeStep = (step) => {
 		if (step === 1) {
 			this.setState({
@@ -84,7 +92,7 @@ export default class App extends React.Component {
 				/>
 				<div className="mainWrapper" style={{transform: 'translateX('+(this.state.curStep * -100)+'vw)'}}>
 					<BoxSelection changeMTXBox={this.onChangeMTXBox} />
-					<MTXSelection curMTX={this.state.curBox} modifyMTXItem={this.onModifyMTXItem} />
+					<MTXSelection curMTX={this.state.curBox} modifyMTXItem={this.onModifyMTXItem} safariCheck={this.mobileSafariCheck} />
 					<BoxSimulator
 						simToggle={this.onToggleSimulator}
 						isRunning={this.state.simulatorRunning}
@@ -93,8 +101,9 @@ export default class App extends React.Component {
 						curStep={this.state.curStep}
 						simList={this.onSimFinish}
 						boxChanged={this.state.boxChanged}
+						safariCheck={this.mobileSafariCheck}
 					/>
-					<Statistics stats={this.state.statList} boxChanged={this.state.boxChanged} />
+					<Statistics stats={this.state.statList} boxChanged={this.state.boxChanged} safariCheck={this.mobileSafariCheck} />
 				</div>
 			</div>
 		);

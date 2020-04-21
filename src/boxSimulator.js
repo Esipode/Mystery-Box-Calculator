@@ -227,6 +227,7 @@ export default class BoxSimulator extends React.Component {
 	render() {
 		return (
 			<div className="boxSimulator">
+			<div className={`boxSimulator${this.props.safariCheck() ? ' safari' : ''}`}>
 				<div className="searchContainer">
 					<h4>Boxes:
 					<input 
@@ -271,7 +272,6 @@ export default class BoxSimulator extends React.Component {
 								key={item.name}
 							/>
 						))}
-						<tr className="bufferSpace" />
 					</tbody>
 				</table>
 			</div>
