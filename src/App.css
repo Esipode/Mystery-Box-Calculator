@@ -344,6 +344,7 @@ body {
 
 .mtxSelection tbody {
 	display: block;
+	border-radius: 0 0 10px 10px;
 	overflow-y: auto;
 	overflow-x: hidden;
 	height: calc(100vh - 195px);
@@ -641,6 +642,7 @@ body {
 	display: block;
 	overflow-y: auto;
 	overflow-x: hidden;
+	border-radius: 0 0 10px 10px;
 	height: calc(100vh - 290px);
 	border-spacing: 0px;
 	scrollbar-width: none;
@@ -793,6 +795,7 @@ body {
 	display: block;
 	overflow-y: auto;
 	overflow-x: hidden;
+	border-radius: 0 0 10px 10px;
 	height: calc(100vh - 195px);
 	border-spacing: 0px;
 	scrollbar-width: none;
