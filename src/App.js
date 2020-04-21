@@ -23,7 +23,7 @@ export default class App extends React.Component {
 		let ua = window.navigator.userAgent;
 		let iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
 		let webkit = !!ua.match(/WebKit/i);
-		let isBrave = !!(navigator.brave && navigator.brave.isBrave() || false);
+		let isBrave = !!((navigator.brave && navigator.brave.isBrave()) || false);
 		let iOSSafari = iOS && webkit && !ua.match(/CriOS/i) && !isBrave;
 		return iOSSafari;
 	}
