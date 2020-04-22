@@ -643,7 +643,7 @@ body {
 	overflow-y: auto;
 	overflow-x: hidden;
 	border-radius: 0 0 10px 10px;
-	height: calc(100vh - 290px);
+	height: calc(100vh - 275px);
 	border-spacing: 0px;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
