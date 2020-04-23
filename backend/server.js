@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const path = require('path');
 
 require('dotenv').config();
 
@@ -20,6 +21,16 @@ connection.once('open', () => {
 const statsRouter = require('./routes/stats');
 
 app.use('/stats', statsRouter);
+
+//Serve static assets if in production
+if(process.env.NOD_ENV === 'production') {
+	//set static folder
+	app.use(express.static('./build'));
+
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(_dirname, 'build', 'index.html'));
+	});
+}
 
 app.listen(port, () => {{
 	console.log(`Server is running on port: ${port}`)
