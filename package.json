@@ -15,7 +15,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start && npm run server",
+    "start": "node backend/server.js && npm run start-client.js",
     "build": "react-scripts build",
     "server": "node backend/server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
