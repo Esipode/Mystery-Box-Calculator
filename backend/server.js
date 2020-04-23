@@ -25,7 +25,7 @@ app.use('/stats', statsRouter);
 //Serve static assets if in production
 if(process.env.NOD_ENV === 'production') {
 	//set static folder
-	app.use(express.static('./build'));
+	app.use(express.static('build'));
 
 	app.get('*', (req, res) => {
 		res.sendFile(path.resolve(_dirname, 'build', 'index.html'));
