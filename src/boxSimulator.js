@@ -148,7 +148,8 @@ export default class BoxSimulator extends React.Component {
 		let rawList = JSON.parse(JSON.stringify(this.state.completedList))
 		let sortedItems = rawList;
 		return new Promise(resolve => {
-			let statList = [];
+			let statList = {};
+			statList._id = rawList[0].box;
 			statList.total = (() => {
 				let sum = 0;
 				for (let i = 0; i < rawList.length; i++) {
@@ -156,7 +157,6 @@ export default class BoxSimulator extends React.Component {
 				}
 				return sum;
 			})();
-			statList.box = rawList[0].box;
 			statList.itemList = (() => {
 				
 				sortedItems.sort((a, b) => {
@@ -191,42 +191,21 @@ export default class BoxSimulator extends React.Component {
 		})
 	}
 	onSubmitResults = async () => {
-		const stat = await this.listStats();
-		console.log(stat);
-		let masterList = await axios.get('http://localhost:5000/stats');
-		console.log(masterList);
-		let boxIndex = await masterList.data.findIndex((name) => {return name._id === stat.box});
-		let curBox = masterList.data[boxIndex];
-		curBox.total += stat.total;
-		for (let i = 0; i < curBox.itemList.length; i++) {
-			if (stat.itemList[i].count > 0) {
-				curBox.itemList[i].count += stat.itemList[i].count;
-				if (stat.itemList[i].selected) {
-					curBox.itemList[i].wanted += stat.itemList[i].count;
-				}
-				else {
-					curBox.itemList[i].unwanted += stat.itemList[i].count;
-				}
-			}
-		}
-		this.setState({
-			resultsSubmitted: true
-		})
-		const statList = {
-			_id: stat.box,
-            total: curBox.total,
-            itemList: curBox.itemList
-		}
-		this.props.simList(statList);
-		// axios.post('http://localhost:5000/stats/update/'+statList._id, statList)
-		// 	.then(res => console.log(res.data))
-		// 	.catch((err) => {
-		// 		console.log(err);
-		// 	});
+		let stat = await this.listStats();
+		axios.post('http://localhost:5000/stats/update/'+stat._id, stat)
+			.then(res => {
+				console.log('Stats updated!');
+				this.props.simList(res.data);
+				this.setState({
+					resultsSubmitted: true
+				})
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	}
 	render() {
 		return (
-			<div className="boxSimulator">
 			<div className={`boxSimulator${this.props.safariCheck() ? ' safari' : ''}`}>
 				<div className="searchContainer">
 					<h4>Boxes:

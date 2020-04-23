@@ -30,12 +30,29 @@ router.route('/add').post((req, res) => {
 router.route('/update/:id').post((req, res) => {
 	Stat.findById(req.params.id)
 		.then(stat => {
-			stat.total = req.body.total;
-			stat.itemList = req.body.itemList;
-
-			stat.save()
-				.then(() => res.json('Stat updated!'))
-				.catch(err => res.status(400).json('Error: ' + err));
+			let masterList = stat.itemList;
+			let filterList = new Promise((resolve, reject) => {
+				masterList.forEach((item, index) => {
+					if (req.body.itemList[index].count > 0) {
+						item.count += req.body.itemList[index].count;
+						if (req.body.itemList[index].selected) {
+							item.wanted += req.body.itemList[index].count;
+						}
+						else {
+							item.unwanted += req.body.itemList[index].count;
+						}
+					}
+				})
+				resolve();
+			});
+			filterList.then(() => {
+				stat.total += req.body.total;
+				stat.itemList = masterList;
+				stat.markModified('itemList');
+				stat.save()
+					.then(() => res.json(stat))
+					.catch(err => res.status(400).json('Error: ' + err));
+			})
 		})
 		.catch(err => res.status(400).json('Error: ' + err));
 });
