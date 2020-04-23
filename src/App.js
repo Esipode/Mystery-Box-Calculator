@@ -56,6 +56,7 @@ export default class App extends React.Component {
 		}
 		else {
 			arr = arr.filter((item) => item !== mtx);
+			mtx.selected = false;
 		}
 		this.toggleStepThree(true);
 		this.setState({
