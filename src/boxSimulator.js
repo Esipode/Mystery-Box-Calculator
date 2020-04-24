@@ -216,7 +216,7 @@ export default class BoxSimulator extends React.Component {
 						disabled={this.props.isRunning} 
 						onChange={(e) => this.setState({boxVal: e.target.value.replace(/\D/,'')})} 
 						value={this.state.boxVal} 
-						placeholder="# of boxes"
+						placeholder="#"
 						onPaste={this.stopPaste}
 					/>
 					</h4>
