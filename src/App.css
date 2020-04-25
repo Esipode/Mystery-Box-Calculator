@@ -353,10 +353,6 @@ body {
 	-ms-overflow-style: none;
 }
 
-.mtxSelection.safari tbody {
-	height: calc(100vh - 325px);
-}
-
 .mtxSelection .mtx {
 	height: 60px;
 	background-color: rgba(255,255,255,0.07);
@@ -654,10 +650,6 @@ body {
 	background: transparent;
 }
 
-.boxSimulator.safari tbody {
-	height: calc(100vh - 405px);
-}
-
 .boxSimulator .simResults {
 	height: 60px;
 	opacity: 0.5;
@@ -809,10 +801,6 @@ body {
 .statistics tbody::-webkit-scrollbar {
 	width: 0;
 	background: transparent;
-}
-
-.statistics.safari tbody {
-	height: calc(100vh - 325px);
 }
 
 .statistics tbody .stat {
@@ -1236,5 +1224,19 @@ body {
 	.statistics tbody .stat td:nth-child(1) {
 		width: 279px;
 		font-size: 16px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.mtxSelection.safari tbody {
+		height: calc(100vh - 325px);
+	}
+
+	.boxSimulator.safari tbody {
+		height: calc(100vh - 405px);
+	}
+
+	.statistics.safari tbody {
+		height: calc(100vh - 325px);
 	}
 }
