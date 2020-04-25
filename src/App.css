@@ -811,7 +811,7 @@ body {
 	background: transparent;
 }
 
-.boxSimulator.safari tbody {
+.statistics.safari tbody {
 	height: calc(100vh - 325px);
 }
 
