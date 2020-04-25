@@ -971,23 +971,15 @@ body {
 		margin: 9px 7.5%
 	}
 
-	.boxSimulator .progressBar {
-		margin-top: 9px;
-	}
-
-	.boxSimulator .progressCount {
-		top: 60px;
+	.boxSimulator .progressCount, .boxSimulator .submitResults {
+		top: 0px;
 		font-size: 14px;
-	}
-
-	.boxSimulator .submitResults {
-		top: 60px;
-		font-size: 14px;
+		position: relative;
 	}
 
 	.boxSimulator table {
 		width: 300px;
-		margin-top: 0px;
+		margin-top: 12px;
 	}
 
 	.boxSimulator thead th:nth-child(1) {
