@@ -353,7 +353,7 @@ body {
 	-ms-overflow-style: none;
 }
 
-.safari tbody {
+.mtxSelection.safari tbody {
 	height: calc(100vh - 325px);
 }
 
@@ -654,6 +654,10 @@ body {
 	background: transparent;
 }
 
+.boxSimulator.safari tbody {
+	height: calc(100vh - 405px);
+}
+
 .boxSimulator .simResults {
 	height: 60px;
 	opacity: 0.5;
@@ -805,6 +809,10 @@ body {
 .statistics tbody::-webkit-scrollbar {
 	width: 0;
 	background: transparent;
+}
+
+.boxSimulator.safari tbody {
+	height: calc(100vh - 325px);
 }
 
 .statistics tbody .stat {
