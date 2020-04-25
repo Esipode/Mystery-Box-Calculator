@@ -1126,7 +1126,7 @@ body {
 	}
 
 	.mtxSelection tbody {
-		height: calc(100vh - 45px);
+		height: calc(100vh - 55px);
 	}
 
 	.boxSimulator {
@@ -1147,7 +1147,7 @@ body {
 	}
 
 	.boxSimulator tbody {
-		height: calc(100vh - 138px);
+		height: calc(100vh - 148px);
 	}
 
 	.statistics {
@@ -1161,6 +1161,17 @@ body {
 
 	.statistics tbody {
 		height: calc(100vh - 55px);
+	}
+	.mtxSelection.safari tbody {
+		height: calc(100vh - 105px);
+	}
+
+	.boxSimulator.safari tbody {
+		height: calc(100vh - 198px);
+	}
+
+	.statistics.safari tbody {
+		height: calc(100vh - 105px);
 	}
 }
 
