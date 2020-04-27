@@ -295,12 +295,12 @@ body {
 	border-radius: 10px;
 	width: 375px;
 	align-self: center;
+	text-align: center;
 	box-sizing: content-box;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
 	border-spacing: 0;
 	scrollbar-width: none; /* Firefox */
 	-ms-overflow-style: none;  /* IE 10+ */
-	text-align: center;
 }
 
 .mtxSelection table::-webkit-scrollbar {
@@ -755,7 +755,7 @@ body {
 	border-spacing: 0;
 	text-align: center;
 	scrollbar-width: none;
-    -ms-overflow-style: none;
+	-ms-overflow-style: none;
 }
 
 .statistics thead {
@@ -814,7 +814,7 @@ body {
 
 .statistics tbody td {
 	padding: 5px;
-    border-right: 2px solid rgba(0,0,0,0.3);
+	border-right: 2px solid rgba(0,0,0,0.3);
 }
 
 .statistics tbody td:nth-child(1) {
@@ -914,6 +914,7 @@ body {
 
 	.mtxSelection table {
 		width: 300px;
+		margin-top: 9px;
 	}
 
 	.mtxSelection thead th:nth-child(1) {
@@ -1043,6 +1044,10 @@ body {
 
 	.statistics thead th:nth-child(2) {
 		width: 55px;
+	}
+
+	.statistics .tbody {
+		height: calc(100vh - 160px);
 	}
 }
 
