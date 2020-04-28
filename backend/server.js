@@ -1,4 +1,3 @@
-require('heroku-self-ping').default("https://desolate-fjord-07426.herokuapp.com/");
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
