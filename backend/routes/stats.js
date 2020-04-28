@@ -27,8 +27,8 @@ router.route('/add').post((req, res) => {
 		.catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route(process.env.NODE_ENV === 'production' ? '/update/:id' : '/update/:id'+'TEST').post((req, res) => {
-	Stat.findById(req.params.id)
+router.route('/update/:id').post((req, res) => {
+	Stat.findById(process.env.NODE_ENV === 'production' ? req.params.id : req.params.id+"TEST")
 		.then(stat => {
 			let masterList = stat.itemList;
 			let filterList = new Promise((resolve, reject) => {
