@@ -28,7 +28,8 @@ router.route('/add').post((req, res) => {
 });
 
 router.route('/update/:id').post((req, res) => {
-	Stat.findById(process.env.NODE_ENV.trim() === 'production' ? req.params.id : req.params.id+"TEST")
+	let devCheck = process.env.NODE_ENV === 'dev' ? req.params.id+"TEST" : req.params.id; 
+	Stat.findById(devCheck)
 		.then(stat => {
 			let masterList = stat.itemList;
 			let filterList = new Promise((resolve, reject) => {
