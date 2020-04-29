@@ -195,7 +195,6 @@ export default class BoxSimulator extends React.Component {
 		axios.post('http://localhost:5000/stats/update/'+stat._id, stat)
 			.then(res => {
 				console.log('Stats updated!');
-				console.log(res.data);
 				this.props.simList(res.data);
 				this.setState({
 					resultsSubmitted: true

@@ -28,8 +28,7 @@ router.route('/add').post((req, res) => {
 });
 
 router.route('/update/:id').post((req, res) => {
-	let devCheck = process.env.NODE_ENV === 'dev' ? req.params.id+"TEST" : req.params.id; 
-	Stat.findById(devCheck)
+	Stat.findById(process.env.NODE_ENV === 'production' ? req.params.id : req.params.id+"TEST")
 		.then(stat => {
 			let masterList = stat.itemList;
 			let filterList = new Promise((resolve, reject) => {
@@ -51,7 +50,7 @@ router.route('/update/:id').post((req, res) => {
 				stat.itemList = masterList;
 				stat.markModified('itemList');
 				stat.save()
-					.then(() => res.json(process.env.NODE_ENV))
+					.then(() => res.json(stat))
 					.catch(err => res.status(400).json('Error: ' + err));
 			})
 		})
