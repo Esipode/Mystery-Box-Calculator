@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "node backend/server.js && npm run start-client.js",
-    "start-dev": "react-scripts start",
+    "start-dev": "react-scripts start && nodemon backend/server.js",
     "build": "react-scripts build",
     "server": "node backend/server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true && npm install && npm run build"
