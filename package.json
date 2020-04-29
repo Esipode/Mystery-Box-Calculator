@@ -16,11 +16,11 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "NODE_ENV=production&&node backend/server.js && npm run start-client.js",
+    "start": "NODE_ENV=production node backend/server.js && npm run start-client.js",
     "start-dev": "react-scripts start && nodemon backend/server.js",
     "build": "react-scripts build",
     "server": "node backend/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true && npm install && npm run build"
+    "heroku-postbuild": "npm install && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
