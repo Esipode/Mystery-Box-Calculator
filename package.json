@@ -16,7 +16,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "node backend/server.js && npm run start-client.js",
+    "start": "NODE_ENV=production&&node backend/server.js && npm run start-client.js",
     "start-dev": "react-scripts start && nodemon backend/server.js",
     "build": "react-scripts build",
     "server": "node backend/server.js",
