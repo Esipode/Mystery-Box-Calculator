@@ -51,7 +51,7 @@ router.route('/update/:id').post((req, res) => {
 				stat.itemList = masterList;
 				stat.markModified('itemList');
 				stat.save()
-					.then(() => res.json(stat))
+					.then(() => res.json(process.env.NODE_ENV))
 					.catch(err => res.status(400).json('Error: ' + err));
 			})
 		})
