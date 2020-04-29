@@ -1181,16 +1181,25 @@ body {
 }
 
 @media only screen and (min-width: 768px) and (min-height: 600px) {
+	.header h2 {
+		font-size: 18px;
+	}
+
+	.header h2 span {
+		font-size: 18px;
+	}
+
 	.header h3 {
 		font-size: 20px;
 	}
 
 	.header span {
-		font-size: 15px;
+		font-size: 18px;
 	}
 
 	.header i {
 		font-size: 25px;
+		padding: 6px 15px 0px 15px;
 	}
 
 	.boxSelection {
@@ -1199,16 +1208,57 @@ body {
 		margin: 0 calc(50% - (768px / 2));
 	}
 
+	.boxSelection .box {
+		height: 135px;
+		width: 135px;
+	}
+
+	.boxSelection .box img {
+		height: 95px;
+	}
+
+	.boxSelection .box h3 {
+		font-size: 17px;
+	}
+
 	.mtxSelection table {
 		width: 445px;
 	}
 
 	.mtxSelection thead th:nth-child(1) {
-		width: 243px;
+		width: 230px;
+	}
+
+	.mtxSelection thead th:nth-child(2) {
+		width: 53px;
+	}
+
+	.mtxSelection thead th:nth-child(3) {
+		width: 96px;
+	}
+
+	.mtxSelection thead th:nth-child(4) {
+		width: 60px;
+	}
+
+	.mtxSelection tbody td {
+		font-size: 20px;
 	}
 
 	.mtxSelection .mtx td:nth-child(1) {
-		width: 242px;
+		width: 230px;
+	}
+
+	.mtxSelection .mtx td:nth-child(2) {
+		width: 43px;
+	}
+
+	.mtxSelection .mtx td:nth-child(3) {
+		width: 86px;
+	}
+
+	.mtxSelection .mtx td:nth-child(4) {
+		width: 50px;
 	}
 
 	.boxSimulator {
@@ -1217,16 +1267,91 @@ body {
 		margin: 0 calc(50% - (768px / 2));
 	}
 
+	.boxSimulator .searchContainer {
+		height: 50px;
+	}
+
+	.boxSimulator .searchContainer h4 {
+		height: 50px;
+		font-size: 18px;
+	}
+
+	.boxSimulator input {
+		font-size: 18px;
+	}
+
+	.boxSimulator .searchContainer button {
+		height: 50px;
+	}
+
+	.boxSimulator .progressBar {
+		height: 46px;
+	}
+
+	.boxSimulator .progressCount, .boxSimulator .submitResults {
+		top: 72px;
+		font-size: 20px;
+	}
+
+	.boxSimulator .submitResults {
+		width: 120px;
+	}
+
 	.boxSimulator table {
 		width: 485px;
+		margin-top: 50px;
 	}
 
 	.boxSimulator thead th:nth-child(1) {
-		width: 223px;
+		width: 220px;
+	}
+
+	.boxSimulator thead th:nth-child(2) {
+		width: 53px;
+	}
+
+	.boxSimulator thead th:nth-child(3) {
+		width: 85px;
+	}
+
+	.boxSimulator thead th:nth-child(4) {
+		width: 60px;
+	}
+
+	.boxSimulator thead th:nth-child(5) {
+		width: 59px;
 	}
 	
 	.boxSimulator .simResults td:nth-child(1) {
 		width: 203px;
+	}
+
+	.boxSimulator tbody {
+		height: calc(100vh - 295px);
+	}
+
+	.boxSimulator tbody td {
+		font-size: 20px;
+	}
+
+	.boxSimulator .simResults td:nth-child(1) {
+		width: 202px;
+	}
+
+	.boxSimulator .simResults td:nth-child(2) {
+		width: 53px;
+	}
+
+	.boxSimulator .simResults td:nth-child(3) {
+		width: 86px;
+	}
+
+	.boxSimulator .simResults td:nth-child(4) {
+		width: 60px;
+	}
+
+	.boxSimulator .simResults td:nth-child(5) {
+		width: 60px;
 	}
 
 	.statistics table {
@@ -1240,6 +1365,9 @@ body {
 	.statistics tbody .stat td:nth-child(1) {
 		width: 279px;
 		font-size: 16px;
+	}
+	.statistics tbody .wanted, .statistics tbody .unwanted {
+		font-size: 14px;
 	}
 }
 
