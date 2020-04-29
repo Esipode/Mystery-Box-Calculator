@@ -8,7 +8,7 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-	const _id = req.body._id;;
+	const _id = req.body._id;
 	const total = 0;
 	const itemList = req.body.itemList;
 	for (let i = 0; i < itemList.length; i++) {
