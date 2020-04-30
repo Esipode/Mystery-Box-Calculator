@@ -96,11 +96,9 @@ export default class BoxSimulator extends React.Component {
 				break;
 			}
 		}
-		//Checks total number of items rolled in box
-		// let sum = 0;
-		// for (let k = 0; k < selectedItems.length; k++) {
-		// 	sum += selectedItems[k].count;
-		// }
+		selectedItems.forEach((item, index) => {
+			item.position = index;
+		});
 		selectedItems.sort((a, b) => {
 			if (a.rolled !== b.rolled) {
 				return a.rolled ? -1 : 1;
@@ -110,7 +108,7 @@ export default class BoxSimulator extends React.Component {
 				return a.selected ? -1 : 1;
 			}
 			//Then sort by index
-			if (a.index < b.index) {
+			if (a.position < b.position) {
 				return -1;
 			}
 			return 0;
@@ -141,8 +139,8 @@ export default class BoxSimulator extends React.Component {
 			statList.itemList = (() => {
 				
 				sortedItems.sort((a, b) => {
-					//Sort by item rarity
-					if (a.index < b.index) {
+					//Sort by index
+					if (a.position < b.position) {
 						return -1;
 					}
 					return 0;

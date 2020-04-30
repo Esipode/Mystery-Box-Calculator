@@ -25,7 +25,6 @@ export default class MTXSelection extends React.Component {
 								item={mtxItem}
 								key={mtxItem.name}
 								modifyMTXItem={this.props.modifyMTXItem}
-								index={index}
 							/>
 						))}
 					</tbody>
