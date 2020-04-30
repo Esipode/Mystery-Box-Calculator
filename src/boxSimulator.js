@@ -109,28 +109,9 @@ export default class BoxSimulator extends React.Component {
 			if (a.selected !== b.selected) {
 				return a.selected ? -1 : 1;
 			}
-			//Then sort by item rarity and items that were rolled
-			if (a.rarity !== b.rarity) {
-				if (a.rarity === 'rare' && (b.rarity === 'uncommon' || b.rarity === 'common')) {
-					return -1;
-				}
-				else if (a.rarity === 'uncommon' && b.rarity === 'rare') {
-					return 1;
-				}
-				else if (a.rarity === 'uncommon' && b.rarity === 'common') {
-					return -1;
-				}
-				else if (a.rarity === 'common' && (b.rarity === 'rare' || b.rarity === 'uncommon')) {
-					return 1;
-				}
-			}
-			//Then sort by point value and items that were rolled
-			if (a.value !== b.value) {
-				return b.value - a.value;
-			}
-			//Then sort by name and items that were rolled
-			if (a.name !== b.name) {
-				return a - b;
+			//Then sort by index
+			if (a.index < b.index) {
+				return -1;
 			}
 			return 0;
 		})
@@ -161,27 +142,8 @@ export default class BoxSimulator extends React.Component {
 				
 				sortedItems.sort((a, b) => {
 					//Sort by item rarity
-					if (a.rarity !== b.rarity) {
-						if (a.rarity === 'rare' && (b.rarity === 'uncommon' || b.rarity === 'common')) {
-							return -1;
-						}
-						else if (a.rarity === 'uncommon' && b.rarity === 'rare') {
-							return 1;
-						}
-						else if (a.rarity === 'uncommon' && b.rarity === 'common') {
-							return -1;
-						}
-						else if (a.rarity === 'common' && (b.rarity === 'rare' || b.rarity === 'uncommon')) {
-							return 1;
-						}
-					}
-					//Then sort by point value
-					if (a.value !== b.value) {
-						return b.value - a.value;
-					}
-					//Then sort by name
-					if (a.name !== b.name) {
-						return a - b;
+					if (a.index < b.index) {
+						return -1;
 					}
 					return 0;
 				})
