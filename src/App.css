@@ -563,6 +563,7 @@ body {
 	background-color: transparent;
 	border-color: transparent;
 	color: var(--mainColor);
+    pointer-events: none;
 }
 
 .boxSimulator .fa-check {

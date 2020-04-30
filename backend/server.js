@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
+const rateLimit = require("express-rate-limit");
 
 require('dotenv').config();
 
@@ -18,8 +19,14 @@ connection.once('open', () => {
 	console.log('MongoDB database connection established successfully');
 })
 
+const limiter = rateLimit({
+	windowMs: 60 * 1000, // 1 minutes
+	max: 10 // limit each IP to 10 requests per windowMs
+  });
+
 const statsRouter = require('./routes/stats');
 
+app.use(limiter);
 app.use('/stats', statsRouter);
 
 //Serve static assets if in production
