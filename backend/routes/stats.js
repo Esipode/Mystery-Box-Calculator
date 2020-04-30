@@ -28,7 +28,7 @@ router.route('/add').post((req, res) => {
 });
 
 router.route('/update/:id').post((req, res) => {
-	Stat.findById(process.env.PORT === 5000 ? req.params.id+"TEST" : req.params.id)
+	Stat.findById(req.params.id)
 		.then(stat => {
 			let masterList = stat.itemList;
 			let filterList = new Promise((resolve, reject) => {
