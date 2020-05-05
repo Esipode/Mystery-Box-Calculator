@@ -1347,7 +1347,7 @@ body {
 	}
 
 	.boxSimulator .simResults td:nth-child(1) {
-		width: 202px;
+		width: 192px;
 	}
 
 	.boxSimulator .simResults td:nth-child(2) {
@@ -1355,7 +1355,7 @@ body {
 	}
 
 	.boxSimulator .simResults td:nth-child(3) {
-		width: 86px;
+		width: 96px;
 	}
 
 	.boxSimulator .simResults td:nth-child(4) {
