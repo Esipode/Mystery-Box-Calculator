@@ -151,17 +151,24 @@ export default class BoxSimulator extends React.Component {
 		})
 	}
 	onSubmitResults = async () => {
+		this.setState({
+			resultsPending: true
+		})
 		let stat = await this.listStats();
 		axios.post('http://localhost:5000/stats/update/'+stat._id, stat)
 			.then(res => {
 				console.log('Stats updated!');
 				this.props.simList(res.data);
 				this.setState({
-					resultsSubmitted: true
+					resultsSubmitted: true,
+					resultsPending: false
 				})
 			})
 			.catch((err) => {
 				console.log(err);
+				this.setState({
+					resultsPending: false
+				})
 			});
 	}
 	render() {
@@ -195,7 +202,7 @@ export default class BoxSimulator extends React.Component {
 				</div>
 				<p className="progressCount" style={{display: this.props.isRunning && !this.props.boxChanged && this.state.curProgress !== this.state.boxVal ? 'block' : 'none'}}>{this.state.curProgress}/{this.state.boxVal}</p>
 				<p 
-					className={`submitResults ${this.state.resultsSubmitted ? 'submitted' : ''}`} 
+					className={`submitResults${this.state.resultsSubmitted ? ' submitted' : ''}${this.state.resultsPending ? ' pending' : ''}`}
 					onClick={this.onSubmitResults} 
 					style={{display: !this.props.isRunning && this.state.completedList.length && !this.props.boxChanged ? 'block' : 'none'}}
 				>
