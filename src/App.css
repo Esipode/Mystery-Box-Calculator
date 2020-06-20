@@ -15,6 +15,11 @@ body {
 	border: 0;
 }
 
+.Angels_Demons {
+	--mainColor: #e8da30;
+	--bgColor: #391c1a;
+}
+
 .Thaumaturgy {
 	--mainColor: #9fd42b;
 	--bgColor: #191900;
@@ -251,6 +256,10 @@ body {
 	margin: 10px;
 	transition: all 0.25s linear;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.box:nth-child(13) {
+	display: none;
 }
 
 .box:hover {
