@@ -1328,7 +1328,7 @@ body {
 	}
 
 	.boxSimulator thead th:nth-child(1) {
-		width: 220px;
+		width: 212px;
 	}
 
 	.boxSimulator thead th:nth-child(2) {
@@ -1336,11 +1336,11 @@ body {
 	}
 
 	.boxSimulator thead th:nth-child(3) {
-		width: 85px;
+		width: 96px;
 	}
 
 	.boxSimulator thead th:nth-child(4) {
-		width: 60px;
+		width: 56px;
 	}
 
 	.boxSimulator thead th:nth-child(5) {
