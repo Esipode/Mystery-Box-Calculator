@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Header from './header';
 import BoxSelection from './boxSelection';
 import MTXSelection from './mtxSelection';
