@@ -155,21 +155,53 @@ export default class BoxSimulator extends React.Component {
 			resultsPending: true
 		})
 		let stat = await this.listStats();
-		axios.post('/stats/update/'+stat._id, stat)
+		if (process.env.REACT_APP_TESTING_ENV) {
+			//TESTING POST
+			stat._id += "TEST";
+			await axios.post('http://localhost:5000/stats/update/'+stat._id, stat)
 			.then(res => {
-				console.log('Stats updated!');
+				console.log('Testing stats updated!');
 				this.props.simList(res.data);
 				this.setState({
 					resultsSubmitted: true,
 					resultsPending: false
 				})
 			})
-			.catch((err) => {
-				console.log(err);
-				this.setState({
-					resultsPending: false
+			.catch(async (err) => {
+				console.log('Could not find existing table, attempting to create new table!')
+				//TESTING ADD
+				await axios.post('http://localhost:5000/stats/add/', stat)
+				.then(res => {
+					this.setState({
+						resultsSubmitted: true,
+						resultsPending: false
+					})
+					console.log('Table added!');
 				})
+				.catch((err) => {
+					this.setState({
+						resultsPending: false
+					})
+				});
 			});
+		}
+		else {
+			//PRODUCTION POST
+			axios.post('/stats/update/'+stat._id, stat)
+				.then(res => {
+					console.log('Stats updated!');
+					this.props.simList(res.data);
+					this.setState({
+						resultsSubmitted: true,
+						resultsPending: false
+					})
+				})
+				.catch((err) => {
+					this.setState({
+						resultsPending: false
+					})
+				});
+		}
 	}
 	render() {
 		return (

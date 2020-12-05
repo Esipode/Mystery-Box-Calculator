@@ -19,6 +19,7 @@ export default class App extends React.Component {
 			simulatorRunning: false
 		};
 	}
+	
 	mobileSafariCheck = () => {
 		let ua = window.navigator.userAgent;
 		let iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
