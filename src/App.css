@@ -22,7 +22,7 @@ body {
 
 .Angels_Demons {
 	--mainColor: #e8da30;
-	--bgColor: #391c1a;
+	--bgColor: #2b2b2b;
 }
 
 .Thaumaturgy {
@@ -36,23 +36,23 @@ body {
 }
 
 .Carnival {
-	--mainColor: #d87437;
-	--bgColor: #120512;
+	--mainColor: #de7231;
+	--bgColor:#250a25;
 }
 
 .Frontier {
-	--mainColor: #c59248;
-	--bgColor: #190000;
+	--mainColor: #ffc775;
+	--bgColor: #2e0707;
 }
 
 .Glimmerwood {
 	--mainColor: #52ff81;
-	--bgColor: #0b0c29;
+	--bgColor: #161739;
 }
 
 .Fairgraves {
-	--mainColor: #4ff5ff;
-	--bgColor: #06140b;
+	--mainColor: #55dae2;
+	--bgColor:#102b1a;
 }
 
 .Oriath {
