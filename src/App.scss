@@ -1126,7 +1126,7 @@ body {
 		}
 	}
 }
-//Mobile Portrait Display
+//Mobile Landscape Display
 @media only screen and (max-height: 600px) {
 	.App {
 		display: flex;
@@ -1497,7 +1497,7 @@ body {
 		}
 	}
 }
-//Mobile Landscape Display
+//Mobile Portrait Display
 @media only screen and (max-width: 600px) {
 	.App {
 		.mtxSelection.safari tbody {
