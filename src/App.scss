@@ -1297,6 +1297,7 @@ body {
 		.header {
 
 			.backStep, .forwardStep {
+
 				h2 {
 					font-size: 18px;
 	
@@ -1345,7 +1346,7 @@ body {
 			.mtxSelection {
 
 				table {
-					width: 445px;
+					width: 400px;
 
 					thead {
 
@@ -1435,26 +1436,29 @@ body {
 
 					thead {
 
-						th {
+						tr {
 
-							&:nth-child(1) {
-								width: 212px;
-							}
+							th {
 
-							&:nth-child(2) {
-								width: 53px;
-							}
-
-							&:nth-child(3) {
-								width: 96px;
-							}
-
-							&:nth-child(4) {
-								width: 56px;
-							}
-
-							&:nth-child(5) {
-								width: 59px;
+								&:nth-child(1) {
+									width: 212px;
+								}
+	
+								&:nth-child(2) {
+									width: 53px;
+								}
+	
+								&:nth-child(3) {
+									width: 96px;
+								}
+	
+								&:nth-child(4) {
+									width: 56px;
+								}
+	
+								&:nth-child(5) {
+									width: 59px;
+								}
 							}
 						}
 					}
@@ -1499,10 +1503,13 @@ body {
 
 					thead {
 
-						th {
+						tr {
+							
+							th {
 
-							&:nth-child(1) {
-								width: 289px;
+								&:nth-child(1) {
+									width: 289px;
+								}
 							}
 						}
 					}
