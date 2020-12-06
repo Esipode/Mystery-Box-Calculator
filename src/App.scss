@@ -1504,7 +1504,7 @@ body {
 					thead {
 
 						tr {
-							
+
 							th {
 
 								&:nth-child(1) {
@@ -1530,7 +1530,7 @@ body {
 		}
 	}
 }
-//Mobile Portrait Display
+//Safari mobile fixes
 @media only screen and (max-width: 600px) {
 	.App {
 		.mtxSelection.safari tbody {
