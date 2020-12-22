@@ -1,3 +1,31 @@
+//Small Mobile Portrait Display
+@mixin mobile-portrait {
+	@media only screen and (max-width: 380px) {
+		@content;
+	}
+}
+
+//Mobile Landscape Display
+@mixin mobile-landscape {
+	@media only screen and (max-height: 600px) {
+		@content;
+	}
+}
+
+//Desktop Display
+@mixin desktop {
+	@media only screen and (min-width: 768px) and (min-height: 600px) {
+		@content;
+	}
+}
+
+//Safari mobile fixes
+@mixin safari {
+	@media only screen and (max-width: 600px) {
+		@content;
+	}
+}
+
 html {
 	--rareColor: #ffff77;
 	--uncommonColor: #8888ff;
@@ -90,6 +118,12 @@ body {
 	height: 100vh;
 	transition: all 0.25s linear;
 
+	@include mobile-landscape {
+		display: flex;
+		flex-direction: row;
+		padding-left: env(safe-area-inset-left);
+	}
+
 	.header {
 		display: grid;
 		grid-template-columns: calc(50% - 50px) 100px calc(50% - 50px);
@@ -101,6 +135,21 @@ body {
 		align-items: center;
 		background: rgba(255,255,255,0.05);
 		box-shadow: 0px 0px 7px 0px black;
+
+		@include mobile-portrait {
+			grid-template-rows: 100px;
+			height: 110px;
+		}
+
+		@include mobile-landscape {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, 1fr);
+			grid-column-gap: 0px;
+			grid-row-gap: 0px;
+			height: auto;
+			width: 175px;
+		}
 
 		/* LOGO ANIMATION */
 		@keyframes icon-left-flash {
@@ -144,6 +193,15 @@ body {
 			height: 100px;
 			margin-bottom: 20px;
 
+			@include mobile-portrait {
+				height: 80px;
+				margin-bottom: 10px;
+			}
+
+			@include mobile-landscape {
+				grid-area: 2 / 2 / 3 / 2;
+			}
+
 			#Layer_18 {
 				.st13 {
 		
@@ -172,6 +230,15 @@ body {
 			text-shadow: 1px 1px 3px rgba(0,0,0,1);
 			white-space: nowrap;
 			padding-top: 45px;
+
+			@include mobile-portrait {
+				font-size: 20px;
+				padding-top: 45px;
+			}
+
+			@include mobile-landscape {
+				grid-area: 2 / 2 / 3 / 2;
+			}
 		}
 
 		h2 {
@@ -182,15 +249,38 @@ body {
 			white-space: nowrap;
 			padding-top: 95px;
 
+			@include mobile-portrait {
+				font-size: 13px;
+				padding-top: 90px;
+			}
+
+			@include mobile-landscape {
+				width: 175px;
+				grid-area: 2 / 2 / 3 / 2;
+			}
+
+			@include desktop {
+				font-size: 18px;
+			}
+
 			span {
 				opacity: 0.7;
 				margin-left: 5px;
+
+				@include desktop {
+					font-size: 18px;
+				}
 			}
 		}
 
 		i {
 			font-size: 20px;
 			padding: 3px 10px 0px 10px;
+
+			@include desktop {
+				font-size: 25px;
+				padding: 6px 15px 0px 15px;
+			}
 		}
 
 		.backStep, .forwardStep {
@@ -201,15 +291,44 @@ body {
 			pointer-events: none;
 			transition: all 0.25s ease-in-out;
 
+			@include mobile-landscape {
+				width: 100%;
+				justify-content: center;
+			}
+
 			h3 {
 				font-size: 15px;
 				margin: 0;
+
+				@include mobile-portrait {
+					font-size: 16px;
+				}
+
+				@include mobile-landscape {
+					font-size: 16px;
+				}
+
+				@include desktop {
+					font-size: 20px;
+				}
 			}
 
 			span {
 				font-size: 12px;
 				opacity: 0.7;
 				margin: 0;
+
+				@include mobile-portrait {
+				font-size: 13px;
+				}
+
+				@include mobile-landscape {
+					font-size: 13px;
+				}
+
+				@include desktop {
+					font-size: 18px;
+				}
 			}
 		}
 
@@ -218,12 +337,44 @@ body {
 			justify-self: end;
 			text-align: end;
 			margin-bottom: 20px;
+
+			@include mobile-portrait {
+				display: flex;
+				flex-direction: column-reverse;
+				margin-bottom: 10px;
+
+				i {
+					padding-right: 0;
+					padding-bottom: 5px;
+					align-self: flex-end;
+				}
+			}
+
+			@include mobile-landscape {
+				grid-area: 1 / 2 / 2 / 2;
+			}
 		}
 
 		.forwardStep {
 			grid-area: 1 / 3 / 2 / 4;
 			justify-self: start;
 			margin-bottom: 20px;
+
+			@include mobile-portrait {
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 10px;
+
+				i {
+					padding-left: 0;
+					padding-bottom: 5px;
+					align-self: flex-start;
+				}
+			}
+
+			@include mobile-landscape {
+				grid-area: 3 / 2 / 4 / 2;
+			}
 		}
 
 		.headerVisible {
@@ -238,6 +389,27 @@ body {
 		align-items: flex-start;
 		height: calc(100vh - 150px);
 		transition: transform 0.75s cubic-bezier(1, -0.14, 0, 1.25);
+
+		@include mobile-portrait {
+			height: calc(100vh - 110vh);
+		}
+
+		@include mobile-landscape {
+			height: auto;
+			width: calc(100vw - 185px);
+
+			.mtxSelection.safari tbody {
+				height: calc(100vh - 105px);
+			}
+	
+			.boxSimulator.safari tbody {
+				height: calc(100vh - 198px);
+			}
+	
+			.statistics.safari tbody {
+				height: calc(100vh - 105px);
+			}
+		}
 	
 		.boxSelection {
 			display: flex;
@@ -249,12 +421,24 @@ body {
 			overflow-y: auto;
 			scrollbar-width: none; /* Firefox */
 			-ms-overflow-style: none;  /* IE 10+ */
+
+			@include mobile-landscape {
+				min-width: calc(100vw - 185px);
+				align-content: center;
+				align-self: center;
+			}
+
+			@include desktop {
+				width: 768px;
+				min-width: 768px;
+				margin: 0 calc(50% - (768px / 2));
+			}
 	
 			&::-webkit-scrollbar {
 				width: 0;
 				background: transparent;
 			}
-	
+
 			.box {
 				height: 100px;
 				width: 100px;
@@ -265,6 +449,30 @@ body {
 				margin: 10px;
 				transition: all 0.25s linear;
 				box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+
+				@include mobile-portrait {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: center;
+					height: 50px;
+					width: 40%;
+				}
+
+				@include mobile-landscape {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: center;
+					height: 50px;
+					width: 140px;
+					margin: 7px;
+				}
+
+				@include desktop {
+					height: 135px;
+					width: 135px;
+				}
 	
 				&:hover {
 					cursor: pointer;
@@ -278,12 +486,43 @@ body {
 	
 				img {
 					height: 75px;
+
+					@include mobile-portrait {
+						padding-left: 5px;
+						height: 50px;
+					}
+
+					@include mobile-landscape {
+						padding-left: 5px;
+						height: 50px;
+					}
+
+					@include desktop {
+						height: 100px;
+					}
 				}
 	
 				h3 {
 					font-size: 10px;
 					margin: 0;
 					letter-spacing: 1px;
+
+					@include mobile-portrait {
+						width: calc(100% - 55px);
+						padding: 0 8px;
+						font-size: 14px;
+					}
+
+					@include mobile-landscape {
+						width: calc(100% - 55px);
+						padding: 0 8px;
+						font-size: 12px;
+					}
+
+					@include desktop {
+						font-size: 17px;
+						font-weight: 400;
+					}
 				}
 			}
 		}
@@ -298,6 +537,17 @@ body {
 			margin-bottom: 40px;
 			scrollbar-width: none; /* Firefox */
 			-ms-overflow-style: none;  /* IE 10+ */
+
+			@include mobile-portrait {
+				font-size: 14px;
+				margin: 0;
+			}
+
+			@include mobile-landscape {
+				margin: 0;
+				margin-left: 185px;
+				min-width: calc(100vw - 185px);
+			}
 	
 			&::-webkit-scrollbar {
 				width: 0;
@@ -307,7 +557,6 @@ body {
 			table {
 				overflow: hidden;
 				border-radius: 10px;
-				width: 375px;
 				align-self: center;
 				text-align: center;
 				box-sizing: content-box;
@@ -315,6 +564,16 @@ body {
 				border-spacing: 0;
 				scrollbar-width: none; /* Firefox */
 				-ms-overflow-style: none;  /* IE 10+ */
+
+				@include mobile-portrait {
+					width: 300px;
+					margin-top: 9px;
+				}
+
+				@include mobile-landscape {
+					padding-top: 15px;
+					align-self: baseline;
+				}
 	
 				&::-webkit-scrollbar {
 					width: 0;
@@ -322,33 +581,20 @@ body {
 				}
 	
 				thead {
-					display: block;
 					border-radius: 10px 10px 0 0;
 					background-color: rgba(0,0,0,0.5);
 	
 					tr {
-						display: block;
 	
 						th {
-							display: inline-block;
-							padding: 5px 0;
+							padding: 5px 8px;
 							border-right: 2px solid #2a2a2a;
 	
 							&:nth-child(1) {
-								width: 173px;
 								border-left: none;
 							}
 	
-							&:nth-child(2) {
-								width: 54px;
-							}
-	
-							&:nth-child(3) {
-								width: 82px;
-							}
-	
 							&:nth-child(4) {
-								width: 58px;
 								border-right: none;
 							}
 						}
@@ -356,7 +602,6 @@ body {
 				}
 	
 				tbody {
-					display: block;
 					border-radius: 0 0 10px 10px;
 					overflow-y: auto;
 					overflow-x: hidden;
@@ -364,6 +609,14 @@ body {
 					border-spacing: 0px;
 					scrollbar-width: none;
 					-ms-overflow-style: none;
+
+					@include mobile-portrait {
+						height: calc(100vh - 155px);
+					}
+
+					@include mobile-landscape {
+						height: calc(100vh - 55px);
+					}
 	
 					&::-webkit-scrollbar {
 						width: 0;
@@ -373,6 +626,10 @@ body {
 					.mtx {
 						height: 60px;
 						background-color: rgba(255,255,255,0.07);
+
+						@include mobile-portrait {
+							height: 45px;
+						}
 	
 						&:nth-child(odd) {
 							background-color: rgba(255,255,255,0.12);
@@ -398,25 +655,26 @@ body {
 							padding: 5px;
 							border-right: 2px solid rgba(0,0,0,0.3);
 							transition: all 0.25s ease-in-out;
+
+							@include desktop {
+								font-size: 20px;
+							}
 	
 							&:nth-child(1) {
-								width: 172px;
 								border-left: 0px solid var(--mainColor);
 							}
 	
-							&:nth-child(2) {
-								width: 45px;
-							}
-	
 							&:nth-child(3) {
-								width: 73px;
 								border: none;
 							}
 	
 							&:nth-child(4) {
-								width: 50px;
 								border: none;
 								background-color: rgba(0,0,0,0.3);
+
+								@include mobile-portrait {
+									display: none;
+								}
 	
 								img {
 									height: 50px;
@@ -441,6 +699,23 @@ body {
 			justify-content: center;
 			scrollbar-width: none; /* Firefox */
 			-ms-overflow-style: none;  /* IE 10+ */
+
+			@include mobile-portrait {
+				font-size: 14px;
+				width: 300px;
+				padding: 0;
+			}
+
+			@include mobile-landscape {
+				margin-left: 185px;
+				min-width: calc(100vw - 185px);
+			}
+
+			@include desktop {
+				min-width: 768px;
+				width: 768px;
+				margin: 0 calc(50% - (768px / 2));
+			}
 	
 			&::-webkit-scrollbar {
 				width: 0;
@@ -461,6 +736,10 @@ body {
 				outline: none;
 				caret-color: white;
 				transition: all 0.5s linear;
+
+				@include desktop {
+					font-size: 18px;
+				}
 	
 				&:focus {
 					border-bottom: 1px solid var(--mainColor);
@@ -477,6 +756,18 @@ body {
 				margin-top: 12px;
 				border-radius: 10px;
 				background-color: rgba(0,0,0,0.5);
+
+				@include mobile-portrait {
+					margin: 9px 7.5%;
+				}
+
+				@include mobile-landscape {
+					margin: 25px 7.5% 12px 7.5%;
+				}
+
+				@include desktop {
+					height: 50px;
+				}
 	
 				h4 {
 					display: flex;
@@ -485,6 +776,11 @@ body {
 					justify-content: center;
 					margin: 0;
 					align-items: center;
+
+					@include desktop {
+						height: 50px;
+						font-size: 18px;
+					}
 	
 					&:first-child {
 						border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -513,6 +809,10 @@ body {
 					outline: none;
 					background-color: transparent;
 					transition: all 0.25s linear;
+
+					@include desktop {
+						height: 50px;
+					}
 	
 					&::-moz-focus-inner {
 						border: 0;
@@ -539,6 +839,10 @@ body {
 					max-width: 390px;
 					left: calc(200vw + (50% - (485px / 2)));
 				}
+
+				@include desktop {
+					height: 46px;
+				}
 			}
 	
 			.progressCount {
@@ -547,6 +851,21 @@ body {
 				opacity: 0.5;
 				position: absolute;
 				top: 62px;
+
+				@include mobile-portrait {
+					top: 0px;
+					font-size: 14px;
+					position: relative;
+				}
+
+				@include mobile-landscape {
+					top: 75px;
+				}
+
+				@include desktop {
+					top: 72px;
+					font-size: 20px;
+				}
 			}
 	
 			.submitResults {
@@ -563,6 +882,22 @@ body {
 				border: 1px solid var(--mainColor);
 				border-radius: 10px;
 				transition: all 0.25s linear;
+
+				@include mobile-portrait {
+					top: 0px;
+					font-size: 14px;
+					position: relative;
+				}
+
+				@include mobile-landscape {
+					top: 75px;
+				}
+
+				@include desktop {
+					top: 72px;
+					font-size: 20px;
+					width: 120px;
+				}
 	
 				&:hover {
 					opacity: 1;
@@ -617,6 +952,20 @@ body {
 				border-spacing: 0;
 				scrollbar-width: none; /* Firefox */
 				-ms-overflow-style: none;  /* IE 10+ */
+
+				@include mobile-portrait {
+					width: 300px;
+					margin-top: 12px;
+				}
+
+				@include mobile-landscape {
+					margin-top: 40px;
+				}
+
+				@include desktop {
+					width: 485px;
+					margin-top: 60px;
+				}
 	
 				&::-webkit-scrollbar {
 					width: 0;
@@ -624,36 +973,19 @@ body {
 				}
 	
 				thead {
-					display: block;
 					background-color: rgba(0,0,0,0.5);
 	
 					tr {
-						display: block;
 	
 						th {
-							display: inline-block;
 							padding: 5px 0;
 							border-right: 2px solid #2a2a2a;
 	
 							&:nth-child(1) {
-								width: 113px;
 								border-left: none;
 							}
 	
-							&:nth-child(2) {
-								width: 53px;
-							}
-	
-							&:nth-child(3) {
-								width: 83px;
-							}
-	
-							&:nth-child(4) {
-								width: 58px;
-							}
-	
 							&:nth-child(5) {
-								width: 60px;
 								border-right: none;
 							}
 						}
@@ -661,7 +993,6 @@ body {
 				}
 	
 				tbody {
-					display: block;
 					overflow-y: auto;
 					overflow-x: hidden;
 					border-radius: 0 0 10px 10px;
@@ -669,6 +1000,18 @@ body {
 					border-spacing: 0px;
 					scrollbar-width: none;
 					-ms-overflow-style: none;
+
+					@include mobile-portrait {
+						height: calc(100vh - 235px);
+					}
+
+					@include mobile-landscape {
+						height: calc(100vh - 158px);
+					}
+
+					@include desktop {
+						height: calc(100vh - 305px);
+					}
 	
 					&::-webkit-scrollbar {
 						width: 0;
@@ -680,6 +1023,10 @@ body {
 						opacity: 0.5;
 						text-align: center;
 						background-color: rgba(255,255,255,0.05);
+
+						@include mobile-portrait {
+							height: 45px;
+						}
 	
 						td {
 							padding: 5px 0;
@@ -690,6 +1037,14 @@ body {
 								width: 93px;
 								padding: 0 10px;
 								border-right: 2px solid rgba(0,0,0,0.3);
+
+								@include mobile-portrait {
+									padding: 0 5px;
+								}
+							}
+
+							@include desktop {
+								font-size: 20px;
 							}
 	
 							&:nth-child(2) {
@@ -699,6 +1054,10 @@ body {
 	
 							&:nth-child(3) {
 								width: 85px;
+
+								@include mobile-portrait {
+									border-right: 2px solid rgba(0,0,0,0.3);
+								}
 							}
 	
 							&:nth-child(4) {
@@ -707,6 +1066,10 @@ body {
 	
 								img {
 									height: 50px;
+								}
+
+								@include mobile-portrait {
+									display: none;
 								}
 							}
 	
@@ -763,6 +1126,15 @@ body {
 			min-width: 100vw;
 			scrollbar-width: none;
 			-ms-overflow-style: none;
+
+			@include mobile-portrait {
+				padding-bottom: 0px;	
+			}
+
+			@include mobile-landscape {
+				margin-left: 185px;
+				min-width: calc(100vw - 185px);
+			}
 	
 			&::-webkit-scrollbar {
 				width: 0;
@@ -781,30 +1153,34 @@ body {
 				text-align: center;
 				scrollbar-width: none;
 				-ms-overflow-style: none;
+
+				@include mobile-portrait {
+					width: 300px;
+					margin-top: 9px;
+				}
+
+				@include mobile-landscape {
+					align-self: baseline;
+				}
+
+				@include desktop {
+					width: 445px;
+				}
 	
 				thead {
-					display: block;
 					background-color: rgba(0,0,0,0.5);
 	
 					tr {
-						display: block;
 	
 						th {
-							display: inline-block;
 							padding: 5px 0;
 							border-right: 2px solid #2a2a2a;
 	
 							&:nth-child(1) {
-								width: 219px;
 								border-left: none;
 							}
 	
-							&:nth-child(2) {
-								width: 75px;
-							}
-	
 							&:nth-child(3) {
-								width: 77px;
 								border-right: none;
 							}
 						}
@@ -812,7 +1188,6 @@ body {
 				}
 	
 				tbody {
-					display: block;
 					overflow-y: auto;
 					overflow-x: hidden;
 					border-radius: 0 0 10px 10px;
@@ -820,6 +1195,14 @@ body {
 					border-spacing: 0px;
 					scrollbar-width: none;
 					-ms-overflow-style: none;
+
+					@include mobile-portrait {
+						height: calc(100vh - 160px);
+					}
+
+					@include mobile-landscape {
+						height: calc(100vh - 55px);
+					}
 	
 					&::-webkit-scrollbar {
 						width: 0;
@@ -840,17 +1223,18 @@ body {
 	
 							&:nth-child(1) {
 								padding-left: 0px;
-								width: 209px;
 								font-size: 13px;
+
+								@include desktop {
+									font-size: 16px;
+								}
 							}
 	
 							&:nth-child(2) {
-								width: 65px;
 								word-break: break-all;
 							}
 	
 							&:nth-child(3) {
-								width: 67px;
 								border-right: none;
 								display: flex;
 								height: inherit;
@@ -863,12 +1247,20 @@ body {
 							font-size: 12px;
 							align-self: flex-start;
 							color: #71ff71;
+
+							@include desktop {
+								font-size: 16px;
+							}
 						}
 						
 						.unwanted {
 							font-size: 12px;
 							align-self: flex-end;
 							color: #ff6f6f;
+
+							@include desktop {
+								font-size: 16px;
+							}
 						}
 					}
 	
@@ -886,663 +1278,19 @@ body {
 				}
 			}
 		}
-	}
-}
 
-//Small Mobile Portrait Display
-@media only screen and (max-width: 380px) {
-	.App {
-
-		.header {
-			grid-template-rows: 100px;
-			height: 110px;
-
-			.backStep, .forwardStep {
-
-				h3 {
-					font-size: 16px;
-				}
-
-				span {
-					font-size: 13px;
-				}
-			}
-
-			.backStep {
-				display: flex;
-				flex-direction: column-reverse;
-				margin-bottom: 10px;
-
-				i {
-					padding-right: 0;
-					padding-bottom: 5px;
-					align-self: flex-end;
-				}
-			}
-
-			.icon {
-				height: 80px;
-				margin-bottom: 10px;
-			}
-
-			h1 {
-				font-size: 20px;
-				padding-top: 45px;
-			}
-
-			h2 {
-				font-size: 13px;
-				padding-top: 90px;
-			}
-
-			.forwardStep {
-				display: flex;
-				flex-direction: column;
-				margin-bottom: 10px;
-
-				i {
-					padding-left: 0;
-					padding-bottom: 5px;
-					align-self: flex-start;
-				}
-			}
-		}
-
-		.mainWrapper {
-			height: calc(100vh - 110px);
-
-			.boxSelection {
-
-				.box {
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-					justify-content: center;
-					height: 50px;
-					width: 40%;
-
-					img {
-						padding-left: 5px;
-						height: 50px;
-					}
-
-					h3 {
-						width: calc(100% - 55px);
-						padding: 0 8px;
-						font-size: 14px;
-					}
-				}
-			}
-		
-			.mtxSelection {
-				font-size: 14px;
-				margin: 0;
-
-				table {
-					width: 300px;
-					margin-top: 9px;
-
-					thead {
-
-						tr {
-
-							th {
-
-								&:nth-child(1) {
-									width: 146px;
-								}
-		
-								&:nth-child(2) {
-									width: 69px;
-								}
-		
-								&:nth-child(3) {
-									width: 81px;
-									border-right: none;
-								}
-		
-								&:nth-child(4) {
-									display: none;
-								}
-							}
-						}
-					}
-
-					tbody {
-						height: calc(100vh - 155px);
-
-						.mtx {
-							height: 45px;
-
-							td {
-								&:nth-child(1) {
-									width: 139px;
-								}
-	
-								&:nth-child(2) {
-									width: 60px;
-								}
-	
-								&:nth-child(3) {
-									width: 71px;
-								}
-	
-								&:nth-child(4) {
-									display: none;
-								}
-							}
-						}
-					}
-				}
-			}
-
-			.boxSimulator {
-				font-size: 14px;
-				width: 300px;
-				padding: 0;
-
-				.searchContainer {
-					margin: 9px 7.5%
-				}
-
-				.progressCount, .submitResults {
-					top: 0px;
-					font-size: 14px;
-					position: relative;
-				}
-
-				table {
-					width: 300px;
-					margin-top: 12px;
-
-					thead {
-
-						tr {
-
-							th {
-
-								&:nth-child(1) {
-									width: 134px;
-								}
-	
-								&:nth-child(2) {
-									width: 44px;
-								}
-	
-								&:nth-child(3) {
-									width: 71px;
-								}
-	
-								&:nth-child(4) {
-									display: none;
-								}
-	
-								&:nth-child(5) {
-									width: 45px;
-								}
-							}
-						}
-					}
-
-					tbody {
-						height: calc(100vh - 235px);
-
-						.simResults {
-							height: 45px;
-
-							td {
-
-								&:nth-child(1) {
-									padding: 0 5px;
-									width: 124px;
-								}
-
-								&:nth-child(2) {
-									width: 44px;
-								}
-
-								&:nth-child(3) {
-									width: 71px;
-									border-right: 2px solid rgba(0,0,0,0.3);
-								}
-
-								&:nth-child(4) {
-									display: none;
-								}
-
-								&:nth-child(5) {
-									width: 45px;
-								}
-							}
-						}
-					}
-				}
-			}
-
-			.statistics {
-				padding-bottom: 0px;
-
-				table {
-					width: 300px;
-					margin-top: 9px;
-
-					th {
-
-						&:nth-child(1) {
-							width: 164px;
-						}
-
-						&:nth-child(2) {
-							width: 55px;
-						}
-					}
-				}
-			}
-
-			.statistics tbody {
-				height: calc(100vh - 160px);
-			}
-		}
-	}
-}
-//Mobile Landscape Display
-@media only screen and (max-height: 600px) {
-	.App {
-		display: flex;
-		flex-direction: row;
-		padding-left: env(safe-area-inset-left);
-		
-		.header {
-			display: grid;
-			grid-template-columns: 1fr;
-			grid-template-rows: repeat(3, 1fr);
-			grid-column-gap: 0px;
-			grid-row-gap: 0px;
-			height: auto;
-			width: 175px;
-
-			.icon {
-				grid-area: 2 / 2 / 3 / 2;
-			}
-
-			h1 {
-				grid-area: 2 / 2 / 3 / 2;
-			}
-
-			h2 {
-				width: 175px;
-				grid-area: 2 / 2 / 3 / 2;
-			}
-
-			.backStep, .forwardStep {
-				width: 100%;
-				justify-content: center;
-
-				h3 {
-					font-size: 16px;
-				}
-
-				span {
-					font-size: 13px;
-				}
-			}
-
-			.backStep {
-				grid-area: 1 / 2 / 2 / 2;
-			}
-
-			.forwardStep {
-				grid-area: 3 / 2 / 4 / 2;
-			}
-		}
-
-		.mainWrapper {
-			height: auto;
-			width: calc(100vw - 185px);
-
-			.boxSelection {
-				min-width: calc(100vw - 185px);
-				align-content: center;
-				align-self: center;
-
-				.box {
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-					justify-content: center;
-					height: 50px;
-					width: 140px;
-					margin: 7px;
-
-					h3 {
-						width: calc(100% - 55px);
-						padding: 0 8px;
-						font-size: 12px;
-					}
-
-					img {
-						padding-left: 5px;
-						height: 50px;
-					}
-				}
-			}
-
-			.mtxSelection {
-				margin: 0;
-				margin-left: 185px;
-				min-width: calc(100vw - 185px);
-
-				table {
-					padding-top: 15px;
-					align-self: baseline;
-
-					tbody {
-						height: calc(100vh - 55px);
-					}
-				}
-			}
-
-			.boxSimulator {
-				margin-left: 185px;
-				min-width: calc(100vw - 185px);
-
-				.searchContainer {
-					margin: 25px 7.5% 12px 7.5%;
-				}
-
-				.progressCount, .submitResults {
-					top: 75px;
-				}
-
-				table {
-					margin-top: 40px;
-
-					tbody {
-						height: calc(100vh - 158px);
-					}
-				}
-			}
-
-			.statistics {
-				margin-left: 185px;
-				min-width: calc(100vw - 185px);
-
-				table {
-					align-self: baseline;
-
-					tbody {
-						height: calc(100vh - 55px);
-					}
-				}
-			}
-
+		@include safari {
 			.mtxSelection.safari tbody {
-				height: calc(100vh - 105px);
+				height: calc(100vh - 325px);
 			}
-	
+		
 			.boxSimulator.safari tbody {
-				height: calc(100vh - 198px);
+				height: calc(100vh - 415px);
 			}
-	
+		
 			.statistics.safari tbody {
-				height: calc(100vh - 105px);
+				height: calc(100vh - 325px);
 			}
-		}
-	}
-}
-//Desktop Display
-@media only screen and (min-width: 768px) and (min-height: 600px) {
-	.App {
-
-		.header {
-
-			.backStep, .forwardStep {
-
-				h2 {
-					font-size: 18px;
-	
-					span {
-						font-size: 18px;
-					}
-				}
-	
-				h3 {
-					font-size: 20px;
-				}
-	
-				span {
-					font-size: 18px;
-				}
-	
-				i {
-					font-size: 25px;
-					padding: 6px 15px 0px 15px;
-				}
-			}
-		}
-
-		.mainWrapper {
-
-			.boxSelection {
-				width: 768px;
-				min-width: 768px;
-				margin: 0 calc(50% - (768px / 2));
-
-				.box {
-					height: 135px;
-					width: 135px;
-
-					img {
-						height: 100px;
-					}
-
-					h3 {
-						font-size: 17px;
-						font-weight: 400;
-					}
-				}
-			}
-	
-			.mtxSelection {
-
-				table {
-					width: 400px;
-
-					thead {
-
-						th {
-
-							&:nth-child(1) {
-								width: 230px;
-							}
-		
-							&:nth-child(2) {
-								width: 53px;
-							}
-		
-							&:nth-child(3) {
-								width: 96px;
-							}
-		
-							&:nth-child(4) {
-								width: 60px;
-							}
-						} 
-					}
-					
-					tbody {
-
-						td {
-							font-size: 20px;
-
-							&:nth-child(1) {
-								width: 230px;
-							}
-
-							&:nth-child(2) {
-								width: 43px;
-							}
-
-							&:nth-child(3) {
-								width: 86px;
-							}
-
-							&:nth-child(4) {
-								width: 50px;
-							}
-						}
-					}
-				}
-			}
-	
-			.boxSimulator {
-				min-width: 768px;
-				width: 768px;
-				margin: 0 calc(50% - (768px / 2));
-
-				input {
-					font-size: 18px;
-				}
-
-				.searchContainer {
-					height: 50px;
-
-					h4 {
-						height: 50px;
-						font-size: 18px;
-					}
-
-					button {
-						height: 50px;
-					}
-				}
-
-				.progressBar {
-					height: 46px;
-				}
-
-				.progressCount, .submitResults {
-					top: 72px;
-					font-size: 20px;
-				}
-
-				.submitResults {
-					width: 120px;
-				}
-
-				table {
-					width: 485px;
-					margin-top: 60px;
-
-					thead {
-
-						tr {
-
-							th {
-
-								&:nth-child(1) {
-									width: 212px;
-								}
-	
-								&:nth-child(2) {
-									width: 53px;
-								}
-	
-								&:nth-child(3) {
-									width: 96px;
-								}
-	
-								&:nth-child(4) {
-									width: 56px;
-								}
-	
-								&:nth-child(5) {
-									width: 59px;
-								}
-							}
-						}
-					}
-
-					tbody {
-						height: calc(100vh - 305px);
-
-						.simResults {
-
-							td {
-								font-size: 20px;
-
-								&:nth-child(1) {
-									width: 192px;
-								}
-
-								&:nth-child(2) {
-									width: 53px;
-								}
-
-								&:nth-child(3) {
-									width: 96px;
-								}
-
-								&:nth-child(4) {
-									width: 60px;
-								}
-
-								&:nth-child(5) {
-									width: 60px;
-								}
-							}
-						}
-					}
-				}
-			}
-	
-			.statistics {
-
-				table {
-					width: 445px;
-
-					thead {
-
-						tr {
-
-							th {
-
-								&:nth-child(1) {
-									width: 289px;
-								}
-							}
-						}
-					}
-
-					tbody {
-
-						.stat td:nth-child(1) {
-							width: 279px;
-							font-size: 16px;
-						}
-
-						.wanted, .statistics tbody .unwanted {
-							font-size: 14px;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-//Safari mobile fixes
-@media only screen and (max-width: 600px) {
-	.App {
-		.mtxSelection.safari tbody {
-			height: calc(100vh - 325px);
-		}
-	
-		.boxSimulator.safari tbody {
-			height: calc(100vh - 415px);
-		}
-	
-		.statistics.safari tbody {
-			height: calc(100vh - 325px);
 		}
 	}
 }
