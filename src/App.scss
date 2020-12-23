@@ -990,7 +990,7 @@ body {
 				}
 
 				@include desktop {
-					width: auto;
+					width: 418px;
 					margin-top: 60px;
 				}
 	
@@ -1019,16 +1019,24 @@ body {
 							}
 
 							&:nth-child(3) {
-								width: 87px;
+								width: 88px;
 							}
 
 							&:nth-child(4) {
-								width: 57px;
+								width: 56px;
+
+								@include desktop {
+									width: 52px;
+								}
 							}
 	
 							&:nth-child(5) {
 								width: 60px;
 								border-right: none;
+
+								@include desktop {
+									width: 56px;
+								}
 							}
 						}
 					}
@@ -1075,10 +1083,6 @@ body {
 							padding: 5px 0;
 							border: none;
 							transition: all 0.25s ease-in-out;
-
-							@include desktop {
-								font-size: 20px;
-							}
 	
 							&:nth-child(1) {
 								width: 113px;
@@ -1088,6 +1092,10 @@ body {
 
 								@include mobile-portrait {
 									padding: 0 5px;
+								}
+
+								@include mobile-landscape {
+									font-size: 16px;
 								}
 
 								@include desktop {
