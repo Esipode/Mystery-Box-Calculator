@@ -571,7 +571,7 @@ body {
 				}
 
 				@include mobile-landscape {
-					padding-top: 15px;
+					margin-top: 15px;
 					align-self: baseline;
 				}
 	
@@ -581,6 +581,7 @@ body {
 				}
 	
 				thead {
+					display: block;
 					border-radius: 10px 10px 0 0;
 					background-color: rgba(0,0,0,0.5);
 	
@@ -591,10 +592,24 @@ body {
 							border-right: 2px solid #2a2a2a;
 	
 							&:nth-child(1) {
+								width: 163px;
 								border-left: none;
+
+								@include desktop {
+									width: 223px;
+								}
+							}
+
+							&:nth-child(2) {
+								width: 34px;
+							}
+
+							&:nth-child(3) {
+								width: 81px;
 							}
 	
 							&:nth-child(4) {
+								width: 43px;
 								border-right: none;
 							}
 						}
@@ -602,10 +617,11 @@ body {
 				}
 	
 				tbody {
+					display: block;
 					border-radius: 0 0 10px 10px;
 					overflow-y: auto;
 					overflow-x: hidden;
-					height: calc(100vh - 195px);
+					height: calc(100vh - 200px);
 					border-spacing: 0px;
 					scrollbar-width: none;
 					-ms-overflow-style: none;
@@ -661,14 +677,25 @@ body {
 							}
 	
 							&:nth-child(1) {
+								width: 169px;
 								border-left: 0px solid var(--mainColor);
+
+								@include desktop {
+									width: 229px;
+								}
+							}
+
+							&:nth-child(2) {
+								width: 40px;
 							}
 	
 							&:nth-child(3) {
+								width: 88px;
 								border: none;
 							}
 	
 							&:nth-child(4) {
+								width: 50px;
 								border: none;
 								background-color: rgba(0,0,0,0.3);
 
@@ -943,8 +970,8 @@ body {
 	
 			table {
 				overflow: hidden;
-				border-radius: 10px;
 				width: 375px;
+				border-radius: 10px;
 				margin-top: 50px;
 				align-self: center;
 				box-sizing: content-box;
@@ -963,7 +990,7 @@ body {
 				}
 
 				@include desktop {
-					width: 485px;
+					width: auto;
 					margin-top: 60px;
 				}
 	
@@ -973,6 +1000,7 @@ body {
 				}
 	
 				thead {
+					display: block;
 					background-color: rgba(0,0,0,0.5);
 	
 					tr {
@@ -982,10 +1010,24 @@ body {
 							border-right: 2px solid #2a2a2a;
 	
 							&:nth-child(1) {
+								width: 161px;
 								border-left: none;
+							}
+
+							&:nth-child(2) {
+								width: 53px;
+							}
+
+							&:nth-child(3) {
+								width: 87px;
+							}
+
+							&:nth-child(4) {
+								width: 57px;
 							}
 	
 							&:nth-child(5) {
+								width: 60px;
 								border-right: none;
 							}
 						}
@@ -993,10 +1035,11 @@ body {
 				}
 	
 				tbody {
+					display: block;
 					overflow-y: auto;
 					overflow-x: hidden;
 					border-radius: 0 0 10px 10px;
-					height: calc(100vh - 285px);
+					height: calc(100vh - 290px);
 					border-spacing: 0px;
 					scrollbar-width: none;
 					-ms-overflow-style: none;
@@ -1032,36 +1075,50 @@ body {
 							padding: 5px 0;
 							border: none;
 							transition: all 0.25s ease-in-out;
-	
-							&:nth-child(1) {
-								width: 93px;
-								padding: 0 10px;
-								border-right: 2px solid rgba(0,0,0,0.3);
-
-								@include mobile-portrait {
-									padding: 0 5px;
-								}
-							}
 
 							@include desktop {
 								font-size: 20px;
 							}
 	
-							&:nth-child(2) {
-								width: 53px;
+							&:nth-child(1) {
+								width: 113px;
+								padding: 0 10px;
 								border-right: 2px solid rgba(0,0,0,0.3);
+								font-size: 14px;
+
+								@include mobile-portrait {
+									padding: 0 5px;
+								}
+
+								@include desktop {
+									width: 141px;
+									font-size: 18px;
+								}
+							}
+	
+							&:nth-child(2) {
+								width: 49px;
+								border-right: 2px solid rgba(0,0,0,0.3);
+
+								@include desktop {
+									width: 53px;
+								}
 							}
 	
 							&:nth-child(3) {
-								width: 85px;
+								width: 77px;
 
 								@include mobile-portrait {
 									border-right: 2px solid rgba(0,0,0,0.3);
 								}
+
+								@include desktop {
+									width: 85px;
+								}
 							}
 	
 							&:nth-child(4) {
-								width: 60px;
+								width: 56px;
 								background-color: rgba(0,0,0,0.3);
 	
 								img {
@@ -1074,7 +1131,7 @@ body {
 							}
 	
 							&:nth-child(5) {
-								width: 60px;
+								width: 56px;
 								border: none;
 							}
 						}
@@ -1144,7 +1201,6 @@ body {
 			table {
 				overflow: hidden;
 				border-radius: 10px;
-				width: 375px;
 				margin-top: 12px;
 				align-self: center;
 				box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
@@ -1162,12 +1218,9 @@ body {
 				@include mobile-landscape {
 					align-self: baseline;
 				}
-
-				@include desktop {
-					width: 445px;
-				}
 	
 				thead {
+					display: block;
 					background-color: rgba(0,0,0,0.5);
 	
 					tr {
@@ -1177,10 +1230,16 @@ body {
 							border-right: 2px solid #2a2a2a;
 	
 							&:nth-child(1) {
+								width: 223px;
 								border-left: none;
+							}
+
+							&:nth-child(2) {
+								width: 50px;
 							}
 	
 							&:nth-child(3) {
+								width: 70px;
 								border-right: none;
 							}
 						}
@@ -1188,10 +1247,11 @@ body {
 				}
 	
 				tbody {
+					display: block;
 					overflow-y: auto;
 					overflow-x: hidden;
 					border-radius: 0 0 10px 10px;
-					height: calc(100vh - 195px);
+					height: calc(100vh - 200px);
 					border-spacing: 0px;
 					scrollbar-width: none;
 					-ms-overflow-style: none;
@@ -1222,19 +1282,18 @@ body {
 							border-right: 2px solid rgba(0,0,0,0.3);
 	
 							&:nth-child(1) {
+								width: 213px;
 								padding-left: 0px;
-								font-size: 13px;
-
-								@include desktop {
-									font-size: 16px;
-								}
+								font-size: 16px;
 							}
 	
 							&:nth-child(2) {
+								width: 40px;
 								word-break: break-all;
 							}
 	
 							&:nth-child(3) {
+								width: 70px;
 								border-right: none;
 								display: flex;
 								height: inherit;
