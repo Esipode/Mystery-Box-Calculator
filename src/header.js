@@ -1,33 +1,28 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import { ReactComponent as LogoSVG } from './images/chesticon.svg';
 
-export default class Header extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			stepInfo: [ 
-				'Select a box',
-				'Select desired MTXs',
-				'Simulate Boxes',
-				'Global Stats'
-			]
-		};
+export default function Header({curStep, changeStep, boxSelected, activeMTX, isSimulating, simList, allowStepThree}) {
+
+	const stepInfo = useMemo(() => [
+		'Select a box', 'Select desired MTXs', 'Simulate Boxes', 'Global Stats'
+	], [])
+
+	const onStepButton = (direction) => {
+		changeStep(curStep + direction)
 	}
-	onStepButton = (direction) => {
-		this.props.changeStep(this.props.curStep + direction)
-	}
-	onCheckStepVisibilityForward = (step) => {
-		if (this.props.isSimulating) {
+
+	const onCheckStepVisibilityForward = (step) => {
+		if (isSimulating) {
 			return ''
 		}
 		else {
 			switch (step) {
 				case 0:
-					return (this.props.boxSelected === "") ? '' : 'headerVisible';
+					return (boxSelected === "") ? '' : 'headerVisible';
 				case 1:
-					return (this.props.activeMTX.length < 1) ? '' : 'headerVisible';
+					return (activeMTX.length < 1) ? '' : 'headerVisible';
 				case 2:
-					return (this.props.simList) ? 'headerVisible' : '';
+					return (simList) ? 'headerVisible' : '';
 				case 3:
 					return '';
 				default:
@@ -35,12 +30,13 @@ export default class Header extends React.Component {
 			}
 		}
 	}
-	onCheckStepVisibilityBackward = () => {
-		if (this.props.isSimulating) {
+
+	const onCheckStepVisibilityBackward = () => {
+		if (isSimulating) {
 			return ''
 		}
 		else {
-			if (this.props.curStep > 0) {
+			if (curStep > 0) {
 				return 'headerVisible'
 			}
 			else {
@@ -48,43 +44,43 @@ export default class Header extends React.Component {
 			}
 		}
 	}
-	render() {
-		return (
-			<div className="header">
-				<div className={`backStep ${this.onCheckStepVisibilityBackward()}`} onClick={() => this.onStepButton(-1)} >
-					<div>
-						<h3>Step {this.props.curStep > 0 ? this.props.curStep : 1}</h3>
-						<span>{this.props.curStep > 0 ? this.state.stepInfo[this.props.curStep - 1] : this.state.stepInfo[0]}</span>
-					</div>
-					<i className="fas fa-arrow-circle-left" />
+
+	return (
+		<div className="header">
+			<div className={`backStep ${onCheckStepVisibilityBackward()}`} onClick={() => onStepButton(-1)} >
+				<div>
+					<h3>Step {curStep > 0 ? curStep : 1}</h3>
+					<span>{curStep > 0 ? stepInfo[curStep - 1] : stepInfo[0]}</span>
 				</div>
-				<LogoSVG />
-				<h1>MTX Calc</h1>
-				<h2>Step {this.props.curStep + 1}:<span>{this.state.stepInfo[this.props.curStep]}</span></h2>
-				<div className={`forwardStep ${this.onCheckStepVisibilityForward(this.props.curStep)}`} onClick={() => this.onStepButton(+1)}>
-					<i className="fas fa-arrow-circle-right" />
-					<div>
-						<h3>Step {
-							!this.props.activeMTX.length && !this.props.allowStepThree ? 2 :
-							this.props.curStep === 1 && this.props.allowStepThree ? 3 :
-							this.props.curStep < 2 ? this.props.curStep + 2 : 
-							this.props.curStep === 2 && !this.props.simList ? 3 :
-							this.props.curStep === 2 ? 4 :
-							this.props.curStep + 1
-							}
-						 </h3>
-						<span> {
-							!this.props.activeMTX.length && !this.props.allowStepThree ? this.state.stepInfo[1] : 
-							this.props.curStep === 1 && this.props.allowStepThree ? this.state.stepInfo[2] :
-							this.props.curStep < 2 ? this.state.stepInfo[this.props.curStep + 1] : 
-							this.props.curStep === 2 && !this.props.simList ? this.state.stepInfo[2] :
-							this.props.curStep === 2 ? this.state.stepInfo[3] : 
-							this.state.stepInfo[this.props.curStep]
-							}
-						</span>
-					</div>
+				<i className="fas fa-arrow-circle-left" />
+			</div>
+			<LogoSVG />
+			<h1>MTX Calc</h1>
+			<h2>Step {curStep + 1}:<span>{stepInfo[curStep]}</span></h2>
+			<div className={`forwardStep ${onCheckStepVisibilityForward(curStep)}`} onClick={() => onStepButton(+1)}>
+				<i className="fas fa-arrow-circle-right" />
+				<div>
+					<h3>Step {
+						!activeMTX.length && !allowStepThree ? 2 :
+						curStep === 1 && allowStepThree ? 3 :
+						curStep < 2 ? curStep + 2 : 
+						curStep === 2 && !simList ? 3 :
+						curStep === 2 ? 4 :
+						curStep + 1
+						}
+					 </h3>
+					<span> {
+						!activeMTX.length && !allowStepThree ? stepInfo[1] : 
+						curStep === 1 && allowStepThree ? stepInfo[2] :
+						curStep < 2 ? stepInfo[curStep + 1] : 
+						curStep === 2 && !simList ? stepInfo[2] :
+						curStep === 2 ? stepInfo[3] : 
+						stepInfo[curStep]
+						}
+					</span>
 				</div>
 			</div>
-		);
-	}
+		</div>
+	);
+
 }

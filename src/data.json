@@ -1,8 +1,6 @@
 {
 	"images": [
 		{
-<<<<<<< HEAD
-=======
 			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/WarlordBox_itemart.png",
 			"name": "Warlord"
 		},
@@ -15,7 +13,6 @@
 			"name": "Angels & Demons"
 		},
 		{
->>>>>>> master
 			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/ThaumaturgyBox_itemart.png",
 			"name": "Thaumaturgy"
 		},
@@ -66,8 +63,6 @@
 	],
 	"mtxData": [
 		{
-<<<<<<< HEAD
-=======
 			"box": "Warlord",
 			"name": "Suffering Wings",
 			"value": "320",
@@ -866,7 +861,6 @@
 			"rarity": "common"
 		},
 		{
->>>>>>> master
 			"box": "Thaumaturgy",
 			"name": "Scientist Wings",
 			"value": "320",

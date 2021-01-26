@@ -1,33 +1,23 @@
-import React from 'react';
-<<<<<<< HEAD
-import './App.css';
-=======
+import React, {useState} from 'react';
 import './App.scss';
->>>>>>> master
 import Header from './header';
 import BoxSelection from './boxSelection';
 import MTXSelection from './mtxSelection';
 import BoxSimulator from './boxSimulator';
 import Statistics from './statistics';
 
-export default class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			curStep: 0,
-			curBox: '',
-			boxChanged: false,
-			fullMTXList: [],
-			activeMTX: [],
-			statList: {itemList: []},
-			simulatorRunning: false
-		};
-	}
-<<<<<<< HEAD
-=======
-	
->>>>>>> master
-	mobileSafariCheck = () => {
+export default function App() {
+
+	const [curStep, setCurStep] = useState(0);
+	const [curBox, setCurBox] = useState('');
+	const [boxChanged, setBoxChanged] = useState(false);
+	const [fullMTXList, setFullMTXList] = useState([]);
+	const [activeMTX, setActiveMTX] = useState([]);
+	const [statList, setStatList] = useState({itemList: []});
+	const [simRunning, setSimRunning] = useState(false);
+	const [allowStepThree, setStepThree] = useState(false);
+
+	const mobileSafariCheck = () => {
 		let ua = window.navigator.userAgent;
 		let iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
 		let webkit = !!ua.match(/WebKit/i);
@@ -35,86 +25,75 @@ export default class App extends React.Component {
 		let iOSSafari = iOS && webkit && !ua.match(/CriOS/i) && !isBrave;
 		return iOSSafari;
 	}
-	onChangeStep = (step) => {
-		if (step === 1) {
-			this.setState({
-				allowStepThree: false
-			})
-		}
-		this.setState({
-			curStep: step
-		})
+
+	const onChangeStep = (step) => {
+		step === 1 && setStepThree(false);
+		setCurStep(step);
 	}
-	onChangeMTXBox = (boxName, mtxList) => {
-		this.setState({
-			curStep: 1,
-			curBox: boxName,
-			boxChanged: true,
-			fullMTXList: mtxList,
-			activeMTX: [],
-			statList: {itemList: []},
-			allowStepThree: false
-		});
+
+	const onChangeMTXBox = (boxName, mtxList) => {
+		setCurStep(1);
+		setCurBox(boxName);
+		setBoxChanged(true);
+		setFullMTXList(mtxList);
+		setActiveMTX([]);
+		setStatList({itemList: []});
+		setStepThree(false);
 	};
-	onModifyMTXItem = (mtx, add) => {
-		let arr = this.state.activeMTX;
+
+	const onModifyMTXItem = (mtx, add) => {
+		let arr = activeMTX;
 		if (add) {
 			mtx.selected = true;
-			arr = this.state.activeMTX.concat(mtx);
+			arr = activeMTX.concat(mtx);
 		}
 		else {
 			arr = arr.filter((item) => item !== mtx);
 			mtx.selected = false;
 		}
-		this.toggleStepThree(true);
-		this.setState({
-			activeMTX: arr
-		})
+		setStepThree(true);
+		setActiveMTX(arr);
 	}
-	toggleStepThree = (val) => {
-		this.setState({
-			allowStepThree: val ? true : false
-		})
+
+	const onToggleSimulator = () => {
+		setSimRunning(!simRunning);
+		setBoxChanged(false);
 	}
-	onToggleSimulator = () => {
-		this.setState(prevState => ({
-			simulatorRunning: !prevState.simulatorRunning,
-			boxChanged: false
-		}))
-	}
-	onSimFinish = (list) => {
-		this.setState({
-			statList: list
-		})
-	}
-	render() {
-		return (
-			<div className={`App ${this.state.curBox.replace(/[^A-Z0-9]+/ig, "_")}`} style={ this.state.curBox === '' ? {backgroundColor: '#2a2a2a'} : {backgroundColor: 'var(--bgColor)'}}>
-				<Header 
-					curStep={this.state.curStep}
-					changeStep={this.onChangeStep}
-					boxSelected={this.state.curBox}
-					activeMTX={this.state.activeMTX}
-					isSimulating={this.state.simulatorRunning}
-					simList={this.state.statList.itemList.length > 0 ? true : false}
-					allowStepThree={this.state.allowStepThree}
+
+	return (
+		<div className={`App ${curBox.replace(/[^A-Z0-9]+/ig, "_")}`} style={ curBox === '' ? {backgroundColor: '#2a2a2a'} : {backgroundColor: 'var(--bgColor)'}}>
+			<Header 
+				curStep={curStep}
+				changeStep={onChangeStep}
+				boxSelected={curBox}
+				activeMTX={activeMTX}
+				isSimulating={simRunning}
+				simList={statList.itemList.length > 0 ? true : false}
+				allowStepThree={allowStepThree}
+			/>
+			<div className="mainWrapper" style={{transform: 'translateX('+(curStep * -100)+'vw)'}}>
+				<BoxSelection changeMTXBox={onChangeMTXBox} />
+				<MTXSelection
+					curMTX={curBox}
+					modifyMTXItem={onModifyMTXItem}
+					safariCheck={mobileSafariCheck}
 				/>
-				<div className="mainWrapper" style={{transform: 'translateX('+(this.state.curStep * -100)+'vw)'}}>
-					<BoxSelection changeMTXBox={this.onChangeMTXBox} />
-					<MTXSelection curMTX={this.state.curBox} modifyMTXItem={this.onModifyMTXItem} safariCheck={this.mobileSafariCheck} />
-					<BoxSimulator
-						simToggle={this.onToggleSimulator}
-						isRunning={this.state.simulatorRunning}
-						curMTXList={this.state.activeMTX}
-						fullMTXList={this.state.fullMTXList}
-						curStep={this.state.curStep}
-						simList={this.onSimFinish}
-						boxChanged={this.state.boxChanged}
-						safariCheck={this.mobileSafariCheck}
-					/>
-					<Statistics stats={this.state.statList} boxChanged={this.state.boxChanged} safariCheck={this.mobileSafariCheck} />
-				</div>
+				<BoxSimulator
+					simToggle={onToggleSimulator}
+					isRunning={simRunning}
+					curMTXList={activeMTX}
+					fullMTXList={fullMTXList}
+					curStep={curStep}
+					setStatList={setStatList}
+					boxChanged={boxChanged}
+					safariCheck={mobileSafariCheck}
+				/>
+				<Statistics
+					stats={statList}
+					boxChanged={boxChanged}
+					safariCheck={mobileSafariCheck}
+				/>
 			</div>
-		);
-	}
+		</div>
+	);
 }

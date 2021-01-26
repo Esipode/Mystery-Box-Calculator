@@ -2,34 +2,34 @@ import React from 'react';
 import { mtxData as data } from './data.json';
 import MTX from './mtx';
 
-export default class MTXSelection extends React.Component {
-	getMTXList = () => {
-		return data.filter((item) => item.box === this.props.curMTX);
+export default function MTXSelection({curMTX, modifyMTXItem, safariCheck}) {
+
+	const getMTXList = () => {
+		return data.filter((item) => item.box === curMTX);
 	}
-	render() {
-		let mtxList = this.getMTXList();
-		return (
-			<div className={`mtxSelection${this.props.safariCheck() ? ' safari' : ''}`}>
-				<table>
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Value</th>
-							<th>Rarity</th>
-							<th>Image</th>
-						</tr>
-					</thead>
-					<tbody>
-						{mtxList.map((mtxItem, index) => (
-							<MTX
-								item={mtxItem}
-								key={mtxItem.name}
-								modifyMTXItem={this.props.modifyMTXItem}
-							/>
-						))}
-					</tbody>
-				</table>
-			</div>
-		);
-	}
+
+	return (
+		<div className={`mtxSelection${safariCheck() ? ' safari' : ''}`}>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Value</th>
+						<th>Rarity</th>
+						<th>Image</th>
+					</tr>
+				</thead>
+				<tbody>
+					{getMTXList().map((mtxItem, index) => (
+						<MTX
+							item={mtxItem}
+							key={mtxItem.name}
+							modifyMTXItem={modifyMTXItem}
+						/>
+					))}
+				</tbody>
+			</table>
+		</div>
+	);
+
 }

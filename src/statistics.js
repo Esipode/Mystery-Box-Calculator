@@ -1,34 +1,28 @@
 import React from 'react';
 import Stat from './stat';
 
-export default class Statistics extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			
-		};
-	}
-	render() {
-		return (
-			<div className={`statistics${this.props.safariCheck() ? ' safari' : ''}`}>
-				<table style={{display: !this.props.boxChanged ? 'table' : 'none'}}>
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Total</th>
-							<th>Ratio</th>
-						</tr>
-					</thead>
-					<tbody>
-						{this.props.stats.itemList.map(stat => (
-							<Stat
-								stat={stat}
-								key={stat.name}
-							/>
-						))}
-					</tbody>
-				</table>
-			</div>
-		);
-	}
+export default function Statistics({boxChanged, stats, safariCheck}) {
+
+	return (
+		<div className={`statistics${safariCheck() ? ' safari' : ''}`}>
+			<table style={{display: !boxChanged ? 'table' : 'none'}}>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Total</th>
+						<th>Ratio</th>
+					</tr>
+				</thead>
+				<tbody>
+					{stats.itemList.map(stat => (
+						<Stat
+							stat={stat}
+							key={stat.name}
+						/>
+					))}
+				</tbody>
+			</table>
+		</div>
+	);
+
 }
