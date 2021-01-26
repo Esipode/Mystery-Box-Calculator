@@ -1,7 +1,11 @@
 # PoE Mystery Box Calculator
 
 A calculator for Path of Exile's quarterly mystery boxes. Simulates boxes results to accurately represent potential profit/loss on gambling.
+<<<<<<< HEAD
 ### __[Try it out!](https://desolate-fjord-07426.herokuapp.com/)__
+=======
+### __[Try it out!](https://mtxcalc.com)__
+>>>>>>> master
 ## How does it work?
 
 First we select your desired Mystery Box from the list to set it as the active option.
@@ -24,4 +28,8 @@ If you so choose, you can then submit your simulated items to the list of global
 
 ![Preview-Image-5.jpg](/images/Preview-Image-5.jpg)
 
+<<<<<<< HEAD
 That's it! I hope this tool helps you make an informed decision on your in-game purchases! Good luck, Exiles!
+=======
+That's it! I hope this tool helps you make an informed decision on your in-game purchases! Good luck, Exiles!
+>>>>>>> master

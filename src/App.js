@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import './App.css';
+=======
+import './App.scss';
+>>>>>>> master
 import Header from './header';
 import BoxSelection from './boxSelection';
 import MTXSelection from './mtxSelection';
@@ -19,6 +23,10 @@ export default class App extends React.Component {
 			simulatorRunning: false
 		};
 	}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> master
 	mobileSafariCheck = () => {
 		let ua = window.navigator.userAgent;
 		let iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
