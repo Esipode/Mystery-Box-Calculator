@@ -13,7 +13,7 @@ export default function simBoxes({safariCheck, setStatList, setSubmitted, setRes
 					maxLength="3" 
 					disabled={isRunning} 
 					onChange={(e) => setBoxVal(e.target.value.replace(/\D/,''))} 
-					value={boxVal}
+					value={boxVal || ''}
 					placeholder="#"
 					onPaste={(e) => e.preventDefault()}
 				/>
