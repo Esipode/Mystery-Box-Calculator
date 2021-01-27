@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { images as box } from './data.json';
-import { mtxData as data } from './data.json';
+import { images as box } from '../data.json';
+import { mtxData as data } from '../data.json';
 import Box from './box';
 
 export default function BoxSelection({changeMTXBox}) {

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './App.scss';
 import Header from './header';
-import BoxSelection from './boxSelection';
-import MTXSelection from './mtxSelection';
-import BoxSimulator from './boxSimulator';
-import Statistics from './statistics';
+import BoxSelection from './step1/boxSelection';
+import MTXSelection from './step2/mtxSelection';
+import BoxSimulator from './step3/boxSimulator';
+import Statistics from './step4/statistics';
 
 export default function App() {
 

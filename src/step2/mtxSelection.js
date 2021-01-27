@@ -1,5 +1,5 @@
 import React from 'react';
-import { mtxData as data } from './data.json';
+import { mtxData as data } from '../data.json';
 import MTX from './mtx';
 
 export default function MTXSelection({curMTX, modifyMTXItem, safariCheck}) {
