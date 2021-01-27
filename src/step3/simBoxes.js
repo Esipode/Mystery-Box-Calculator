@@ -1,7 +1,7 @@
 import React from 'react';
 import SimResults from './simResults';
 
-export default function simBoxes({safariCheck, isRunning, onSubmitResults, completedList, resultsSubmitted, setBoxVal, boxVal, simToggle, resultsPending, fullMTXList}) {
+export default function simBoxes({safariCheck, setStatList, setSubmitted, setResultsPending, isRunning, onSubmitResults, completedList, resultsSubmitted, setBoxVal, boxVal, simToggle, resultsPending, fullMTXList}) {
 
 	return (
 		<div className={`boxSimulator${safariCheck() ? ' safari' : ''}`}>
@@ -29,7 +29,7 @@ export default function simBoxes({safariCheck, isRunning, onSubmitResults, compl
 			</div>
 			<button
 				className={`submitResults${resultsSubmitted ? ' submitted' : ''}${resultsPending ? ' pending' : ''}${isRunning || !completedList.length ? ' hideResults' : ''}`}
-				onClick={() => onSubmitResults()}
+				onClick={() => onSubmitResults(completedList, setStatList, setSubmitted, setResultsPending)}
 				disabled={isRunning || !completedList.length}
 			>
 				{resultsSubmitted ? <i className="fas fa-check"></i> : 'Submit Results'}

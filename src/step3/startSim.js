@@ -81,5 +81,5 @@ export default async function startSim(fullMTXList, boxVal, isRunning, curMTXLis
 	isRunning && simToggle();
 
 	let endTime = performance.now();
-	console.log("%cSimulation Time: ", "color: #0a0" , ((endTime - startTime) / 1000).toFixed(2) + " Seconds");
+	// console.log("%cSimulation Time: ", "color: #0a0" , ((endTime - startTime) / 1000).toFixed(2) + " Seconds");
 }
