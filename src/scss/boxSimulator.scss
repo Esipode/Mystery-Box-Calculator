@@ -22,6 +22,8 @@
 		min-width: 768px;
 		width: 768px;
 		margin: 0 calc(50% - (768px / 2));
+		flex-direction: column;
+		align-items: center;
 	}
 
 	&::-webkit-scrollbar {
@@ -131,113 +133,127 @@
 		}
 	}
 
-	.progressBar {
-		content: '';
-		-webkit-clip-path: inset(0 100% 0 0);
-		clip-path: inset(0 100% 0 0);
-		width: 100%;
-		max-width: 68.5%;;
-		height: 36px;
-		position: absolute;
-		left: calc(200vw + 7.5%);
-		border: 2px solid var(--mainColor);
-		border-radius: 10px 0 0 10px;
-		border-right: none;
-		pointer-events: none;
-		transition: opacity 0.1s ease-in-out;
-
-		@media only screen and (min-width: 575px) {
-			max-width: 390px;
-			left: calc(200vw + (50% - (485px / 2)));
-		}
-
-		@include desktop {
-			height: 46px;
-		}
-	}
-
-	.progressCount {
-		align-self: center;
-		margin: 0;
-		opacity: 0.5;
-		position: absolute;
-		top: 62px;
+	.simInfoContainer {
+		display: flex;
+		flex-direction: row;
+		margin-top: 12px;
+		width: 400px;
+		max-width: 95vw;
+		justify-content: space-evenly;
 
 		@include mobile-portrait {
-			top: 0px;
-			font-size: 14px;
-			position: relative;
+			margin-top: 3px;
 		}
 
 		@include mobile-landscape {
-			top: 75px;
+			margin-top: 0px;
 		}
 
-		@include desktop {
-			top: 72px;
-			font-size: 20px;
+		.submitResults {
+			width: 115px;
+			cursor: pointer;
+			font: inherit;
+			outline: none;
+			color: white;
+			margin: 0;
+			opacity: 0.7;
+			text-align: center;
+			align-self: center;
+			background-color: rgba(0,0,0,0.6);
+			padding: 5px;
+			border: 1px solid var(--mainColor);
+			border-radius: 10px;
+			transition: all 0.25s linear;
+	
+			@include mobile-portrait {
+				top: 0px;
+				font-size: 14px;
+				position: relative;
+			}
+	
+			@include mobile-landscape {
+			}
+	
+			@include desktop {
+				font-size: 20px;
+				width: 135px;
+			}
+	
+			&:hover {
+				opacity: 1;
+			}
 		}
-	}
-
-	.submitResults {
-		position: absolute;
-		top: 62px;
-		width: 115px;
-		cursor: pointer;
-		font: inherit;
-		outline: none;
-		color: white;
-		margin: 0;
-		opacity: 0.7;
-		text-align: center;
-		align-self: center;
-		background-color: rgba(0,0,0,0.6);
-		padding: 5px;
-		border: 1px solid var(--mainColor);
-		border-radius: 10px;
-		transition: all 0.25s linear;
-
-		@include mobile-portrait {
-			top: 0px;
-			font-size: 14px;
-			position: relative;
-		}
-
-		@include mobile-landscape {
-			top: 75px;
-		}
-
-		@include desktop {
-			top: 72px;
-			font-size: 20px;
-			width: 135px;
-		}
-
-		&:hover {
+	
+		.submitted {
+			cursor: default;
 			opacity: 1;
+			background-color: transparent;
+			border-color: transparent;
+			color: var(--mainColor);
+			pointer-events: none;
 		}
-	}
-
-	.submitted {
-		cursor: default;
-		opacity: 1;
-		background-color: transparent;
-		border-color: transparent;
-		color: var(--mainColor);
-		pointer-events: none;
-	}
-
-	.pending {
-		pointer-events: none;
-	}
-
-	.hideResults {
-		cursor: default;
-		pointer-events: none;
-		opacity: 0.2;
-
-		&:hover {
+	
+		.pending {
+			pointer-events: none;
+		}
+	
+		.hideResults {
+			cursor: default;
+			pointer-events: none;
 			opacity: 0.2;
+	
+			&:hover {
+				opacity: 0.2;
+			}
+		}
+	
+		.profitContainer {
+			display: flex;
+			justify-content: center;
+			margin: 0;
+			font-size: 16px;
+			padding: 6px 12px;
+			background: rgba(0, 0, 0, 0.5);
+			border-radius: 10px;
+
+			@include mobile-portrait {
+				font-size: 14px;
+			}
+
+			@include mobile-landscape {
+				font-size: 14px;
+			}
+
+			@include desktop {
+				font-size: 20px;
+			}
+	
+			span:nth-child(1) {
+				color: #0d0;
+				padding-right: 3px;
+				font-weight: 600;
+			}
+	
+			span:nth-child(2) {
+				color: #d00;
+				padding-left: 3px;
+				padding-right: 2px;
+				font-weight: 600;
+			}
+
+			.amount, .amount-positive, .amount-negative {
+				padding: 0 4px;
+			}
+
+			.amount-positive {
+				color: #0d0;
+			}
+
+			.amount-negative {
+				color: #d00;
+			}
+
+
 		}
 	}
 
@@ -269,7 +285,7 @@
 		overflow: hidden;
 		width: 375px;
 		border-radius: 10px;
-		margin-top: 50px;
+		margin-top: 10px;
 		align-self: center;
 		box-sizing: content-box;
 		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
@@ -284,12 +300,12 @@
 		}
 
 		@include mobile-landscape {
-			margin-top: 40px;
+			margin-top: 10px;
 		}
 
 		@include desktop {
 			width: 415px;
-			margin-top: 60px;
+			margin-top: 10px;
 		}
 
 		&::-webkit-scrollbar {
@@ -351,11 +367,11 @@
 			-ms-overflow-style: none;
 
 			@include mobile-portrait {
-				height: calc(100vh - 235px);
+				height: calc(100vh - 250px);
 			}
 
 			@include mobile-landscape {
-				height: calc(100vh - 158px);
+				height: calc(100vh - 160px);
 			}
 
 			@include desktop {

@@ -3,6 +3,22 @@ import SimResults from './simResults';
 
 export default function simBoxes({safariCheck, setStatList, setSubmitted, setResultsPending, isRunning, onSubmitResults, completedList, resultsSubmitted, setBoxVal, boxVal, simToggle, resultsPending, fullMTXList}) {
 
+	const calcProfit = () => {
+		if (!completedList.length || isRunning) {
+			return 0;
+		}
+		else {
+			let selectedItems = completedList.filter(item => {
+				return item.selected;
+			})
+			let pointsTotal = 0;
+			for (let i in selectedItems) {
+				pointsTotal += parseInt(selectedItems[i].value);
+			}
+			return (pointsTotal - (boxVal * 30))
+		}
+	}
+
 	return (
 		<div className={`boxSimulator${safariCheck() ? ' safari' : ''}`}>
 			<div className="searchContainer">
@@ -27,13 +43,25 @@ export default function simBoxes({safariCheck, setStatList, setSubmitted, setRes
 					<i className='fas fa-play'/>
 				</button>
 			</div>
-			<button
-				className={`submitResults${resultsSubmitted ? ' submitted' : ''}${resultsPending ? ' pending' : ''}${isRunning || !completedList.length ? ' hideResults' : ''}`}
-				onClick={() => onSubmitResults(completedList, setStatList, setSubmitted, setResultsPending)}
-				disabled={isRunning || !completedList.length}
-			>
-				{resultsSubmitted ? <i className="fas fa-check"></i> : 'Submit Results'}
-			</button>
+			<div className="simInfoContainer">
+				<button
+					className={`submitResults${resultsSubmitted ? ' submitted' : ''}${resultsPending ? ' pending' : ''}${isRunning || !completedList.length ? ' hideResults' : ''}`}
+					onClick={() => onSubmitResults(completedList, setStatList, setSubmitted, setResultsPending)}
+					disabled={isRunning || !completedList.length}
+				>
+					{resultsSubmitted ? <i className="fas fa-check"></i> : 'Submit Results'}
+				</button>
+				<p className="profitContainer">
+					<span>Profit</span>
+					/
+					<span>Loss</span>
+					:
+					<span className={`amount${calcProfit() > 0 ? '-positive' : calcProfit() < 0 ? '-negative' : ''}`}>
+						{calcProfit()}
+					</span> 
+					Points
+				</p>
+			</div>
 			<table className={isRunning ? 'hide-table' : 'show-table'}>
 				<thead>
 					<tr>
