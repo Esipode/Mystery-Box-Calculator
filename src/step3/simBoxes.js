@@ -45,15 +45,13 @@ export default function simBoxes({safariCheck, setStatList, setSubmitted, setRes
 					</tr>
 				</thead>
 				<tbody>
-					{!completedList?.length && 
+					{!completedList?.length ? 
 						fullMTXList?.map((item) => (
 							<SimResults
 								item={item}
 								key={item.name}
 							/>
-						))
-					}
-					{completedList?.length &&
+						)) :
 						completedList?.map((item) => (
 							<SimResults
 								item={item}
