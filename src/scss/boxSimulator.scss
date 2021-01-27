@@ -1,0 +1,492 @@
+.boxSimulator {
+	display: flex;
+	margin: 0;
+	min-width: 100vw;
+	flex-wrap: wrap;
+	justify-content: center;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;  /* IE 10+ */
+
+	@include mobile-portrait {
+		font-size: 14px;
+		width: 300px;
+		padding: 0;
+	}
+
+	@include mobile-landscape {
+		margin-left: 185px;
+		min-width: calc(100vw - 185px);
+	}
+
+	@include desktop {
+		min-width: 768px;
+		width: 768px;
+		margin: 0 calc(50% - (768px / 2));
+	}
+
+	&::-webkit-scrollbar {
+		width: 0;
+		background: transparent;
+	}
+
+	input {
+		font-family: dosis;
+		color: rgba(255,255,255,0.7);
+		font-size: 16px;
+		width: 60px;
+		text-align: center;
+		margin: 0 5px;
+		background: transparent;
+		border: none;
+		border-radius: 0;
+		border-bottom: 1px solid rgba(255,255,255,0.6);
+		outline: none;
+		caret-color: white;
+		transition: all 0.5s linear;
+
+		@include desktop {
+			font-size: 18px;
+		}
+
+		&:focus {
+			border-bottom: 1px solid var(--mainColor);
+		}
+	}
+
+	.searchContainer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 40px;
+		width: 85%;
+		max-width: 485px;
+		margin-top: 12px;
+		border-radius: 10px;
+		background-color: rgba(0,0,0,0.5);
+
+		@include mobile-portrait {
+			margin: 9px 7.5%;
+		}
+
+		@include mobile-landscape {
+			margin: 25px 7.5% 12px 7.5%;
+		}
+
+		@include desktop {
+			height: 50px;
+		}
+
+		h4 {
+			display: flex;
+			width: 40%;
+			height: 40px;
+			justify-content: center;
+			margin: 0;
+			align-items: center;
+
+			@include desktop {
+				height: 50px;
+				font-size: 18px;
+			}
+
+			&:first-child {
+				border-right: 1px solid rgba(255, 255, 255, 0.1);
+				margin-left: 5px;
+			}
+
+			&:nth-child(2) {
+				border-right: 1px solid rgba(255, 255, 255, 0.1);
+				margin-left: 5px;
+			}
+		}
+
+		button {
+			cursor: pointer;
+			color: white;
+			height: 40px;
+			width: 20%;
+			font-family: dosis;
+			font-weight: 600;
+			font-size: 18px;
+			border: none;
+			border-top: 2px solid var(--mainColor);
+			border-bottom: 2px solid var(--mainColor);
+			border-right: 2px solid var(--mainColor);
+			border-radius: 0 10px 10px 0;
+			outline: none;
+			background-color: transparent;
+			transition: all 0.25s linear;
+
+			@include desktop {
+				height: 50px;
+			}
+
+			&::-moz-focus-inner {
+				border: 0;
+			}
+		}
+
+		.disable-btn {
+			opacity: 0.3;
+		}
+	}
+
+	.progressBar {
+		content: '';
+		-webkit-clip-path: inset(0 100% 0 0);
+		clip-path: inset(0 100% 0 0);
+		width: 100%;
+		max-width: 68.5%;;
+		height: 36px;
+		position: absolute;
+		left: calc(200vw + 7.5%);
+		border: 2px solid var(--mainColor);
+		border-radius: 10px 0 0 10px;
+		border-right: none;
+		pointer-events: none;
+		transition: opacity 0.1s ease-in-out;
+
+		@media only screen and (min-width: 575px) {
+			max-width: 390px;
+			left: calc(200vw + (50% - (485px / 2)));
+		}
+
+		@include desktop {
+			height: 46px;
+		}
+	}
+
+	.progressCount {
+		align-self: center;
+		margin: 0;
+		opacity: 0.5;
+		position: absolute;
+		top: 62px;
+
+		@include mobile-portrait {
+			top: 0px;
+			font-size: 14px;
+			position: relative;
+		}
+
+		@include mobile-landscape {
+			top: 75px;
+		}
+
+		@include desktop {
+			top: 72px;
+			font-size: 20px;
+		}
+	}
+
+	.submitResults {
+		position: absolute;
+		top: 62px;
+		width: 115px;
+		cursor: pointer;
+		font: inherit;
+		outline: none;
+		color: white;
+		margin: 0;
+		opacity: 0.7;
+		text-align: center;
+		align-self: center;
+		background-color: rgba(0,0,0,0.6);
+		padding: 5px;
+		border: 1px solid var(--mainColor);
+		border-radius: 10px;
+		transition: all 0.25s linear;
+
+		@include mobile-portrait {
+			top: 0px;
+			font-size: 14px;
+			position: relative;
+		}
+
+		@include mobile-landscape {
+			top: 75px;
+		}
+
+		@include desktop {
+			top: 72px;
+			font-size: 20px;
+			width: 135px;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.submitted {
+		cursor: default;
+		opacity: 1;
+		background-color: transparent;
+		border-color: transparent;
+		color: var(--mainColor);
+		pointer-events: none;
+	}
+
+	.pending {
+		pointer-events: none;
+	}
+
+	.hideResults {
+		cursor: default;
+		pointer-events: none;
+		opacity: 0.2;
+
+		&:hover {
+			opacity: 0.2;
+		}
+	}
+
+	@keyframes popIn {
+		0% {
+			opacity: 0;
+			transform: scale(0);
+		}
+		40% {
+			opacity: 1;
+			transform: scale(1);
+		}
+		80% {
+			opacity: 1;
+			transform: scale(1);
+		}
+		100% {
+			opacity: 0;
+			transform: scale(0);
+		}
+	}
+
+	.fa-check {
+		opacity: 0;
+		animation: popIn 1.25s ease-in-out 0.25s;
+	}
+
+	table {
+		overflow: hidden;
+		width: 375px;
+		border-radius: 10px;
+		margin-top: 50px;
+		align-self: center;
+		box-sizing: content-box;
+		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+		border-spacing: 0;
+		scrollbar-width: none; /* Firefox */
+		-ms-overflow-style: none;  /* IE 10+ */
+		transition: all 0.25s linear;
+
+		@include mobile-portrait {
+			width: 300px;
+			margin-top: 12px;
+		}
+
+		@include mobile-landscape {
+			margin-top: 40px;
+		}
+
+		@include desktop {
+			width: 415px;
+			margin-top: 60px;
+		}
+
+		&::-webkit-scrollbar {
+			width: 0;
+			background: transparent;
+		}
+
+		thead {
+			display: block;
+			background-color: rgba(0,0,0,0.5);
+
+			tr {
+
+				th {
+					padding: 5px 0;
+					border-right: 2px solid #2a2a2a;
+
+					&:nth-child(1) {
+						width: 161px;
+						border-left: none;
+					}
+
+					&:nth-child(2) {
+						width: 53px;
+					}
+
+					&:nth-child(3) {
+						width: 88px;
+					}
+
+					&:nth-child(4) {
+						width: 56px;
+
+						@include desktop {
+							width: 52px;
+						}
+					}
+
+					&:nth-child(5) {
+						width: 60px;
+						border-right: none;
+
+						@include desktop {
+							width: 56px;
+						}
+					}
+				}
+			}
+		}
+
+		tbody {
+			display: block;
+			overflow-y: auto;
+			overflow-x: hidden;
+			border-radius: 0 0 10px 10px;
+			height: calc(100vh - 290px);
+			border-spacing: 0px;
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+
+			@include mobile-portrait {
+				height: calc(100vh - 235px);
+			}
+
+			@include mobile-landscape {
+				height: calc(100vh - 158px);
+			}
+
+			@include desktop {
+				height: calc(100vh - 310px);
+			}
+
+			&::-webkit-scrollbar {
+				width: 0;
+				background: transparent;
+			}
+
+			.simResults {
+				height: 60px;
+				opacity: 0.5;
+				text-align: center;
+				background-color: rgba(255,255,255,0.05);
+
+				@include mobile-portrait {
+					height: 45px;
+				}
+
+				td {
+					padding: 5px 0;
+					border: none;
+					transition: all 0.25s ease-in-out;
+
+					&:nth-child(1) {
+						width: 113px;
+						padding: 0 10px;
+						border-right: 2px solid rgba(0,0,0,0.3);
+						font-size: 14px;
+
+						@include mobile-portrait {
+							padding: 0 5px;
+						}
+
+						@include mobile-landscape {
+							font-size: 16px;
+						}
+
+						@include desktop {
+							width: 141px;
+							font-size: 18px;
+						}
+					}
+
+					&:nth-child(2) {
+						width: 49px;
+						border-right: 2px solid rgba(0,0,0,0.3);
+
+						@include desktop {
+							width: 53px;
+						}
+					}
+
+					&:nth-child(3) {
+						width: 77px;
+
+						@include mobile-portrait {
+							border-right: 2px solid rgba(0,0,0,0.3);
+						}
+
+						@include desktop {
+							width: 85px;
+						}
+					}
+
+					&:nth-child(4) {
+						width: 56px;
+						background-color: rgba(0,0,0,0.3);
+
+						img {
+							height: 50px;
+						}
+
+						@include mobile-portrait {
+							display: none;
+						}
+					}
+
+					&:nth-child(5) {
+						width: 56px;
+						border: none;
+					}
+				}
+
+				.rare {
+					color: var(--rareColor);
+				}
+
+				.uncommon {
+					color: var(--uncommonColor);
+				}
+
+				.common {
+					color: var(--commonColor);
+				}
+
+				&:nth-child(odd) {
+					background-color: rgba(255,255,255,0.15);
+				}
+				
+			}
+
+			.wanted {
+				opacity: 1;
+				background-color: rgba(16, 255, 0, 0.18);
+
+				&:nth-child(odd) {
+					background-color: rgba(16, 255, 0, 0.25);
+				}
+			}
+
+			.unwanted {
+				opacity: 1;
+				background-color: rgba(255, 0, 0, 0.18);
+
+				&:nth-child(odd) {
+					background-color: rgba(255, 0, 0, 0.25);
+				}
+			}
+		}
+	}
+
+	.hide-table {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+
+	.show-table {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}

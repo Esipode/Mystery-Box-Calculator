@@ -1,0 +1,81 @@
+html {
+	--rareColor: #ffff77;
+	--uncommonColor: #8888ff;
+	--commonColor: #c8c8c8;
+	overflow: hidden;
+}
+
+body {
+	font-family: dosis, sans-serif;
+	user-select: none;
+	color: white;
+	margin: 0;
+	padding: 0;
+	padding: env(safe-area-inset);
+	border: 0;
+}
+
+@import './displaySizes.scss';
+@import './boxColors.scss';
+
+.App {
+	overflow: hidden;
+	height: 100vh;
+	transition: all 0.25s linear;
+
+	@include mobile-landscape {
+		display: flex;
+		flex-direction: row;
+		padding-left: env(safe-area-inset-left);
+	}
+
+	@import './header.scss';
+
+	.mainWrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		height: calc(100vh - 150px);
+		transition: transform 0.75s cubic-bezier(1, -0.14, 0, 1.25);
+
+		@include mobile-portrait {
+			height: calc(100vh - 110vh);
+		}
+
+		@include mobile-landscape {
+			height: auto;
+			width: calc(100vw - 185px);
+
+			.mtxSelection.safari tbody {
+				height: calc(100vh - 105px);
+			}
+	
+			.boxSimulator.safari tbody {
+				height: calc(100vh - 198px);
+			}
+	
+			.statistics.safari tbody {
+				height: calc(100vh - 105px);
+			}
+		}
+
+		@import './boxSelection.scss';
+		@import './mtxSelection.scss';
+		@import './boxSimulator.scss';
+		@import './statistics.scss';
+
+		@include safari {
+			.mtxSelection.safari tbody {
+				height: calc(100vh - 325px);
+			}
+		
+			.boxSimulator.safari tbody {
+				height: calc(100vh - 415px);
+			}
+		
+			.statistics.safari tbody {
+				height: calc(100vh - 325px);
+			}
+		}
+	}
+}

@@ -1,0 +1,258 @@
+.header {
+	display: grid;
+	grid-template-columns: calc(50% - 50px) 100px calc(50% - 50px);
+	grid-template-rows: 150px;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	height: 150px;
+	justify-items: center;
+	align-items: center;
+	background: rgba(255,255,255,0.05);
+	box-shadow: 0px 0px 7px 0px black;
+
+	@include mobile-portrait {
+		grid-template-rows: 100px;
+		height: 110px;
+	}
+
+	@include mobile-landscape {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, 1fr);
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+		height: auto;
+		width: 175px;
+	}
+
+	/* LOGO ANIMATION */
+	@keyframes icon-left-flash {
+		0% {
+			transform: translate(0px, 0px);
+		}
+		50% {
+			transform: translate(-8px, -20px);
+		}
+		100% {
+			transform: translate(0px, 0px) rotate(0.01deg);
+		}
+	}
+
+	@keyframes icon-middle-flash {
+		0% {
+			transform: translate(0px, 0px);
+		}
+		50% {
+			transform: translate(0px, -20px);
+		}
+		100% {
+			transform: translate(0px, 0px) rotate(0.01deg);
+		}
+	}
+
+	@keyframes icon-right-flash {
+		0% {
+			transform: translate(0px, 0px);
+		}
+		50% {
+			transform: translate(10px, -16px) rotate(0.01deg);
+		}
+		100% {
+			transform: translate(0px, 0px);
+		}
+	}
+
+	.icon {
+		grid-area: 1 / 2 / 2 / 3;
+		height: 100px;
+		margin-bottom: 20px;
+
+		@include mobile-portrait {
+			height: 80px;
+			margin-bottom: 10px;
+		}
+
+		@include mobile-landscape {
+			grid-area: 2 / 2 / 3 / 2;
+		}
+
+		#Layer_18 {
+			.st13 {
+	
+				&:nth-child(1) {
+					animation: icon-left-flash linear 2s;
+					animation-iteration-count: infinite;
+				}
+	
+				&:nth-child(2) {
+					animation: icon-middle-flash linear 2s;
+					animation-iteration-count: infinite;
+				}
+	
+				&:nth-child(3) {
+					animation: icon-right-flash linear 2s;
+					animation-iteration-count: infinite;
+				}
+			}
+		}
+	}
+
+	h1 {
+		grid-area: 1 / 2 / 2 / 3;
+		font-size: 25px;
+		text-align: center;
+		text-shadow: 1px 1px 3px rgba(0,0,0,1);
+		white-space: nowrap;
+		padding-top: 45px;
+
+		@include mobile-portrait {
+			font-size: 20px;
+			padding-top: 45px;
+		}
+
+		@include mobile-landscape {
+			grid-area: 2 / 2 / 3 / 2;
+		}
+	}
+
+	h2 {
+		grid-area: 1 / 2 / 2 / 3;
+		font-size: 15px;
+		text-align: center;
+		word-spacing: 2px;
+		white-space: nowrap;
+		padding-top: 95px;
+
+		@include mobile-portrait {
+			font-size: 13px;
+			padding-top: 90px;
+		}
+
+		@include mobile-landscape {
+			width: 175px;
+			grid-area: 2 / 2 / 3 / 2;
+		}
+
+		@include desktop {
+			font-size: 18px;
+		}
+
+		span {
+			opacity: 0.7;
+			margin-left: 5px;
+
+			@include desktop {
+				font-size: 18px;
+			}
+		}
+	}
+
+	i {
+		font-size: 20px;
+		padding: 3px 10px 0px 10px;
+
+		@include desktop {
+			font-size: 25px;
+			padding: 6px 15px 0px 15px;
+		}
+	}
+
+	.backStep, .forwardStep {
+		display: flex;
+		cursor: pointer;
+		align-items: center;
+		opacity: 0;
+		pointer-events: none;
+		transition: all 0.25s ease-in-out;
+
+		@include mobile-landscape {
+			width: 100%;
+			justify-content: center;
+		}
+
+		h3 {
+			font-size: 15px;
+			margin: 0;
+
+			@include mobile-portrait {
+				font-size: 16px;
+			}
+
+			@include mobile-landscape {
+				font-size: 16px;
+			}
+
+			@include desktop {
+				font-size: 20px;
+			}
+		}
+
+		span {
+			font-size: 12px;
+			opacity: 0.7;
+			margin: 0;
+
+			@include mobile-portrait {
+			font-size: 13px;
+			}
+
+			@include mobile-landscape {
+				font-size: 13px;
+			}
+
+			@include desktop {
+				font-size: 18px;
+			}
+		}
+	}
+
+	.backStep {
+		grid-area: 1 / 1 / 2 / 2;
+		justify-self: end;
+		text-align: end;
+		margin-bottom: 20px;
+
+		@include mobile-portrait {
+			display: flex;
+			flex-direction: column-reverse;
+			margin-bottom: 10px;
+
+			i {
+				padding-right: 0;
+				padding-bottom: 5px;
+				align-self: flex-end;
+			}
+		}
+
+		@include mobile-landscape {
+			grid-area: 1 / 2 / 2 / 2;
+		}
+	}
+
+	.forwardStep {
+		grid-area: 1 / 3 / 2 / 4;
+		justify-self: start;
+		margin-bottom: 20px;
+
+		@include mobile-portrait {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 10px;
+
+			i {
+				padding-left: 0;
+				padding-bottom: 5px;
+				align-self: flex-start;
+			}
+		}
+
+		@include mobile-landscape {
+			grid-area: 3 / 2 / 4 / 2;
+		}
+	}
+
+	.headerVisible {
+		opacity: 1;
+		pointer-events: initial;
+	}
+}

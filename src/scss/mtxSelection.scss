@@ -1,0 +1,190 @@
+.mtxSelection {
+	display: flex;
+	margin: 0;
+	min-width: 100vw;
+	margin-top: 12px;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 40px;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;  /* IE 10+ */
+
+	@include mobile-portrait {
+		font-size: 14px;
+		margin: 0;
+	}
+
+	@include mobile-landscape {
+		margin: 0;
+		margin-left: 185px;
+		min-width: calc(100vw - 185px);
+	}
+
+	&::-webkit-scrollbar {
+		width: 0;
+		background: transparent;
+	}
+
+	table {
+		overflow: hidden;
+		border-radius: 10px;
+		align-self: center;
+		text-align: center;
+		box-sizing: content-box;
+		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+		border-spacing: 0;
+		scrollbar-width: none; /* Firefox */
+		-ms-overflow-style: none;  /* IE 10+ */
+
+		@include mobile-portrait {
+			width: 300px;
+			margin-top: 9px;
+		}
+
+		@include mobile-landscape {
+			margin-top: 15px;
+			align-self: baseline;
+		}
+
+		&::-webkit-scrollbar {
+			width: 0;
+			background: transparent;
+		}
+
+		thead {
+			display: block;
+			border-radius: 10px 10px 0 0;
+			background-color: rgba(0,0,0,0.5);
+
+			tr {
+
+				th {
+					padding: 5px 8px;
+					border-right: 2px solid #2a2a2a;
+
+					&:nth-child(1) {
+						width: 163px;
+						border-left: none;
+
+						@include desktop {
+							width: 223px;
+						}
+					}
+
+					&:nth-child(2) {
+						width: 34px;
+					}
+
+					&:nth-child(3) {
+						width: 81px;
+					}
+
+					&:nth-child(4) {
+						width: 43px;
+						border-right: none;
+					}
+				}
+			}
+		}
+
+		tbody {
+			display: block;
+			border-radius: 0 0 10px 10px;
+			overflow-y: auto;
+			overflow-x: hidden;
+			height: calc(100vh - 200px);
+			border-spacing: 0px;
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+
+			@include mobile-portrait {
+				height: calc(100vh - 155px);
+			}
+
+			@include mobile-landscape {
+				height: calc(100vh - 55px);
+			}
+
+			&::-webkit-scrollbar {
+				width: 0;
+				background: transparent;
+			}
+
+			.mtx {
+				height: 60px;
+				background-color: rgba(255,255,255,0.07);
+
+				@include mobile-portrait {
+					height: 45px;
+				}
+
+				&:nth-child(odd) {
+					background-color: rgba(255,255,255,0.12);
+				}
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				.rare {
+					color: var(--rareColor);
+				}
+
+				.uncommon {
+					color: var(--uncommonColor);
+				}
+
+				.common {
+					color: var(--commonColor);
+				}
+
+				td {
+					padding: 5px;
+					border-right: 2px solid rgba(0,0,0,0.3);
+					transition: all 0.25s ease-in-out;
+
+					@include desktop {
+						font-size: 20px;
+					}
+
+					&:nth-child(1) {
+						width: 169px;
+						border-left: 0px solid var(--mainColor);
+
+						@include desktop {
+							width: 229px;
+						}
+					}
+
+					&:nth-child(2) {
+						width: 40px;
+					}
+
+					&:nth-child(3) {
+						width: 88px;
+						border: none;
+					}
+
+					&:nth-child(4) {
+						width: 50px;
+						border: none;
+						background-color: rgba(0,0,0,0.3);
+
+						@include mobile-portrait {
+							display: none;
+						}
+
+						img {
+							height: 50px;
+						}
+					}
+				}
+			}
+
+			.active td:first-child {
+				border-left: 5px solid var(--mainColor);
+				padding-left: 0px;
+			}
+		}
+	}
+}

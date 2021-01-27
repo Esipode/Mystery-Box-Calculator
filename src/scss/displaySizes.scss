@@ -1,0 +1,27 @@
+//Small Mobile Portrait Display
+@mixin mobile-portrait {
+	@media only screen and (max-width: 380px) {
+		@content;
+	}
+}
+
+//Mobile Landscape Display
+@mixin mobile-landscape {
+	@media only screen and (max-height: 600px) {
+		@content;
+	}
+}
+
+//Desktop Display
+@mixin desktop {
+	@media only screen and (min-width: 768px) and (min-height: 600px) {
+		@content;
+	}
+}
+
+//Safari mobile fixes
+@mixin safari {
+	@media only screen and (max-width: 600px) {
+		@content;
+	}
+}

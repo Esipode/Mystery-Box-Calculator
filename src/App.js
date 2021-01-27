@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './App.scss';
+import './scss/App.scss';
 import Header from './header';
 import BoxSelection from './step1/boxSelection';
 import MTXSelection from './step2/mtxSelection';
