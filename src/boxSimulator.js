@@ -7,9 +7,7 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 	const [, updateState] = React.useState();
   	const forceUpdate = React.useCallback(() => updateState({}), []);
 	
-	const [boxVal, setBoxVal] = useState('');
-	const [curProgress, setCurProg] = useState(0);
-	const [percentLoaded, setPercent] = useState(0);
+	const [boxVal, setBoxVal] = useState(undefined);
 	const [completedList, setCompletedList] = useState([]);
 	const [resultsPending, setResultsPending] = useState(false);
 	const [resultsSubmitted, setSubmitted] = useState(false);
@@ -21,14 +19,13 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 
 	const startSim = async () => {
 		let startTime = performance.now();
+		await sleep(500);
 		setSubmitted(false);
 		let selectedItems = JSON.parse(JSON.stringify(fullMTXList));
 		let fullList = JSON.parse(JSON.stringify(fullMTXList));
 		//Execute for as long as the number of items randomly selected is less than the number of boxes to be opened
 		for (let i = 1; i <= boxVal;) {
-			//Forces waiting between each time an item is randomly selected to prevent browser freezing
-			await sleep(5);
-			if (!isRunning) {
+			if (!isRunning || boxVal > 999) {
 				break;
 			}
 			else {
@@ -79,8 +76,6 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 							break;
 						}
 					}
-					setCurProg(i - 1);
-					setPercent(((i / boxVal) * 100));
 				}
 			}
 		}
@@ -101,9 +96,6 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 			}
 			return 0;
 		})
-		await sleep(100);
-		setCurProg(0);
-		setPercent(0);
 		setCompletedList(selectedItems);
 		isRunning && simToggle();
 
@@ -182,7 +174,7 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 	}
 
 	useEffect(() => {
-		isRunning && startSim();
+		isRunning && boxVal > 0 && startSim();
 	}, [isRunning])
 
 	return (
@@ -195,25 +187,20 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 					maxLength="3" 
 					disabled={isRunning} 
 					onChange={(e) => setBoxVal(e.target.value.replace(/\D/,''))} 
-					value={boxVal} 
+					value={boxVal}
 					placeholder="#"
 					onPaste={(e) => e.preventDefault()}
 				/>
 				</h4>
-				<h4>Points: {boxVal * 30}</h4>
-				<button onClick={() => {forceUpdate(); simToggle()}} style={{borderColor: isRunning ? '#ff5f5f' : 'var(--mainColor)'}}>
-					<i className={isRunning ? 'fas fa-stop' : 'fas fa-play' }/>
+				<h4>Points: {(boxVal * 30) || 0}</h4>
+				<button 
+					className={!boxVal > 0 || boxVal > 999 || isRunning ? 'disable-btn' : ''} 
+					onClick={() => {forceUpdate(); simToggle()}} 
+					// disabled={!boxVal > 0 || boxVal > 999 || isRunning}
+				>
+					<i className='fas fa-play'/>
 				</button>
-				<div
-					className="progressBar"
-					style={{
-						clipPath: `inset(0 ${(100 - percentLoaded)}% 0 0)`,
-						WebkitClipPath: `inset(0 ${(100 - percentLoaded)}% 0 0)`,
-						opacity: percentLoaded >= 1 && percentLoaded < 100 ? 1 : 0
-					}}
-				/>
 			</div>
-			<p className="progressCount" style={{display: isRunning && !boxChanged && curProgress !== boxVal ? 'block' : 'none'}}>{curProgress}/{boxVal}</p>
 			<p 
 				className={`submitResults${resultsSubmitted ? ' submitted' : ''}${resultsPending ? ' pending' : ''}`}
 				onClick={() => onSubmitResults()} 
@@ -221,7 +208,7 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 			>
 				{resultsSubmitted ? <i className="fas fa-check"></i> : 'Submit Results'}
 			</p>
-			<table style={{display: completedList.length && !isRunning && !boxChanged ? 'table' : 'none'}}>
+			<table className={isRunning ? 'hide-table' : 'show-table'}>
 				<thead>
 					<tr>
 						<th>Name</th>
@@ -232,12 +219,22 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 					</tr>
 				</thead>
 				<tbody>
-					{completedList.map((item) => (
-						<SimResults
-							item={item}
-							key={item.name}
-						/>
-					))}
+					{!completedList.length && 
+						fullMTXList.map((item) => (
+							<SimResults
+								item={item}
+								key={item.name}
+							/>
+						))
+					}
+					{completedList.length &&
+						completedList.map((item) => (
+							<SimResults
+								item={item}
+								key={item.name}
+							/>
+						))
+					}
 				</tbody>
 			</table>
 		</div>

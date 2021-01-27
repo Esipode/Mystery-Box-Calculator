@@ -850,6 +850,10 @@ body {
 						border: 0;
 					}
 				}
+
+				.disable-btn {
+					opacity: 0.3;
+				}
 			}
 	
 			.progressBar {
@@ -984,6 +988,7 @@ body {
 				border-spacing: 0;
 				scrollbar-width: none; /* Firefox */
 				-ms-overflow-style: none;  /* IE 10+ */
+				transition: all 0.25s linear;
 
 				@include mobile-portrait {
 					width: 300px;
@@ -1185,6 +1190,16 @@ body {
 						}
 					}
 				}
+			}
+
+			.hide-table {
+				transform: translateY(100px);
+				opacity: 0;
+			}
+
+			.show-table {
+				transform: translateY(0px);
+				opacity: 1;
 			}
 		}
 	
