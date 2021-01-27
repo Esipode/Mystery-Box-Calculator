@@ -6,7 +6,7 @@ import onSubmitResults from './onSubmitResults';
 
 export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXList, setStatList, boxChanged, safariCheck}) {
 	
-	const [boxVal, setBoxVal] = useState(undefined);
+	const [boxVal, setBoxVal] = useState();
 	const [completedList, setCompletedList] = useState([]);
 	const [resultsPending, setResultsPending] = useState(false);
 	const [resultsSubmitted, setSubmitted] = useState(false);
