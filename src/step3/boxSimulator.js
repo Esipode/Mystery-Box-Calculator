@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-
 import SimBoxes from './simBoxes';
 import startSim from './startSim';
 import onSubmitResults from './onSubmitResults';
@@ -7,6 +6,7 @@ import onSubmitResults from './onSubmitResults';
 export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXList, setStatList, boxChanged, safariCheck}) {
 	
 	const [boxVal, setBoxVal] = useState();
+	const [prevBoxVal, setPrevBoxVal] = useState(0);
 	const [completedList, setCompletedList] = useState([]);
 	const [resultsPending, setResultsPending] = useState(false);
 	const [resultsSubmitted, setSubmitted] = useState(false);
@@ -17,11 +17,15 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 	}
 
 	useEffect(() => {
-		isRunning && boxVal > 0 && startSim(fullMTXList, boxVal, isRunning, curMTXList, setCompletedList, simToggle, setSubmitted, sleep);
+		isRunning && boxVal > 0 && startSim(fullMTXList, boxVal, isRunning, curMTXList, setCompletedList, simToggle, setSubmitted, sleep, setPrevBoxVal);
 	}, [isRunning])
 
 	return (
-		<div style={{minWidth: '100vw'}}>
+		<div className="boxSimulatorContainer">
+		{/* <div className="boxSimToggle">
+			<p>Open Boxes</p>
+			<p>Calculate Probability</p>
+		</div> */}
 			<SimBoxes 
 				safariCheck={safariCheck}
 				setStatList={setStatList}
@@ -37,6 +41,7 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 				simToggle={simToggle}
 				resultsPending={resultsPending}
 				fullMTXList={fullMTXList}
+				prevBoxVal={prevBoxVal}
 			/>
 		</div>
 	);

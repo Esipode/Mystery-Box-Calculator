@@ -66,6 +66,10 @@
 						width: 163px;
 						border-left: none;
 
+						@include mobile-portrait {
+							width: 141px;
+						}
+
 						@include desktop {
 							width: 223px;
 						}
@@ -73,15 +77,27 @@
 
 					&:nth-child(2) {
 						width: 34px;
+
+						@include mobile-portrait {
+							width: 30px;
+						}
 					}
 
 					&:nth-child(3) {
 						width: 81px;
+
+						@include mobile-portrait {
+							display: none;
+						}
 					}
 
 					&:nth-child(4) {
 						width: 43px;
 						border-right: none;
+
+						@include mobile-portrait {
+							width: 77px;
+						}
 					}
 				}
 			}

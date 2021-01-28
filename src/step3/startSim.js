@@ -1,5 +1,6 @@
-export default async function startSim(fullMTXList, boxVal, isRunning, curMTXList, setCompletedList, simToggle, setSubmitted, sleep) {
+export default async function startSim(fullMTXList, boxVal, isRunning, curMTXList, setCompletedList, simToggle, setSubmitted, sleep, setPrevBoxVal) {
 	let startTime = performance.now();
+	setPrevBoxVal(0);
 	await sleep(500);
 	setSubmitted(false);
 	let selectedItems = JSON.parse(JSON.stringify(fullMTXList));
@@ -79,7 +80,7 @@ export default async function startSim(fullMTXList, boxVal, isRunning, curMTXLis
 	})
 	setCompletedList(selectedItems);
 	isRunning && simToggle();
-
+	setPrevBoxVal(boxVal);
 	let endTime = performance.now();
 	// console.log("%cSimulation Time: ", "color: #0a0" , ((endTime - startTime) / 1000).toFixed(2) + " Seconds");
 }

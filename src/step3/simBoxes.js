@@ -1,7 +1,7 @@
 import React from 'react';
 import SimResults from './simResults';
 
-export default function simBoxes({safariCheck, setStatList, setSubmitted, setResultsPending, isRunning, onSubmitResults, completedList, resultsSubmitted, setBoxVal, boxVal, simToggle, resultsPending, fullMTXList}) {
+export default function simBoxes({safariCheck, setStatList, setSubmitted, setResultsPending, isRunning, onSubmitResults, completedList, resultsSubmitted, setBoxVal, boxVal, simToggle, resultsPending, fullMTXList, prevBoxVal, setPrevBoxVal}) {
 
 	const calcProfit = () => {
 		if (!completedList.length || isRunning) {
@@ -15,14 +15,14 @@ export default function simBoxes({safariCheck, setStatList, setSubmitted, setRes
 			for (let i in selectedItems) {
 				pointsTotal += parseInt(selectedItems[i].value);
 			}
-			return (pointsTotal - (boxVal * 30))
+			return (pointsTotal - (prevBoxVal * 30))
 		}
 	}
 
 	return (
 		<div className={`boxSimulator${safariCheck() ? ' safari' : ''}`}>
 			<div className="searchContainer">
-				<h4>Boxes:
+				<h4 className="box-input">Boxes:
 				<input 
 					type="text" 
 					pattern={"[0-9]*"} 
@@ -34,14 +34,14 @@ export default function simBoxes({safariCheck, setStatList, setSubmitted, setRes
 					onPaste={(e) => e.preventDefault()}
 				/>
 				</h4>
-				<h4>Points: {(boxVal * 30) || 0}</h4>
 				<button 
-					className={!boxVal > 0 || boxVal > 999 || isRunning ? 'disable-btn' : ''} 
+					className={(boxVal <= 0 || boxVal > 999) || isRunning ? 'disable-btn' : ''} 
 					onClick={() => simToggle()} 
-					disabled={!boxVal > 0 || boxVal > 999 || isRunning}
+					disabled={(boxVal <= 0 || boxVal > 999) || isRunning}
 				>
 					<i className='fas fa-play'/>
 				</button>
+				<h4 className="points-amount">Points: {(boxVal * 30) || 0}</h4>
 			</div>
 			<div className="simInfoContainer">
 				<button
@@ -57,7 +57,7 @@ export default function simBoxes({safariCheck, setStatList, setSubmitted, setRes
 					<span>Loss</span>
 					:
 					<span className={`amount${calcProfit() > 0 ? '-positive' : calcProfit() < 0 ? '-negative' : ''}`}>
-						{calcProfit()}
+						{calcProfit().toString().replace('-', '')}
 					</span> 
 					Points
 				</p>
