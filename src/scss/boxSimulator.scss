@@ -7,9 +7,55 @@
 	position: relative;
 
 	.boxSimToggle {
+		pointer-events: none;
 		position: absolute;
 		display: flex;
 		flex-direction: column;
+		top: 12px;
+		padding-right: 360px;
+
+		.toggleContainer {
+			pointer-events: all;
+			cursor: pointer;
+			display: flex;
+			flex-direction: column;
+			margin: 0;
+			height: 30px;
+			width: 34px;
+			justify-content: center;
+			align-items: center;
+			font-size: 11px;
+			padding: 8px;
+			border: 1px solid transparent;
+			border-radius: 10px;
+			background: rgba(0, 0, 0, 0.5);
+			transition: all 0.1s linear;
+
+			&:first-child {
+				margin-bottom: 4px;
+			}
+
+			i {
+				font-size: 18px;
+				margin-bottom: 5px;
+				display: flex;
+				flex-direction: column;
+				transition: all 0.1s linear;
+			}
+
+			&:hover {
+				border: 1px solid var(--mainColor);
+				opacity: 0.8;
+			}
+		}
+
+		.active {
+			border: 1px solid var(--mainColor);
+			
+			i {
+				color: var(--mainColor);
+			}
+		}
 	}
 
 	.boxSimulator {

@@ -28,16 +28,16 @@ export default function simBoxes({safariCheck, setStatList, setSubmitted, setRes
 					pattern={"[0-9]*"} 
 					maxLength="3" 
 					disabled={isRunning} 
-					onChange={(e) => setBoxVal(e.target.value.replace(/\D/,''))} 
+					onChange={(e) => setBoxVal(parseInt(e.target.value.replace(/\D/,'')) || 0)} 
 					value={boxVal || ''}
 					placeholder="#"
 					onPaste={(e) => e.preventDefault()}
 				/>
 				</h4>
 				<button 
-					className={(boxVal <= 0 || boxVal > 999) || isRunning ? 'disable-btn' : ''} 
+					className={(boxVal === undefined || boxVal === 0 || boxVal > 999) || isRunning ? 'disable-btn' : ''} 
 					onClick={() => simToggle()} 
-					disabled={(boxVal <= 0 || boxVal > 999) || isRunning}
+					disabled={(boxVal === undefined || boxVal === 0 || boxVal > 999) || isRunning}
 				>
 					<i className='fas fa-play'/>
 				</button>

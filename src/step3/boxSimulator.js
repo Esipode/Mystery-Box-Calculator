@@ -10,6 +10,7 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 	const [completedList, setCompletedList] = useState([]);
 	const [resultsPending, setResultsPending] = useState(false);
 	const [resultsSubmitted, setSubmitted] = useState(false);
+	const [simMode, setSimMode] = useState('simulator');
 
 	//Forces waiting between each time an item is randomly selected
 	const sleep = (milliseconds) => {
@@ -22,10 +23,10 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 
 	return (
 		<div className="boxSimulatorContainer">
-		{/* <div className="boxSimToggle">
-			<p>Open Boxes</p>
-			<p>Calculate Probability</p>
-		</div> */}
+			<div className="boxSimToggle">
+				<p className={`toggleContainer ${simMode === 'simulator'   ? 'active' : ''}`} onClick={() => setSimMode('simulator')}><i class="fas fa-box-open"></i>Simulator</p>
+				<p className={`toggleContainer ${simMode === 'probability' ? 'active' : ''}`} onClick={() => setSimMode('probability')}><i class="fas fa-percentage"></i>Probability</p>
+			</div>
 			<SimBoxes 
 				safariCheck={safariCheck}
 				setStatList={setStatList}
