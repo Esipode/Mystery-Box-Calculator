@@ -1,7 +1,7 @@
 import React from 'react';
 import SimResults from './simResults';
 
-export default function simBoxes({safariCheck, setStatList, setSubmitted, setResultsPending, isRunning, onSubmitResults, completedList, resultsSubmitted, setBoxVal, boxVal, simToggle, resultsPending, fullMTXList, prevBoxVal, setPrevBoxVal}) {
+export default function simBoxes({simMode, safariCheck, setStatList, setSubmitted, setResultsPending, isRunning, onSubmitResults, completedList, resultsSubmitted, setBoxVal, boxVal, simToggle, resultsPending, fullMTXList, prevBoxVal, setPrevBoxVal}) {
 
 	const calcProfit = () => {
 		if (!completedList.length || isRunning) {
@@ -20,7 +20,7 @@ export default function simBoxes({safariCheck, setStatList, setSubmitted, setRes
 	}
 
 	return (
-		<div className={`boxSimulator${safariCheck() ? ' safari' : ''}`}>
+		<div className={`boxSimulator${safariCheck() ? ' safari' : ''}${simMode === "simulator" ? '' : ' hideContainer'}`}>
 			<div className="searchContainer">
 				<h4 className="box-input">Boxes:
 				<input 

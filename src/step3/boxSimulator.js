@@ -43,6 +43,7 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 				resultsPending={resultsPending}
 				fullMTXList={fullMTXList}
 				prevBoxVal={prevBoxVal}
+				simMode={simMode}
 			/>
 		</div>
 	);
