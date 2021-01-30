@@ -24,8 +24,8 @@ export default function BoxSimulator({simToggle, isRunning, curMTXList, fullMTXL
 	return (
 		<div className="boxSimulatorContainer">
 			<div className="boxSimToggle">
-				<p className={`toggleContainer ${simMode === 'simulator'   ? 'active' : ''}`} onClick={() => setSimMode('simulator')}><i class="fas fa-box-open"></i>Simulator</p>
-				<p className={`toggleContainer ${simMode === 'probability' ? 'active' : ''}`} onClick={() => setSimMode('probability')}><i class="fas fa-percentage"></i>Probability</p>
+				<p className={`toggleContainer ${simMode === 'simulator'   ? 'active' : ''}`} onClick={() => setSimMode('simulator')}><i className="fas fa-box-open"></i>Simulator</p>
+				<p className={`toggleContainer ${simMode === 'probability' ? 'active' : ''}`} onClick={() => setSimMode('probability')}><i className="fas fa-percentage"></i>Probability</p>
 			</div>
 			<SimBoxes 
 				safariCheck={safariCheck}
