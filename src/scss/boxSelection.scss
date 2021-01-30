@@ -66,10 +66,6 @@
 			background-color: rgba(255, 255, 255, 0.1);
 		}
 
-		.selected {
-			color: var(--mainColor);
-			border-color: var(--mainColor);
-		}
 
 		img {
 			height: 75px;
@@ -111,5 +107,10 @@
 				font-weight: 400;
 			}
 		}
+	}
+
+	.selected {
+		color: var(--mainColor);
+		border-color: var(--mainColor);
 	}
 }
