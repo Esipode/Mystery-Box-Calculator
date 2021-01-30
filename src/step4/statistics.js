@@ -1,10 +1,14 @@
 import React from 'react';
 import Stat from './stat';
+import {useSelector, useDispatch} from 'react-redux';
 
-export default function Statistics({boxChanged, stats, safariCheck}) {
+export default function Statistics() {
+
+	const statList = useSelector(state => state.statList);
+	const boxChanged = useSelector(state => state.boxChanged);
 
 	return (
-		<div className={`statistics${safariCheck() ? ' safari' : ''}`}>
+		<div className="statistics">
 			<table style={{display: !boxChanged ? 'table' : 'none'}}>
 				<thead>
 					<tr>
@@ -14,7 +18,7 @@ export default function Statistics({boxChanged, stats, safariCheck}) {
 					</tr>
 				</thead>
 				<tbody>
-					{stats.itemList.map(stat => (
+					{statList.itemList.map(stat => (
 						<Stat
 							stat={stat}
 							key={stat.name}

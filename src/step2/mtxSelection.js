@@ -1,15 +1,18 @@
 import React from 'react';
 import { mtxData as data } from '../data.json';
 import MTX from './mtx';
+import {useSelector} from 'react-redux';
 
-export default function MTXSelection({curMTX, modifyMTXItem, safariCheck}) {
+export default function MTXSelection() {
+	
+	const currBox = useSelector(state => state.currBox);
 
 	const getMTXList = () => {
-		return data.filter((item) => item.box === curMTX);
+		return data.filter((item) => item.box === currBox);
 	}
 
 	return (
-		<div className={`mtxSelection${safariCheck() ? ' safari' : ''}`}>
+		<div className="mtxSelection">
 			<table>
 				<thead>
 					<tr>
@@ -24,7 +27,6 @@ export default function MTXSelection({curMTX, modifyMTXItem, safariCheck}) {
 						<MTX
 							item={mtxItem}
 							key={mtxItem.name}
-							modifyMTXItem={modifyMTXItem}
 						/>
 					))}
 				</tbody>

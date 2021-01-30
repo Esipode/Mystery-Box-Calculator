@@ -1,14 +1,33 @@
 import React, {useState} from 'react';
 
-export default function MTX({modifyMTXItem, item}) {
+import {useSelector, useDispatch} from 'react-redux';
+import {setActiveMTX, setStepThree} from '../actions';
+
+export default function MTX({item}) {
+
+	const dispatch = useDispatch();
+	const activeMTX = useSelector(state => state.activeMTX);
 
 	const [active, setActive] = useState(false);
 
 	const onAddRemoveMTX = () => {
-		let toggleActive  = !active;
-		setActive(toggleActive);
-		modifyMTXItem(item, toggleActive);
+		setActive(!active);
+		onModifyMTXItem(item, !active);
 	};
+
+	const onModifyMTXItem = (mtx, add) => {
+		let arr = activeMTX;
+		if (add) {
+			mtx.selected = true;
+			arr = activeMTX.concat(mtx);
+		}
+		else {
+			arr = arr.filter((item) => item !== mtx);
+			mtx.selected = false;
+		}
+		dispatch(setStepThree(true));
+		dispatch(setActiveMTX(arr));
+	}
 
 	return (
 		<tr className={`mtx ${active ? 'active' : 'inactive'}`} onClick={() => onAddRemoveMTX()}>

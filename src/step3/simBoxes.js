@@ -1,10 +1,23 @@
 import React from 'react';
 import SimResults from './simResults';
+import onSubmitResults from './onSubmitResults';
 
-export default function simBoxes({simMode, safariCheck, setStatList, setSubmitted, setResultsPending, isRunning, onSubmitResults, completedList, resultsSubmitted, setBoxVal, boxVal, simToggle, resultsPending, fullMTXList, prevBoxVal, setPrevBoxVal}) {
+import {useSelector, useDispatch} from 'react-redux';
+import {setStatList, setBoxVal, setResultsPending, setResultsSubmitted} from '../actions';
+
+export default function SimBoxes({simMode, simToggle}) {
+
+	const dispatch = useDispatch();
+	const fullMTXList = useSelector(state => state.fullMTXList);
+	const simRunning = useSelector(state => state.simRunning);
+	const boxVal = useSelector(state => state.boxVal);
+	const prevBoxVal = useSelector(state => state.prevBoxVal);
+	const completedList = useSelector(state => state.completedList);
+	const resultsPending = useSelector(state => state.resultsPending);
+	const resultsSubmitted = useSelector(state => state.resultsSubmitted);
 
 	const calcProfit = () => {
-		if (!completedList.length || isRunning) {
+		if (!completedList.length || simRunning) {
 			return 0;
 		}
 		else {
@@ -20,24 +33,24 @@ export default function simBoxes({simMode, safariCheck, setStatList, setSubmitte
 	}
 
 	return (
-		<div className={`boxSimulator${safariCheck() ? ' safari' : ''}${simMode === "simulator" ? '' : ' hideContainer'}`}>
+		<div className={`boxSimulator${simMode === "simulator" ? '' : ' hideContainer'}`}>
 			<div className="searchContainer">
 				<h4 className="box-input">Boxes:
 				<input 
 					type="text" 
 					pattern={"[0-9]*"} 
 					maxLength="3" 
-					disabled={isRunning} 
-					onChange={(e) => setBoxVal(parseInt(e.target.value.replace(/\D/,'')) || 0)} 
+					disabled={simRunning}
+					onChange={(e) => dispatch(setBoxVal(parseInt(e.target.value.replace(/\D/,'')) || 0))} 
 					value={boxVal || ''}
 					placeholder="#"
 					onPaste={(e) => e.preventDefault()}
 				/>
 				</h4>
 				<button 
-					className={(boxVal === undefined || boxVal === 0 || boxVal > 999) || isRunning ? 'disable-btn' : ''} 
+					className={(boxVal === undefined || boxVal === 0 || boxVal > 999) || simRunning ? 'disable-btn' : ''} 
 					onClick={() => simToggle()} 
-					disabled={(boxVal === undefined || boxVal === 0 || boxVal > 999) || isRunning}
+					disabled={(boxVal === undefined || boxVal === 0 || boxVal > 999) || simRunning}
 				>
 					<i className='fas fa-play'/>
 				</button>
@@ -45,9 +58,9 @@ export default function simBoxes({simMode, safariCheck, setStatList, setSubmitte
 			</div>
 			<div className="simInfoContainer">
 				<button
-					className={`submitResults${resultsSubmitted ? ' submitted' : ''}${resultsPending ? ' pending' : ''}${isRunning || !completedList.length ? ' hideResults' : ''}`}
-					onClick={() => onSubmitResults(completedList, setStatList, setSubmitted, setResultsPending)}
-					disabled={isRunning || !completedList.length}
+					className={`submitResults${resultsSubmitted ? ' submitted' : ''}${resultsPending ? ' pending' : ''}${simRunning || !completedList.length ? ' hideResults' : ''}`}
+					onClick={() => onSubmitResults(dispatch, completedList, setStatList, setResultsSubmitted, setResultsPending)}
+					disabled={simRunning || !completedList.length}
 				>
 					{resultsSubmitted ? <i className="fas fa-check"></i> : 'Submit Results'}
 				</button>
@@ -62,7 +75,7 @@ export default function simBoxes({simMode, safariCheck, setStatList, setSubmitte
 					Points
 				</p>
 			</div>
-			<table className={isRunning ? 'hide-table' : 'show-table'}>
+			<table className={simRunning ? 'hide-table' : 'show-table'}>
 				<thead>
 					<tr>
 						<th>Name</th>

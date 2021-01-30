@@ -1,8 +1,8 @@
-export default async function startSim(fullMTXList, boxVal, isRunning, curMTXList, setCompletedList, simToggle, setSubmitted, sleep, setPrevBoxVal) {
-	let startTime = performance.now();
-	setPrevBoxVal(0);
+export default async function startSim(dispatch, fullMTXList, boxVal, isRunning, curMTXList, setCompletedList, simToggle, setSubmitted, sleep, setPrevBoxVal) {
+	// let startTime = performance.now();
+	dispatch(setPrevBoxVal(0));
 	await sleep(500);
-	setSubmitted(false);
+	dispatch(setSubmitted(false));
 	let selectedItems = JSON.parse(JSON.stringify(fullMTXList));
 	let fullList = JSON.parse(JSON.stringify(fullMTXList));
 	//Execute for as long as the number of items randomly selected is less than the number of boxes to be opened
@@ -78,9 +78,9 @@ export default async function startSim(fullMTXList, boxVal, isRunning, curMTXLis
 		}
 		return 0;
 	})
-	setCompletedList(selectedItems);
+	dispatch(setCompletedList(selectedItems));
 	isRunning && simToggle();
-	setPrevBoxVal(boxVal);
-	let endTime = performance.now();
+	dispatch(setPrevBoxVal(boxVal));
+	// let endTime = performance.now();
 	// console.log("%cSimulation Time: ", "color: #0a0" , ((endTime - startTime) / 1000).toFixed(2) + " Seconds");
 }
