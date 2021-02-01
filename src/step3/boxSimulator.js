@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import SimBoxes from './simBoxes';
 import startSim from './startSim';
+import ProbabilitySim from './probabilitySim';
 
 import {useSelector, useDispatch} from 'react-redux';
 import {setBoxChanged, setSimRunning, setPrevBoxVal, setCompletedList, setResultsSubmitted} from '../actions';
@@ -13,7 +14,8 @@ export default function BoxSimulator() {
 	const simRunning = useSelector(state => state.simRunning);
 	const boxVal = useSelector(state => state.boxVal);
 
-	const [simMode, setSimMode] = useState('simulator');
+	const [simMode, setSimMode] = useState('probability');
+	const [probFilter, setProbFilter] = useState('box')
 
 	//Forces waiting between each time an item is randomly selected
 	const sleep = (milliseconds) => {
@@ -38,6 +40,11 @@ export default function BoxSimulator() {
 			<SimBoxes
 				simToggle={simToggle}
 				simMode={simMode}
+			/>
+			<ProbabilitySim
+				simMode={simMode}
+				probFilter={probFilter}
+				setProbFilter={setProbFilter}
 			/>
 		</div>
 	);
