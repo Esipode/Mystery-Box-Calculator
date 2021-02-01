@@ -48,9 +48,9 @@ export default function SimBoxes({simMode, simToggle}) {
 				/>
 				</h4>
 				<button 
-					className={(boxVal === undefined || boxVal === 0 || boxVal > 999) || simRunning ? 'disable-btn' : ''} 
+					className={(boxVal === null || boxVal === 0 || boxVal > 999) || simRunning ? 'disable-btn' : ''} 
 					onClick={() => simToggle()} 
-					disabled={(boxVal === undefined || boxVal === 0 || boxVal > 999) || simRunning}
+					disabled={(boxVal === null || boxVal === 0 || boxVal > 999) || simRunning}
 				>
 					<i className='fas fa-play'/>
 				</button>

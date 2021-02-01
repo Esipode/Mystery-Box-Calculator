@@ -45,37 +45,11 @@ body {
 		@include mobile-landscape {
 			height: auto;
 			width: calc(100vw - 185px);
-
-			.mtxSelection.safari tbody {
-				height: calc(100vh - 105px);
-			}
-	
-			.boxSimulator.safari tbody {
-				height: calc(100vh - 198px);
-			}
-	
-			.statistics.safari tbody {
-				height: calc(100vh - 105px);
-			}
 		}
 
 		@import './boxSelection.scss';
 		@import './mtxSelection.scss';
 		@import './boxSimulator.scss';
 		@import './statistics.scss';
-
-		@include safari {
-			.mtxSelection.safari tbody {
-				height: calc(100vh - 325px);
-			}
-		
-			.boxSimulator.safari tbody {
-				height: calc(100vh - 415px);
-			}
-		
-			.statistics.safari tbody {
-				height: calc(100vh - 325px);
-			}
-		}
 	}
 }

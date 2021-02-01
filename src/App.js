@@ -8,8 +8,6 @@ import Statistics from './step4/statistics';
 
 import {useSelector} from 'react-redux';
 
-import {setStep, setBox, setBoxChanged, setFullMTXList, setActiveMTX, setStatList, setSimRunning, setStepThree} from './actions';
-
 export default function App() {
 
 	const currStep = useSelector(state => state.currStep);

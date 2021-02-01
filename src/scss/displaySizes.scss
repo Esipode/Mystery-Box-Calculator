@@ -18,10 +18,3 @@
 		@content;
 	}
 }
-
-//Safari mobile fixes
-@mixin safari {
-	@media only screen and (max-width: 600px) {
-		@content;
-	}
-}

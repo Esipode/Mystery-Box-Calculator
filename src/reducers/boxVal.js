@@ -1,4 +1,4 @@
-const boxVal = (state = '', action) => {
+const boxVal = (state = null, action) => {
 	switch (action.type) {
 		case 'BOX_VAL':
 			return action.value;

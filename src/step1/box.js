@@ -9,9 +9,11 @@ export default function Box({name, image}) {
 	const dispatch = useDispatch();
 	const activeBox = useSelector(state => state.activeBox);
 
-	const onChangeMTXBox = (boxName, mtxList) => {
+	
+
+	const onChangeMTXBox = (mtxList) => {
 		dispatch(setStep(1));
-		dispatch(setBox(boxName));
+		dispatch(setBox(name));
 		dispatch(setBoxChanged(true));
 		dispatch(setFullMTXList(mtxList));
 		dispatch(setActiveMTX([]));
@@ -19,15 +21,14 @@ export default function Box({name, image}) {
 		dispatch(setStepThree(false));
 	};
 
-	const onSelectBox = (newBox) => {
-		if (activeBox !== name || activeBox === '')
-		dispatch(setActiveBox(newBox));
-		let mtxList = data.filter((item) => item.box === newBox).map(item => ({...item, count: 0}));
-		onChangeMTXBox(newBox, mtxList);
+	const onSelectBox = () => {
+		dispatch(setActiveBox(name));
+		let mtxList = data.filter((item) => item.box === name).map(item => ({...item, count: 0}));
+		onChangeMTXBox(mtxList);
 	};
 
 	return (
-		<div className={`box ${activeBox === name ? 'selected' : 'unselected'}`} onClick={() => onSelectBox(name)}>
+		<div className={`box ${activeBox === name ? 'selected' : 'unselected'}`} onClick={() => onSelectBox()}>
 			<img src={image} alt={name} draggable="false" />
 			<h3>{name}</h3>
 		</div>

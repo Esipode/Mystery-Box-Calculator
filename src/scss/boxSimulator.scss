@@ -7,6 +7,7 @@
 	position: relative;
 
 	.boxSimToggle {
+		z-index: 1;
 		pointer-events: none;
 		position: absolute;
 		display: flex;
@@ -101,8 +102,9 @@
 	}
 
 	.boxSimulator {
+		position: absolute;
+		top: 0;
 		transition: all 0.25s linear;
-		opacity: 1;
 		scrollbar-width: none; /* Firefox */
 		-ms-overflow-style: none;  /* IE 10+ */
 	

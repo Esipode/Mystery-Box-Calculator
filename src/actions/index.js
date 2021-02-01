@@ -56,7 +56,7 @@ export const setStepThree = (val) => {
 
 export const setActiveBox = (val) => {
 	return {
-		type: "STEP_THREE",
+		type: "ACTIVE_BOX",
 		value: val
 	}
 }
