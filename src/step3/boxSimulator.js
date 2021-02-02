@@ -15,7 +15,6 @@ export default function BoxSimulator() {
 	const boxVal = useSelector(state => state.boxVal);
 
 	const [simMode, setSimMode] = useState('probability');
-	const [probFilter, setProbFilter] = useState('box')
 
 	//Forces waiting between each time an item is randomly selected
 	const sleep = (milliseconds) => {
@@ -43,8 +42,6 @@ export default function BoxSimulator() {
 			/>
 			<ProbabilitySim
 				simMode={simMode}
-				probFilter={probFilter}
-				setProbFilter={setProbFilter}
 			/>
 		</div>
 	);
