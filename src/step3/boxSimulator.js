@@ -33,8 +33,8 @@ export default function BoxSimulator() {
 	return (
 		<div className="boxSimulatorContainer">
 			<div className="boxSimToggle">
-				<p className={`toggleContainer ${simMode === 'simulator'   ? 'active' : ''}`} onClick={() => setSimMode('simulator')}><i className="fas fa-box-open"></i>Simulator</p>
-				<p className={`toggleContainer ${simMode === 'probability' ? 'active' : ''}`} onClick={() => setSimMode('probability')}><i className="fas fa-percentage"></i>Probability</p>
+				<p className={`toggleContainer ${simMode === 'simulator'   ? 'active' : ''} ${simRunning ? 'disable-btn' : ''}`} onClick={() => !simRunning && setSimMode('simulator')}><i className="fas fa-box-open"></i>Simulator</p>
+				<p className={`toggleContainer ${simMode === 'probability' ? 'active' : ''} ${simRunning ? 'disable-btn' : ''}`} onClick={() => !simRunning && setSimMode('probability')}><i className="fas fa-percentage"></i>Probability</p>
 			</div>
 			<SimBoxes
 				simToggle={simToggle}
@@ -42,6 +42,7 @@ export default function BoxSimulator() {
 			/>
 			<ProbabilitySim
 				simMode={simMode}
+				sleep={sleep}
 			/>
 		</div>
 	);
