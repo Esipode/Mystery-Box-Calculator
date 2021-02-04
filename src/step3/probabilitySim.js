@@ -133,7 +133,6 @@ export default function ProbabilitySim({simMode, sleep}) {
 						selectList[j].count = 0;
 					}
 					i++;
-					console.log(newList);
 				}
 				setBoxCalcCurrent(currVals)
 			}
@@ -199,13 +198,15 @@ export default function ProbabilitySim({simMode, sleep}) {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td># {boxCalcCurrent.iteration}</td>
-							<td>{boxCalcCurrent.boxes}</td>
-							<td>{boxCalcCurrent.points}</td>
-							<td>{boxCalcCurrent.found[0]} / {boxCalcCurrent.found[1]}</td>
-							<td>{boxCalcCurrent.percent} %</td>
-						</tr>
+						{simRunning && 
+							<tr>
+								<td># {boxCalcCurrent.iteration}</td>
+								<td>{boxCalcCurrent.boxes}</td>
+								<td>{boxCalcCurrent.points}</td>
+								<td>{boxCalcCurrent.found[0]} / {boxCalcCurrent.found[1]}</td>
+								<td>{boxCalcCurrent.percent} %</td>
+							</tr>
+						}
 						{boxCalcList.map((round, index) => {
 							return <tr key={index}>
 								<td># {round.iteration}</td>
