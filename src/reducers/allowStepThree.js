@@ -5,6 +5,6 @@ const allowStepThree = (state = false, action) => {
 		default:
 			return state;
 	}
-}
+};
 
 export default allowStepThree;

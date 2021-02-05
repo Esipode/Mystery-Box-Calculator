@@ -5,6 +5,6 @@ const resultsSubmitted = (state = false, action) => {
 		default:
 			return state;
 	}
-}
+};
 
 export default resultsSubmitted;

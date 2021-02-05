@@ -5,6 +5,6 @@ const completedList = (state = [], action) => {
 		default:
 			return state;
 	}
-}
+};
 
 export default completedList;

@@ -5,6 +5,6 @@ const activeMTX = (state = [], action) => {
 		default:
 			return state;
 	}
-}
+};
 
 export default activeMTX;

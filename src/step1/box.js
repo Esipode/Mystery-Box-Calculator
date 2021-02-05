@@ -1,15 +1,21 @@
 import React from 'react';
 import { mtxData as data } from '../data.json';
 
-import {useSelector, useDispatch} from 'react-redux';
-import {setStep, setBox, setBoxChanged, setFullMTXList, setActiveMTX, setStatList, setStepThree, setActiveBox} from '../actions';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+	setStep,
+	setBox,
+	setBoxChanged,
+	setFullMTXList,
+	setActiveMTX,
+	setStatList,
+	setStepThree,
+	setActiveBox
+} from '../actions';
 
-export default function Box({name, image}) {
-
+export default function Box({ name, image }) {
 	const dispatch = useDispatch();
-	const activeBox = useSelector(state => state.activeBox);
-
-	
+	const activeBox = useSelector((state) => state.activeBox);
 
 	const onChangeMTXBox = (mtxList) => {
 		dispatch(setStep(1));
@@ -17,13 +23,13 @@ export default function Box({name, image}) {
 		dispatch(setBoxChanged(true));
 		dispatch(setFullMTXList(mtxList));
 		dispatch(setActiveMTX([]));
-		dispatch(setStatList({itemList: []}));
+		dispatch(setStatList({ itemList: [] }));
 		dispatch(setStepThree(false));
 	};
 
 	const onSelectBox = () => {
 		dispatch(setActiveBox(name));
-		let mtxList = data.filter((item) => item.box === name).map(item => ({...item, count: 0}));
+		let mtxList = data.filter((item) => item.box === name).map((item) => ({ ...item, count: 0 }));
 		onChangeMTXBox(mtxList);
 	};
 
@@ -33,5 +39,4 @@ export default function Box({name, image}) {
 			<h3>{name}</h3>
 		</div>
 	);
-
 }

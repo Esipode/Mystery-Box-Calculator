@@ -1,7 +1,7 @@
 export default function listStats(completedList) {
-	let rawList = JSON.parse(JSON.stringify(completedList))
+	let rawList = JSON.parse(JSON.stringify(completedList));
 	let sortedItems = rawList;
-	return new Promise(resolve => {
+	return new Promise((resolve) => {
 		let statList = {};
 		statList._id = rawList[0].box;
 		statList.total = (() => {
@@ -12,16 +12,15 @@ export default function listStats(completedList) {
 			return sum;
 		})();
 		statList.itemList = (() => {
-			
 			sortedItems.sort((a, b) => {
 				//Sort by index
 				if (a.position < b.position) {
 					return -1;
 				}
 				return 0;
-			})
+			});
 			return sortedItems;
 		})();
-	resolve(statList);
-	})
+		resolve(statList);
+	});
 }

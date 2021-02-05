@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import currStep from './currStep';
 import currBox from './currBox';
 import boxChanged from './boxChanged';
@@ -14,7 +14,6 @@ import completedList from './completedList';
 import resultsPending from './resultsPending';
 import resultsSubmitted from './resultsSubmitted';
 
-
 const allReducers = combineReducers({
 	currStep,
 	currBox,
@@ -29,8 +28,7 @@ const allReducers = combineReducers({
 	prevBoxVal,
 	completedList,
 	resultsPending,
-	resultsSubmitted,
-	
-})
+	resultsSubmitted
+});
 
 export default allReducers;

@@ -5,6 +5,6 @@ const currBox = (state = '', action) => {
 		default:
 			return state;
 	}
-}
+};
 
 export default currBox;

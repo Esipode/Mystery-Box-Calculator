@@ -1,4 +1,15 @@
-export default async function startSim(dispatch, fullMTXList, boxVal, isRunning, curMTXList, setCompletedList, simToggle, setSubmitted, sleep, setPrevBoxVal) {
+export default async function startSim(
+	dispatch,
+	fullMTXList,
+	boxVal,
+	isRunning,
+	curMTXList,
+	setCompletedList,
+	simToggle,
+	setSubmitted,
+	sleep,
+	setPrevBoxVal
+) {
 	// let startTime = performance.now();
 	dispatch(setPrevBoxVal(0));
 	await sleep(500);
@@ -6,28 +17,27 @@ export default async function startSim(dispatch, fullMTXList, boxVal, isRunning,
 	let selectedItems = JSON.parse(JSON.stringify(fullMTXList));
 	let fullList = JSON.parse(JSON.stringify(fullMTXList));
 	//Execute for as long as the number of items randomly selected is less than the number of boxes to be opened
-	for (let i = 1; i <= boxVal;) {
+	for (let i = 1; i <= boxVal; ) {
 		if (!isRunning || boxVal > 999) {
 			break;
-		}
-		else {
+		} else {
 			//Variable to store selected rarity of items to select from
 			let curRarity;
 			//Random number to decided rarity
-			let chanceRoll = Math.floor(Math.random()*(100)+1);
+			let chanceRoll = Math.floor(Math.random() * 100 + 1);
 			//Weighted categories for deciding rarity
 			switch (true) {
-				case (chanceRoll <= 20):
+				case chanceRoll <= 20:
 					curRarity = 'rare';
 					break;
-				case (chanceRoll <= 55 && chanceRoll > 20):
+				case chanceRoll <= 55 && chanceRoll > 20:
 					curRarity = 'uncommon';
 					break;
-				case (chanceRoll > 55):
-					curRarity = 'common'
+				case chanceRoll > 55:
+					curRarity = 'common';
 					break;
 				default:
-					curRarity = ''
+					curRarity = '';
 					break;
 			}
 			//Create filtered list of item indexes matching selected rarity
@@ -36,7 +46,7 @@ export default async function startSim(dispatch, fullMTXList, boxVal, isRunning,
 				fullList[i].rarity === curRarity && listFiltered.push(i);
 			}
 			//The index of the item to be selected, taken from the full list
-			let curItemIndex = listFiltered[Math.floor(Math.random()*(listFiltered.length))];
+			let curItemIndex = listFiltered[Math.floor(Math.random() * listFiltered.length)];
 			//Check to see if the randomly selected rarity matched the rarity of the random item
 			if (curRarity === fullList[curItemIndex].rarity) {
 				//Create variable storing the currently selected item taken from the index of the full list
@@ -48,8 +58,7 @@ export default async function startSim(dispatch, fullMTXList, boxVal, isRunning,
 						if (itemCheck.length) {
 							if (itemCheck[0].name === selectedItems[j].name) {
 								selectedItems[j].selected = true;
-							}
-							else {
+							} else {
 								selectedItems[j].selected = false;
 							}
 						}
@@ -77,7 +86,7 @@ export default async function startSim(dispatch, fullMTXList, boxVal, isRunning,
 			return -1;
 		}
 		return 0;
-	})
+	});
 	dispatch(setCompletedList(selectedItems));
 	isRunning && simToggle();
 	dispatch(setPrevBoxVal(boxVal));

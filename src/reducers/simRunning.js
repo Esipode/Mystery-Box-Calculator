@@ -5,6 +5,6 @@ const simRunning = (state = false, action) => {
 		default:
 			return state;
 	}
-}
+};
 
 export default simRunning;

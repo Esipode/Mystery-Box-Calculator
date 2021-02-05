@@ -965,8 +965,8 @@
 			font-size: 20px;
 			border-radius: 10px;
 			padding: 0 10px;
-			margin: 3px 0 0 58px;
-			height: 48px;
+			margin: 13px 0 0 60px;
+			height: 38px;
 			width: 130px;
 			background: rgba(0, 0, 0, 0.5);
 
@@ -995,7 +995,7 @@
 			overflow: hidden;
 			width: 375px;
 			border-radius: 10px;
-			margin-top: 5px;
+			margin-top: 10px;
 			align-self: center;
 			box-sizing: content-box;
 			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
@@ -1060,6 +1060,7 @@
 				display: block;
 				overflow-y: auto;
 				overflow-x: hidden;
+				max-height: calc(100vh - 310px);
 				border-radius: 0 0 10px 10px;
 				border-spacing: 0px;
 				scrollbar-width: none;

@@ -5,6 +5,6 @@ const resultsPending = (state = false, action) => {
 		default:
 			return state;
 	}
-}
+};
 
 export default resultsPending;
