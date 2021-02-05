@@ -698,6 +698,7 @@
 			max-width: 485px;
 			margin-top: 12px;
 			border-radius: 10px;
+			transition: all 0.25s linear;
 
 			@include mobile-portrait {
 				margin-bottom: 10px;
@@ -807,8 +808,10 @@
 
 			.react-select {
 				margin-left: -22px;
+				transition: all 0.25s linear;
 
 				.react-select__control {
+					cursor: pointer;
 					height: 50px;
 					width: 211px;
 					background: rgba(0, 0, 0, 0.5);
@@ -884,6 +887,7 @@
 						}
 
 						.react-select__option {
+							cursor: pointer;
 							display: flex;
 							width: 100%;
 							border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -956,38 +960,56 @@
 			.disable-btn {
 				filter: brightness(0.2);
 			}
+
+			.disabledContainer {
+				opacity: 0.5;
+				pointer-events: none;
+			}
 		}
 
-		.iteration-input {
+		.input-container {
 			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-size: 20px;
-			border-radius: 10px;
-			padding: 0 10px;
-			margin: 13px 0 0 60px;
-			height: 38px;
-			width: 130px;
-			background: rgba(0, 0, 0, 0.5);
 
-			input {
-				font-family: dosis;
-				color: rgba(255,255,255,0.7);
-				font-size: 20px;
-				width: 40px;
-				text-align: center;
-				margin: 0 5px;
-				background: transparent;
-				border: none;
-				border-radius: 0;
-				border-bottom: 1px solid rgba(255,255,255,0.6);
-				outline: none;
-				caret-color: white;
-				transition: all 0.5s linear;
-		
-				&:focus {
-					border-bottom: 1px solid var(--mainColor);
+			.iteration-input, .boxes-input {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 18px;
+				border-radius: 10px;
+				padding: 0 10px;
+				margin: 13px 0 0 60px;
+				height: 38px;
+				width: 153px;
+				background: rgba(0, 0, 0, 0.5);
+				transition: all 0.25s linear;
+	
+				input {
+					font-family: dosis;
+					color: rgba(255,255,255,0.7);
+					font-size: 20px;
+					width: 40px;
+					text-align: center;
+					margin: 0 5px;
+					background: transparent;
+					border: none;
+					border-radius: 0;
+					border-bottom: 1px solid rgba(255,255,255,0.6);
+					outline: none;
+					caret-color: white;
+					transition: all 0.5s linear;
+			
+					&:focus {
+						border-bottom: 1px solid var(--mainColor);
+					}
 				}
+	
+				&.disabled {
+					opacity: 0.5;
+				}
+			}
+
+			.boxes-input {
+				margin: 13px 0 0 10px;
 			}
 		}
 

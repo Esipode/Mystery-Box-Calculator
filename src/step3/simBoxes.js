@@ -41,7 +41,7 @@ export default function SimBoxes({simMode, simToggle}) {
 					pattern={"[0-9]*"} 
 					maxLength="3" 
 					disabled={simRunning}
-					onChange={(e) => dispatch(setBoxVal(parseInt(e.target.value.replace(/\D/,'')) || 0))} 
+					onChange={(e) => dispatch(setBoxVal(parseInt(e.target.value.replace(/\D/,'')) || 0))}
 					value={boxVal || ''}
 					placeholder="#"
 					onPaste={(e) => e.preventDefault()}
