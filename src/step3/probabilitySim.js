@@ -248,7 +248,6 @@ export default function ProbabilitySim({ simMode, sleep }) {
 					};
 					selectItem.count = 0;
 					i++;
-					console.log(newList);
 				}
 				setItemCalcCurrent(currVals);
 			}
