@@ -347,10 +347,10 @@ export default function ProbabilitySim({ simMode, sleep }) {
 						<thead>
 							<tr>
 								<th>Iteration</th>
-								<th>Boxes Opened</th>
-								<th>Points Spent</th>
-								<th>Selected Found</th>
-								<th>Percent Chance</th>
+								<th>Boxes</th>
+								<th>Points</th>
+								<th>Found</th>
+								<th>Chance</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -374,7 +374,7 @@ export default function ProbabilitySim({ simMode, sleep }) {
 										<td>
 											{round.found[0]} / {round.found[1]}
 										</td>
-										<td>{round.percent} %</td>
+										<td>{round.percent}%</td>
 									</tr>
 								);
 							})}
@@ -388,10 +388,10 @@ export default function ProbabilitySim({ simMode, sleep }) {
 						<thead>
 							<tr>
 								<th>Iteration</th>
-								<th>Boxes Opened</th>
-								<th>Points Spent</th>
+								<th>Boxes</th>
+								<th>Points</th>
 								<th>Found</th>
-								<th>Percent Chance</th>
+								<th>Chance</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -401,7 +401,7 @@ export default function ProbabilitySim({ simMode, sleep }) {
 									<td>{itemCalcCurrent.boxes}</td>
 									<td>{itemCalcCurrent.points}</td>
 									<td>{itemCalcCurrent.found}</td>
-									<td>{itemCalcCurrent.percent} %</td>
+									<td>{itemCalcCurrent.percent}%</td>
 								</tr>
 							)}
 							{itemCalcList.map((round, index) => {
