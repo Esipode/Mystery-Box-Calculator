@@ -131,6 +131,9 @@
     }
 
     @include desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     &::-webkit-scrollbar {
@@ -181,6 +184,7 @@
 
       @include desktop {
         height: 50px;
+        margin-left: 58px;
       }
 
       h4 {
@@ -280,6 +284,7 @@
       }
 
       @include desktop {
+        margin-left: 58px;
       }
 
       .submitResults {
@@ -423,7 +428,6 @@
       margin-top: 10px;
       align-self: center;
       box-sizing: content-box;
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
       border-spacing: 0;
       scrollbar-width: none; /* Firefox */
       -ms-overflow-style: none; /* IE 10+ */
@@ -439,7 +443,10 @@
       }
 
       @include desktop {
-        width: 415px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
         margin-top: 10px;
       }
 
@@ -450,7 +457,12 @@
 
       thead {
         display: block;
+        border-radius: 10px 10px 0 0;
         background-color: rgba(0, 0, 0, 0.5);
+
+        @include desktop {
+          width: 415px;
+        }
 
         tr {
           th {
@@ -479,6 +491,10 @@
 
               @include mobile-portrait {
                 width: 76px;
+              }
+
+              @include desktop {
+                width: 85px;
               }
             }
 
@@ -529,6 +545,10 @@
         }
 
         @include desktop {
+          width: 100vw;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           height: calc(100vh - 310px);
         }
 
@@ -548,7 +568,7 @@
           }
 
           td {
-            padding: 5px 0;
+            padding: 0;
             border: none;
             transition: all 0.25s ease-in-out;
 
@@ -568,7 +588,7 @@
 
               @include desktop {
                 width: 141px;
-                font-size: 18px;
+                font-size: 17px;
               }
             }
 
@@ -684,6 +704,9 @@
     }
 
     @include desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 415px;
     }
 
@@ -713,6 +736,7 @@
       @include desktop {
         max-width: 485px;
         height: 50px;
+        margin-left: 59px;
       }
 
       h4 {
@@ -1050,7 +1074,6 @@
       margin-top: 10px;
       align-self: center;
       box-sizing: content-box;
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
       border-spacing: 0;
       scrollbar-width: none; /* Firefox */
       -ms-overflow-style: none; /* IE 10+ */
@@ -1064,7 +1087,10 @@
       }
 
       @include desktop {
-        width: 415px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
       }
 
       &::-webkit-scrollbar {
@@ -1074,7 +1100,12 @@
 
       thead {
         display: block;
+        border-radius: 10px 10px 0 0;
         background-color: rgba(0, 0, 0, 0.5);
+
+        @include desktop {
+          width: 415px;
+        }
 
         tr {
           th {
@@ -1165,6 +1196,14 @@
           max-height: calc(100vh - 150px);
         }
 
+        @include desktop {
+          width: 100vw;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-height: calc(100vh - 310px);
+        }
+
         &::-webkit-scrollbar {
           width: 0;
           background: transparent;
@@ -1175,12 +1214,21 @@
           opacity: 1;
           text-align: center;
 
+          @include desktop {
+            width: 414px;
+          }
+
           td {
             color: white;
             font-size: 18px;
             padding: 5px 0;
             border: none;
             transition: all 0.25s ease-in-out;
+
+            @include desktop {
+              height: 60px;
+              padding: 0 5px;
+            }
 
             &:nth-child(1) {
               width: 40px;
@@ -1192,7 +1240,7 @@
               }
 
               @include desktop {
-                width: 40px;
+                width: 39px;
               }
             }
 
@@ -1205,7 +1253,7 @@
               }
 
               @include desktop {
-                width: 91px;
+                width: 81px;
               }
             }
 
@@ -1218,7 +1266,7 @@
               }
 
               @include desktop {
-                width: 84px;
+                width: 74px;
               }
             }
 
@@ -1231,7 +1279,7 @@
               }
 
               @include desktop {
-                width: 97px;
+                width: 87px;
               }
             }
 
@@ -1244,13 +1292,17 @@
               }
 
               @include desktop {
-                width: 75px;
+                width: 64px;
               }
             }
           }
 
           &:nth-child(odd) {
             background-color: rgba(255, 255, 255, 0.15);
+          }
+
+          &:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.08);
           }
         }
       }
