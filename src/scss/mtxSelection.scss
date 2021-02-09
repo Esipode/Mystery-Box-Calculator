@@ -211,11 +211,16 @@
             }
           }
         }
-      }
+        &.active {
+          td:first-child {
+            border-left: 5px solid var(--mainColor);
+            padding-left: 0px;
 
-      .active td:first-child {
-        border-left: 5px solid var(--mainColor);
-        padding-left: 0px;
+            @include desktop {
+              padding: 0 5px 0 0;
+            }
+          }
+        }
       }
     }
   }
