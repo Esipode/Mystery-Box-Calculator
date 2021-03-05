@@ -24,7 +24,7 @@
     }
 
     @include mobile-landscape {
-      padding-right: 140px;
+      padding-right: 220px;
     }
 
     @include desktop {
@@ -270,7 +270,7 @@
     .simInfoContainer {
       display: flex;
       flex-direction: row;
-      margin-top: 12px;
+      margin-top: 6px;
       max-width: 95vw;
       justify-content: flex-end;
 
@@ -279,16 +279,18 @@
       }
 
       @include mobile-landscape {
-        margin-top: 15px;
+        margin-top: 6px;
         width: 375px;
       }
 
       @include desktop {
+        margin-top: 10px;
         margin-left: 58px;
       }
 
       .submitResults {
-        width: 115px;
+        width: 146px;
+        height: 38px;
         cursor: pointer;
         font: inherit;
         outline: none;
@@ -304,15 +306,19 @@
         transition: all 0.25s linear;
 
         @include mobile-portrait {
+          width: 115px;
+          height: auto;
           top: 0px;
           font-size: 14px;
           position: relative;
         }
 
         @include mobile-landscape {
+          width: 115px;
         }
 
         @include desktop {
+          height: auto;
           font-size: 20px;
           width: 135px;
         }
@@ -348,6 +354,7 @@
       .profitContainer {
         display: flex;
         justify-content: center;
+        align-items: center;
         margin: 0;
         font-size: 16px;
         padding: 6px 12px;
@@ -753,7 +760,7 @@
         }
 
         @include mobile-landscape {
-          width: 150px;
+          width: 125px;
         }
 
         @include desktop {
@@ -1004,14 +1011,14 @@
 
     .input-container {
       display: flex;
-      margin-top: 6px;
+      margin-top: 7px;
 
       @include mobile-landscape {
         margin-top: 7px;
       }
 
       @include desktop {
-        margin-top: 13px;
+        margin-top: 12px;
       }
 
       .iteration-input,
@@ -1034,7 +1041,8 @@
         }
 
         @include mobile-landscape {
-          margin-left: 20px;
+          margin-left: 48px;
+          width: 140px;
         }
 
         input {
