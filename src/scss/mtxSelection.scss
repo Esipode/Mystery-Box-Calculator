@@ -181,7 +181,7 @@
 
           &:nth-child(1) {
             width: 169px;
-            border-left: 0px solid var(--mainColor);
+            border-left: 0px solid #{'rgb(var(--mainColor))'};
 
             @include desktop {
               width: 229px;
@@ -213,7 +213,7 @@
         }
         &.active {
           td:first-child {
-            border-left: 5px solid var(--mainColor);
+            border-left: 5px solid #{'rgb(var(--mainColor))'};
             padding-left: 0px;
 
             @include desktop {

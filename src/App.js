@@ -15,7 +15,7 @@ export default function App() {
 	return (
 		<div
 			className={`App ${currBox.replace(/[^A-Z0-9]+/gi, '_')}`}
-			style={currBox === '' ? { backgroundColor: '#2a2a2a' } : { backgroundColor: 'var(--bgColor)' }}
+			style={currBox === '' ? { backgroundColor: '#2a2a2a' } : { backgroundColor: 'rgb(var(--bgColor)' }}
 		>
 			<Header />
 			<div className="mainWrapper" style={{ transform: 'translateX(' + currStep * -100 + 'vw)' }}>

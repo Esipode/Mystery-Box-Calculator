@@ -1,18 +1,25 @@
 .boxSelection {
+  overflow: hidden;
   display: flex;
+  position: relative;
   flex-wrap: wrap;
   margin: 0;
   justify-content: center;
+  height: 60vh;
   min-width: 100vw;
+  padding-top: 30px;
   align-content: baseline;
   overflow-y: auto;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 
   @include mobile-landscape {
     min-width: calc(100vw - 185px);
     align-content: center;
     align-self: center;
+    height: 80vh;
+    padding-top: 90px;
   }
 
   @include desktop {
@@ -58,6 +65,10 @@
     @include desktop {
       height: 135px;
       width: 135px;
+    }
+
+    &:last-child {
+      margin-bottom: 120px;
     }
 
     &:hover {
@@ -108,7 +119,7 @@
   }
 
   .selected {
-    color: var(--mainColor);
-    border-color: var(--mainColor);
+    color: #{'rgb(var(--mainColor))'};
+    border-color: #{'rgb(var(--mainColor))'};
   }
 }

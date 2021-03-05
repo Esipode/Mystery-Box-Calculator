@@ -90,7 +90,7 @@
       }
 
       &:hover {
-        border: 1px solid var(--mainColor);
+        border: 1px solid #{'rgb(var(--mainColor))'};
         opacity: 0.8;
       }
 
@@ -100,10 +100,10 @@
     }
 
     .active {
-      border: 1px solid var(--mainColor);
+      border: 1px solid #{'rgb(var(--mainColor))'};
 
       i {
-        color: var(--mainColor);
+        color: #{'rgb(var(--mainColor))'};
       }
     }
   }
@@ -161,7 +161,7 @@
       }
 
       &:focus {
-        border-bottom: 1px solid var(--mainColor);
+        border-bottom: 1px solid #{'rgb(var(--mainColor))'};
       }
     }
 
@@ -240,7 +240,7 @@
       button {
         z-index: 1;
         cursor: pointer;
-        color: var(--bgColor);
+        color: #{'rgb(var(--bgColor))'};
         height: 50px;
         width: 50px;
         font-family: dosis;
@@ -249,7 +249,7 @@
         border: none;
         border-radius: 100px;
         outline: none;
-        background-color: var(--mainColor);
+        background-color: #{'rgb(var(--mainColor))'};
         transition: all 0.25s linear;
 
         &::-moz-focus-inner {
@@ -301,7 +301,7 @@
         align-self: center;
         background-color: rgba(0, 0, 0, 0.6);
         padding: 5px;
-        border: 1px solid var(--mainColor);
+        border: 1px solid #{'rgb(var(--mainColor))'};
         border-radius: 10px;
         transition: all 0.25s linear;
 
@@ -333,7 +333,7 @@
         opacity: 1;
         background-color: transparent;
         border-color: transparent;
-        color: var(--mainColor);
+        color: #{'rgb(var(--mainColor))'};
         pointer-events: none;
       }
 
@@ -819,8 +819,8 @@
         border: none;
         border-radius: 100px;
         outline: none;
-        background-color: var(--mainColor);
-        color: var(--bgColor);
+        background-color: #{'rgb(var(--mainColor))'};
+        color: #{'rgb(var(--bgColor))'};
         transition: all 0.25s linear;
 
         &::-moz-focus-inner {
@@ -838,8 +838,8 @@
       }
 
       .activeFilter {
-        color: var(--mainColor);
-        border: 1px solid var(--mainColor);
+        color: #{'rgb(var(--mainColor))'};
+        border: 1px solid #{'rgb(var(--mainColor))'};
       }
 
       .react-select {
@@ -964,8 +964,8 @@
             }
 
             .react-select__option--is-selected {
-              color: var(--bgColor);
-              background-color: var(--mainColor);
+              color: #{'rgb(var(--bgColor))'};
+              background-color: #{'rgb(var(--mainColor))'};
 
               &:hover {
                 color: inherit;
@@ -977,23 +977,23 @@
 
       .activeSelect {
         .react-select__control {
-          border: 1px solid var(--mainColor);
+          border: 1px solid #{'rgb(var(--mainColor))'};
 
           .react-select__value-container {
             .react-select__single-value {
               .listItem {
-                color: var(--mainColor);
+                color: #{'rgb(var(--mainColor))'};
               }
             }
           }
 
           .react-select__indicators {
             .react-select__indicator-separator {
-              background-color: var(--mainColor);
+              background-color: #{'rgb(var(--mainColor))'};
             }
 
             .react-select__dropdown-indicator {
-              color: var(--mainColor);
+              color: #{'rgb(var(--mainColor))'};
             }
           }
         }
@@ -1061,7 +1061,7 @@
           transition: all 0.5s linear;
 
           &:focus {
-            border-bottom: 1px solid var(--mainColor);
+            border-bottom: 1px solid #{'rgb(var(--mainColor))'};
           }
         }
 
