@@ -322,8 +322,18 @@ export default function ProbabilitySim({ simMode, sleep }) {
             defaultValue={itemList[0]}
             value={itemSelected}
             onChange={(e) => {
-              setItemSelected(e);
-              setProbFilter("item");
+              if (itemSelected.value.item.name !== e.value.item.name) {
+                setItemSelected(e);
+                setItemCalcCurrent({
+                  iteration: 0,
+                  boxes: 0,
+                  points: 0,
+                  found: false,
+                  percent: 0,
+                });
+                setItemCalcList([]);
+                setProbFilter("item");
+              }
             }}
             options={itemList}
             isSearchable={false}
@@ -438,7 +448,7 @@ export default function ProbabilitySim({ simMode, sleep }) {
                           className="fas fa-check"
                           style={{
                             color: "#090",
-                            textShadow: "0px 0px 2px white",
+                            textShadow: "0px 0px 2px rgba(255, 255, 255, 0.3)",
                           }}
                         />
                       ) : (
@@ -446,7 +456,7 @@ export default function ProbabilitySim({ simMode, sleep }) {
                           className="fas fa-times"
                           style={{
                             color: "#b00",
-                            textShadow: "0px 0px 2px white",
+                            textShadow: "0px 0px 2px rgba(255, 255, 255, 0.3)",
                           }}
                         />
                       )}
