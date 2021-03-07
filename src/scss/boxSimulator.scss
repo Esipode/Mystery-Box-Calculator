@@ -1,4 +1,5 @@
 .boxSimulatorContainer {
+  height: 100%;
   min-width: 100vw;
   display: flex;
   flex-direction: column;
@@ -7,6 +8,12 @@
   position: relative;
 
   @include mobile-landscape {
+    min-width: calc(100vw - 185px);
+    margin-left: 185px;
+  }
+
+  @include desktop {
+    mask-image: linear-gradient(to bottom, black 80%, transparent 95%);
   }
 
   .boxSimToggle {
@@ -569,6 +576,11 @@
           opacity: 0.5;
           text-align: center;
           background-color: rgba(255, 255, 255, 0.05);
+
+          &:last-child {
+            margin-bottom: 100px;
+            border-radius: 0 0 10px 10px;
+          }
 
           @include mobile-portrait {
             height: 45px;
@@ -1221,6 +1233,11 @@
           height: 60px;
           opacity: 1;
           text-align: center;
+
+          &:last-child {
+            margin-bottom: 100px;
+            border-radius: 0 0 10px 10px;
+          }
 
           @include desktop {
             width: 414px;

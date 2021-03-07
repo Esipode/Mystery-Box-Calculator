@@ -20,6 +20,10 @@
     min-width: calc(100vw - 185px);
   }
 
+  @include desktop {
+    mask-image: linear-gradient(to bottom, black 80%, transparent 95%);
+  }
+
   &::-webkit-scrollbar {
     width: 0;
     background: transparent;
@@ -151,6 +155,15 @@
 
         &:nth-child(odd) {
           background-color: rgba(255, 255, 255, 0.12);
+        }
+
+        &:last-child {
+          margin-bottom: 100px;
+          border-radius: 0 0 10px 10px;
+
+          td:last-child {
+            border-radius: 0 0 10px 0;
+          }
         }
 
         &:hover {
