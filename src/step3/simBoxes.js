@@ -21,9 +21,7 @@ export default function SimBoxes({simMode, simToggle}) {
 			return 0;
 		}
 		else {
-			let selectedItems = completedList.filter(item => {
-				return item.selected;
-			})
+			let selectedItems = completedList.filter(item => item.rolled && item.selected)
 			let pointsTotal = 0;
 			for (let i in selectedItems) {
 				pointsTotal += parseInt(selectedItems[i].value);
