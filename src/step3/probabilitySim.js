@@ -322,7 +322,7 @@ export default function ProbabilitySim({ simMode, sleep }) {
             defaultValue={itemList[0]}
             value={itemSelected}
             onChange={(e) => {
-              if (itemSelected.value.item.name !== e.value.item.name) {
+              if ((itemSelected.value.item.name !== e.value.item.name) || probFilter === "box") {
                 setItemSelected(e);
                 setItemCalcCurrent({
                   iteration: 0,
