@@ -1171,27 +1171,27 @@
             }
 
             &:nth-child(4) {
-              width: 87px;
+              width: 77px;
 
               @include mobile-portrait {
-                width: 69px;
+                width: 59px;
               }
 
               @include desktop {
-                width: 97px;
+                width: 87px;
               }
             }
 
             &:nth-child(5) {
-              width: 59px;
+              width: 69px;
               border-right: none;
 
               @include mobile-portrait {
-                width: 72px;
+                width: 82px;
               }
 
               @include desktop {
-                width: 75px;
+                width: 85px;
               }
             }
           }
@@ -1296,28 +1296,28 @@
             }
 
             &:nth-child(4) {
-              width: 87px;
+              width: 77px;
               border-right: 2px solid rgba(0, 0, 0, 0.3);
 
               @include mobile-portrait {
-                width: 69px;
+                width: 59px;
               }
 
               @include desktop {
-                width: 87px;
+                width: 77px;
               }
             }
 
             &:nth-child(5) {
-              width: 59px;
+              width: 69px;
               border: none;
 
               @include mobile-portrait {
-                width: 72px;
+                width: 82px;
               }
 
               @include desktop {
-                width: 64px;
+                width: 74px;
               }
             }
           }
