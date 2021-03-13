@@ -269,6 +269,23 @@ export default function ProbabilitySim({ simMode, sleep }) {
     dispatch(setSimRunning(false));
   };
 
+  const getAverage = (arr) => {
+    let value = 0;
+    if (typeof arr[0] === "boolean") {
+      for (let i in arr) {
+        arr[i] && value++;
+      }
+      return `${value} / ${arr.length}`
+    }
+    else {
+      for (let i in arr) {
+        value += arr[i];
+      }
+      value = value / arr.length;
+      return value;
+    }
+  }
+
   return (
     <div
       className={`probabilitySim${
@@ -397,6 +414,15 @@ export default function ProbabilitySim({ simMode, sleep }) {
                   <td>{boxCalcCurrent.percent} %</td>
                 </tr>
               )}
+              {!simRunning && boxCalcList?.[0]?.boxes > 0 && (
+                <tr style={{background: 'rgba(var(--mainColor), 0.4)'}}>
+                  <td>Avg</td>
+                  <td>{getAverage(boxCalcList.map(box => box.boxes)).toFixed(0)}</td>
+                  <td>{getAverage(boxCalcList.map(box => box.points)).toFixed(0)}</td>
+                  <td>{getAverage(boxCalcList.map(box => box.found[0])).toFixed(0)} / {boxCalcCurrent.found[1]}</td>
+                  <td>{getAverage(boxCalcList.map(box => parseFloat(box.percent))).toFixed(2)}%</td>
+                </tr>
+              )}
               {boxCalcList.map((round, index) => {
                 return (
                   <tr key={index}>
@@ -434,6 +460,15 @@ export default function ProbabilitySim({ simMode, sleep }) {
                   <td>{itemCalcCurrent.points}</td>
                   <td>{itemCalcCurrent.found}</td>
                   <td>{itemCalcCurrent.percent}%</td>
+                </tr>
+              )}
+              {!simRunning && itemCalcList?.[0]?.boxes > 0 && (
+                <tr style={{background: 'rgba(var(--mainColor), 0.4)'}}>
+                  <td>Avg</td>
+                  <td>{getAverage(itemCalcList.map(item => item.boxes)).toFixed(0)}</td>
+                  <td>{getAverage(itemCalcList.map(item => item.points)).toFixed(0)}</td>
+                  <td>{getAverage(itemCalcList.map(item => item.found))}</td>
+                  <td>{getAverage(itemCalcList.map(item => parseFloat(item.percent))).toFixed(2)}%</td>
                 </tr>
               )}
               {itemCalcList.map((round, index) => {
