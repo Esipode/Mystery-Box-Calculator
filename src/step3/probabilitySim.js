@@ -368,7 +368,7 @@ export default function ProbabilitySim({ simMode, sleep }) {
             disabled={simRunning}
             onChange={(e) =>
               setIterations(
-                e.target.value > 20 ? 20 : e.target.value.replace(/\D/, "")
+                e.target.value > 50 ? 50 : e.target.value.replace(/\D/, "")
               )
             }
             value={iterations}
