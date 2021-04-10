@@ -25,7 +25,7 @@
   @include desktop {
     width: 768px;
     min-width: 768px;
-    margin: 0 calc(50% - (768px / 2));
+    padding: 30px calc(50% - (768px / 2));
   }
 
   &::-webkit-scrollbar {
