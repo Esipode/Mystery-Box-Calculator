@@ -35,7 +35,7 @@ export default function Box({ name, image }) {
 
 	return (
 		<div className={`box ${activeBox === name ? 'selected' : 'unselected'}`} onClick={() => onSelectBox()}>
-			<img src={image} alt={name} draggable="false" />
+			<img src={image} alt={name} draggable="false" onError={(e) => e.target.src = "/images/img_missing.svg"} />
 			<h3>{name}</h3>
 		</div>
 	);

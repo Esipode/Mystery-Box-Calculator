@@ -1,6 +1,10 @@
 {
 	"images": [
 		{
+			"image": "https://preview.redd.it/4xgo6xa3n8d71.png?width=156&format=png&auto=webp&s=2afe65e1f655004b55f83058841bb6858b878efd",
+			"name": "Midnight Pact"
+		},
+		{
 			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/ApollyonMysteryBox.png",
 			"name": "Apollyon"
 		},
@@ -66,6 +70,272 @@
 		}
 	],
 	"mtxData": [
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Back Attachment",
+			"value": "320",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerGrandBackAttachment.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Wings",
+			"value": "320",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerGrandBackAttachment.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Body Armour",
+			"value": "250",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerBodyArmour.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Body Armour",
+			"value": "250",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerBodyArmour.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Tail Attachment",
+			"value": "230",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerSmallBackAttachment.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Cloak",
+			"value": "230",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerSmallBackAttachment.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Character Effect",
+			"value": "230",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerCharacterEffect.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Character Effect",
+			"value": "210",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerCharacterEffect.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Weapon",
+			"value": "210",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerWeaponSkin.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Weapon",
+			"value": "180",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerWeaponSkin.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Weapon Effect",
+			"value": "180",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerWeaponEffect.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Weapon Effect",
+			"value": "180",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerWeaponEffect.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Portal",
+			"value": "180",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerPortalEffect.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Portal",
+			"value": "150",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerPortalEffect.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Ratmother Pet",
+			"value": "150",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerLargePet.png",
+			"rarity": "rare"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Owl Pet",
+			"value": "160",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerLargePet.png",
+			"rarity": "uncommon"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Helmet",
+			"value": "160",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerHelmet.png",
+			"rarity": "uncommon"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Helmet",
+			"value": "130",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerHelmet.png",
+			"rarity": "uncommon"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Boots",
+			"value": "130",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerBoots.png",
+			"rarity": "uncommon"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Boots",
+			"value": "80",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerBoots.png",
+			"rarity": "uncommon"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Gloves",
+			"value": "80",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerGloves.png",
+			"rarity": "uncommon"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Gloves",
+			"value": "80",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerGloves.png",
+			"rarity": "uncommon"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Aura Effect",
+			"value": "80",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerAuraEffect.png",
+			"rarity": "uncommon"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Aura Effect",
+			"value": "125",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerAuraEffect.png",
+			"rarity": "uncommon"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Blood Rage Effect",
+			"value": "125",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerBloodRageEffect.png",
+			"rarity": "uncommon"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Cold Snap Effect",
+			"value": "110",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerColdSnapEffect.png",
+			"rarity": "uncommon"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Hood",
+			"value": "110",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerHood.png",
+			"rarity": "uncommon"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Hood",
+			"value": "100",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerHood.png",
+			"rarity": "common"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Footprints",
+			"value": "100",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerFootprints.png",
+			"rarity": "common"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Footprints",
+			"value": "80",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerFootprints.png",
+			"rarity": "common"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Building Supplies",
+			"value": "80",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerBuildingSupplies.png",
+			"rarity": "common"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Building Supplies",
+			"value": "60",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerBuildingSupplies.png",
+			"rarity": "common"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Curios",
+			"value": "60",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerCurios.png",
+			"rarity": "common"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Curios",
+			"value": "50",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerCurios.png",
+			"rarity": "common"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Environmental Effect",
+			"value": "40",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerEnvironmentEffect.png",
+			"rarity": "common"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Environmental Effect",
+			"value": "50",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerEnvironmentEffect.png",
+			"rarity": "common"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Overseer Bat Pet",
+			"value": "40",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTScavengerSmallPet.png",
+			"rarity": "common"
+		},
+		{
+			"box": "Midnight Pact",
+			"name": "Scavenger Candle Mass Pet",
+			"value": "30",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTOverseerSmallPet.png",
+			"rarity": "common"
+		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Wings",

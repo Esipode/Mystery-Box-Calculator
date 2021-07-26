@@ -33,7 +33,7 @@ export default function MTX({ item }) {
 			<td>{item.value}</td>
 			<td className={item.rarity}>{item.rarity}</td>
 			<td>
-				<img src={item.image} alt={item.name} />
+				<img src={item.image} alt={item.name} onError={(e) => e.target.src = "/images/img_missing.svg"} />
 			</td>
 		</tr>
 	);
