@@ -418,7 +418,7 @@ export default function ProbabilitySim({ simMode, sleep }) {
                 <tr style={{background: 'rgba(var(--mainColor), 0.4)'}}>
                   <td>Avg</td>
                   <td>{getAverage(boxCalcList.map(box => box.boxes)).toFixed(0)}</td>
-                  <td>{getAverage(boxCalcList.map(box => box.points)).toFixed(0)}</td>
+                  <td>{getAverage(boxCalcList.map(box => box.boxes)).toFixed(0) * 30}</td>
                   <td>{getAverage(boxCalcList.map(box => box.found[0])).toFixed(0)} / {boxCalcCurrent.found[1]}</td>
                   <td>{getAverage(boxCalcList.map(box => parseFloat(box.percent))).toFixed(2)} %</td>
                 </tr>
@@ -466,7 +466,7 @@ export default function ProbabilitySim({ simMode, sleep }) {
                 <tr style={{background: 'rgba(var(--mainColor), 0.4)'}}>
                   <td>Avg</td>
                   <td>{getAverage(itemCalcList.map(item => item.boxes)).toFixed(0)}</td>
-                  <td>{getAverage(itemCalcList.map(item => item.points)).toFixed(0)}</td>
+                  <td>{getAverage(itemCalcList.map(item => item.boxes)).toFixed(0) * 30}</td>
                   <td>{getAverage(itemCalcList.map(item => item.found))}</td>
                   <td>{getAverage(itemCalcList.map(item => parseFloat(item.percent))).toFixed(2)} %</td>
                 </tr>

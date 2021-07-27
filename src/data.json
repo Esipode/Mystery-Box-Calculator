@@ -5,67 +5,67 @@
 			"name": "Midnight Pact"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/ApollyonMysteryBox.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/d/d5/Apollyon_Mystery_Box_inventory_icon.png",
 			"name": "Apollyon"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/WarlordBox_itemart.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/1/16/Warlord_Mystery_Box_inventory_icon.png",
 			"name": "Warlord"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/TwilightMysteryBox.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/7/7e/Twilight_Mystery_Box_inventory_icon.png",
 			"name": "Twilight"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/AngelsandDemonsMysteryBox.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/6/6f/Angels_and_Demons_Mystery_Box_inventory_icon.png",
 			"name": "Angels & Demons"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/ThaumaturgyBox_itemart.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/8/8c/Thaumaturgy_Mystery_Box_inventory_icon.png",
 			"name": "Thaumaturgy"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/PolarisBox_itemart.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/8/87/Polaris_Mystery_Box_inventory_icon.png",
 			"name": "Polaris"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/CarnevalMysteryBox.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/7/7c/Carnival_Mystery_Box_inventory_icon.png",
 			"name": "Carnival"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/FrontierMysteryBox.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/d/d8/Frontier_Mystery_Box_inventory_icon.png",
 			"name": "Frontier"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/DarkwoodMysteryBox.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/4/4d/Glimmerwood_Mystery_Box_inventory_icon.png",
 			"name": "Glimmerwood"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/FairgravesMysteryBox.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/e/ec/Fairgraves_Mystery_Box_inventory_icon.png",
 			"name": "Fairgraves"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/OriathMysteryBox.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/6/6f/Oriath_Mystery_Box_inventory_icon.png",
 			"name": "Oriath"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/ApocalypseMysteryBox.png",
+			"image": "http://static.wikia.nocookie.net/pathofexile_gamepedia/images/c/c9/Apocalypse_Mystery_Box_inventory_icon.png",
 			"name": "Apocalypse"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/SinInnocenceMysteryBox.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/7/70/Sin_and_Innocence_Mystery_Box_inventory_icon.png",
 			"name": "Sin & Innocence"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/FireIceMysteryBox.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/8/8e/Fire_and_Ice_Mystery_Box_inventory_icon.png",
 			"name": "Fire & Ice"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/LightChaosMysteryBox.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/1/1b/Chaos_and_Order_Mystery_Box_inventory_icon.png",
 			"name": "Chaos & Order"
 		},
 		{
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MysteryChest/ClassicMysteryBox.png",
+			"image": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/e/e6/Classic_Mystery_Box_inventory_icon.png",
 			"name": "Classic"
 		}
 	],
@@ -340,798 +340,798 @@
 			"box": "Apollyon",
 			"name": "Lightbringer Wings",
 			"value": "320",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Wings/LightbringerWings.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerWings.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Wings",
 			"value": "320",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Wings/DarkshardWings.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardWings.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Body Armour",
 			"value": "250",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/BodyArmour/LightbringerBodyArmour.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerBodyArmour.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Body Armour",
 			"value": "250",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/BodyArmour/DarkshardBodyArmour.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardBodyArmour.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Cloak",
 			"value": "230",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Wings/LightbringerCloak.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerCloak.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Cloak",
 			"value": "230",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Wings/DarkshardCloak.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardCloak.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Character Effect",
 			"value": "210",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Character/LightbringerCharacterEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerCharacterEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Character Effect",
 			"value": "210",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Character/DarkshardCharacterEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardCharacterEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Weapon Skin",
 			"value": "180",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Weapon/LightbringerWeaponSkin.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerWeaponSkin.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Weapon Skin",
 			"value": "180",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Weapon/DarkshardWeaponSkin.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardWeaponSkin.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Weapon Effect",
 			"value": "180",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Weapon/weapon_lightbringer.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerWeaponEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Weapon Effect",
 			"value": "180",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Weapon/weapon_darkshard.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardWeaponEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Portal Effect",
 			"value": "150",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Portals/LightbringerPortalEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerPortalEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Portal Effect",
 			"value": "150",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Portals/DarkshardPortalEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardPortalEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Gryffon Pet",
 			"value": "160",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Pets/LightbringerGryffonPet.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerGryffonPet.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Gryffon Pet",
 			"value": "160",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Pets/DarkshardGryffonPet.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardGryffonPet.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Helmet",
 			"value": "130",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Hats/LightbringerHelmet.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerHelmet.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Helmet",
 			"value": "130",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Hats/DarkshardHelmet.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardHelmet.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Boots",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/shoes/SufferingBoots.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerBoots.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Boots",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/shoes/DarkshardBoots.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardBoots.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Gloves",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/gloves/LightbringerGloves.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerGloves.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Gloves",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/gloves/DarkshardGloves.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardGloves.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Aura Effect",
 			"value": "125",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Auras/LightbringerAuraEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerAuraEffect.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Aura Effect",
 			"value": "125",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Auras/DarkshardAuraEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardAuraEffect.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Righteous Fire Effect",
 			"value": "110",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/LightbringerRighteousFireEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerRighteousFireEffect.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Totem Skin",
 			"value": "110",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/DarkshardTotemSkin.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardTotemSkin.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Helmet Attachment",
 			"value": "100",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Hats/LightbringerHelmetAttachment.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerHelmetAttachment.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Helmet Attachment",
 			"value": "100",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Hats/DarkshardHelmetAttachment.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardHelmetAttachment.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Footprints",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Footprints/LightbringerFootprints.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerFootprints.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Footprints",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Footprints/DarkshardFootprints.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardFootprints.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Building Supplies",
 			"value": "60",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/LightbringerBuildingSupplies.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerBuildingSupplies.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Building Supplies",
 			"value": "60",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/DarkshardBuildingSupplies.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardBuildingSupplies.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Curios",
 			"value": "50",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/LightbringerCurios.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerCurios.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Curios",
 			"value": "50",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/DarkshardCurios.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardCurios.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Environmental Effect",
 			"value": "40",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/LightbringerEnvironmentalEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerEnvironmentalEffect.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Environmental Effect",
 			"value": "40",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/DarkshardEnvironmentalEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardEnvironmentalEffect.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Lightbringer Cat Pet",
 			"value": "30",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Pets/LightbringerCatPet.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTLightbringerCatPet.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Apollyon",
 			"name": "Darkshard Falcon Pet",
 			"value": "30",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Pets/DarkshardBirdPet.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/TESTDarkshardBirdPet.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Wings",
 			"value": "320",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Wings/SufferingWings.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingWings.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Wings",
 			"value": "320",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Wings/MiseryWings.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryWings.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Body Armour",
 			"value": "250",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/BodyArmour/SufferingBodyArmour.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingBodyArmour.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Body Armour",
 			"value": "250",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/BodyArmour/MiseryBodyArmour.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryBodyArmour.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Cloak",
 			"value": "230",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Wings/SufferingSmallBackAttachment.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingSmallBackAttachment.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Swords Back Attachment",
 			"value": "230",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Wings/MiserySwordBackAttachment.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiserySwordBackAttachment.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Character Effect",
 			"value": "210",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Character/SufferingCharacterEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingCharacterEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Character Effect",
 			"value": "210",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Character/MiseryCharacterEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryCharacterEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Weapon Skin",
 			"value": "180",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Weapon/SufferingWeaponSkin.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingWeaponSkin.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Weapon Skin",
 			"value": "180",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Weapon/MiseryWeaponSkin.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryWeaponSkin.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Weapon Effect",
 			"value": "180",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Weapon/weapon_SufferingWeaponEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingWeaponEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Weapon Effect",
 			"value": "180",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Weapon/weapon_MiseryWeaponEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryWeaponEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Portal Effect",
 			"value": "150",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Portals/SufferingPortalEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingPortalEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Portal Effect",
 			"value": "150",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Portals/MiseryPortalEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryPortalEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Spirit Pet",
 			"value": "160",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Pets/SufferingSpiritPet.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingSpiritPet.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Will-o'-the-wisp Pet",
 			"value": "160",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Pets/MiseryWillothewispPet.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryWillothewispPet.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Helmet",
 			"value": "130",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Hats/SufferingHelmet.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingHelmet.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Helmet",
 			"value": "130",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Hats/MiseryHelmet.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryHelmet.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Boots",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/shoes/SufferingBoots.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingBoots.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Boots",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/shoes/MiseryBoots.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryBoots.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Gloves",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/gloves/SufferingGloves.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingGloves.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Gloves",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/gloves/MiseryGloves.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryGloves.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Aura Effect",
 			"value": "125",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Auras/SufferingAuraEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingAuraEffect.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Aura Effect",
 			"value": "125",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Auras/MiseryAuraEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryAuraEffect.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Toxic Rain Effect",
 			"value": "110",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/SufferingToxicRainEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingToxicRainEffect.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Shield Charge Effect",
 			"value": "110",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/MiseryShieldChargeEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryShieldChargeEffect.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Helmet Attachment",
 			"value": "100",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Hats/SufferingHelmetAttachment.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingHelmetAttachment.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Helmet Attachment",
 			"value": "100",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Hats/MiseryHelmetAttachment.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryHelmetAttachment.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Footprints",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Footprints/SufferingFootprintsEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingFootprintsEffect.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Footprints",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Footprints/MiseryFootprintsEffect.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryFootprintsEffect.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Building Supplies",
 			"value": "60",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/SufferingBuildingSupplies.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingBuildingSupplies.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Building Supplies",
 			"value": "60",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/MiseryBuildingSupplies.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryBuildingSupplies.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Curios",
 			"value": "50",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/SufferingObjects.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingObjects.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Curios",
 			"value": "50",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/MiseryObjects.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryObjects.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Warlord",
 			"name": "Suffering Environmental Effect",
 			"value": "40",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/SufferingEnvironmentalEffectDecoration.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/SufferingEnvironmentalEffectDecoration.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Warlord",
 			"name": "Misery Environmental Effect",
 			"value": "40",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/MiseryEnvironmentEffectDecoration.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryEnvironmentEffectDecoration.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Warlord",
 			"name": "Toxic Cockroach Pet",
 			"value": "30",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Pets/ToxicCockroachPet.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/ToxicCockroachPet.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Warlord",
 			"name": "Broken Sword Pet",
 			"value": "30",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Pets/BrokenSwordPet.png",
+			"image": "https://web.poecdn.com/public/news/2021-01-16/WarlordMysteryBox/News/MiseryBrokenSwordPet.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Wings",
 			"value": "320",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Wings/SunriseWings.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseWings.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Wings",
 			"value": "320",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Wings/NightfallWings.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallWings.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Body Armour",
 			"value": "250",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/BodyArmour/SunriseBodyArmour.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseBodyArmour.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Body Armour",
 			"value": "250",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/BodyArmour/NightfallBodyArmour.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallBodyArmour.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Cloak",
 			"value": "230",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Wings/SunriseCloak.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseCloak.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Cloak",
 			"value": "230",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Wings/NightfallCloak.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallCloak.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Character Effect",
 			"value": "210",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Character/SunriseCharacterEffect.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseCharacterEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Character Effect",
 			"value": "210",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Character/NightfallCharacterEffect.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallCharacterEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Shield Skin",
 			"value": "180",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Shields/SunriseShieldSkin.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseShieldSkin.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Weapon Skin",
 			"value": "180",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Weapon/NightfallWeaponSkin.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallWeaponSkin.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Weapon Effect",
 			"value": "180",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Weapon/weapon_SunriseWeaponEffect.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/weapon_SunriseWeaponEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Weapon Effect",
 			"value": "180",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Weapon/weapon_NightfallWeaponEffect.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/weapon_NightfallWeaponEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Portal Effect",
 			"value": "150",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Portals/SunrisePortalEffect.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunrisePortalEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Portal Effect",
 			"value": "150",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Portals/NightfallPortalEffect.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallPortalEffect.png",
 			"rarity": "rare"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Wolf Pet",
 			"value": "160",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Pets/SunriseWolfPet.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseWolfPet.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Dragon Pet",
 			"value": "160",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Pets/NightfallDragonPet.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallDragonPet.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Helmet",
 			"value": "130",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Hats/SunriseHelmet.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseHelmet.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Helmet",
 			"value": "130",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Hats/NightfallHelmet.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallHelmet.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Boots",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/shoes/SunriseBoots.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseBoots.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Boots",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/shoes/NightfallBoots.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallBoots.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Gloves",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/gloves/SunriseGloves.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseGloves.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Gloves",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/gloves/NightfallGloves.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallGloves.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Aura Effect",
 			"value": "125",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Auras/SunriseAuraEffect.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseAuraEffect.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Aura Effect",
 			"value": "125",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Auras/NightfallAuraEffect.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallAuraEffect.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Blood and Sand Effect",
 			"value": "110",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/SunriseBloodandSand.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseBloodandSand.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Flame Dash Effect",
 			"value": "110",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/NightfallFlameDashEffect.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallFlameDashEffect.png",
 			"rarity": "uncommon"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Helmet Attachment",
 			"value": "100",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Hats/SunriseHelmetAttachment.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseHelmetAttachment.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Helmet Attachment",
 			"value": "100",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Hats/NightfallHelmetAttachment.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallHelmetAttachment.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Footprints",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Footprints/SunriseFootprints.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseFootprints.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Footprints",
 			"value": "80",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Effects/Footprints/NightfallFootprints.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallFootprints.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Building Supplies",
 			"value": "60",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/SunriseBuildingSupplies.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseBuildingSupplies.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Building Supplies",
 			"value": "60",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/NightfallBuildingSupplies.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallBuildingSupplies.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Objects",
 			"value": "50",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/SunriseObjects.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseObjects.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Crystals",
 			"value": "50",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/NightfallObjects.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallObjects.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Environmental Effect",
 			"value": "40",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/SunriseEnvironmentalEffect.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseEnvironmentalEffect.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Environmental Effect",
 			"value": "40",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Hideout/NightfallEnvironmentalEffect.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallEnvironmentalEffect.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Twilight",
 			"name": "Sunrise Orrery Pet",
 			"value": "30",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Pets/SunriseOrreryPet.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/SunriseOrreryPet.png",
 			"rarity": "common"
 		},
 		{
 			"box": "Twilight",
 			"name": "Nightfall Cloud Pet",
 			"value": "30",
-			"image": "https://web.poecdn.com/image/Art/2DItems/Pets/NightfallCloudPet.png",
+			"image": "https://web.poecdn.com/public/news/2020-09-18/TwilightMysteryBox/News/NightfallCloudPet.png",
 			"rarity": "common"
 		},
 		{
