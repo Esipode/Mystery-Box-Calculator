@@ -79,8 +79,7 @@ export default function ProbabilitySim({ simMode, sleep }) {
 
   const getBoxImage = () =>
     activeBox &&
-    box.filter((boxName) => boxName.name === activeBox && boxName.image)[0]
-      .image;
+    box.filter((boxName) => boxName.name === activeBox && boxName.image)[0].image;
 
   const calcBox = async () => {
     let fullList = JSON.parse(JSON.stringify(fullMTXList));
