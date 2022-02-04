@@ -7,13 +7,12 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-rate-limit": "^5.2.3",
     "mongoose": "^5.11.13",
-    "node-sass": "^4.14.1",
     "nodemon": "^2.0.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -21,6 +20,7 @@
     "react-scripts": "4.0.1",
     "react-select": "^4.0.2",
     "redux": "^4.0.5",
+    "sass": "^1.49.7",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
