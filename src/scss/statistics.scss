@@ -67,7 +67,7 @@
       tr {
         th {
           padding: 5px 0;
-          border-right: 2px solid #2a2a2a;
+          border-right: 1px solid #2a2a2a;
 
           &:nth-child(1) {
             width: 223px;
@@ -131,7 +131,7 @@
 
         td {
           padding: 5px;
-          border-right: 2px solid rgba(0, 0, 0, 0.3);
+          border-right: 1px solid rgba(0, 0, 0, 0.3);
 
           @include desktop {
             padding: 0 5px;
@@ -142,7 +142,7 @@
           }
 
           &:nth-child(1) {
-            width: 213px;
+            width: 217px;
             padding-left: 0px;
             font-size: 16px;
           }

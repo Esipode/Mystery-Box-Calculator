@@ -1,9 +1,9 @@
 import axios from 'axios';
 import listStats from './listStats';
 
-export default async function onSubmitResults(dispatch, completedList, setStatList, setSubmitted, setResultsPending) {
+export default async function onSubmitResults(dispatch, completedList, setStatList, setSubmitted, setResultsPending, boxName) {
 	dispatch(setResultsPending(true));
-	let stat = await listStats(completedList);
+	let stat = await listStats(completedList, boxName);
 	if (process.env.REACT_APP_TESTING_ENV) {
 		//TESTING POST
 		stat._id += 'TEST';

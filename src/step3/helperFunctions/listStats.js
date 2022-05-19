@@ -1,9 +1,9 @@
-export default function listStats(completedList) {
+export default function listStats(completedList, boxName) {
 	let rawList = JSON.parse(JSON.stringify(completedList));
 	let sortedItems = rawList;
 	return new Promise((resolve) => {
 		let statList = {};
-		statList._id = rawList[0].box;
+		statList._id = boxName;
 		statList.total = (() => {
 			let sum = 0;
 			for (let i = 0; i < rawList.length; i++) {

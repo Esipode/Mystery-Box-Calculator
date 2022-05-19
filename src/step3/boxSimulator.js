@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useCallback } from "react";
 import SimBoxes from "./simBoxes";
-import startSim from "./startSim";
+import startSim from "./helperFunctions/startSim";
 import ProbabilitySim from "./probabilitySim";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -14,65 +14,46 @@ import {
 
 export default function BoxSimulator() {
   const dispatch = useDispatch();
+  const simMode = useSelector((state) => state.simMode);
   const fullMTXList = useSelector((state) => state.fullMTXList);
   const activeMTX = useSelector((state) => state.activeMTX);
   const simRunning = useSelector((state) => state.simRunning);
   const boxVal = useSelector((state) => state.boxVal);
+  const mode = useSelector((state) => state.currMode);
 
-  const [simMode, setSimMode] = useState("simulator");
-
-  //Forces waiting between each time an item is randomly selected
-  const sleep = (milliseconds) => {
-    return new Promise((resolve) => setTimeout(resolve, milliseconds));
-  };
-
-  const simToggle = () => {
+  const simToggle = useCallback(() => {
     dispatch(setSimRunning(!simRunning));
     dispatch(setBoxChanged(false));
-  };
+  }, [dispatch, simRunning]);
 
-  useEffect(() => {
-    simMode === "simulator" &&
-      simRunning &&
-      boxVal > 0 &&
+  const startSimulation = useCallback(() => {
+    if (simMode === "simulator" && simRunning && boxVal > 0) {
+      dispatch(setPrevBoxVal(0));
       startSim(
+        activeMTX,
+        boxVal,
         dispatch,
         fullMTXList,
-        boxVal,
-        simRunning,
-        activeMTX,
+        mode,
         setCompletedList,
-        simToggle,
+        setPrevBoxVal,
         setResultsSubmitted,
-        sleep,
-        setPrevBoxVal
-      );
-  }, [simRunning]);
+        simRunning,
+        simToggle,
+      ).then(({ selectedItems, newBoxVal }) => {
+        dispatch(setCompletedList(selectedItems));
+        dispatch(setPrevBoxVal(newBoxVal));
+      })
+      
+    }
+  }, [activeMTX, boxVal, dispatch, fullMTXList, mode, simMode, simRunning, simToggle]);
+
+  useEffect(() => startSimulation(), [startSimulation]);
 
   return (
     <div className="boxSimulatorContainer">
-      <div className="boxSimToggle">
-        <p
-          className={`toggleContainer ${
-            simMode === "simulator" ? "active" : ""
-          } ${simRunning ? "disable-btn" : ""}`}
-          onClick={() => !simRunning && setSimMode("simulator")}
-        >
-          <i className="fas fa-box-open" />
-          Simulator
-        </p>
-        <p
-          className={`toggleContainer ${
-            simMode === "probability" ? "active" : ""
-          } ${simRunning ? "disable-btn" : ""}`}
-          onClick={() => !simRunning && setSimMode("probability")}
-        >
-          <i className="fas fa-percentage" />
-          Probability
-        </p>
-      </div>
       <SimBoxes simToggle={simToggle} simMode={simMode} />
-      <ProbabilitySim simMode={simMode} sleep={sleep} />
+      <ProbabilitySim simMode={simMode} />
     </div>
   );
 }

@@ -1,10 +1,9 @@
 import React from "react";
 import Stat from "./stat";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 export default function Statistics() {
   const statList = useSelector((state) => state.statList);
-  const boxChanged = useSelector((state) => state.boxChanged);
 
   return (
     <div className="statistics">

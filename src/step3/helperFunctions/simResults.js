@@ -10,11 +10,11 @@ export default function SimResults({ item }) {
 		>
 			<td>{item.name}</td>
 			<td>{item.value}</td>
-			<td className={item.rarity}>{item.rarity}</td>
+			<td className={item.rarity}>{item.chance ? item.chance + ' %' : item.rarity}</td>
 			<td>
 				<img src={item.image} alt={item.name} />
 			</td>
-			<td>{item.count}</td>
+			{!item.chance && <td>{item.count}</td>}
 		</tr>
 	);
 }

@@ -1,14 +1,17 @@
-import React from 'react';
-import { mtxData as data } from '../data.json';
-import MTX from './mtx';
+import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
+
+
+import { boxes } from '../data.json';
+import MTX from './mtx';
 
 export default function MTXSelection() {
 	const currBox = useSelector((state) => state.currBox);
+	const mode = useSelector((state) => state.currMode);
 
-	const getMTXList = () => {
-		return data.filter((item) => item.box === currBox);
-	};
+	const currMTXList = useMemo(() => {
+		return boxes.filter((box) => box.name === currBox)[0]?.mtx;
+	}, [currBox]);
 
 	return (
 		<div className="mtxSelection">
@@ -17,11 +20,11 @@ export default function MTXSelection() {
 					<tr>
 						<th>Name</th>
 						<th>Value</th>
-						<th>Rarity</th>
+						<th>{mode === 'new' ? 'Chance' : 'Rarity'}</th>
 						<th>Image</th>
 					</tr>
 				</thead>
-				<tbody>{getMTXList().map((mtxItem, index) => <MTX item={mtxItem} key={mtxItem.name} />)}</tbody>
+				<tbody>{currMTXList?.map((item) => <MTX item={item} key={item.name} />)}</tbody>
 			</table>
 		</div>
 	);

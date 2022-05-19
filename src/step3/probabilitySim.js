@@ -1,14 +1,18 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { mtxData as data } from "../data.json";
-import { images as box } from "../data.json";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
+import { boxes } from "../data.json";
 import Select from "react-select";
 
 import { useSelector, useDispatch } from "react-redux";
 import { setSimRunning } from "../actions";
 
-export default function ProbabilitySim({ simMode, sleep }) {
+import calcBox from "./helperFunctions/calcBox";
+import calcItem from "./helperFunctions/calcItem";
+import BoxSimToggle from './boxSimToggle';
+
+export default function ProbabilitySim({ simMode }) {
   const dispatch = useDispatch();
   const fullMTXList = useSelector((state) => state.fullMTXList);
+  const mode = useSelector((state) => state.currMode);
   const activeBox = useSelector((state) => state.activeBox);
   const activeMTX = useSelector((state) => state.activeMTX);
   const simRunning = useSelector((state) => state.simRunning);
@@ -20,12 +24,12 @@ export default function ProbabilitySim({ simMode, sleep }) {
         label: (
           <div className="listItem">
             {item.name}
-            <img src={item.image} />
+            <img src={item.image} alt={item.name} />
           </div>
         ),
       };
     });
-  }, [activeBox]);
+  }, [fullMTXList]);
 
   const [probFilter, setProbFilter] = useState("box");
   const [itemSelected, setItemSelected] = useState(itemList[0]);
@@ -48,6 +52,13 @@ export default function ProbabilitySim({ simMode, sleep }) {
   });
   const [itemCalcList, setItemCalcList] = useState([]);
 
+  //Correct number of boxes if it exceeds number of options in new mode
+	useEffect(() => {
+		if (mode === 'new' && boxVal > fullMTXList.length) {
+			setBoxVal(fullMTXList.length);
+		}
+	}, [boxVal, fullMTXList, mode])
+
   //Reset displayed item when box changes
   useEffect(() => {
     setBoxCalcCurrent({
@@ -67,207 +78,18 @@ export default function ProbabilitySim({ simMode, sleep }) {
     });
     setItemCalcList([]);
     setItemSelected(itemList[0]);
+  }, [itemList]);
+
+  const boxImage = useMemo(() => {
+    const image = boxes.filter((currBox) => currBox.name === activeBox)[0]?.image;
+    if (image) return image;
+    else {
+      const mtxs = boxes.filter((currBox) => currBox.name === activeBox)[0]?.mtx;
+      const imageIndex = Math.floor(Math.random() * mtxs?.length);
+      return mtxs?.[imageIndex]?.image;
+    }
   }, [activeBox]);
-
-  //Run box calculation when start button pressed
-  useEffect(() => {
-    if (simMode === "probability") {
-      probFilter === "box" && simRunning && activeBox && calcBox();
-      probFilter === "item" && simRunning && activeBox && calcItem();
-    }
-  }, [simRunning]);
-
-  const getBoxImage = () =>
-    activeBox &&
-    box.filter((boxName) => boxName.name === activeBox && boxName.image)[0].image;
-
-  const calcBox = async () => {
-    let fullList = JSON.parse(JSON.stringify(fullMTXList));
-    let selectList = JSON.parse(JSON.stringify(activeMTX));
-    let currVals = {
-      iteration: 0,
-      boxes: 0,
-      points: 0,
-      found: [0, 0],
-      percent: 0,
-    };
-    for (let j in selectList) {
-      selectList[j].count = 0;
-    }
-    for (let i = 0; i < iterations; ) {
-      await sleep(10);
-      if (!simRunning) {
-        break;
-      } else {
-        currVals.boxes++;
-        //Variable to store selected rarity of items to select from
-        let curRarity;
-        //Random number to decided rarity
-        let chanceRoll = Math.floor(Math.random() * 100 + 1);
-        //Weighted categories for deciding rarity
-        switch (true) {
-          case chanceRoll <= 20:
-            curRarity = "rare";
-            break;
-          case chanceRoll <= 55 && chanceRoll > 20:
-            curRarity = "uncommon";
-            break;
-          case chanceRoll > 55:
-            curRarity = "common";
-            break;
-          default:
-            curRarity = "";
-            break;
-        }
-        //Create filtered list of item indexes matching selected rarity
-        let listFiltered = [];
-        for (let i in fullList) {
-          fullList[i].rarity === curRarity && listFiltered.push(i);
-        }
-        //The index of the item to be selected, taken from the full list
-        let curItemIndex =
-          listFiltered[Math.floor(Math.random() * listFiltered.length)];
-        selectList.filter((mtx) => {
-          if (mtx.name === fullList[curItemIndex].name) {
-            mtx.count++;
-          }
-        });
-        currVals = {
-          iteration: i + 1,
-          boxes: currVals.boxes,
-          points: currVals.boxes * 30,
-          found: [
-            selectList.filter((mtx) => mtx.count >= 1).length,
-            selectList.length,
-          ],
-          percent: (
-            (selectList.filter((mtx) => mtx.count >= 1).length * 100) /
-              currVals.boxes || 0
-          ).toFixed(2),
-        };
-        if (
-          selectList.filter((mtx) => mtx.count >= 1).length ===
-            selectList.length ||
-          (boxVal >= 1 && currVals.boxes === parseInt(boxVal))
-        ) {
-          let newList = boxCalcList;
-          newList.unshift({
-            iteration: i + 1,
-            boxes: currVals.boxes,
-            points: currVals.boxes * 30,
-            found: [
-              selectList.filter((mtx) => mtx.count >= 1).length,
-              selectList.length,
-            ],
-            percent: (
-              (selectList.filter((mtx) => mtx.count >= 1).length * 100) /
-                currVals.boxes || 0
-            ).toFixed(2),
-          });
-          setBoxCalcList(newList);
-          currVals = {
-            iteration: i + 2,
-            boxes: 0,
-            points: 0,
-            found: [0, selectList.length],
-            percent: 0,
-          };
-          for (let j in selectList) {
-            selectList[j].count = 0;
-          }
-          i++;
-        }
-        setBoxCalcCurrent(currVals);
-      }
-    }
-    dispatch(setSimRunning(false));
-  };
-
-  const calcItem = async () => {
-    let fullList = JSON.parse(JSON.stringify(fullMTXList));
-    let selectItem = itemSelected.value.item;
-    selectItem.count = 0;
-    let currVals = {
-      iteration: 0,
-      boxes: 0,
-      points: 0,
-      found: false,
-      percent: 0,
-    };
-    for (let i = 0; i < iterations; ) {
-      await sleep(10);
-      if (!simRunning) {
-        break;
-      } else {
-        currVals.boxes++;
-        //Variable to store selected rarity of items to select from
-        let curRarity;
-        //Random number to decided rarity
-        let chanceRoll = Math.floor(Math.random() * 100 + 1);
-        //Weighted categories for deciding rarity
-        switch (true) {
-          case chanceRoll <= 20:
-            curRarity = "rare";
-            break;
-          case chanceRoll <= 55 && chanceRoll > 20:
-            curRarity = "uncommon";
-            break;
-          case chanceRoll > 55:
-            curRarity = "common";
-            break;
-          default:
-            curRarity = "";
-            break;
-        }
-        //Create filtered list of item indexes matching selected rarity
-        let listFiltered = [];
-        for (let i in fullList) {
-          fullList[i].rarity === curRarity && listFiltered.push(i);
-        }
-        //The index of the item to be selected, taken from the full list
-        let curItemIndex =
-          listFiltered[Math.floor(Math.random() * listFiltered.length)];
-        if (selectItem.name === fullList[curItemIndex].name) {
-          selectItem.count++;
-        }
-        currVals = {
-          iteration: i + 1,
-          boxes: currVals.boxes,
-          points: currVals.boxes * 30,
-          found: selectItem.count ? true : false,
-          percent: ((selectItem.count * 100) / currVals.boxes || 0).toFixed(2),
-        };
-        if (
-          selectItem.count ||
-          (parseInt(boxVal) >= 1 && currVals.boxes === parseInt(boxVal))
-        ) {
-          let newList = itemCalcList;
-          newList.unshift({
-            iteration: i + 1,
-            boxes: currVals.boxes,
-            points: currVals.boxes * 30,
-            found: selectItem.count ? true : false,
-            percent: ((selectItem.count * 100) / currVals.boxes || 0).toFixed(
-              2
-            ),
-          });
-          setItemCalcList(newList);
-          currVals = {
-            iteration: i + 2,
-            boxes: 0,
-            points: 0,
-            found: false,
-            percent: 0,
-          };
-          selectItem.count = 0;
-          i++;
-        }
-        setItemCalcCurrent(currVals);
-      }
-    }
-    dispatch(setSimRunning(false));
-  };
-
+  
   const getAverage = (arr) => {
     let value = 0;
     if (typeof arr[0] === "boolean") {
@@ -285,109 +107,156 @@ export default function ProbabilitySim({ simMode, sleep }) {
     }
   }
 
+  const runBoxCalc = useCallback(() => {
+    if (simMode === "probability" && simRunning && activeBox) {
+      probFilter === "box" && calcBox({ 
+        fullMTXList, 
+        activeMTX, 
+        iterations, 
+        simRunning, 
+        boxVal, 
+        boxCalcList, 
+        setBoxCalcList, 
+        setBoxCalcCurrent,
+        mode,
+      }).then(() => dispatch(setSimRunning(false)));
+      probFilter === "item" && calcItem({ 
+        fullMTXList, 
+        iterations, 
+        simRunning, 
+        itemSelected, 
+        boxVal, 
+        itemCalcList, 
+        setItemCalcList, 
+        setItemCalcCurrent,
+        mode,
+      }).then(() => dispatch(setSimRunning(false)));
+    }
+  }, [
+    activeBox,
+    probFilter, 
+    simMode, 
+    simRunning, 
+    activeMTX, 
+    boxCalcList, 
+    boxVal, 
+    dispatch, 
+    fullMTXList, 
+    itemCalcList, 
+    itemSelected, 
+    iterations,
+    mode
+  ])
+
+  //Run box calculation when start button pressed
+  useEffect(() => runBoxCalc(), [runBoxCalc]);
+
   return (
     <div
       className={`probabilitySim${
         simMode === "probability" ? "" : " hideContainer"
       }`}
     >
-      {activeBox && (
-        <div className="selectorContainer">
-          <h4
-            className={`boxSelector ${
-              probFilter === "box" ? "activeFilter" : ""
-            } ${simRunning ? "disabledContainer" : ""}`}
-            onClick={() => setProbFilter("box")}
-          >
-            <img src={getBoxImage()} />
-            <span>Selected Items</span>
+      <div className="sim-header">
+        <BoxSimToggle />
+        {activeBox && (
+          <div className="selectorContainer">
+            <h4
+              className={`boxSelector ${
+                probFilter === "box" ? "activeFilter" : ""
+              } ${simRunning ? "disabledContainer" : ""}`}
+              onClick={() => setProbFilter("box")}
+            >
+              <img src={boxImage} alt='selected-items-toggle' />
+              <span>Selected Items</span>
+            </h4>
+            <button
+              className={`${simRunning ? "disable-btn" : ""}`}
+              onClick={() => {
+                if (probFilter === "box") {
+                  setBoxCalcCurrent({
+                    iteration: 0,
+                    boxes: 0,
+                    points: 0,
+                    found: [0, 0],
+                    percent: 0,
+                  });
+                  setBoxCalcList([]);
+                } else if (probFilter === "item") {
+                  setItemCalcCurrent({
+                    iteration: 0,
+                    boxes: 0,
+                    points: 0,
+                    found: false,
+                    percent: 0,
+                  });
+                  setItemCalcList([]);
+                }
+                dispatch(setSimRunning(true));
+              }}
+              disabled={simRunning}
+            >
+              <i className="fas fa-play" />
+            </button>
+            <Select
+              className={`react-select ${
+                probFilter === "item" ? "activeSelect" : ""
+              } ${simRunning ? "disabledContainer" : ""}`}
+              classNamePrefix="react-select"
+              defaultValue={itemList[0]}
+              value={itemSelected}
+              onChange={(e) => {
+                if ((itemSelected.value.item.name !== e.value.item.name) || probFilter === "box") {
+                  setItemSelected(e);
+                  setItemCalcCurrent({
+                    iteration: 0,
+                    boxes: 0,
+                    points: 0,
+                    found: false,
+                    percent: 0,
+                  });
+                  setItemCalcList([]);
+                  setProbFilter("item");
+                }
+              }}
+              options={itemList}
+              isSearchable={false}
+              disabled={simRunning}
+            />
+          </div>
+        )}
+        <div className="input-container">
+          <h4 className={`iteration-input ${simRunning ? "disabled" : ""}`}>
+            Iterations:
+            <input
+              type="text"
+              pattern={"[0-9]*"}
+              maxLength="3"
+              disabled={simRunning}
+              onChange={(e) =>
+                setIterations(
+                  e.target.value > 100 ? 100 : e.target.value.replace(/\D/, "")
+                )
+              }
+              value={iterations || ''}
+              placeholder="#"
+              onPaste={(e) => e.preventDefault()}
+            />
           </h4>
-          <button
-            className={`${simRunning ? "disable-btn" : ""}`}
-            onClick={() => {
-              if (probFilter === "box") {
-                setBoxCalcCurrent({
-                  iteration: 0,
-                  boxes: 0,
-                  points: 0,
-                  found: [0, 0],
-                  percent: 0,
-                });
-                setBoxCalcList([]);
-              } else if (probFilter === "item") {
-                setItemCalcCurrent({
-                  iteration: 0,
-                  boxes: 0,
-                  points: 0,
-                  found: false,
-                  percent: 0,
-                });
-                setItemCalcList([]);
-              }
-              dispatch(setSimRunning(true));
-            }}
-            disabled={simRunning}
-          >
-            <i className="fas fa-play" />
-          </button>
-          <Select
-            className={`react-select ${
-              probFilter === "item" ? "activeSelect" : ""
-            } ${simRunning ? "disabledContainer" : ""}`}
-            classNamePrefix="react-select"
-            defaultValue={itemList[0]}
-            value={itemSelected}
-            onChange={(e) => {
-              if ((itemSelected.value.item.name !== e.value.item.name) || probFilter === "box") {
-                setItemSelected(e);
-                setItemCalcCurrent({
-                  iteration: 0,
-                  boxes: 0,
-                  points: 0,
-                  found: false,
-                  percent: 0,
-                });
-                setItemCalcList([]);
-                setProbFilter("item");
-              }
-            }}
-            options={itemList}
-            isSearchable={false}
-            disabled={simRunning}
-          />
+          <h4 className={`boxes-input ${simRunning ? "disabled" : ""}`}>
+            Max Boxes:
+            <input
+              type="text"
+              pattern={"[0-9]*"}
+              maxLength="3"
+              disabled={simRunning}
+              onChange={(e) => setBoxVal(e.target.value.replace(/\D/, ""))}
+              value={boxVal || ''}
+              placeholder="#"
+              onPaste={(e) => e.preventDefault()}
+            />
+          </h4>
         </div>
-      )}
-      <div className="input-container">
-        <h4 className={`iteration-input ${simRunning ? "disabled" : ""}`}>
-          Iterations:
-          <input
-            type="text"
-            pattern={"[0-9]*"}
-            maxLength="2"
-            disabled={simRunning}
-            onChange={(e) =>
-              setIterations(
-                e.target.value > 50 ? 50 : e.target.value.replace(/\D/, "")
-              )
-            }
-            value={iterations}
-            placeholder="#"
-            onPaste={(e) => e.preventDefault()}
-          />
-        </h4>
-        <h4 className={`boxes-input ${simRunning ? "disabled" : ""}`}>
-          Max Boxes:
-          <input
-            type="text"
-            pattern={"[0-9]*"}
-            maxLength="3"
-            disabled={simRunning}
-            onChange={(e) => setBoxVal(e.target.value.replace(/\D/, ""))}
-            value={boxVal}
-            placeholder="#"
-            onPaste={(e) => e.preventDefault()}
-          />
-        </h4>
       </div>
       {probFilter === "box" && (
         <div className="boxCalcListContainer">
@@ -416,10 +285,10 @@ export default function ProbabilitySim({ simMode, sleep }) {
               {!simRunning && boxCalcList?.[0]?.boxes > 0 && (
                 <tr style={{background: 'rgba(var(--mainColor), 0.4)'}}>
                   <td>Avg</td>
-                  <td>{getAverage(boxCalcList.map(box => box.boxes)).toFixed(0)}</td>
-                  <td>{getAverage(boxCalcList.map(box => box.boxes)).toFixed(0) * 30}</td>
-                  <td>{getAverage(boxCalcList.map(box => box.found[0])).toFixed(0)} / {boxCalcCurrent.found[1]}</td>
-                  <td>{getAverage(boxCalcList.map(box => parseFloat(box.percent))).toFixed(2)} %</td>
+                  <td>{getAverage(boxCalcList.map(currBox => currBox.boxes)).toFixed(0)}</td>
+                  <td>{getAverage(boxCalcList.map(currBox => currBox.boxes)).toFixed(0) * (mode === 'new' ? 50 : 30)}</td>
+                  <td>{getAverage(boxCalcList.map(currBox => currBox.found[0])).toFixed(0)} / {boxCalcCurrent.found[1]}</td>
+                  <td>{getAverage(boxCalcList.map(currBox => parseFloat(currBox.percent))).toFixed(2)} %</td>
                 </tr>
               )}
               {boxCalcList.map((round, index) => {
@@ -465,7 +334,7 @@ export default function ProbabilitySim({ simMode, sleep }) {
                 <tr style={{background: 'rgba(var(--mainColor), 0.4)'}}>
                   <td>Avg</td>
                   <td>{getAverage(itemCalcList.map(item => item.boxes)).toFixed(0)}</td>
-                  <td>{getAverage(itemCalcList.map(item => item.boxes)).toFixed(0) * 30}</td>
+                  <td>{getAverage(itemCalcList.map(item => item.boxes)).toFixed(0) * (mode === 'new' ? 50 : 30)}</td>
                   <td>{getAverage(itemCalcList.map(item => item.found))}</td>
                   <td>{getAverage(itemCalcList.map(item => parseFloat(item.percent))).toFixed(2)} %</td>
                 </tr>

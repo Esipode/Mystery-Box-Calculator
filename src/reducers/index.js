@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import currStep from './currStep';
+import currMode from './currMode';
 import currBox from './currBox';
 import boxChanged from './boxChanged';
 import fullMTXList from './fullMTXList';
@@ -13,9 +14,11 @@ import prevBoxVal from './prevBoxVal';
 import completedList from './completedList';
 import resultsPending from './resultsPending';
 import resultsSubmitted from './resultsSubmitted';
+import simMode from './simMode';
 
 const allReducers = combineReducers({
 	currStep,
+	currMode,
 	currBox,
 	boxChanged,
 	fullMTXList,
@@ -28,7 +31,8 @@ const allReducers = combineReducers({
 	prevBoxVal,
 	completedList,
 	resultsPending,
-	resultsSubmitted
+	resultsSubmitted,
+	simMode,
 });
 
 export default allReducers;
