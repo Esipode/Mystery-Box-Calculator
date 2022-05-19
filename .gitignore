@@ -14,6 +14,7 @@
 .DS_Store
 priv_key.ppk
 pub_key
+openssh_key
 .env
 .env.local
 .env.development.local
