@@ -12,8 +12,8 @@
 
 # misc
 .DS_Store
-key
-key.ppk
+priv_key.ppk
+pub_key
 .env
 .env.local
 .env.development.local
