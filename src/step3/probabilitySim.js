@@ -16,6 +16,7 @@ export default function ProbabilitySim({ simMode }) {
   const activeBox = useSelector((state) => state.activeBox);
   const activeMTX = useSelector((state) => state.activeMTX);
   const simRunning = useSelector((state) => state.simRunning);
+  const ownedList = useSelector((state) => state.ownedList);
 
   const itemList = useMemo(() => {
     return fullMTXList.map((item) => {
@@ -54,10 +55,11 @@ export default function ProbabilitySim({ simMode }) {
 
   //Correct number of boxes if it exceeds number of options in new mode
 	useEffect(() => {
-		if (mode === 'new' && boxVal > fullMTXList.length) {
-			setBoxVal(fullMTXList.length);
+    const maxSize = fullMTXList.length - ownedList.length;
+		if (mode === 'new' && boxVal > maxSize) {
+			setBoxVal(maxSize);
 		}
-	}, [boxVal, fullMTXList, mode])
+	}, [boxVal, fullMTXList, mode, ownedList])
 
   //Reset displayed item when box changes
   useEffect(() => {
@@ -111,7 +113,8 @@ export default function ProbabilitySim({ simMode }) {
     if (simMode === "probability" && simRunning && activeBox) {
       probFilter === "box" && calcBox({ 
         fullMTXList, 
-        activeMTX, 
+        activeMTX,
+        ownedList,
         iterations, 
         simRunning, 
         boxVal, 

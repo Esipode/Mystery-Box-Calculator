@@ -20,6 +20,7 @@ export default function SimBoxes({simMode, simToggle}) {
 	const resultsPending = useSelector(state => state.resultsPending);
 	const resultsSubmitted = useSelector(state => state.resultsSubmitted);
 	const boxName = useSelector(state => state.currBox);
+	const ownedList = useSelector(state => state.ownedList);
 
 	const calcProfit = () => {
 		if (!completedList.length || simRunning) {
@@ -37,10 +38,11 @@ export default function SimBoxes({simMode, simToggle}) {
 
 	//Correct number of boxes if it exceeds number of options in new mode
 	useEffect(() => {
-		if (mode === 'new' && boxVal > fullMTXList.length) {
-			dispatch(setBoxVal(fullMTXList.length));
+		const maxSize = fullMTXList.length - ownedList.length;
+		if (mode === 'new' && boxVal > maxSize) {
+			dispatch(setBoxVal(maxSize));
 		}
-	}, [boxVal, fullMTXList, mode, dispatch])
+	}, [boxVal, fullMTXList, mode, dispatch, ownedList])
 
 	//Get fake table header widths
 	const checkWidths = () => {
@@ -56,6 +58,12 @@ export default function SimBoxes({simMode, simToggle}) {
 		}
 		return widths;
 	}
+
+	const isDisabled = () => (
+		simRunning ||
+		(boxVal === null || boxVal === 0 || boxVal > 999) || 
+		(mode === 'new' && boxVal > (fullMTXList.length - ownedList.length))
+	)
 
 	//Get fake table header widths
 	useEffect(() => {
@@ -86,9 +94,9 @@ export default function SimBoxes({simMode, simToggle}) {
 					/>
 					</h4>
 					<button 
-						className={(boxVal === null || boxVal === 0 || boxVal > 999) || simRunning ? 'disable-btn' : ''} 
+						className={isDisabled() ? 'disable-btn' : ''} 
 						onClick={() => simToggle()} 
-						disabled={(boxVal === null || boxVal === 0 || boxVal > 999) || simRunning}
+						disabled={isDisabled()}
 					>
 						<i className='fas fa-play'/>
 					</button>

@@ -30,7 +30,8 @@ const verifyFinishedIteration = async (list, boxVal, currVals) => {
 
 export default async function calcBox({ 
     fullMTXList, 
-    activeMTX, 
+    activeMTX,
+    ownedList,
     iterations, 
     simRunning, 
     boxVal, 
@@ -82,9 +83,10 @@ export default async function calcBox({
         itemIndex = await getIndex(fullList, randomRange);
       }
 
+      const isOwned = !!ownedList.filter((item) => (fullList[itemIndex].name === item.name) && item.owned).length;
       const { updatedList, updatedFullList } = await checkCount(selectList, fullList, itemIndex);
 
-      if (!updatedFullList.filter((item) => item.count > 1).length || mode === 'old') {
+      if ((!updatedFullList.filter((item) => item.count > 1).length && !isOwned) || mode === 'old') {
         await sleep(25);
         currVals.boxes++;
         selectList = [...updatedList];

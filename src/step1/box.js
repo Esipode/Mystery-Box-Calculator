@@ -11,7 +11,8 @@ import {
 	setActiveMTX,
 	setStatList,
 	setStepThree,
-	setActiveBox
+	setActiveBox,
+	setOwnedList,
 } from '../actions';
 
 export default function Box({ name, image }) {
@@ -25,6 +26,7 @@ export default function Box({ name, image }) {
 		dispatch(setBoxChanged(true));
 		dispatch(setFullMTXList(mtxList));
 		dispatch(setActiveMTX([]));
+		dispatch(setOwnedList([]));
 		dispatch(setStatList({ itemList: [] }));
 		dispatch(setStepThree(false));
 	};

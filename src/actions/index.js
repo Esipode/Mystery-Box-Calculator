@@ -63,6 +63,11 @@ export const setPrevBoxVal = (val) => ({
 	value: val
 })
 
+export const setOwnedList = (val) => ({
+	type: "OWNED_LIST",
+	value: val
+})
+
 export const setCompletedList = (val) => ({
 	type: "COMPLETED_LIST",
 	value: val

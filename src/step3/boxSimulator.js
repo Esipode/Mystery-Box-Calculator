@@ -20,6 +20,7 @@ export default function BoxSimulator() {
   const simRunning = useSelector((state) => state.simRunning);
   const boxVal = useSelector((state) => state.boxVal);
   const mode = useSelector((state) => state.currMode);
+  const ownedList = useSelector((state) => state.ownedList);
 
   const simToggle = useCallback(() => {
     dispatch(setSimRunning(!simRunning));
@@ -32,10 +33,10 @@ export default function BoxSimulator() {
       startSim(
         activeMTX,
         boxVal,
+        ownedList,
         dispatch,
         fullMTXList,
         mode,
-        setCompletedList,
         setPrevBoxVal,
         setResultsSubmitted,
         simRunning,
@@ -46,7 +47,7 @@ export default function BoxSimulator() {
       })
       
     }
-  }, [activeMTX, boxVal, dispatch, fullMTXList, mode, simMode, simRunning, simToggle]);
+  }, [activeMTX, boxVal, ownedList, dispatch, fullMTXList, mode, simMode, simRunning, simToggle]);
 
   useEffect(() => startSimulation(), [startSimulation]);
 

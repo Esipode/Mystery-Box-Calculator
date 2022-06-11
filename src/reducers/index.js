@@ -12,6 +12,7 @@ import activeBox from './activeBox';
 import boxVal from './boxVal';
 import prevBoxVal from './prevBoxVal';
 import completedList from './completedList';
+import ownedList from './ownedList';
 import resultsPending from './resultsPending';
 import resultsSubmitted from './resultsSubmitted';
 import simMode from './simMode';
@@ -30,6 +31,7 @@ const allReducers = combineReducers({
 	boxVal,
 	prevBoxVal,
 	completedList,
+	ownedList,
 	resultsPending,
 	resultsSubmitted,
 	simMode,

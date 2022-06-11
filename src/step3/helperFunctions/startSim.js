@@ -14,10 +14,10 @@ import {
 export default async function startSim(
 	curMTXList,
 	boxVal,
+	ownedList,
   	dispatch,
 	fullMTXList,
   	mode,
-	setCompletedList,
 	setSubmitted,
 	setPrevBoxVal,
 	isRunning,
@@ -71,8 +71,9 @@ export default async function startSim(
 
 				let curItem = JSON.parse(JSON.stringify(fullList[selectedIndex]));
 				let itemCheck = curMTXList.filter((item) => item.name === curItem.name);
+				const isOwned = !!ownedList.filter((item) => (curItem.name === item.name) && item.owned).length;
 				
-				if (!selectedItems[selectedIndex].count) {
+				if (!selectedItems[selectedIndex].count && !isOwned) {
 					for (let j = 0; j <= selectedItems.length; j++) {
 						if (j < selectedItems.length && curItem.name === selectedItems[j].name) {
 							selectedItems[j].count = 1;
