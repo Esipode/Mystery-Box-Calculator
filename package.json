@@ -24,12 +24,11 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "node backend/server.js && npm run start-client.js",
+    "start": "node backend/server.js",
     "svr": "cd backend && nodemon server",
     "dev": "react-scripts start",
     "build": "react-scripts build",
-    "server": "node backend/server.js",
-    "heroku-postbuild": "npm install && npm run build"
+    "deploy": "npm install && npm run build"
   },
   "eslintConfig": {
     "extends": [
