@@ -9,6 +9,8 @@ import calcBox from "./helperFunctions/calcBox";
 import calcItem from "./helperFunctions/calcItem";
 import BoxSimToggle from './boxSimToggle';
 
+const { boxes } = data;
+
 export default function ProbabilitySim({ simMode }) {
   const dispatch = useDispatch();
   const fullMTXList = useSelector((state) => state.fullMTXList);
@@ -18,7 +20,6 @@ export default function ProbabilitySim({ simMode }) {
   const simRunning = useSelector((state) => state.simRunning);
   const ownedList = useSelector((state) => state.ownedList);
   
-	const { boxes } = data;
 
   const itemList = useMemo(() => {
     return fullMTXList.map((item) => {

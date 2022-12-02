@@ -15,11 +15,12 @@ import {
 	setOwnedList,
 } from '../actions';
 
+const { boxes } = data;
+
 export default function Box({ name, image }) {
 	const dispatch = useDispatch();
 	const activeBox = useSelector((state) => state.activeBox);
 
-	const { boxes } = data;
 
 	const onChangeMTXBox = (mtxList, name) => {
 		dispatch(setStep(1));

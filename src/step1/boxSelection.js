@@ -2,8 +2,9 @@ import React from 'react';
 import data from '../data.json';
 import Box from './box';
 
+const { boxes } = data;
+
 export default function BoxSelection() {
-	const { boxes } = data;
 
 	return (
 		<div className="boxSelection">
