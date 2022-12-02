@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { boxes } from '../data.json';
+import data from '../data.json';
 
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -18,6 +18,8 @@ import {
 export default function Box({ name, image }) {
 	const dispatch = useDispatch();
 	const activeBox = useSelector((state) => state.activeBox);
+
+	const { boxes } = data;
 
 	const onChangeMTXBox = (mtxList, name) => {
 		dispatch(setStep(1));

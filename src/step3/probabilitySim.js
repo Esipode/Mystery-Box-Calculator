@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
-import { boxes } from "../data.json";
+import data from "../data.json";
 import Select from "react-select";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -17,6 +17,8 @@ export default function ProbabilitySim({ simMode }) {
   const activeMTX = useSelector((state) => state.activeMTX);
   const simRunning = useSelector((state) => state.simRunning);
   const ownedList = useSelector((state) => state.ownedList);
+  
+	const { boxes } = data;
 
   const itemList = useMemo(() => {
     return fullMTXList.map((item) => {

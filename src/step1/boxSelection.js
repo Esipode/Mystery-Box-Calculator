@@ -1,8 +1,9 @@
 import React from 'react';
-import { boxes } from '../data.json';
+import data from '../data.json';
 import Box from './box';
 
 export default function BoxSelection() {
+	const { boxes } = data;
 
 	return (
 		<div className="boxSelection">
