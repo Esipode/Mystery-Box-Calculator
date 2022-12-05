@@ -42,7 +42,7 @@ export default async function calcBox({
   }) {
 	let fullList = mode === 'new' ? await setRanges([...fullMTXList]) : [...fullMTXList];
   let selectList = [...activeMTX];
-  console.log({fullList, selectList})
+
   let currVals = {
     iteration: 0,
     boxes: 0,
