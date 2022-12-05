@@ -40,8 +40,9 @@ export default async function calcBox({
     setBoxCalcCurrent,
     mode,
   }) {
-	let fullList = JSON.parse(JSON.stringify(fullMTXList));
-  let selectList = JSON.parse(JSON.stringify(activeMTX));
+	let fullList = mode === 'new' ? await setRanges([...fullMTXList]) : [...fullMTXList];
+  let selectList = [...activeMTX];
+  console.log({fullList, selectList})
   let currVals = {
     iteration: 0,
     boxes: 0,
@@ -49,10 +50,6 @@ export default async function calcBox({
     found: [0, 0],
     percent: 0,
   };
-  
-	if (mode === 'new') {
-    fullList = await setRanges(fullList);
-  } 
 
   for (let j in selectList) {
     selectList[j].count = 0;
@@ -83,7 +80,8 @@ export default async function calcBox({
         itemIndex = await getIndex(fullList, randomRange);
       }
 
-      const isOwned = !!ownedList.filter((item) => (fullList[itemIndex].name === item.name) && item.owned).length;
+      const selectedItemName = fullList?.[itemIndex]?.name;
+      const isOwned = !!ownedList.filter((item) => (selectedItemName === item.name) && item.owned).length;
       const { updatedList, updatedFullList } = await checkCount(selectList, fullList, itemIndex);
 
       if ((!updatedFullList.filter((item) => item.count > 1).length && !isOwned) || mode === 'old') {
