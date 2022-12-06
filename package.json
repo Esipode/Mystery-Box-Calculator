@@ -25,11 +25,12 @@
     "web-vitals": "^3.1.0"
   },
   "scripts": {
-    "start": "node backend/server.js",
+    "server": "node backend/server.js",
     "svr": "cd backend && nodemon server",
-    "dev": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "npm install && npm run build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
