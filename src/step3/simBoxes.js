@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import SimResults from './helperFunctions/simResults';
-import onSubmitResults from './helperFunctions/onSubmitResults';
+// Disabled for now due to not using backend server
+// import onSubmitResults from './helperFunctions/onSubmitResults';
 import BoxSimToggle from './boxSimToggle';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {setStatList, setBoxVal, setResultsPending, setResultsSubmitted} from '../actions';
+// Disabled for now due to not using backend server
+// import {setStatList, setBoxVal, setResultsPending, setResultsSubmitted} from '../actions';
+import { setBoxVal } from '../actions';
 
 export default function SimBoxes({simMode, simToggle}) {
 	const tableHeaderRef = useRef();
@@ -17,9 +20,10 @@ export default function SimBoxes({simMode, simToggle}) {
 	const boxVal = useSelector(state => state.boxVal);
 	const prevBoxVal = useSelector(state => state.prevBoxVal);
 	const completedList = useSelector(state => state.completedList);
-	const resultsPending = useSelector(state => state.resultsPending);
-	const resultsSubmitted = useSelector(state => state.resultsSubmitted);
-	const boxName = useSelector(state => state.currBox);
+	// Disabled for now due to not using backend server
+	// const resultsPending = useSelector(state => state.resultsPending);
+	// const resultsSubmitted = useSelector(state => state.resultsSubmitted);
+	// const boxName = useSelector(state => state.currBox);
 	const ownedList = useSelector(state => state.ownedList);
 
 	const calcProfit = () => {
@@ -103,13 +107,14 @@ export default function SimBoxes({simMode, simToggle}) {
 					<h4 className="points-amount">Points: {(boxVal * (mode === 'new' ? 50 : 30)) || 0}</h4>
 				</div>
 				<div className="simInfoContainer">
-					<button
+					{/* Disabled for now due to not using backend server */}
+					{/* <button
 						className={`submitResults${resultsSubmitted ? ' submitted' : ''}${resultsPending ? ' pending' : ''}${simRunning || !completedList.length ? ' hideResults' : ''}`}
 						onClick={() => onSubmitResults(dispatch, completedList, setStatList, setResultsSubmitted, setResultsPending, boxName)}
 						disabled={simRunning || !completedList.length}
 					>
 						{resultsSubmitted ? <i className="fas fa-check"></i> : 'Submit Results'}
-					</button>
+					</button> */}
 					<p className="profitContainer">
 						<span>Profit</span>
 						/
