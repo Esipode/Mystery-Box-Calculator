@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "./static/css/main.2008cd6c.css",
+    "main.js": "./static/js/main.26cebbec.js",
+    "static/media/chesticon.svg": "./static/media/chesticon.a54ed22370306a10931627d485b0b4c9.svg",
+    "index.html": "./index.html",
+    "main.2008cd6c.css.map": "./static/css/main.2008cd6c.css.map",
+    "main.26cebbec.js.map": "./static/js/main.26cebbec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2008cd6c.css",
+    "static/js/main.26cebbec.js"
+  ]
+}
